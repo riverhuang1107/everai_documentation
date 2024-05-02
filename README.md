@@ -157,7 +157,7 @@ from everai.image import Builder
 #Example: quay.io/riverhuang1107/get-start:v0.0.30
 IMAGE = 'quay.io/<username>/<repo>:<tag>'
 ```
-`everai image build`过程中会安装`buildx`，`buildx`用于构建多平台(x86，arm64)构架镜像  
+`everai image build`过程中会安装`buildx`，`buildx`用于构建多平台（x86，arm64）构架镜像  
 
 
 ## 部署Deploy image
