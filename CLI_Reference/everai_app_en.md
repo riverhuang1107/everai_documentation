@@ -7,19 +7,19 @@ everai app [-h] {create,run,get,upgrade,pause,deploy,prepare,list,ls,queue,q} ..
 **Positional arguments**:
   {create,run,get,upgrade,pause,deploy,prepare,list,ls,queue,q}
                         App command help  
-    `create`              Create an app  
-    `run`                 Local run a everai application for test  
-    `get`                 Get app information  
-    `upgrade`             Upgrade an app  
-    `pause`               Pause an app, all worker will be stopped  
-    `deploy`              Deploy an app to serving status  
-    `pause`               Pause an app, all worker will be stopped  
-    `prepare`             Prepare an app, all of function which decorated by @app.prepare would be called  
-    `list (ls)`           List all apps  
-    `queue (q)`           List queue of app  
+    * `create`              Create an app  
+    * `run`                 Local run a everai application for test  
+    * `get`                 Get app information  
+    * `upgrade`             Upgrade an app  
+    * `pause`               Pause an app, all worker will be stopped  
+    * `deploy`              Deploy an app to serving status  
+    * `pause`               Pause an app, all worker will be stopped  
+    * `prepare`             Prepare an app, all of function which decorated by @app.prepare would be called  
+    * `list (ls)`           List all apps  
+    * `queue (q)`           List queue of app  
 
 **Options**:  
-  -h, --help            show this help message and exit
+  * `-h, --help`            show this help message and exit
 
 ## everai app create             
 Create an app
@@ -41,8 +41,8 @@ everai app create [-h] [--route-name ROUTE_NAME] [name]
   `name`                  The app name  
 
 **Options**:  
--h, --help            show this help message and exit  
---route-name ROUTE_NAME, -r ROUTE_NAME
+* `-h, --help`            show this help message and exit  
+* `--route-name ROUTE_NAME, -r ROUTE_NAME`
                         Globally unique route name. By default, it is same with the app name. Once the application name conflicts, route-name needs to be set explicitly.
 
 ## everai app run                 
@@ -58,9 +58,9 @@ everai app run [-h] [--port PORT] [--listen LISTEN]
 ```
 
 **Options**:  
--h, --help       show this help message and exit
---port PORT      The port to bind to
---listen LISTEN  The interface to bind to
+* `-h, --help`       show this help message and exit
+* `--port PORT`      The port to bind to
+* `--listen LISTEN`  The interface to bind to
 
 ## everai app get                 
 Get app information  
@@ -78,7 +78,7 @@ everai app get [-h] name
   `name`        The app name
 
 **Options**:
--h, --help  show this help message and exit
+* `-h, --help`  show this help message and exit
 
 ## everai app upgrade             
 Upgrade an app  
@@ -97,7 +97,7 @@ everai app deploy [-h]
 ```
 
 **Options**:  
--h, --help  show this help message and exit
+* `-h, --help`  show this help message and exit
 
 ## everai app prepare             
 Prepare an app, all of function which decorated by @app.prepare would be called  
@@ -115,7 +115,7 @@ everai app prepare [-h]
 ```
 
 **Options**:  
--h, --help  show this help message and exit  
+* `-h, --help`  show this help message and exit  
 
 ## everai app list (ls)           
 List all apps  
@@ -130,9 +130,9 @@ everai app list [-h] [--output [OUTPUT]]
 ```
 
 **Options**:  
--h, --help            show this help message and exit  
---output [OUTPUT], -o [OUTPUT]
+* `-h, --help`            show this help message and exit  
+* `--output [OUTPUT], -o [OUTPUT]`
                         Output format, One of: (json, yaml, table, wide)
 
-##everai app queue (q)           
+## everai app queue (q)           
 List queue of app
