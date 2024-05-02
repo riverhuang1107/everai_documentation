@@ -7,16 +7,16 @@ everai app [-h] {create,run,get,upgrade,pause,deploy,prepare,list,ls,queue,q} ..
 **Positional arguments**:
   {create,run,get,upgrade,pause,deploy,prepare,list,ls,queue,q}
                         App command help  
-    * `create`              Create an app  
-    * `run`                 Local run a everai application for test  
-    * `get`                 Get app information  
-    * `upgrade`             Upgrade an app  
-    * `pause`               Pause an app, all worker will be stopped  
-    * `deploy`              Deploy an app to serving status  
-    * `pause`               Pause an app, all worker will be stopped  
-    * `prepare`             Prepare an app, all of function which decorated by @app.prepare would be called  
-    * `list (ls)`           List all apps  
-    * `queue (q)`           List queue of app  
+  * `create`              Create an app  
+  * `run`                 Local run a everai application for test  
+  * `get`                 Get app information  
+  * `upgrade`             Upgrade an app  
+  * `pause`               Pause an app, all worker will be stopped  
+  * `deploy`              Deploy an app to serving status  
+  * `pause`               Pause an app, all worker will be stopped  
+  * `prepare`             Prepare an app, all of function which decorated by @app.prepare would be called  
+  * `list (ls)`           List all apps  
+  * `queue (q)`           List queue of app  
 
 **Options**:  
   * `-h, --help`            show this help message and exit
