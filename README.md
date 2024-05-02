@@ -90,7 +90,9 @@ pip install --upgrade everai
 ```
 #### 卸载Uninstall
 Uninstall the package with pip(macOS, Linux(WSL), Windows PowerShell):  
+```bash
 pip uninstall everai
+```
 
 ## 创建应用Create an app
 ### 文件目录结构File and folder structure
@@ -126,7 +128,7 @@ everai secret create your-quay-io-secret-name \
 ```
 
 ## 编写你的代码Write your app code in python
-There is an example code in app.py  
+There is an example code in `app.py`  
 you could test in your local machine will following command  
 ```bash
 everai app run
@@ -155,7 +157,7 @@ from everai.image import Builder
 #Example: quay.io/riverhuang1107/get-start:v0.0.30
 IMAGE = 'quay.io/<username>/<repo>:<tag>'
 ```
-`everai image build`过程中会安装`buildx`，`buildx`用于构建多平台(x86,arm64)构架镜像  
+`everai image build`过程中会安装`buildx`，`buildx`用于构建多平台(x86，arm64)构架镜像  
 
 
 ## 部署Deploy image
