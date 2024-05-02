@@ -4,7 +4,7 @@
 everai app [-h] {create,run,get,upgrade,pause,deploy,prepare,list,ls,queue,q} ...
 ```
 
-**Positional arguments**:
+**Positional arguments**:  
   {create,run,get,upgrade,pause,deploy,prepare,list,ls,queue,q}
                         App command help  
   * `create`              Create an app  
@@ -46,7 +46,7 @@ everai app create [-h] [--route-name ROUTE_NAME] [name]
                         Globally unique route name. By default, it is same with the app name. Once the application name conflicts, route-name needs to be set explicitly.
 
 ## everai app run                 
-Local run a everai application for test
+Local run a everai application for test  
 **Examples**:
 ```bash
 everai app run
