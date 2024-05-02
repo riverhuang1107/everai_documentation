@@ -20,20 +20,20 @@ Read and write data to highly-performant distributed file systems.
 
 ## 安装和使用前提条件Requirements/Prerequisites
 ### Python
-EverAI CLI library requires Python 3.8+.
+EverAI CLI library requires Python 3.8+.  
 EverAI CLI需要Python版本为3.8及以上版本。
 ### EverAI
 To continue with this quick start, you'll need access to the following from EverAI:  
-●EverAI account  
+* **EverAI account**  
 Create an account at everai.expvent.com.  
 你需要在everai.expvent.com创建一个账号。  
-●EverAI Token  
+* **EverAI Token**  
 	你可以从everai.expvent.com中获取到你的账号token。  
 ### Docker
 To build your Docker image, you'll need access to the following:  
-●Docker installed  
-●Docker Buildx installed  
-●Docker account  
+* **Docker installed**  
+* **Docker Buildx installed**  
+* **Docker account**  
 
 ## 快速入门Quick start
 ### 安装，更新和卸载Install, Upgrade and Uninstall
