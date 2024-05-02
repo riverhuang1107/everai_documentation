@@ -6,7 +6,7 @@ everai image [-h] {build} ...
 
 **Positional arguments**:  
   {build}     everai image command helps  
-    `build`     Image build
+    * `build`     Image build
 
 **Options**:  
 * `-h, --help`  show this help message and exit  
@@ -14,7 +14,7 @@ everai image [-h] {build} ...
 ## everai image build    
 Image build  
 **Examples**:  
-This step will build the container image, using two very simple files Dockerfile and image_builder.py, and call the following command will compile the image and push them to your specified registry.
+This step will build the container image, using two very simple files Dockerfile and image_builder.py, and call the following command will compile the image and push them to your specified registry.  
 The dependence of this step is docker and buildx installed on your machine. Otherwise we will have further prompts to help you install them
 ```bash
 docker login quary.io  
