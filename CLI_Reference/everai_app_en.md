@@ -75,7 +75,7 @@ everai app get [-h] name
 ```
 
 **Positional arguments**:  
-  `name`        The app name
+  * `name`        The app name
 
 **Options**:
 * `-h, --help`  show this help message and exit
