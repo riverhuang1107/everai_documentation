@@ -22,7 +22,7 @@ everai app [-h] {create,run,get,upgrade,pause,deploy,prepare,list,ls,queue,q} ..
   * `-h, --help`            show this help message and exit
 
 ## everai app create             
-Create an app
+Create an app  
 **Examples**:
 ```bash
 everai app create get-start
