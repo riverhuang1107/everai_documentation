@@ -21,8 +21,9 @@ Create ConfigMap from file or literal string
 **Examples**:  
 ```bash  
 everai configmap create get-start-configmap --from-literal min_workers=1
+```
 
-Usage: 
+**Usage**: 
 ```bash 
 everai configmap create [-h] [-l FROM_LITERAL] [-f FROM_FILE] name
 ```
