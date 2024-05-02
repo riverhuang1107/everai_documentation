@@ -29,7 +29,7 @@ everai worker list [-h] [--output [OUTPUT]] [--all] [--recent-days [RECENT_DAYS]
 ```
 
 **Positional arguments**:  
-  `app_name`              The app name  
+  * `app_name`              The app name  
 
 **Options**:  
 * `-h, --help`            show this help message and exit  
