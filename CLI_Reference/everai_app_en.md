@@ -52,8 +52,10 @@ Examples:
 everai app run
 ```
 
-Usage:  
+Usage: 
+```bash 
 everai app run [-h] [--port PORT] [--listen LISTEN]
+```
 
 Options:  
 -h, --help       show this help message and exit
@@ -61,14 +63,16 @@ Options:
 --listen LISTEN  The interface to bind to
 
 ## everai app get                 
-Get app information
+Get app information  
 Examples:
 ```bash
 everai app get get-start
 ```
 
-Usage:
+Usage: 
+```bash 
 everai app get [-h] name
+```
 
 positional arguments:  
   `name`        The app name
@@ -113,7 +117,7 @@ Options:
 -h, --help  show this help message and exit  
 
 ## everai app list (ls)           
-List all apps
+List all apps  
 Examples:
 ```bash
 everai app list
