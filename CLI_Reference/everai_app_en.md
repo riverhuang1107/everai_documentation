@@ -81,14 +81,15 @@ Options:
 -h, --help  show this help message and exit
 
 ## everai app upgrade             
-Upgrade an app
-##everai app pause               
-Pause an app, all worker will be stopped
-##everai app deploy              
-Deploy an app to serving status
-Examples:
+Upgrade an app  
+## everai app pause               
+Pause an app, all worker will be stopped  
+## everai app deploy              
+Deploy an app to serving status  
+Examples:  
+```bash
  everai app deploy
-
+```
 
 Usage:  
 ```bash
