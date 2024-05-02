@@ -1,21 +1,21 @@
 # READ ME
 ## 简介Introduction
-EverAI's platform empowers data/AI/ML teams to develop faster at lower cost, while scaling production workloads to thousands of CPUs and GPUs.
+EverAI's platform empowers data/AI/ML teams to develop faster at lower cost, while scaling production workloads to thousands of CPUs and GPUs.  
 Run generative AI models, large-scale batch jobs, job queues, and much more.  
-Run GPU inference jobs on serverless infrastructure that scales with you.
-EverAI CLI is the tool to automate / manage GPU pods for EverAI.
+Run GPU inference jobs on serverless infrastructure that scales with you.  
+EverAI CLI is the tool to automate / manage GPU pods for EverAI.  
 The EverAI Python library provides convenient, on-demand access to serverless cloud compute from Python scripts on your local computer.  
 
 ## 产品特性Features
-●Pay as you go  
+* **Pay as you go**  
 You always pay for what you use and nothing more. You never pay for idle resources — just actual compute time. Only pay by the hour.  
-●Focus on your code  
+* **Focus on your code**  
 Deploy your apps as serverless REST APIs, or an web endpoint, all with just a single line of code. Don't focus on the hardware infrastructure. We run the infrastructure.  
-●Provide multiple models of GPUs  
+* **Provide multiple models of GPUs**  
 You can choose the suitable GPU model according to your app workload. Deploy autoscaling inference endpoints on GPUs(4090s, A100s, L40s), when your app gets an influx of traffic.  
-●Develop locally on remote hardware.  
+* **Develop locally on remote hardware**  
 You can write code on your laptop and execute it on cloud hardware immediately, with lightning fast build times. Run AI models in the cloud scalably and performantly.  
-●Store large files in Storage Volumes.  
+* **Store large files in Storage Volumes**  
 Read and write data to highly-performant distributed file systems.  
 
 ## 安装和使用前提条件Requirements/Prerequisites
