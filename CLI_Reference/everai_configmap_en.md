@@ -108,7 +108,7 @@ everai configmap update [-h] [-l FROM_LITERAL] [-f FROM_FILE] name
 ```
 
 **Positional arguments**:  
-  `name`                  The configmap name
+  * `name`                  The configmap name
 
 **Options**:  
 * `-h, --help`            show this help message and exit  
