@@ -120,7 +120,7 @@ everai app create get-start
 Secrets provide a dictionary of environment variables for images.
 Secrets are a secure way to add credentials and other sensitive information to the containers your functions run in. You can create and edit secrets on EverAI, or programmatically from Python code.
 depending on whether the model and Docker image require security certification  
-In this case, we will create one secret for quay.io  
+In this case, we will create one secret for [quay.io](https://quay.io/)  
 ```bash
 everai secret create your-quay-io-secret-name \
   --from-literal username=<your username> \
