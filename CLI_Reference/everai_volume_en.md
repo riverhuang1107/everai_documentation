@@ -78,7 +78,7 @@ everai volume pull [-h] [--force] [--sync] name
               delete. notice: only use argument `--force`, --sync will come into effect  
 
 ## everai volume push                
-Push volume
+Push volume  
 **Examples**:  
 ```bash
 everai volume push get-start-volume
