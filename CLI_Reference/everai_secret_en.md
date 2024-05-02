@@ -1,6 +1,8 @@
 # everai secret
 **Usage**:  
+```bash
 everai secret [-h] {create,delete,list,ls,get,update} ...
+```
 
 **Positional arguments**:  
   {create,delete,list,ls,get,update}
@@ -29,7 +31,7 @@ everai secret create [-h] [-l FROM_LITERAL] [-f FROM_FILE] name
 ```
 
 **Positional arguments**:  
-  `name`                  The secret name
+  * `name`                  The secret name
 
 **Options**:  
 * `-h, --help`            show this help message and exit  
