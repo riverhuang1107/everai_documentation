@@ -57,17 +57,17 @@ pip install everai
 pip install everai --user
 ```
 
-注意Tips  
-If you installed EverAI CLI but you’re seeing an error like everai: command not found when trying to run the CLI, this means that the installation location of Python package executables (“binaries”) are not present on your system path. This is a common problem; you need to reconfigure your system’s environment variables to fix it.  
-* **Linux**  
+>注意Tips  
+>If you installed EverAI CLI but you’re seeing an error like everai: command not found when trying to run the CLI, this means that the installation location of Python package executables (“binaries”) are not present on your system path. This is a common problem; you need to reconfigure your system’s environment variables to fix it.  
+>* **Linux**  
 ```bash
 python3 -m site --user-base
 
 export PATH="/home/hhq/.local/bin:$PATH"
 ```
 
-We know that the scripts go to the `bin/` folder where the packages are installed.So we concatenate the paths with `bin/`. Finally, in order to avoid repeating the export command we add it to our `.bashrc` file and we run source to run the new changes, giving us the suggested solution mentioned at the beginning.  
-* **Windows PowerShell**  
+>We know that the scripts go to the `bin/` folder where the packages are installed.So we concatenate the paths with `bin/`. Finally, in order to avoid repeating the export command we add it to our `.bashrc` file and we run source to run the new changes, giving us the suggested solution mentioned at the beginning.  
+>* **Windows PowerShell**  
 ```bash
 pip install everai --user
 
@@ -76,13 +76,13 @@ pip install everai --user
   Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
 Successfully installed everai-0.1.38
 ```
-或者运行：  
+>或者运行：  
 ```bash
 python -m site --user-site
 ```
 
-you can find the user base binary directory and replacing `site-packages` with `Scripts`. For example, this could return 			`C:\Users\<Username>\AppData\Roaming\Python\Python311\site-packages` so you would need to set your PATH to include `C:\Users\<Username>\AppData\Roaming\Python\Python311\Scripts`. You can set your user PATH permanently in the Control Panel. You may need to log out for the PATH changes to take effect.
-在系统属性的环境变量中，设置`C:\Users\<Username>\AppData\Roaming\Python\Python311\Scripts`。
+>you can find the user base binary directory and replacing `site-packages` with `Scripts`. For example, this could return 			`C:\Users\<Username>\AppData\Roaming\Python\Python311\site-packages` so you would need to set your PATH to include `C:\Users\<Username>\AppData\Roaming\Python\Python311\Scripts`. You can set your user PATH permanently in the Control Panel. You may need to log out for the PATH changes to take effect.  
+>在系统属性的环境变量中，设置`C:\Users\<Username>\AppData\Roaming\Python\Python311\Scripts`。
 #### 更新Upgrade
 Upgrade the package with pip(macOS, Linux(WSL), Windows PowerShell):  
 ```bash
