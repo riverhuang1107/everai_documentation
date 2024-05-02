@@ -6,7 +6,7 @@ everai image [-h] {build} ...
 
 **Positional arguments**:  
   {build}     everai image command helps  
-    * `build`     Image build
+* `build`     Image build
 
 **Options**:  
 * `-h, --help`  show this help message and exit  
