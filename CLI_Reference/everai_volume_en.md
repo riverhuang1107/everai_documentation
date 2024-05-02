@@ -39,7 +39,7 @@ everai volume list [-h] [--output [OUTPUT]]
 ## everai volume delete              
 Delete volume
 ## everai volume get                 
-Get volume
+Get volume  
 **Examples**:  
 ```bash
 everai volume get get-start-volume
