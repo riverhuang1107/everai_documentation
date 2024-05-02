@@ -75,7 +75,7 @@ everai volume pull [-h] [--force] [--sync] name
 * `--force`     Force pull remote volume file to local, if your volume local metadata revision equal remote volume
               revision, pull will stop, if add `--force`, pull will ignore revision compare  
 * `--sync`      Sync file form remote, if this file local have, but remote not exist, then this local file will be
-              delete. notice: only use argument `--force`, --sync will come into effect  
+              delete. notice: only use argument `--force`, `--sync` will come into effect  
 
 ## everai volume push                
 Push volume  
