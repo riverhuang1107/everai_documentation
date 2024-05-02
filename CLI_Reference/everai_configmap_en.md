@@ -38,7 +38,7 @@ everai configmap create [-h] [-l FROM_LITERAL] [-f FROM_FILE] name
                         Create configmap from file, for example: --from-file filename  
 
 ## everai configmap delete              
-Delete configmap
+Delete configmap  
 **Examples**:  
 ```bash
 everai configmap delete get-start-configmap
@@ -55,7 +55,7 @@ everai configmap delete [-h] name
 * `-h, --help`  show this help message and exit
 
 ## everai configmap list (ls)           
-List configmaps
+List configmaps  
 **Examples**:  
 ```bash
 everai configmap list
@@ -106,7 +106,7 @@ everai configmap update --from-literal min_workers=1 \
 everai configmap update [-h] [-l FROM_LITERAL] [-f FROM_FILE] name
 ```
 
-**Positional arguments**:
+**Positional arguments**:  
   `name`                  The configmap name
 
 **Options**:  
