@@ -168,7 +168,11 @@ The final step is to deploy your app to [EverAI](everai.expvent.com) and keep it
 everai app deploy  
 ```
 After running `everai app list`, you can see your apps status.  
-
+```bash
+NAME         STATUS                       CREATED_AT                ROUTE_NAME
+-----------  ---------------------------  ------------------------  ------------
+get-start    V1AppStatus.STATUS_DEPLOYED  2024-04-29 15:05:18+0800  got-started
+```
 Now, you can make a test call for your app, in these examples looks like:  
 ```bash
 curl --no-buffer -H'Authorization: Bearer <your_token>' https://everai.expvent.com/api/apps/v1/routes/got-started/sse

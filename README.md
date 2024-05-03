@@ -161,7 +161,11 @@ everai image build
 everai app deploy  
 ```
 执行`everai app list`后，可以看到当前应用的状态。  
-
+```bash
+NAME         STATUS                       CREATED_AT                ROUTE_NAME
+-----------  ---------------------------  ------------------------  ------------
+get-start    V1AppStatus.STATUS_DEPLOYED  2024-04-29 15:05:18+0800  got-started
+```
 当你看到你的应用处于`STATUS_DEPLOYED`时，你可以执行下面的请求来测试你部署的代码是否符合你的预期：  
 ```bash
 curl --no-buffer -H'Authorization: Bearer <your_token>' https://everai.expvent.com/api/apps/v1/routes/got-started/sse
