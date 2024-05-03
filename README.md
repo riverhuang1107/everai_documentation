@@ -2,9 +2,10 @@
 ## 简介Introduction
 EverAI's platform empowers data/AI/ML teams to develop faster at lower cost, while scaling production workloads to thousands of CPUs and GPUs.  
 Run generative AI models, large-scale batch jobs, job queues, and much more.  
-Run GPU inference jobs on serverless infrastructure that scales with you.  
-EverAI CLI is the tool to automate / manage GPU pods for EverAI.  
 The EverAI Python library provides convenient, on-demand access to serverless cloud compute from Python scripts on your local computer.  
+EverAI平台提供数据/AI/机器学习研发团队以更低的运营研发成本来快速迭代产品，尤其是在你团队的AI产品运行时需要消耗大规模CPU和GPU计算资源的时候。  
+EverAI平台提供无服务云计算架构的运行环境，可运行生成式AI大模型、大规模批处理任务，以及任务队列等。  
+EverAI CLI命令行工具提供了一种按需计费和使用的方法，使你的本地Python代码以无服务的云计算方式在EverAI平台上运行。  
 
 ## 产品特性Features
 * **Pay as you go**  
@@ -59,6 +60,7 @@ pip install everai --user
 
 >**注意Tips**  
 >If you installed EverAI CLI but you’re seeing an error like `everai: command not found` when trying to run the CLI, this means that the installation location of Python package executables (“binaries”) are not present on your system path. This is a common problem; you need to reconfigure your system’s environment variables to fix it.  
+>如果你安装了EverAI CLI工具，但你在执行命令时发现了类似`everai: command not found`这样的错误，这意味着你的系统路径中还没有设置可以执行Python可执行包（二进制可执行包）的系统路径。这是一个常见问题；你需要通过配置你的系统环境变量来修复它。  
 >* **Linux**  
 >```bash
 >python3 -m site --user-base
@@ -66,7 +68,7 @@ pip install everai --user
 >export PATH="/home/hhq/.local/bin:$PATH"
 >```
 >
->We know that the scripts go to the `bin/` folder where the packages are installed. So we concatenate the paths with `bin/`. Finally, in order to avoid repeating the export command we add it to our `.bashrc` file and we run source to run the new changes, giving us the suggested solution mentioned at the beginning.  
+>We know that the scripts go to the `bin/` folder where the packages are installed. So we concatenate the paths with `bin/`. Finally, in order to avoid repeating the export command we add it to our `.bashrc` file and we run `source` to run the new changes, giving us the suggested solution mentioned at the beginning.  
 >* **Windows PowerShell**  
 >```bash
 >pip install everai --user
