@@ -116,11 +116,11 @@ Prepare an app, all of function which decorated by @app.prepare would be called
 
 **Examples**:  
 
-Before your application cloud be deployed, you should construct your volume first, if your app use at least one volume.  
+Before your application is deployed in the cloud, you should construct your volume first, if your app uses at least one volume.  
 
 For production environment, the volumes are very important, you could call the following command to prepare it.  
 
-This command line will call all functions who decorated by @app.prepare, in these functions you should set up volume data before the app use it.
+This command line will call all functions which are decorated by `@app.prepare`, in these functions you should set up volume data before the app use it.  
 ```bash
 everai app prepare
 ```
