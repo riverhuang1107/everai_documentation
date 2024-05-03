@@ -76,12 +76,12 @@ pip install everai --user
 >执行上述命令，你可以得到存放Python二进制包的基础路径，然后把路径中的`site-packages`替换成`Scripts`。举例来说，如果命令返回的是`C:\Users\<Username>\AppData\Roaming\Python\Python311\site-packages`，那么你需要在你的环境变量中添加`C:\Users\<Username>\AppData\Roaming\Python\Python311\Scripts`。你可以在系统属性的环境变量中，添加这条路径。最后你需要关闭`PowerShell`窗口，重新打开后使之生效。  
 
 #### 更新
-Upgrade the package with pip(macOS, Linux(WSL), Windows PowerShell):  
+使用`pip`工具升级EverAI CLI命令行工具，以下命令适用于Linux(WSL)，macOS， Windows PowerShell。  
 ```bash
 pip install --upgrade everai
 ```
 #### 卸载
-Uninstall the package with pip(macOS, Linux(WSL), Windows PowerShell):  
+使用`pip`工具卸载EverAI CLI命令行工具，以下命令适用于Linux(WSL)，macOS， Windows PowerShell。  
 ```bash
 pip uninstall everai
 ```
