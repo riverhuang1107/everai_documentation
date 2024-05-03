@@ -1,25 +1,10 @@
 # READ ME
-## 简介Introduction
-EverAI's platform empowers data/AI/ML teams to develop faster at lower cost, while scaling production workloads to thousands of CPUs and GPUs.  
-Run generative AI models, large-scale batch jobs, job queues, and much more.  
-The EverAI Python library provides convenient, on-demand access to serverless cloud compute from Python scripts on your local computer.  
-
+## 简介
 EverAI平台提供数据/AI/机器学习研发团队以更低的运营研发成本来快速迭代产品，尤其是在你团队的AI产品运行时需要消耗大规模CPU和GPU计算资源的时候。  
 EverAI平台提供无服务云计算架构的运行环境，可运行生成式AI大模型、大规模批处理任务，以及任务队列等。  
 EverAI CLI命令行工具提供了一种按需计费和使用的方法，使你的本地Python代码以无服务的云计算方式在EverAI平台上运行。  
 
-## 产品特性Features
-* **Pay as you go**  
-You always pay for what you use and nothing more. You never pay for idle resources — just actual compute time. Only pay by the hour.  
-* **Focus on your code**  
-Deploy your apps as serverless REST APIs, or an web endpoint, all with just a single line of code. Don't focus on the hardware infrastructure. We run the infrastructure.  
-* **Provide multiple models of GPUs**  
-You can choose the suitable GPU model according to your app workload. Deploy autoscaling inference endpoints on GPUs(4090s, A100s, L40s), when your app gets an influx of traffic.  
-* **Develop locally on remote hardware**  
-You can write code on your laptop and execute it on cloud hardware immediately, with lightning fast build times. Run AI models in the cloud scalably and performantly.  
-* **Store large files in Storage Volumes**  
-Read and write data to highly-performant distributed file systems.  
-
+## 产品特性
 * **按需付费**  
 你只需要为你真正在使用的计算资源时长支付费用。你不再需要为空闲时的资源支付任何费用。并且是按小时计费。  
 * **关注你的代码**  
@@ -32,31 +17,17 @@ Read and write data to highly-performant distributed file systems.
 你可以在高效的分布式文件系统中读写数据。
 
 
-## 安装和使用前提条件Requirements/Prerequisites
+## 安装和使用前提条件
 ### Python
-EverAI CLI library requires Python 3.8+.  
-
 EverAI CLI需要Python版本为3.8及以上版本。
-### EverAI
-To continue with this quick start, you'll need access to the following from [EverAI](everai.expvent.com):  
-* **EverAI account**  
-Create an account at [EverAI](everai.expvent.com).  
-* **EverAI Token**  
-Get your account Token from [EverAI](everai.expvent.com).  
 
+### EverAI
 在快速入门前，你首先需要在[EverAI](everai.expvent.com)完成完成以下的准备工作：
 * **EverAI账号**  
 你需要在[EverAI](everai.expvent.com)创建一个账号。
 * **EverAI Token**  
 	你可以从[EverAI](everai.expvent.com)中获取到你的账号token。
 ### Docker
-To build your Docker image, you'll need access to the following:  
-* **Docker installed**  
-* **Docker Buildx installed**  
-* **Docker account**  
->**Tips**  
->Buildx could be used to build multiple-platform(x86, arm64) Docker Image.  
-
 为了能顺利构建Docker镜像，你需要做以下准备工作：  
 * **安装Docker环境**
 * **安装Docker Buildx插件**
@@ -65,19 +36,14 @@ To build your Docker image, you'll need access to the following:
 >Buildx可用于构建多平台（x86，arm64）构架Docker镜像。
 
 
-## 快速入门Quick start
-### 安装，更新和卸载Install, Upgrade and Uninstall
-#### 安装Install
+## 快速入门
+### 安装，更新和卸载
+#### 安装
 使用pip工具进行安装。  
 Run this in order to install the Python library locally.  
 Install the package with `pip`:  
-##### Linux(WSL)  
+##### Linux(WSL) & MacOS  
 ```bash
-pip install everai
-```
-
-##### MacOS
-```bash  
 pip install everai
 ```
 
@@ -87,7 +53,7 @@ pip install everai
 pip install everai --user
 ```
 
->**注意Tips**  
+>**小贴上**  
 >If you installed EverAI CLI but you’re seeing an error like `everai: command not found` when trying to run the CLI, this means that the installation location of Python package executables (“binaries”) are not present on your system path. This is a common problem; you need to reconfigure your system’s environment variables to fix it.  
 >如果你安装了EverAI CLI工具，但你在执行命令时发现了类似`everai: command not found`这样的错误，这意味着你的系统路径中还没有设置可以执行Python可执行包（二进制可执行包）的系统路径。这是一个常见问题；你需要通过配置你的系统环境变量来修复它。  
 >* **Linux**  
@@ -114,19 +80,19 @@ pip install everai --user
 >
 >you can find the user base binary directory and replacing `site-packages` with `Scripts`. For example, this could return 			`C:\Users\<Username>\AppData\Roaming\Python\Python311\site-packages` so you would need to set your PATH to include `C:\Users\<Username>\AppData\Roaming\Python\Python311\Scripts`. You can set your user PATH permanently in the Control Panel. You may need to log out for the PATH changes to take effect.  
 >在系统属性的环境变量中，设置`C:\Users\<Username>\AppData\Roaming\Python\Python311\Scripts`。
-#### 更新Upgrade
+#### 更新
 Upgrade the package with pip(macOS, Linux(WSL), Windows PowerShell):  
 ```bash
 pip install --upgrade everai
 ```
-#### 卸载Uninstall
+#### 卸载
 Uninstall the package with pip(macOS, Linux(WSL), Windows PowerShell):  
 ```bash
 pip uninstall everai
 ```
 
-## 创建应用Create an app
-### 文件目录结构File and folder structure
+## 创建应用
+### 文件目录结构
 按照目录来区分app，要写入文档，每个app必须包含的文件介绍，包括app.py，image_builder.py等
 ```bash
 hhq@HHQ:~/app$ tree hhq-start
@@ -140,14 +106,14 @@ hhq-start
 └── requirements.txt
 ```
 
-### 创建第一个应用Create your first app
+### 创建第一个应用
 ```bash
 everai login --token <your token>
 
 everai app create get-start
 ```
 
-## 创建密钥Create secrets
+## 创建密钥
 Secrets provide a dictionary of environment variables for images.
 Secrets are a secure way to add credentials and other sensitive information to the containers your functions run in. You can create and edit secrets on EverAI, or programmatically from Python code.
 depending on whether the model and Docker image require security certification  
@@ -158,14 +124,14 @@ everai secret create your-quay-io-secret-name \
   --from-literal password=<your password>
 ```
 
-## 编写你的代码Write your app code in python
+## 编写你的代码
 There is an example code in `app.py`  
 you could test in your local machine will following command  
 ```bash
 everai app run
 ```
 
-## 准备存储Prepare volume
+## 准备存储
 Before your application cloud be deployed, you should construct your volume first, if your app use at least one volume.  
 For production environment, the volumes are very important, you could call the following command to prepare it.  
 This command line will call all functions who decorated by `@app.prepare`, in these functions you should set up volume data before the app use it  
@@ -173,7 +139,7 @@ This command line will call all functions who decorated by `@app.prepare`, in th
 everai app prepare
 ```
 
-## 构建镜像Build image
+## 构建镜像
 This step will build the container image, using two very simple files `Dockerfile` and `image_builder.py`, and call the following command will compile the image and push them to your specified registry.  
 The dependence of this step is docker and buildx installed on your machine. Otherwise we will have further prompts to help you install them  
 ```bash
@@ -191,7 +157,7 @@ IMAGE = 'quay.io/<username>/<repo>:<tag>'
 `everai image build`过程中会安装`buildx`，`buildx`用于构建多平台（x86，arm64）构架镜像  
 
 
-## 部署Deploy image
+## 部署
 The final step is to deploy your app to everai and keep it running.
 ```bash
 everai app deploy  
@@ -204,7 +170,7 @@ curl --no-buffer -H'Authorization: Bearer <your_token>' https://everai.expvent.c
 curl -X POST -H'Content-Type: application/json' -H'Authorization: Bearer <your_token>' https://everai.expvent.com/api/apps/v1/routes/got-started/txt2img/jone -d '{"prompt": "say hello to"}'
 ```
 
-## 开源协议License
+## 开源协议
 The MIT License.  
 
-## 参与贡献Contributing
+## 参与贡献

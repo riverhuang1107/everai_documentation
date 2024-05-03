@@ -42,13 +42,8 @@ To build your Docker image, you'll need access to the following:
 使用pip工具进行安装。  
 Run this in order to install the Python library locally.  
 Install the package with `pip`:  
-##### Linux(WSL)  
+##### Linux(WSL) & MacOS  
 ```bash
-pip install everai
-```
-
-##### MacOS
-```bash  
 pip install everai
 ```
 
