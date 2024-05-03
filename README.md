@@ -136,9 +136,12 @@ everai app run
 ```
 
 ## 准备存储
-Before your application cloud be deployed, you should construct your volume first, if your app use at least one volume.  
-For production environment, the volumes are very important, you could call the following command to prepare it.  
-This command line will call all functions who decorated by `@app.prepare`, in these functions you should set up volume data before the app use it  
+如果你的应用需要用到文件对象存储，那么在你的应用部署到云环境之前，你需要先创建一个对象存储。  
+
+在生产环境，对象存储是非常重要的，你可以通过下面的命令准备它。  
+
+这句命令会执行所有被`@app.prepare`注解过的方法，在这些方法中你应该配置好文件数据。  
+
 ```bash
 everai app prepare
 ```
