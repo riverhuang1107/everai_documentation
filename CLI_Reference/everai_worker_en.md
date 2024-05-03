@@ -14,6 +14,7 @@ everai worker [-h] {list,ls} ...
 
 ## everai worker list (ls)
 List workers of app  
+
 **Examples**:  
 ```bash 
 everai worker list get-start

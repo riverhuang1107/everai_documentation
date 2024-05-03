@@ -21,6 +21,7 @@ everai volume [-h] {create,list,ls,delete,get,pull,push} ...
 Create volume  
 ## everai volume list (ls)           
 List volume  
+
 **Examples**:
 ```bash
 everai volume list
@@ -37,9 +38,11 @@ everai volume list [-h] [--output [OUTPUT]]
                         Output format, One of: (json, yaml, table, wide)  
 
 ## everai volume delete              
-Delete volume
+Delete volume  
+
 ## everai volume get                 
 Get volume  
+
 **Examples**:  
 ```bash
 everai volume get get-start-volume
@@ -58,6 +61,7 @@ everai volume get [-h] name
 
 ## everai volume pull                
 Pull volume  
+
 **Examples**:  
 ```bash
 everai volume pull get-start-volume
@@ -79,6 +83,7 @@ everai volume pull [-h] [--force] [--sync] name
 
 ## everai volume push                
 Push volume  
+
 **Examples**:  
 ```bash
 everai volume push get-start-volume
