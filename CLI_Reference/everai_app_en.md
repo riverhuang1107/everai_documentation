@@ -23,6 +23,7 @@ everai app [-h] {create,run,get,upgrade,pause,deploy,prepare,list,ls,queue,q} ..
 
 ## everai app create             
 Create an app  
+
 **Examples**:
 ```bash
 everai app create get-start
@@ -38,6 +39,7 @@ everai app create [-h] [--route-name ROUTE_NAME] [name]
 ```
 
 **Positional arguments**:  
+
   `name`                  The app name  
 
 **Options**:  
@@ -47,6 +49,7 @@ everai app create [-h] [--route-name ROUTE_NAME] [name]
 
 ## everai app run                 
 Local run a everai application for test  
+
 **Examples**:
 ```bash
 everai app run
@@ -64,6 +67,7 @@ everai app run [-h] [--port PORT] [--listen LISTEN]
 
 ## everai app get                 
 Get app information  
+
 **Examples**:
 ```bash
 everai app get get-start
@@ -82,10 +86,13 @@ everai app get [-h] name
 
 ## everai app upgrade             
 Upgrade an app  
+
 ## everai app pause               
 Pause an app, all worker will be stopped  
+
 ## everai app deploy              
 Deploy an app to serving status  
+
 **Examples**:  
 ```bash
  everai app deploy
@@ -106,10 +113,14 @@ everai app deploy [-h]
 
 ## everai app prepare             
 Prepare an app, all of function which decorated by @app.prepare would be called  
+
 **Examples**:  
-Before your application cloud be deployed, you should construct your volume first, if your app use at least one volume.
-For production environment, the volumes are very important, you could call the following command to prepare it.
-This command line will call all functions who decorated by @app.prepare, in these functions you should set up volume data before the app use it
+
+Before your application cloud be deployed, you should construct your volume first, if your app use at least one volume.  
+
+For production environment, the volumes are very important, you could call the following command to prepare it.  
+
+This command line will call all functions who decorated by @app.prepare, in these functions you should set up volume data before the app use it.
 ```bash
 everai app prepare
 ```
@@ -124,6 +135,7 @@ everai app prepare [-h]
 
 ## everai app list (ls)           
 List all apps  
+
 **Examples**:
 ```bash
 everai app list
