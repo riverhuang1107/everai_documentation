@@ -1,7 +1,7 @@
 # README
 ## Introduction
 EverAI's platform empowers data/AI/ML teams to develop faster at lower cost, while scaling production workloads to thousands of CPUs and GPUs.
-  
+
 Run generative AI models, large-scale batch jobs, job queues, and much more.  
 
 The EverAI Python library provides convenient, on-demand access to serverless cloud compute from Python scripts on your local computer.  
@@ -44,16 +44,14 @@ To build your Docker image, you'll need access to the following:
 ## Quick start
 ### Install, Upgrade and Uninstall
 #### Install
-使用pip工具进行安装。  
-Run this in order to install the Python library locally.  
-Install the package with `pip`:  
+Install the package with `pip`. Run this in order to install the Python library locally.   
 ##### Linux(WSL) & MacOS  
 ```bash
 pip install everai
 ```
 
 ##### Windows PowerShell  
-以管理员身份运行PowerShell：  
+Open PowerShell as Administrator:  
 ```bash
 pip install everai --user
 ```
