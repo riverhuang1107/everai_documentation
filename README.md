@@ -38,7 +38,7 @@ EverAI CLI需要Python版本为3.8及以上版本。
 * **安装Docker环境**
 * **安装Docker Buildx插件**
 * **具备一个Docker账号**
->**小贴士**：  
+>**小贴士**  
 >Buildx可用于构建多平台（x86，arm64）构架Docker镜像。
 
 
