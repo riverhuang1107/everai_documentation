@@ -3,6 +3,7 @@
 EverAI's platform empowers data/AI/ML teams to develop faster at lower cost, while scaling production workloads to thousands of CPUs and GPUs.  
 Run generative AI models, large-scale batch jobs, job queues, and much more.  
 The EverAI Python library provides convenient, on-demand access to serverless cloud compute from Python scripts on your local computer.  
+
 EverAI平台提供数据/AI/机器学习研发团队以更低的运营研发成本来快速迭代产品，尤其是在你团队的AI产品运行时需要消耗大规模CPU和GPU计算资源的时候。  
 EverAI平台提供无服务云计算架构的运行环境，可运行生成式AI大模型、大规模批处理任务，以及任务队列等。  
 EverAI CLI命令行工具提供了一种按需计费和使用的方法，使你的本地Python代码以无服务的云计算方式在EverAI平台上运行。  
@@ -18,6 +19,7 @@ You can choose the suitable GPU model according to your app workload. Deploy aut
 You can write code on your laptop and execute it on cloud hardware immediately, with lightning fast build times. Run AI models in the cloud scalably and performantly.  
 * **Store large files in Storage Volumes**  
 Read and write data to highly-performant distributed file systems.  
+
 * **按需付费**  
 你只需要为你真正在使用的计算资源时长支付费用。你不再需要为空闲时的资源支付任何费用。并且是按小时计费。  
 * **关注你的代码**  
@@ -35,12 +37,17 @@ Read and write data to highly-performant distributed file systems.
 EverAI CLI library requires Python 3.8+.  
 EverAI CLI需要Python版本为3.8及以上版本。
 ### EverAI
-To continue with this quick start, you'll need access to the following from EverAI:  
+To continue with this quick start, you'll need access to the following from [EverAI](everai.expvent.com):  
 * **EverAI account**  
-Create an account at everai.expvent.com.  
-你需要在everai.expvent.com创建一个账号。  
+Create an account at [EverAI](everai.expvent.com).  
 * **EverAI Token**  
-	你可以从everai.expvent.com中获取到你的账号token。  
+Get your account Token from [EverAI](everai.expvent.com).  
+
+在快速入门前，你首先需要在[EverAI](everai.expvent.com)完成完成以下的准备工作：
+* **EverAI账号**  
+你需要在[EverAI](everai.expvent.com)创建一个账号。
+* **EverAI Token**  
+	你可以从[EverAI](everai.expvent.com)中获取到你的账号token。
 ### Docker
 To build your Docker image, you'll need access to the following:  
 * **Docker installed**  
