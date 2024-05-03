@@ -114,11 +114,9 @@ everai app create get-start
 ```
 
 ## Create secrets
-Secrets provide a dictionary of environment variables for images.  
-
 Secrets are a secure way to add credentials and other sensitive information to the containers your functions run in.  
 
-You can create and edit secrets on EverAI, or programmatically from Python code.  
+You can create and edit secrets on [EverAI](everai.expvent.com), or programmatically from Python code.  
 
 Depending on whether the model and Docker image require security certification.  
 
