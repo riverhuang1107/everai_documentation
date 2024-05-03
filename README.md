@@ -135,21 +135,24 @@ everai app prepare
 ```
 
 ## 构建镜像
-This step will build the container image, using two very simple files `Dockerfile` and `image_builder.py`, and call the following command will compile the image and push them to your specified registry.  
-The dependence of this step is docker and buildx installed on your machine. Otherwise we will have further prompts to help you install them  
-```bash
-docker login quary.io
-docker buildx version
-everai image build
-```
-image_builder.py  
+这步需要使用`Dockerfile`和`image_builder.py`来为你的应用构建容器镜像。  
+
+在`image_builder.py`中，你需要配置你的镜像地址信息。  
 ```python
 from everai.image import Builder
 
-#Example: quay.io/riverhuang1107/get-start:v0.0.30
 IMAGE = 'quay.io/<username>/<repo>:<tag>'
 ```
-`everai image build`过程中会安装`buildx`，`buildx`用于构建多平台（x86，arm64）构架镜像  
+首先确保你的docker环境处于登录状态，以及你已经安装了docker buildx插件。  
+```bash
+docker login quary.io
+
+docker buildx version
+```
+然后执行以下命令打包镜像，并且把打包好的镜像推送到你指定的镜像仓库中。
+```bash
+everai image build
+```
 
 
 ## 部署
@@ -167,6 +170,6 @@ curl -X POST -H'Content-Type: application/json' -H'Authorization: Bearer <your_t
 ```
 
 ## 开源协议
-The MIT License.  
+MIT License协议。  
 
 ## 参与贡献

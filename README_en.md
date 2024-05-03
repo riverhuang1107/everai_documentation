@@ -143,23 +143,24 @@ everai app prepare
 ```
 
 ## Build image
-This step will build the container image, using two very simple files `Dockerfile` and `image_builder.py`, and call the following command will compile the image and push them to your specified registry.  
+This step will build the container image, using two very simple files `Dockerfile` and `image_builder.py`.  
 
-The dependence of this step is docker and buildx installed on your machine. Otherwise we will have further prompts to help you install them.  
-```bash
-docker login quary.io
-docker buildx version
-everai image build
-```
-image_builder.py  
+In `image_builder.py`, you should set your image repo.
 ```python
 from everai.image import Builder
 
-#Example: quay.io/riverhuang1107/get-start:v0.0.30
 IMAGE = 'quay.io/<username>/<repo>:<tag>'
 ```
-`everai image build`过程中会安装`buildx`，`buildx`用于构建多平台（x86，arm64）构架镜像  
+The dependence of this step is docker and buildx installed on your machine. Otherwise we will have further prompts to help you install them.  
+```bash
+docker login quary.io
 
+docker buildx version
+```
+Then call the following command will compile the image and push them to your specified registry.  
+```bash
+everai image build
+```
 
 ## Deploy image
 The final step is to deploy your app to [EverAI](everai.expvent.com) and keep it running.
