@@ -168,7 +168,7 @@ everai app deploy
 ```
 After running `everai app list`, you can see your apps status.  
 
-Now, you can make a test call for your app, in this example looks like:  
+Now, you can make a test call for your app, in these examples looks like:  
 ```bash
 curl --no-buffer -H'Authorization: Bearer <your_token>' https://everai.expvent.com/api/apps/v1/routes/got-started/sse
 
