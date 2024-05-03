@@ -93,17 +93,17 @@ pip uninstall everai
 
 ## Create an app
 ### File and folder structure
-按照目录来区分app，要写入文档，每个app必须包含的文件介绍，包括app.py，image_builder.py等
+* **`Dockerfile`** This is the text file which is used to build docker image, and it includes series of instructions and commands used to build image.  
+
+* **`app.py`** This is the code file which mainly supplies public service.  
+
+* **`image_builder.py`** This is the config file that is used to build docker image.
+
 ```bash
-hhq@HHQ:~/app$ tree hhq-start
-hhq-start
+<app name>
 ├── Dockerfile
-├── __pycache__
-│   ├── app.cpython-310.pyc
-│   └── image_builder.cpython-310.pyc
 ├── app.py
-├── image_builder.py
-└── requirements.txt
+└── image_builder.py
 ```
 
 ### Create your first app

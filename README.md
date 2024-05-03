@@ -95,17 +95,17 @@ pip uninstall everai
 
 ## 创建应用
 ### 文件目录结构
-按照目录来区分app，要写入文档，每个app必须包含的文件介绍，包括app.py，image_builder.py等
+* **`Dockerfile`** 用来构建镜像的文本文件，文本内容包含了构建镜像所需的指令(Instruction)和操作命令。  
+
+* **`app.py`** 对外提供应用服务的代码文件。  
+
+* **`image_builder.py`** 构建镜像的配置文件。  
+
 ```bash
-hhq@HHQ:~/app$ tree hhq-start
-hhq-start
+<app name>
 ├── Dockerfile
-├── __pycache__
-│   ├── app.cpython-310.pyc
-│   └── image_builder.cpython-310.pyc
 ├── app.py
-├── image_builder.py
-└── requirements.txt
+└── image_builder.py
 ```
 
 ### 创建第一个应用
