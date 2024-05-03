@@ -69,20 +69,11 @@ pip install everai --user
 >```
 >* **Windows PowerShell**  
 >```bash
->pip install everai --user
->
-> Installing collected packages: everai
->  WARNING: The scripts ever.exe and everai.exe are installed in 'C:\Users\黄河清\AppData\Roaming\Python\Python311\Scripts' which is not on PATH.
->  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
->Successfully installed everai-0.1.38
->```
->或者运行：  
->```bash
 >python -m site --user-site
 >```
 >
 >you can find the user base binary directory and replacing `site-packages` with `Scripts`. For example, this could return 			`C:\Users\<Username>\AppData\Roaming\Python\Python311\site-packages` so you would need to set your PATH to include `C:\Users\<Username>\AppData\Roaming\Python\Python311\Scripts`. You can set your user PATH permanently in the Control Panel. You may need to log out for the PATH changes to take effect.  
->在系统属性的环境变量中，设置`C:\Users\<Username>\AppData\Roaming\Python\Python311\Scripts`。
+
 #### Upgrade
 Upgrade the package with pip(macOS, Linux(WSL), Windows PowerShell):  
 ```bash

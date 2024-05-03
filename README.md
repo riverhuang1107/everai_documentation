@@ -70,20 +70,11 @@ pip install everai --user
 >```
 >* **Windows PowerShell**  
 >```bash
->pip install everai --user
->
-> Installing collected packages: everai
->  WARNING: The scripts ever.exe and everai.exe are installed in 'C:\Users\黄河清\AppData\Roaming\Python\Python311\Scripts' which is not on PATH.
->  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
->Successfully installed everai-0.1.38
->```
->或者运行：  
->```bash
 >python -m site --user-site
 >```
 >
->you can find the user base binary directory and replacing `site-packages` with `Scripts`. For example, this could return 			`C:\Users\<Username>\AppData\Roaming\Python\Python311\site-packages` so you would need to set your PATH to include `C:\Users\<Username>\AppData\Roaming\Python\Python311\Scripts`. You can set your user PATH permanently in the Control Panel. You may need to log out for the PATH changes to take effect.  
->在系统属性的环境变量中，设置`C:\Users\<Username>\AppData\Roaming\Python\Python311\Scripts`。
+>执行上述命令，你可以得到存放Python二进制包的基础路径，然后把路径中的`site-packages`替换成`Scripts`。举例来说，如果命令返回的是`C:\Users\<Username>\AppData\Roaming\Python\Python311\site-packages`，那么你需要在你的环境变量中添加`C:\Users\<Username>\AppData\Roaming\Python\Python311\Scripts`。你可以在系统属性的环境变量中，添加这条路径。最后你需要关闭`PowerShell`窗口，重新打开后使之生效。  
+
 #### 更新
 Upgrade the package with pip(macOS, Linux(WSL), Windows PowerShell):  
 ```bash
