@@ -18,6 +18,13 @@ You can choose the suitable GPU model according to your app workload. Deploy aut
 You can write code on your laptop and execute it on cloud hardware immediately, with lightning fast build times. Run AI models in the cloud scalably and performantly.  
 * **Store large files in Storage Volumes**  
 Read and write data to highly-performant distributed file systems.  
+* **按需付费**  
+你只需要为你真正在使用的计算资源时长支付费用。你不再需要为空闲时的资源支付任何费用。并且是按小时计费。  
+* **关注你的代码**  
+以无服务的云计算架构方式部署你的应用。你不用关注硬件基础设施。我们来负责硬件底层的基础设施。  
+* **提供多种型号的GPU**  
+你可以根据你的应用场景选择合适的GPU型号。当你的应用遇到性能瓶颈时，你的AI推理应用可以在你配置的GPU型号上自动扩容。  
+
 
 ## 安装和使用前提条件Requirements/Prerequisites
 ### Python
