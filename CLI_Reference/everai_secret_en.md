@@ -61,6 +61,7 @@ everai secret delete [-h] name
 
 ## everai secret list (ls)           
 List secret  
+
 **Examples**:
 ```bash  
 everai secret list
