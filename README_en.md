@@ -29,15 +29,21 @@ EverAI CLI library requires Python 3.8+.
 ### EverAI
 To continue with this quick start, you'll need access to the following from [EverAI](everai.expvent.com):  
 * **EverAI account**  
-Create an account at [EverAI](everai.expvent.com).  
+
+  Create an account at [EverAI](everai.expvent.com).  
+
 * **EverAI Token**  
-Get your account Token from [EverAI](everai.expvent.com).  
+
+  Get your account Token from [EverAI](everai.expvent.com).  
 
 ### Docker
 To build your Docker image, you'll need access to the following:  
 * **Docker installed**  
+
 * **Docker Buildx installed**  
+
 * **Docker account**  
+
 >**Tips**  
 >Buildx could be used to build multiple-platform(x86, arm64) Docker Image.  
 
