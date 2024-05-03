@@ -162,10 +162,11 @@ IMAGE = 'quay.io/<username>/<repo>:<tag>'
 
 
 ## Deploy image
-The final step is to deploy your app to everai and keep it running.
+The final step is to deploy your app to [EverAI](everai.expvent.com) and keep it running.
 ```bash
 everai app deploy  
 ```
+After running `everai app list`, you can see your apps status.  
 
 Now, you can make a test call for your app, in this example looks like:  
 ```bash

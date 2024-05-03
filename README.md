@@ -153,12 +153,13 @@ IMAGE = 'quay.io/<username>/<repo>:<tag>'
 
 
 ## 部署
-The final step is to deploy your app to everai and keep it running.
+最后一步是把你的应用部署到[EverAI](everai.expvent.com)。并使它保持在可用的状态。  
 ```bash
 everai app deploy  
 ```
+执行`everai app list`后，可以看到当前应用的状态。  
 
-Now, you can make a test call for your app, in this example looks like  
+当你看到你的应用处于`STATUS_DEPLOYED`时，你可以执行下面的请求来测试你部署的代码是否符合你的预期：  
 ```bash
 curl --no-buffer -H'Authorization: Bearer <your_token>' https://everai.expvent.com/api/apps/v1/routes/got-started/sse
 
