@@ -30,14 +30,21 @@ EverAI CLI需要Python版本为3.8及以上版本。
 ### EverAI
 在快速入门前，你首先需要在[EverAI](everai.expvent.com)完成以下准备工作：
 * **EverAI账号**  
-你需要在[EverAI](everai.expvent.com)创建一个账号。
+
+  你需要在[EverAI](everai.expvent.com)创建一个账号。  
+
 * **EverAI Token**  
-	你可以从[EverAI](everai.expvent.com)中获取到你的账号token。
+
+	你可以从[EverAI](everai.expvent.com)中获取到你的账号token。  
+
 ### Docker
 为了能顺利构建Docker镜像，你需要做以下准备工作：  
-* **安装Docker环境**
-* **安装Docker Buildx插件**
-* **具备一个Docker账号**
+* **安装Docker环境**  
+
+* **安装Docker Buildx插件**  
+
+* **具备一个Docker账号**  
+
 >**小贴士**  
 >Buildx可用于构建多平台（x86，arm64）构架Docker镜像。
 
