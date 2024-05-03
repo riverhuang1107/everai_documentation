@@ -1,6 +1,7 @@
 # README
 ## Introduction
-EverAI's platform empowers data/AI/ML teams to develop faster at lower cost, while scaling production workloads to thousands of CPUs and GPUs.  
+EverAI's platform empowers data/AI/ML teams to develop faster at lower cost, while scaling production workloads to thousands of CPUs and GPUs.
+  
 Run generative AI models, large-scale batch jobs, job queues, and much more.  
 
 The EverAI Python library provides convenient, on-demand access to serverless cloud compute from Python scripts on your local computer.  
@@ -155,7 +156,7 @@ everai app prepare
 ## Build image
 This step will build the container image, using two very simple files `Dockerfile` and `image_builder.py`, and call the following command will compile the image and push them to your specified registry.  
 
-The dependence of this step is docker and buildx installed on your machine. Otherwise we will have further prompts to help you install them  
+The dependence of this step is docker and buildx installed on your machine. Otherwise we will have further prompts to help you install them.  
 ```bash
 docker login quary.io
 docker buildx version

@@ -28,7 +28,7 @@ EverAI CLI命令行工具提供了一种按需计费和使用的方法，使你�
 EverAI CLI需要Python版本为3.8及以上版本。
 
 ### EverAI
-在快速入门前，你首先需要在[EverAI](everai.expvent.com)完成完成以下的准备工作：
+在快速入门前，你首先需要在[EverAI](everai.expvent.com)完成以下的准备工作：
 * **EverAI账号**  
 你需要在[EverAI](everai.expvent.com)创建一个账号。
 * **EverAI Token**  
