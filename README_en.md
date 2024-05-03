@@ -81,12 +81,12 @@ pip install everai --user
 >you can find the user base binary directory and replacing `site-packages` with `Scripts`. For example, this could return 			`C:\Users\<Username>\AppData\Roaming\Python\Python311\site-packages` so you would need to set your PATH to include `C:\Users\<Username>\AppData\Roaming\Python\Python311\Scripts`. You can set your user PATH permanently in the Control Panel. You may need to log out for the PATH changes to take effect.  
 
 #### Upgrade
-Upgrade the package with `pip`(macOS, Linux, WSL, Windows PowerShell):  
+Upgrade the package with `pip`(Linux, WSL, macOS, Windows PowerShell):  
 ```bash
 pip install --upgrade everai
 ```
 #### Uninstall
-Uninstall the package with `pip`(macOS, Linux, WSL, Windows PowerShell):  
+Uninstall the package with `pip`(Linux, WSL, macOS, Windows PowerShell):  
 ```bash
 pip uninstall everai
 ```
