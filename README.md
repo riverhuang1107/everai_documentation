@@ -62,11 +62,12 @@ pip install everai --user
 >* **Linux**  
 >```bash
 >python3 -m site --user-base
->
->export PATH="/home/hhq/.local/bin:$PATH"
 >```
 >
->We know that the scripts go to the `bin/` folder where the packages are installed. So we concatenate the paths with `bin/`. Finally, in order to avoid repeating the export command we add it to our `.bashrc` file and we run `source` to run the new changes, giving us the suggested solution mentioned at the beginning.  
+>执行上述命令获得目录，如`/home/<username>/.local/`，Python的二进制包文件安装在该目录的bin/下。我们可以把两者进行组合，得到路径`/home/<username>/.local/bin`。为了避免每次使用时设置该环境变量，我们可以把该命令加入到`.bashrc`，并且执行`source`命令，使之立即生效。  
+>```bash
+>export PATH="/home/hhq/.local/bin:$PATH"
+>```
 >* **Windows PowerShell**  
 >```bash
 >pip install everai --user
