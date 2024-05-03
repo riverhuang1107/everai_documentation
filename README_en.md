@@ -116,9 +116,9 @@ everai app create get-start
 ## Create secrets
 Secrets are a secure way to add credentials and other sensitive information to the containers your functions run in.  
 
-You can create and edit secrets on [EverAI](everai.expvent.com), or programmatically from Python code.  
+This step is optional, depending on whether the model and Docker image require security certification.  
 
-Depending on whether the model and Docker image require security certification.  
+You can create and edit secrets on [EverAI](everai.expvent.com), or programmatically from Python code.  
 
 In this case, we will create one secret for [quay.io](https://quay.io/) . 
 ```bash
