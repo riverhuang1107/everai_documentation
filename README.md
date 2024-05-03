@@ -118,6 +118,8 @@ everai app create get-start
 ## 创建密钥
 密钥管理提供了一种安全的方法，可以添加凭证和其他敏感信息到你的应用容器中。  
 
+是否需要创建密钥，取决于下载模型文件和拉取Docker镜像时是否需要安全验证。  
+
 你可以在[EverAI](everai.expvent.com)中创建和编辑密钥，或者通过编写Python代码来管理它。  
 
 在这个例子中，我们会为[quay.io](https://quay.io/)创建一个密钥。  
