@@ -132,7 +132,7 @@ everai secret create your-quay-io-secret-name \
 ## Write your app code in python
 There is an example code in `app.py`.  
 
-you could test in your local machine will following command.  
+You could test in your local machine will following command.  
 
 ```bash
 everai app run
