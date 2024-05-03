@@ -40,7 +40,7 @@ everai app create [-h] [--route-name ROUTE_NAME] [name]
 
 **Positional arguments**:  
 
-  `name`                  The app name  
+  * `name`                  The app name  
 
 **Options**:  
 * `-h, --help`            show this help message and exit  
