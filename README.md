@@ -35,6 +35,7 @@ Read and write data to highly-performant distributed file systems.
 ## 安装和使用前提条件Requirements/Prerequisites
 ### Python
 EverAI CLI library requires Python 3.8+.  
+
 EverAI CLI需要Python版本为3.8及以上版本。
 ### EverAI
 To continue with this quick start, you'll need access to the following from [EverAI](everai.expvent.com):  
@@ -53,6 +54,16 @@ To build your Docker image, you'll need access to the following:
 * **Docker installed**  
 * **Docker Buildx installed**  
 * **Docker account**  
+>**Tips**  
+>Buildx could be used to build multiple-platform(x86, arm64) Docker Image.  
+
+为了能顺利构建Docker镜像，你需要做以下准备工作：  
+* **安装Docker环境**
+* **安装Docker Buildx插件**
+* **具备一个Docker账号**
+>小贴士：  
+>Buildx可用于构建多平台（x86，arm64）构架Docker镜像。
+
 
 ## 快速入门Quick start
 ### 安装，更新和卸载Install, Upgrade and Uninstall
