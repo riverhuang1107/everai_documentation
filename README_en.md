@@ -93,6 +93,8 @@ pip uninstall everai
 
 ## Create an app
 ### File and folder structure
+Before creating app In [EverAI](everai.expvent.com), firstly you should create a folder which is named by your app name generally. A EverAI app must includes the following three files at least:  
+
 * **`Dockerfile`** This is the text file which is used to build docker image, and it includes series of instructions and commands used to build image.  
 
 * **`app.py`** This is the code file which mainly supplies public service.  
