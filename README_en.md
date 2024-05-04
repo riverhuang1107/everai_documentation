@@ -46,7 +46,7 @@ To build your Docker image, you'll need access to the following:
 
 * **Docker account**  
 
->**Tips**  
+>[!NOTE]  
 >Buildx could be used to build multiple-platform(x86, arm64) Docker Image.  
 
 ## Quick start
