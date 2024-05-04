@@ -110,6 +110,8 @@ pip uninstall everai
 ```
 
 ### 创建第一个应用
+进入应用目录后，首先需要使用你从[EverAI](everai.expvent.com)获取到的token进行登录。登录成功后，使用`everai app create`命令创建你的应用。  
+
 ```bash
 everai login --token <your token>
 
