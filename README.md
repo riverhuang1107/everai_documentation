@@ -138,6 +138,37 @@ everai secret create your-quay-io-secret-name \
 ## 编写你的代码
 这是一个[app.py](https://github.com/everai-example/get-start/blob/main/app.py)的示例代码。  
 
+首页，引入必要的EverAI Python类库。然后定义所需要用到的变量名，包括对象存储，访问镜像仓库的密钥，以及存放在对象存储中的文件名等。使用`Image.from_registry`静态方法创建一个镜像实例。通过App类来创建定义一个app实例。  
+```python
+import everai.utils.cmd
+from everai.app import App, context, VolumeRequest
+from everai.image import Image, BasicAuth
+from everai.resource_requests import ResourceRequests
+from everai.placeholder import Placeholder
+from image_builder import IMAGE
+
+VOLUME_NAME = 'get-start-volume'
+QUAY_IO_SECRET_NAME = 'quay-secret'
+MODEL_FILE_NAME = 'my-model'
+
+image = Image.from_registry(IMAGE, auth=BasicAuth(
+        username=Placeholder(QUAY_IO_SECRET_NAME, 'username', kind='Secret'),
+        password=Placeholder(QUAY_IO_SECRET_NAME, 'password', kind='Secret'),
+    ))
+
+app = App(
+    '<your app name>',
+    image=image,
+    volume_requests=[
+        VolumeRequest(name=VOLUME_NAME, create_if_not_exists=True),
+    ],
+    secret_requests=[QUAY_IO_SECRET_NAME],
+    resource_requests=ResourceRequests(
+        cpu_num=1,
+        memory_mb=1024,
+    ),
+)
+```
 你可以通过下面的命令在你的本地环境测试你的代码。  
 
 ```bash
