@@ -19,9 +19,14 @@ List workers of app
 ```bash 
 everai worker list get-start
 ```
-
+The result could be shown like this:  
+```bash 
+ID                      STATUS                               DETAIL_STATUS                                CREATED_AT                DELETED_AT
+----------------------  -----------------------------------  -------------------------------------------  ------------------------  ------------
+RF7crg44K8QoYSzvKQCkhh  V1WorkerWorkerStatus.STATUS_RUNNING  WorkerWorkerDetailStatus.DETAIL_STATUS_FREE  2024-04-29 20:53:40+0800
+```
 ```bash
-everai workers list
+everai worker list
 ```
 
 **Usage**:  

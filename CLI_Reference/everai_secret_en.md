@@ -106,7 +106,6 @@ everai secret update \
   --from-literal username=<your username> \
   --from-literal password=<your password> your-quay-io-secret-name
 ```
-拉取镜像需要docker login的密码，而不是quay.io网站的登录密码  
 
 **Usage**:  
 ```bash
