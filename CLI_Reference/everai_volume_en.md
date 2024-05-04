@@ -47,6 +47,25 @@ everai volume list [-h] [--output [OUTPUT]]
 ## everai volume delete              
 Delete volume  
 
+**Examples**:  
+```bash 
+everai volume delete get-start-volume --all
+```
+
+**Usage**:   
+```bash 
+everai volume delete [-h] [--local] [--cloud] [--all] name
+```
+
+positional arguments:
+  * `name`        The volume name
+
+**Options**:
+  * `-h, --help`  show this help message and exit  
+  * `--local`     Delete the local cache of volume only  
+  * `--cloud`     Delete the volume in cloud, and reserve local cahce  
+  * `--all`       Delete volume both cache and in-cloud  
+
 ## everai volume get                 
 Get volume  
 
