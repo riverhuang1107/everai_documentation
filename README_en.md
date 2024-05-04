@@ -4,6 +4,8 @@ EverAI's platform empowers data/AI/ML teams to develop faster at lower cost, whi
 
 Run generative AI models, large-scale batch jobs, job queues, and much more.  
 
+The EverAI CLI is a command-line interface for EverAI. It manages your resource including apps, secrets, volumes according to CLI interface.  
+
 The EverAI Python library provides convenient, on-demand access to serverless cloud compute from Python scripts on your local computer.  
 
 ## Features
