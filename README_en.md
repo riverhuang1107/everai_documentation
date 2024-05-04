@@ -104,7 +104,7 @@ Before creating app In [EverAI](everai.expvent.com), firstly you should create a
 * **`image_builder.py`** This is the config file that is used to build docker image.
 
 ```bash
-<app name>
+<your app name>
 ├── Dockerfile
 ├── app.py
 └── image_builder.py

@@ -105,7 +105,7 @@ pip uninstall everai
 * **`image_builder.py`** 构建镜像的配置文件。  
 
 ```bash
-<app name>
+<your app name>
 ├── Dockerfile
 ├── app.py
 └── image_builder.py
