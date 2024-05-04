@@ -48,7 +48,7 @@ EverAI CLI需要Python版本为3.8及以上版本。
 * **具备一个Docker账号**  
 
 >**小贴士**  
->Buildx可用于构建多平台（x86，arm64）构架Docker镜像。
+>Buildx用于构建多平台（x86，arm64）构架Docker镜像。
 
 
 ## 快速入门
