@@ -73,7 +73,11 @@ Get volume
 ```bash
 everai volume get get-start-volume
 ```
-
+The result could be shown like this:  
+```bash
+<Volume: id: hupa49MesPXwmhFSy9Ku44, name: get-start-volume, revision: 000001-b9c, files: 1, size: 11 B>
+path: /home/<username>/.cache/everai/volumes/hupa49MesPXwmhFSy9Ku44
+```
 **Usage**:  
 ```bash
 everai volume get [-h] name
