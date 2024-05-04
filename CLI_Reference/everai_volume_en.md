@@ -26,6 +26,13 @@ List volume
 ```bash
 everai volume list
 ```
+The result could be shown like this:  
+
+```bash
+NAME              REVISION    CREATED_AT                  FILES  SIZE
+----------------  ----------  ------------------------  -------  ------
+get-start-volume  000001-084  2024-04-29 15:41:34+0800        1  11 B
+```
 
 **Usage**:
 ```bash 

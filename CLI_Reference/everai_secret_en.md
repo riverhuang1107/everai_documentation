@@ -66,7 +66,14 @@ List secret
 ```bash  
 everai secret list
 ```
-
+The result could be shown like this:  
+```bash 
+NAME                        ITEMS
+------------------------  -------
+quay-secret                     2
+your-quay-io-secret-name        2
+```
+ 
 **Usage**:
 ```bash  
 everai secret list [-h] [--output [OUTPUT]]  
