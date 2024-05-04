@@ -17,7 +17,7 @@ List workers of app
 
 **Examples**:  
 ```bash 
-everai worker list get-start
+everai worker list <your app name>
 ```
 The result could be shown like this:  
 ```bash 

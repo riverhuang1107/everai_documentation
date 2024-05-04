@@ -26,11 +26,11 @@ Create an app
 
 **Examples**:
 ```bash
-everai app create get-start
+everai app create <your app name>
 ```
 
 ```bash
-everai app create get-start --route-name got-started
+everai app create <your app name> --route-name <your app route name>
 ```
 
 **Usage**: 
@@ -70,7 +70,7 @@ Get app information
 
 **Examples**:
 ```bash
-everai app get get-start
+everai app get <your app name>
 ```
 
 **Usage**: 
