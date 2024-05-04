@@ -99,7 +99,7 @@ Before creating app In [EverAI](everai.expvent.com), firstly you should create a
 
 * **`Dockerfile`** This is the text file which is used to build docker image, and it includes series of instructions and commands used to build image.  
 
-* **`app.py`** This is the code file which mainly supplies public service.  
+* **`app.py`** This is the code file which mainly provides your app's public service.  
 
 * **`image_builder.py`** This is the config file that is used to build docker image.
 
