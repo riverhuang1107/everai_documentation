@@ -115,7 +115,7 @@ In your app directory, you should login by token you got in [EverAI](everai.expv
 ```bash
 everai login --token <your token>
 
-everai app create get-start
+everai app create <your app name>
 ```
 
 ## Create secrets
@@ -184,9 +184,9 @@ get-start    V1AppStatus.STATUS_DEPLOYED  2024-04-29 15:05:18+0800  got-started
 ```
 Now, you can make a test call for your app, in these examples looks like:  
 ```bash
-curl --no-buffer -H'Authorization: Bearer <your_token>' https://everai.expvent.com/api/apps/v1/routes/got-started/sse
+curl --no-buffer -H'Authorization: Bearer <your_token>' https://everai.expvent.com/api/apps/v1/routes/<your app route name>/sse
 
-curl -X POST -H'Content-Type: application/json' -H'Authorization: Bearer <your_token>' https://everai.expvent.com/api/apps/v1/routes/got-started/txt2img/jone -d '{"prompt": "say hello to"}'
+curl -X POST -H'Content-Type: application/json' -H'Authorization: Bearer <your_token>' https://everai.expvent.com/api/apps/v1/routes/<your app route name>/txt2img/jone -d '{"prompt": "say hello to"}'
 ```
 
 ## License
