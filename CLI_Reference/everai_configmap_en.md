@@ -64,6 +64,12 @@ List configmaps
 ```bash
 everai configmap list
 ```
+The result could be shown like this:  
+```bash
+NAME                   ITEMS
+-------------------  -------
+get-start-configmap        5
+```
 
 **Usage**: 
 ```bash
