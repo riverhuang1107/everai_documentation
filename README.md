@@ -47,7 +47,7 @@ EverAI CLI需要Python版本为3.8及以上版本。
 
 * **具备一个Docker账号**  
 
->[!小贴士]  
+>**小贴士**  
 >Buildx可用于构建多平台（x86，arm64）构架Docker镜像。
 
 
@@ -66,7 +66,7 @@ pip install everai
 pip install everai --user
 ```
 
->[!小贴士]  
+>**小贴士**  
 >如果你安装了EverAI CLI工具，但你在执行命令时发现了类似`everai: command not found`这样的错误，这意味着你的系统路径中还没有设置可以执行Python可执行包（二进制可执行包）的系统路径。这是一个常见问题；你需要通过配置你的系统环境变量来修复它。  
 >* **Linux(WSL)**  
 >```bash
