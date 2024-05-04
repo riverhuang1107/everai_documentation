@@ -117,7 +117,7 @@ pip uninstall everai
 ```bash
 everai login --token <your token>
 
-everai app create get-start
+everai app create <your app name>
 ```
 
 ## 创建密钥
@@ -136,7 +136,7 @@ everai secret create your-quay-io-secret-name \
 ```
 
 ## 编写你的代码
-这是一个关于`app.py`的示例代码。  
+这是一个[app.py](https://github.com/everai-example/get-start/blob/main/app.py)的示例代码。  
 
 你可以通过下面的命令在你的本地环境测试你的代码。  
 
