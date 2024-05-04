@@ -64,7 +64,7 @@ Open PowerShell as Administrator:
 pip install everai --user
 ```
 
->**Tips**  
+>[!NOTE]  
 >If you installed EverAI CLI but you’re seeing an error like `everai: command not found` when trying to run the CLI, this means that the installation location of Python package executables (“binaries”) are not present on your system path. This is a common problem; you need to reconfigure your system’s environment variables to fix it.  
 >* **Linux(WSL)**  
 >```bash
