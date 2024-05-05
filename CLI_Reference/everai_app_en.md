@@ -158,7 +158,7 @@ everai app list [-h] [--output [OUTPUT]]
 ## everai app queue (q)           
 List queue of app  
 
-Example:  
+**Example**:  
 ```bash
 everai app queue <your app name>
 ```
