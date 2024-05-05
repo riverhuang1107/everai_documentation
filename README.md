@@ -169,6 +169,22 @@ app = App(
     ),
 )
 ```
+创建了应用实例后，你可以编写自己的代码。这里的示例使用了`flask`实现了一个服务器端向客户端推送消息的对外服务。  
+
+```python
+import time
+import flask
+
+@app.service.route('/sse', methods=['GET'])
+def sse():
+    def generator():
+        for i in range(10):
+            yield f"hello again {i}"
+            time.sleep(1)
+
+    return flask.Response(generator(), mimetype='text/event-stream')
+```
+
 你可以通过下面的命令在你的本地环境测试你的代码。  
 
 ```bash

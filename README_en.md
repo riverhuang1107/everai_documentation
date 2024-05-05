@@ -99,7 +99,7 @@ Before creating app In [EverAI](everai.expvent.com), firstly you should create a
 
 * **`Dockerfile`** This is the text file which is used to build docker image, and it includes series of instructions and commands used to build image.  
 
-* **`app.py`** This is the code file which mainly provides your app's public service.  
+* **`app.py`** This is the code file which mainly provides your app's external service.  
 
 * **`image_builder.py`** This is the config file that is used to build docker image.
 
@@ -167,7 +167,23 @@ app = App(
     ),
 )
 ```
-You could test in your local machine will following command.  
+Aftering creating a app instance, now you can write your Python code. This example uses `flask` to implement a external web service that sends active messages from the server to the client.  
+
+```python
+import time
+import flask
+
+@app.service.route('/sse', methods=['GET'])
+def sse():
+    def generator():
+        for i in range(10):
+            yield f"hello again {i}"
+            time.sleep(1)
+
+    return flask.Response(generator(), mimetype='text/event-stream')
+```
+
+Now, you could test in your local machine will following command.  
 
 ```bash
 everai app run
