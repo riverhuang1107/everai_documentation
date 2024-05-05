@@ -195,7 +195,11 @@ Before your application is deployed in the cloud, you should construct your volu
 You can create a function by the `@app.prepare` decorator to manager and prepare your volume and related files.  
 
 ```python
+import os
 import time
+from everai.app import App, context, VolumeRequest
+
+VOLUME_NAME = 'get-start-volume'
 
 @app.prepare()
 def prepare_model():

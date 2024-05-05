@@ -199,7 +199,11 @@ everai app run
 你可以通过注解`@app.prepare`创建一个方法来管理和准备你的对象存储以及相关的文件。  
 
 ```python
+import os
 import time
+from everai.app import App, context, VolumeRequest
+
+VOLUME_NAME = 'get-start-volume'
 
 @app.prepare()
 def prepare_model():
