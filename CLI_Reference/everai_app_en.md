@@ -156,4 +156,32 @@ everai app list [-h] [--output [OUTPUT]]
                         Output format, One of: (json, yaml, table, wide)
 
 ## everai app queue (q)           
-List queue of app
+List queue of app  
+
+Example:  
+```bash
+everai app queue <your app name>
+```
+The output for this example is this: 
+```bash
+ QUEUE_INDEX  CREATE_AT                 QUEUE_REASON
+-------------  ------------------------  ----------------------------------------------------------
+            0  2024-05-05 15:21:43+0800  ListRequestQueuesResponseQueueReason.QUEUEREASONWORKERBUSY
+```
+
+**Usage**: 
+```bash
+everai app queue [-h] [--output [OUTPUT]] [app_name]
+```
+
+**Positional arguments**:  
+
+ * `app_name`              The app name
+
+**Options**:  
+
+ * `-h, --help`            show this help message and exit
+ * `--output [OUTPUT], -o [OUTPUT]`
+                        Output format, One of: (json, yaml, table, wide)
+                        
+
