@@ -4,9 +4,7 @@
 everai volume [-h] {create,list,ls,delete,get,pull,push} ...
 ```
 
-**Positional arguments**:  
-  {create,list,ls,delete,get,pull,push}
-                        Volume command help  
+**Commands**:  
 * `create`              Create volume  
 * `list (ls)`           List volume  
 * `delete`              Delete volume  

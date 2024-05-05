@@ -4,9 +4,8 @@
 everai configmap [-h] {create,delete,list,ls,get,update} ...
 ```
 
-**Positional arguments**:  
-  {create,delete,list,ls,get,update}
-                        Configmap command help  
+**Commands**:  
+
 * `create`              Create ConfigMap from file or literal string  
 * `delete`              Delete configmap  
 * `list (ls)`           List configmaps  

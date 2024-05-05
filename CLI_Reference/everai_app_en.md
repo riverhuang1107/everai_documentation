@@ -4,9 +4,7 @@
 everai app [-h] {create,run,get,upgrade,pause,deploy,prepare,list,ls,queue,q} ...
 ```
 
-**Positional arguments**:  
-  {create,run,get,upgrade,pause,deploy,prepare,list,ls,queue,q}
-                        App command help  
+**Commands**:  
   * `create`              Create an app  
   * `run`                 Local run a everai application for test  
   * `get`                 Get app information  

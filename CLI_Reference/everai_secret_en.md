@@ -4,9 +4,7 @@
 everai secret [-h] {create,delete,list,ls,get,update} ...
 ```
 
-**Positional arguments**:  
-  {create,delete,list,ls,get,update}
-                        Secret command help
+**Commands**:  
 * `create`              Create Secret from file or literal string  
 * `delete`              Delete secret  
 * `list (ls)`           List secret  

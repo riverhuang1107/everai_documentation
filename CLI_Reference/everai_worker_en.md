@@ -4,8 +4,7 @@
 everai worker [-h] {list,ls} ...  
 ```
 
-**Positional arguments**:    
-  {list,ls}   Worker command help  
+**Commands**:    
 * `list (ls)`
               List workers of app  
 
