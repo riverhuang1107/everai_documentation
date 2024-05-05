@@ -4,8 +4,7 @@
 everai image [-h] {build} ...
 ```
 
-**Positional arguments**:  
-  {build}     everai image command helps  
+**Commands**:  
 * `build`     Image build
 
 **Options**:  
