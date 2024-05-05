@@ -185,7 +185,7 @@ def sse():
     return flask.Response(generator(), mimetype='text/event-stream')
 ```
 
-你可以通过下面的命令在你的本地环境测试你的代码。  
+现在，你可以通过下面的命令在你的本地环境测试你的代码。  
 
 ```bash
 everai app run
