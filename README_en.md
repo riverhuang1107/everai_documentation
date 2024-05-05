@@ -192,7 +192,7 @@ everai app run
 ## Prepare volume
 Before your application is deployed in the cloud, you should construct your volume first, if your app uses at least one volume.  
 
-You can create a function to manager and prepare your volume and related files to use the `@app.prepare` decorator.  
+You can create a function by the `@app.prepare` decorator to manager and prepare your volume and related files.  
 
 ```python
 import time
