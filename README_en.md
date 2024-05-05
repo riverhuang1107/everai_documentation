@@ -208,7 +208,7 @@ The final step is to deploy your app to [EverAI](everai.expvent.com) and keep it
 ```bash
 everai app deploy  
 ```
-After running `everai app list`, you can see your apps status. If status is `STATUS_DEPLOYED`, it means that your app is deployed successfully.   
+After running `everai app list`, you can see the result shown like this.  If your app's status is `STATUS_DEPLOYED`, it means that your app is deployed successfully.   
 ```bash
 NAME         STATUS                       CREATED_AT                ROUTE_NAME
 -----------  ---------------------------  ------------------------  ------------
