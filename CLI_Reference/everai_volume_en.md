@@ -55,7 +55,7 @@ everai volume delete get-start-volume --all
 everai volume delete [-h] [--local] [--cloud] [--all] name
 ```
 
-positional arguments:
+**Positional arguments**:
   * `name`        The volume name
 
 **Options**:
