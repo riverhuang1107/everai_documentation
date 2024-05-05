@@ -212,7 +212,7 @@ everai image build
 ```bash
 everai app deploy  
 ```
-执行`everai app list`后，可以看到当前应用的状态。如果应用状态是`STATUS_DEPLOYED`，意味着你的应用已经部署成功。    
+执行`everai app list`后，可以看到类似如下的输出结果。如果你的应用状态是`STATUS_DEPLOYED`，意味着你的应用已经部署成功。    
 ```bash
 NAME         STATUS                       CREATED_AT                ROUTE_NAME
 -----------  ---------------------------  ------------------------  ------------
