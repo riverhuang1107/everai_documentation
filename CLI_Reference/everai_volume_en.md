@@ -20,7 +20,7 @@ Create volume
 ## everai volume list (ls)           
 List volume  
 
-**Examples**:
+**Example**:
 ```bash
 everai volume list
 ```
@@ -45,7 +45,7 @@ everai volume list [-h] [--output [OUTPUT]]
 ## everai volume delete              
 Delete volume  
 
-**Examples**:  
+**Example**:  
 ```bash 
 everai volume delete get-start-volume --all
 ```
@@ -67,7 +67,7 @@ positional arguments:
 ## everai volume get                 
 Get volume  
 
-**Examples**:  
+**Example**:  
 ```bash
 everai volume get get-start-volume
 ```
@@ -90,7 +90,7 @@ everai volume get [-h] name
 ## everai volume pull                
 Pull volume  
 
-**Examples**:  
+**Example**:  
 ```bash
 everai volume pull get-start-volume
 ```
@@ -112,7 +112,7 @@ everai volume pull [-h] [--force] [--sync] name
 ## everai volume push                
 Push volume  
 
-**Examples**:  
+**Example**:  
 ```bash
 everai volume push get-start-volume
 ```

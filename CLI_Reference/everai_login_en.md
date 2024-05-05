@@ -1,5 +1,5 @@
 # everai login
-**Examples**:  
+**Example**:  
 ```bash
 everai login --token <your token>  
 ```

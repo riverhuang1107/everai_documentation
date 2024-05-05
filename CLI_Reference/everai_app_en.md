@@ -22,7 +22,7 @@ everai app [-h] {create,run,get,upgrade,pause,deploy,prepare,list,ls,queue,q} ..
 ## everai app create             
 Create an app  
 
-**Examples**:
+**Example**:
 ```bash
 everai app create <your app name>
 ```
@@ -48,7 +48,7 @@ everai app create [-h] [--route-name ROUTE_NAME] [name]
 ## everai app run                 
 Local run a everai application for test  
 
-**Examples**:
+**Example**:
 ```bash
 everai app run
 ```
@@ -66,7 +66,7 @@ everai app run [-h] [--port PORT] [--listen LISTEN]
 ## everai app get                 
 Get app information  
 
-**Examples**:
+**Example**:
 ```bash
 everai app get <your app name>
 ```
@@ -91,7 +91,7 @@ Pause an app, all worker will be stopped
 ## everai app deploy              
 Deploy an app to serving status  
 
-**Examples**:  
+**Example**:  
 ```bash
  everai app deploy
 ```
@@ -112,7 +112,7 @@ everai app deploy [-h]
 ## everai app prepare             
 Prepare an app, all of function which decorated by @app.prepare would be called  
 
-**Examples**:  
+**Example**:  
 
 Before your application is deployed in the cloud, you should construct your volume first, if your app uses at least one volume.  
 
@@ -134,7 +134,7 @@ everai app prepare [-h]
 ## everai app list (ls)           
 List all apps  
 
-**Examples**:
+**Example**:
 ```bash
 everai app list
 ```

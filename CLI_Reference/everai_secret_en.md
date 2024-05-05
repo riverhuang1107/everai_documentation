@@ -17,7 +17,7 @@ everai secret [-h] {create,delete,list,ls,get,update} ...
 ## everai secret create              
 Create Secret from file or literal string  
 
-**Examples**:  
+**Example**:  
 ```bash  
 everai secret create your-quay-io-secret-name \
   --from-literal username=<your username> \
@@ -42,7 +42,7 @@ everai secret create [-h] [-l FROM_LITERAL] [-f FROM_FILE] name
 ## everai secret delete              
 Delete secret  
 
-**Examples**:  
+**Example**:  
 ```bash
 everai secret delete quay-secret
 ```
@@ -60,7 +60,7 @@ everai secret delete [-h] name
 ## everai secret list (ls)           
 List secret  
 
-**Examples**:
+**Example**:
 ```bash  
 everai secret list
 ```
@@ -85,7 +85,7 @@ everai secret list [-h] [--output [OUTPUT]]
 ## everai secret get                 
 Get secret  
 
-**Examples**:
+**Example**:
 ```bash  
 everai secret get your-huggingface-secret-name
 ```
@@ -105,7 +105,7 @@ everai secret get [-h] [--output [OUTPUT]] name
 ## everai secret update              
 Update the Secret from file or literal string  
 
-**Examples**:  
+**Example**:  
 ```bash
 everai secret update \
   --from-literal username=<your username> \

@@ -18,7 +18,7 @@ everai configmap [-h] {create,delete,list,ls,get,update} ...
 ## everai configmap create              
 Create ConfigMap from file or literal string  
 
-**Examples**:  
+**Example**:  
 ```bash  
 everai configmap create get-start-configmap --from-literal min_workers=1
 ```
@@ -41,7 +41,7 @@ everai configmap create [-h] [-l FROM_LITERAL] [-f FROM_FILE] name
 ## everai configmap delete              
 Delete configmap  
 
-**Examples**:  
+**Example**:  
 ```bash
 everai configmap delete get-start-configmap
 ```
@@ -59,7 +59,7 @@ everai configmap delete [-h] name
 ## everai configmap list (ls)           
 List configmaps  
 
-**Examples**:  
+**Example**:  
 ```bash
 everai configmap list
 ```
@@ -82,7 +82,7 @@ everai configmap list [-h] [--output [OUTPUT]]
 ## everai configmap get                 
 Get configmap  
 
-**Examples**:  
+**Example**:  
 ```bash  
 everai configmap get get-start-configmap
 ```
@@ -103,7 +103,7 @@ everai configmap get [-h] [--output [OUTPUT]] name
 ## everai configmap update              
 Update ConfigMap from file or literal string  
 
-**Examples**:  
+**Example**:  
 ```bash  
 everai configmap update --from-literal min_workers=1 \
   --from-literal max_workers=5 \

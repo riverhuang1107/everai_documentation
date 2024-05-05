@@ -13,7 +13,7 @@ everai image [-h] {build} ...
 ## everai image build    
 Image build  
 
-**Examples**:  
+**Example**:  
 
 构建容器镜像，需要使用`Dockerfile`和`image_builder.py`来为你的应用构建容器镜像。  
 
