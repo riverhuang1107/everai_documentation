@@ -192,6 +192,29 @@ everai app run
 ## Prepare volume
 Before your application is deployed in the cloud, you should construct your volume first, if your app uses at least one volume.  
 
+You can create a function to manager and prepare your volume and related files to use the `@app.prepare` decorator.  
+
+```python
+import time
+
+@app.prepare()
+def prepare_model():
+    volume = context.get_volume(VOLUME_NAME)
+
+    model_path = os.path.join(volume.path, MODEL_FILE_NAME)
+    if not os.path.exists(model_path):
+        # download model file
+        with open(model_path, 'wb') as f:
+            f.write('hello world'.encode('utf-8'))
+
+    # only in prepare mode push volume
+    # to save gpu time (redundant sha256 checks)
+    if context.is_prepare_mode:
+        context.volume_manager.push(VOLUME_NAME)
+
+    time.sleep(5)
+```
+
 For production environment, the volumes are very important, you could call the following command to prepare it.  
 
 This command line will call all functions which are decorated by `@app.prepare`, in these functions you should set up volume data before the app use it.  

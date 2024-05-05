@@ -194,6 +194,29 @@ everai app run
 ## 准备存储
 如果你的应用需要用到文件对象存储，那么在你的应用部署到云环境之前，你需要先创建一个对象存储。  
 
+你可以通过注解`@app.prepare`创建一个方法来管理和准备你的对象存储以及相关的文件。  
+
+```python
+import time
+
+@app.prepare()
+def prepare_model():
+    volume = context.get_volume(VOLUME_NAME)
+
+    model_path = os.path.join(volume.path, MODEL_FILE_NAME)
+    if not os.path.exists(model_path):
+        # download model file
+        with open(model_path, 'wb') as f:
+            f.write('hello world'.encode('utf-8'))
+
+    # only in prepare mode push volume
+    # to save gpu time (redundant sha256 checks)
+    if context.is_prepare_mode:
+        context.volume_manager.push(VOLUME_NAME)
+
+    time.sleep(5)
+```
+
 在生产环境，对象存储是非常重要的，你可以通过下面的命令准备它。  
 
 这句命令会执行所有被`@app.prepare`注解过的方法，在这些方法中你应该配置好文件数据。  
