@@ -15,7 +15,7 @@ Image build
 
 **Examples**:  
 
-构建容器镜像，需要使用Dockerfile和image_builder.py来为你的应用构建容器镜像。  
+构建容器镜像，需要使用`Dockerfile`和`image_builder.py`来为你的应用构建容器镜像。  
 
 在`image_builder.py`中，你需要配置你的镜像地址信息。
 
