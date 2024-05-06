@@ -8,7 +8,7 @@ everai image [-h] {build} ...
 * `build`     Image build
 
 **选项**:  
-* `-h, --help`  show this help message and exit  
+* `-h, --help`  显示帮助信息  
 
 ## everai image build    
 Image build  
@@ -43,5 +43,5 @@ everai image build
 everai image build [-h]
 ```
 **选项**:  
-  * `-h, --help`  show this help message and exit
+  * `-h, --help`  显示帮助信息
 

@@ -10,5 +10,5 @@ everai login [-h] --token TOKEN
 ```
 
 **选项**:  
- * `-h, --help`     show this help message and exit  
+ * `-h, --help`     显示帮助信息  
  * `--token` TOKEN  Get token from everai  

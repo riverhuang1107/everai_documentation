@@ -9,7 +9,7 @@ everai worker [-h] {list,ls} ...
               List workers of app  
 
 **选项**:  
-* `-h, --help`  show this help message and exit  
+* `-h, --help`  显示帮助信息  
 
 ## everai worker list (ls)
 List workers of app  
@@ -37,7 +37,7 @@ everai worker list [-h] [--output [OUTPUT]] [--all] [--recent-days [RECENT_DAYS]
   * `app_name`              The app name  
 
 **选项**:  
-* `-h, --help`            show this help message and exit  
+* `-h, --help`            显示帮助信息  
 * `--output [OUTPUT], -o [OUTPUT]`
                         Output format, One of: (json, yaml, table, wide)  
 * `--all, -a`             show all workers, include deleted and errors  

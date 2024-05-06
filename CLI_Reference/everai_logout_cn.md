@@ -10,4 +10,4 @@ everai logout [-h]
 ```
 
 **选项**:  
-* `-h, --help`  show this help message and exit
+* `-h, --help`  显示帮助信息
