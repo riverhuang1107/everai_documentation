@@ -33,7 +33,7 @@ everai worker list
 everai worker list [-h] [--output [OUTPUT]] [--all] [--recent-days [RECENT_DAYS]] app_name
 ```
 
-**Positional arguments**:  
+**参数**:  
   * `app_name`              The app name  
 
 **选项**:  
