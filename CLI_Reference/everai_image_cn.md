@@ -1,19 +1,19 @@
 # everai image
-**Usage**:  
+**格式**:  
 ```bash
 everai image [-h] {build} ...
 ```
 
-**Commands**:  
+**命令**:  
 * `build`     Image build
 
-**Options**:  
+**选项**:  
 * `-h, --help`  show this help message and exit  
 
 ## everai image build    
 Image build  
 
-**Example**:  
+**示例**:  
 
 构建容器镜像，需要使用`Dockerfile`和`image_builder.py`来为你的应用构建容器镜像。  
 
@@ -38,10 +38,10 @@ docker buildx version
 everai image build
 ```
 
-**Usage**:  
+**格式**:  
 ```bash
 everai image build [-h]
 ```
-**Options**:  
+**选项**:  
   * `-h, --help`  show this help message and exit
 
