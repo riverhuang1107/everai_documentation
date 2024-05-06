@@ -26,7 +26,7 @@ Read and write data to highly-performant distributed file systems.
 
 ## Prerequisites
 ### Python
-EverAI CLI library requires Python 3.8+.  
+EverAI CLI library requires Python 3.10+.  
 
 ### EverAI
 To continue with this quick start, you'll need access to the following from [EverAI](everai.expvent.com):  

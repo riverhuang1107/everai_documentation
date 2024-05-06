@@ -27,7 +27,7 @@ EverAI CLI命令行工具提供了一种便捷的按需计费的接入方式，�
 
 ## 安装和使用前提条件
 ### Python
-EverAI CLI需要Python版本为3.8及以上版本。
+EverAI CLI需要Python版本为3.10及以上版本。
 
 ### EverAI
 在快速入门前，你首先需要在[EverAI](everai.expvent.com)完成以下准备工作：
