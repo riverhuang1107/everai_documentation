@@ -38,7 +38,7 @@ everai app create [-h] [--route-name ROUTE_NAME] [name]
 
 **参数**:  
 
-  * `name`                  The app name  
+  * `name`                  应用名称  
 
 **选项**:  
 * `-h, --help`            显示帮助信息  
