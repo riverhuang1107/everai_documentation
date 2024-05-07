@@ -115,7 +115,7 @@ Deploy an app to serving status
 ```bash
  everai app deploy
 ```
-After running `everai app list`, you can see your app's status. If status is `STATUS_DEPLOYED`, it means that your app is deployed successfully.   
+After running `everai app list`, you can see your app's status. If status is `DEPLOYED`, it means that your app is deployed successfully.   
 ```bash
 NAME          STATUS    CREATED_AT                ROUTE_NAME
 ------------  --------  ------------------------  ------------
