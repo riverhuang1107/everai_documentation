@@ -5,8 +5,7 @@ everai worker [-h] {list,ls} ...
 ```
 
 **Commands**:    
-* `list (ls)`
-              List workers of app  
+* `list (ls)` List workers of app  
 
 **Options**:  
 * `-h, --help`  show this help message and exit  
@@ -27,7 +26,13 @@ RF7crg44K8QoYSzvKQCkhh  V1WorkerWorkerStatus.STATUS_RUNNING  WorkerWorkerDetailS
 ```bash
 everai worker list
 ```
-
+The output for this example is this:  
+ 
+```bash
+ID                      STATUS          DETAIL_STATUS       CREATED_AT                DELETED_AT
+----------------------  --------------  ------------------  ------------------------  ------------
+KFZtizCb6eR3E2RTvivzmP  STATUS_RUNNING  DETAIL_STATUS_FREE  2024-05-07 12:36:29+0800
+```
 **Usage**:  
 ```bash  
 everai worker list [-h] [--output [OUTPUT]] [--all] [--recent-days [RECENT_DAYS]] app_name
