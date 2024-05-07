@@ -77,7 +77,7 @@ everai configmap list [-h] [--output [OUTPUT]]
 **选项**:  
 * `-h, --help`            显示帮助信息  
 * `--output [OUTPUT], -o [OUTPUT]`
-                        输出格式，可选（json, yaml, table, wide）  
+                        输出格式，可选（json, yaml, table, wide），默认为table  
 
 ## everai configmap get                 
 Get configmap  
@@ -98,7 +98,7 @@ everai configmap get [-h] [--output [OUTPUT]] name
 **选项**:  
 * `-h, --help`            显示帮助信息  
 * `--output [OUTPUT], -o [OUTPUT]`
-                        输出格式，可选（json, yaml, table, wide）
+                        输出格式，可选（json, yaml, table, wide），默认为table
 
 ## everai configmap update              
 Update ConfigMap from file or literal string  

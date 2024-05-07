@@ -46,7 +46,7 @@ everai worker list [-h] [--output [OUTPUT]] [--all] [--recent-days [RECENT_DAYS]
 **选项**:  
 * `-h, --help`            显示帮助信息  
 * `--output [OUTPUT], -o [OUTPUT]`
-                         输出格式，可选（json, yaml, table, wide）  
+                         输出格式，可选（json, yaml, table, wide），默认为table  
 * `--all, -a`             显示该应用的所有worker，包括已经删除的和有问题的worker  
 * `--recent-days [RECENT_DAYS], -d [RECENT_DAYS]`
                         显示最近天数内没有在运行中的worker  

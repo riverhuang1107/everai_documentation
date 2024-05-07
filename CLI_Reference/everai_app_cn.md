@@ -173,7 +173,7 @@ everai app list [-h] [--output [OUTPUT]]
 **选项**:  
 * `-h, --help`            显示帮助信息  
 * `--output [OUTPUT], -o [OUTPUT]`
-                        输出格式，可选（json, yaml, table, wide）
+                        输出格式，可选（json, yaml, table, wide），默认为table
 
 ## everai app queue (q)           
 List queue of app  
@@ -202,6 +202,6 @@ everai app queue [-h] [--output [OUTPUT]] [app_name]
 
  * `-h, --help`            显示帮助信息
  * `--output [OUTPUT], -o [OUTPUT]`
-                        输出格式，可选（json, yaml, table, wide）
+                        输出格式，可选（json, yaml, table, wide），默认为table
                         
 

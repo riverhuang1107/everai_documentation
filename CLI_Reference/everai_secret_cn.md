@@ -80,7 +80,7 @@ everai secret list [-h] [--output [OUTPUT]]
 **选项**:  
 * `-h, --help`            显示帮助信息
 * `--output [OUTPUT], -o [OUTPUT]`
-                        输出格式，可选（json, yaml, table, wide）
+                        输出格式，可选（json, yaml, table, wide），默认为table
 
 ## everai secret get                 
 根据密钥名称查询密钥
@@ -100,7 +100,7 @@ everai secret get [-h] [--output [OUTPUT]] name
 **选项**:  
 * `-h, --help`            显示帮助信息  
 * `--output [OUTPUT], -o [OUTPUT]`
-                        输出格式，可选（json, yaml, table, wide）  
+                        输出格式，可选（json, yaml, table, wide），默认为table  
 
 ## everai secret update              
 从文件或者字符串更新密钥  
