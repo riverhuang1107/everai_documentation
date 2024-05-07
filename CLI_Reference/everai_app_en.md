@@ -185,8 +185,8 @@ everai app queue <your app name>
 The output for this example is this: 
 ```bash
   QUEUE_INDEX  CREATE_AT                 QUEUE_REASON
--------------  ------------------------  ---------------------
-            0  2024-05-07 10:30:00+0800  QueueReasonWorkerBusy
+-------------  ------------------------  --------------
+            0  2024-05-07 19:26:12+0800  WorkerBusy
 ```
 
 **Usage**: 
