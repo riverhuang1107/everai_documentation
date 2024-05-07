@@ -11,7 +11,7 @@ everai image [-h] {build} ...
 * `-h, --help`  显示帮助信息  
 
 ## everai image build    
-Image build  
+构建应用镜像  
 
 **示例**:  
 
