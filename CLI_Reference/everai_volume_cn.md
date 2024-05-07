@@ -13,7 +13,7 @@ everai volume [-h] {create,list,ls,delete,get,pull,push} ...
 * `push`                Push volume  
 
 **选项**:  
-* `-h, --help`            show this help message and exit
+* `-h, --help`            显示帮助信息
 
 ## everai volume create              
 Create volume  
@@ -38,7 +38,7 @@ everai volume list [-h] [--output [OUTPUT]]
 ```
 
 **选项**:  
-* `-h, --help`            show this help message and exit  
+* `-h, --help`            显示帮助信息  
 * `--output [OUTPUT], -o [OUTPUT]`
                         输出格式，可选（json, yaml, table, wide）  
 
@@ -59,7 +59,7 @@ everai volume delete [-h] [--local] [--cloud] [--all] name
   * `name`        The volume name
 
 **选项**:
-  * `-h, --help`  show this help message and exit  
+  * `-h, --help`  显示帮助信息  
   * `--local`     Delete the local cache of volume only  
   * `--cloud`     Delete the volume in cloud, and reserve local cahce  
   * `--all`       Delete volume both cache and in-cloud  
@@ -85,7 +85,7 @@ everai volume get [-h] name
   * `name`        The volume name
 
 **选项**:    
-* `-h, --help`  show this help message and exit
+* `-h, --help`  显示帮助信息
 
 ## everai volume pull                
 Pull volume  
@@ -103,7 +103,7 @@ everai volume pull [-h] [--force] [--sync] name
   * `name`        The volume name  
 
 **选项**:  
-* `-h, --help`  show this help message and exit  
+* `-h, --help`  显示帮助信息  
 * `--force`     Force pull remote volume file to local, if your volume local metadata revision equal remote volume
               revision, pull will stop, if add `--force`, pull will ignore revision compare  
 * `--sync`      Sync file form remote, if this file local have, but remote not exist, then this local file will be
@@ -125,5 +125,5 @@ everai volume push [-h] name
   * `name`        The volume name  
 
 **选项**:  
-* `-h, --help`  show this help message and exit
+* `-h, --help`  显示帮助信息
 
