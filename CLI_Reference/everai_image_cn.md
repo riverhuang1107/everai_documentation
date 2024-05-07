@@ -5,7 +5,7 @@ everai image [-h] {build} ...
 ```
 
 **命令**:  
-* `build`     Image build
+* `build`     构建镜像
 
 **选项**:  
 * `-h, --help`  显示帮助信息  
