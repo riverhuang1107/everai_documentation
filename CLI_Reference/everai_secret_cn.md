@@ -124,5 +124,5 @@ everai secret update [-h] [-l FROM_LITERAL] [-f FROM_FILE] name
 * `-l FROM_LITERAL, --from-literal FROM_LITERAL`
                         通过字符串更新密钥，举例：`--from-literal name=user`  
 * `-f FROM_FILE, --from-file FROM_FILE`
-                        通过文件更新密钥，举例：`--from-file filename`  
+                        通过文件更新密钥，举例：`--from-file filename`。文件类型支持简单的键值对的YAML文件，值必须是字符串。  
 
