@@ -24,6 +24,6 @@ python -m site --user-site
 ```bash
 [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1000)
 ```
-出现这个问题的原因是你的本地环境是macOS，并且使用了dmg软件包安装了Python环境。如果你在应用目录下存在`Python 3.12`文件夹，文件夹中有一个名为`Install Certificates.command`的脚本文件，运行安装这个文件后，再次执行EverAI CLI的命令，上述问题可以解决。
+出现这个问题的原因是你的本地环境是macOS，并且使用了dmg软件包安装了Python环境。如果你在`应用程序`目录下存在`Python 3.12`文件夹，文件夹中有一个名为`Install Certificates.command`的脚本文件，运行安装这个文件后，再次执行EverAI CLI的命令，上述问题可以解决。
 
 
