@@ -40,7 +40,7 @@ everai volume list [-h] [--output [OUTPUT]]
 **选项**:  
 * `-h, --help`            show this help message and exit  
 * `--output [OUTPUT], -o [OUTPUT]`
-                        Output format, One of: (json, yaml, table, wide)  
+                        输出格式，可选（json, yaml, table, wide）  
 
 ## everai volume delete              
 Delete volume  

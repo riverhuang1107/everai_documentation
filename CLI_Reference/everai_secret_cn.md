@@ -55,7 +55,7 @@ everai secret delete [-h] name
   * `name`        The secret name
 
 **选项**:  
-* `-h, --help`  show this help message and exit  
+* `-h, --help`  显示帮助信息  
 
 ## everai secret list (ls)           
 List secret  
@@ -78,9 +78,9 @@ everai secret list [-h] [--output [OUTPUT]]
 ```
 
 **选项**:  
-* `-h, --help`            show this help message and exit
+* `-h, --help`            显示帮助信息
 * `--output [OUTPUT], -o [OUTPUT]`
-                        Output format, One of: (json, yaml, table, wide)
+                        输出格式，可选（json, yaml, table, wide）
 
 ## everai secret get                 
 Get secret  
@@ -98,9 +98,9 @@ everai secret get [-h] [--output [OUTPUT]] name
   * `name`                  The secret name  
 
 **选项**:  
-* `-h, --help`            show this help message and exit  
+* `-h, --help`            显示帮助信息  
 * `--output [OUTPUT], -o [OUTPUT]`
-                        Output format, One of: (json, yaml, table, wide)  
+                        输出格式，可选（json, yaml, table, wide）  
 
 ## everai secret update              
 Update the Secret from file or literal string  
@@ -120,7 +120,7 @@ everai secret update [-h] [-l FROM_LITERAL] [-f FROM_FILE] name
   * `name`                  The secret name  
 
 **选项**:  
-* `-h, --help`            show this help message and exit  
+* `-h, --help`            显示帮助信息  
 * `-l FROM_LITERAL, --from-literal FROM_LITERAL`
                         Create secret from literal, for example: --from-literal name=user  
 * `-f FROM_FILE, --from-file FROM_FILE`

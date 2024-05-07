@@ -13,7 +13,7 @@ everai configmap [-h] {create,delete,list,ls,get,update} ...
 * `update`              Update ConfigMap from file or literal string  
 
 **选项**:  
-* `-h, --help`            show this help message and exit  
+* `-h, --help`            显示帮助信息  
  
 ## everai configmap create              
 Create ConfigMap from file or literal string  
@@ -32,7 +32,7 @@ everai configmap create [-h] [-l FROM_LITERAL] [-f FROM_FILE] name
   * `name`                  The configmap name
 
 **选项**:  
-* `-h, --help`            show this help message and exit  
+* `-h, --help`            显示帮助信息  
 * `-l FROM_LITERAL, --from-literal FROM_LITERAL`
                         Create configmap from literal, for example: --from-literal name=user  
 * `-f FROM_FILE, --from-file FROM_FILE`
@@ -54,7 +54,7 @@ everai configmap delete [-h] name
   * `name`        The configmap name
 
 **选项**:
-* `-h, --help`  show this help message and exit
+* `-h, --help`  显示帮助信息
 
 ## everai configmap list (ls)           
 List configmaps  
@@ -75,9 +75,9 @@ get-start-configmap        5
 everai configmap list [-h] [--output [OUTPUT]]
 ```
 **选项**:  
-* `-h, --help`            show this help message and exit  
+* `-h, --help`            显示帮助信息  
 * `--output [OUTPUT], -o [OUTPUT]`
-                        Output format, One of: (json, yaml, table, wide)  
+                        输出格式，可选（json, yaml, table, wide）  
 
 ## everai configmap get                 
 Get configmap  
@@ -96,9 +96,9 @@ everai configmap get [-h] [--output [OUTPUT]] name
   * `name`                  The configmap name
 
 **选项**:  
-* `-h, --help`            show this help message and exit  
+* `-h, --help`            显示帮助信息  
 * `--output [OUTPUT], -o [OUTPUT]`
-                        Output format, One of: (json, yaml, table, wide)
+                        输出格式，可选（json, yaml, table, wide）
 
 ## everai configmap update              
 Update ConfigMap from file or literal string  
@@ -121,7 +121,7 @@ everai configmap update [-h] [-l FROM_LITERAL] [-f FROM_FILE] name
   * `name`                  The configmap name
 
 **选项**:  
-* `-h, --help`            show this help message and exit  
+* `-h, --help`            显示帮助信息  
 * `-l FROM_LITERAL, --from-literal FROM_LITERAL`  
                         Update configmap from literal, for example: --from-literal name=user
 `-f FROM_FILE, --from-file FROM_FILE`  
