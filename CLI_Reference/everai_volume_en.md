@@ -78,7 +78,7 @@ everai volume delete [-h] [--local] [--cloud] [--all] name
 **Options**:
   * `-h, --help`  show this help message and exit  
   * `--local`     Delete the local cache of volume only  
-  * `--cloud`     Delete the volume in cloud, and reserve local cahce  
+  * `--cloud`     Delete the volume in cloud, and reserve local cache  
   * `--all`       Delete volume both cache and in-cloud  
 
 ## everai volume get                 

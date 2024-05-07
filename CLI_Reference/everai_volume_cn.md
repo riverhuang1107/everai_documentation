@@ -79,9 +79,9 @@ everai volume delete [-h] [--local] [--cloud] [--all] name
 
 **选项**:
   * `-h, --help`  显示帮助信息  
-  * `--local`     Delete the local cache of volume only  
-  * `--cloud`     Delete the volume in cloud, and reserve local cahce  
-  * `--all`       Delete volume both cache and in-cloud  
+  * `--local`     只删除本地的存储对象  
+  * `--cloud`     只删除平台云端的存储对象  
+  * `--all`       同时删除本地和平台云端的存储对象  
 
 ## everai volume get                 
 显示一个存储对象的详细信息  
@@ -123,10 +123,8 @@ everai volume pull [-h] [--force] [--sync] name
 
 **选项**:  
 * `-h, --help`  显示帮助信息  
-* `--force`     Force pull remote volume file to local, if your volume local metadata revision equal remote volume
-              revision, pull will stop, if add `--force`, pull will ignore revision compare  
-* `--sync`      Sync file form remote, if this file local have, but remote not exist, then this local file will be
-              delete. notice: only use argument `--force`, `--sync` will come into effect  
+* `--force`     强制从远端拉取存储对象文件到本地，系统不会比对`metadata`文件版本。如果不加`--force`，如果你本地的`metadata`文件版本和远端的一致，拉取会停止。    
+* `--sync`      从远端同步文件，如果你的文件在本地存在，但在远端已经不存在，同步后这个本地文件会被删除。注意：需要和`--force`一起使用, `--sync`才会生效。    
 
 ## everai volume push                
 从[EverAI](everai.expvent.com)平台拉取一个存储对象到本地  
