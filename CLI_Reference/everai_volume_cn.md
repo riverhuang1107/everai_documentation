@@ -43,7 +43,7 @@ everai volume create [-h] name
 ```bash
 everai volume list
 ```
-The result could be shown like this:  
+用例输出的结果如下所示：  
 
 ```bash
 NAME              REVISION    CREATED_AT                  FILES  SIZE
@@ -90,7 +90,8 @@ everai volume delete [-h] [--local] [--cloud] [--all] name
 ```bash
 everai volume get get-start-volume
 ```
-The result could be shown like this:  
+用例输出的结果如下所示：  
+
 ```bash
 <Volume: id: hupa49MesPXwmhFSy9Ku44, name: get-start-volume, revision: 000001-b9c, files: 1, size: 11 B>
 path: /home/<username>/.cache/everai/volumes/hupa49MesPXwmhFSy9Ku44
