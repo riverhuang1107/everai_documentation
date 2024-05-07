@@ -37,7 +37,7 @@ everai volume create [-h] name
  * `-h, --help`  显示帮助信息
 
 ## everai volume list (ls)           
-List volume  
+显示存储对象列表  
 
 **示例**:
 ```bash
