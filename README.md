@@ -259,9 +259,9 @@ everai app deploy
 ```
 执行`everai app list`后，可以看到类似如下的输出结果。如果你的应用状态是`STATUS_DEPLOYED`，意味着你的应用已经部署成功。    
 ```bash
-NAME         STATUS                       CREATED_AT                ROUTE_NAME
------------  ---------------------------  ------------------------  ------------
-get-start    V1AppStatus.STATUS_DEPLOYED  2024-04-29 15:05:18+0800  got-started
+NAME          STATUS    CREATED_AT                ROUTE_NAME
+------------  --------  ------------------------  ------------
+get-start     DEPLOYED  2024-04-29 15:05:18+0800  got-started
 ```
 当你看到你的应用处于`STATUS_DEPLOYED`时，你可以执行下面的请求来测试你部署的代码是否符合你的预期：  
 ```bash
