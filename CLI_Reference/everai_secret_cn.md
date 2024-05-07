@@ -12,7 +12,7 @@ everai secret [-h] {create,delete,list,ls,get,update} ...
 * `update`              Update the Secret from file or literal string  
 
 **选项**:  
-* `-h, --help`            show this help message and exit  
+* `-h, --help`            显示帮助信息  
 
 ## everai secret create              
 Create Secret from file or literal string  
@@ -30,7 +30,7 @@ everai secret create [-h] [-l FROM_LITERAL] [-f FROM_FILE] name
 ```
 
 **参数**:  
-  * `name`                  The secret name
+  * `name`                  密钥名称
 
 **选项**:  
 * `-h, --help`            显示帮助信息  
@@ -52,13 +52,13 @@ everai secret delete quay-secret
 everai secret delete [-h] name
 ```
 **参数**:  
-  * `name`        The secret name
+  * `name`        密钥名称
 
 **选项**:  
 * `-h, --help`  显示帮助信息  
 
 ## everai secret list (ls)           
-List secret  
+显示密钥列表  
 
 **示例**:
 ```bash  
@@ -95,7 +95,7 @@ everai secret get [-h] [--output [OUTPUT]] name
 ```
 
 **参数**:  
-  * `name`                  The secret name  
+  * `name`                  密钥名称  
 
 **选项**:  
 * `-h, --help`            显示帮助信息  
@@ -117,7 +117,7 @@ everai secret update \
 everai secret update [-h] [-l FROM_LITERAL] [-f FROM_FILE] name
 ```
 **参数**:  
-  * `name`                  The secret name  
+  * `name`                  密钥名称  
 
 **选项**:  
 * `-h, --help`            显示帮助信息  
