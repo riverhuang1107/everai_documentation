@@ -77,7 +77,7 @@ everai app get [-h] name
 ```
 
 **参数**:  
-  * `name`        The app name
+  * `name`        应用名称
 
 **选项**:
 * `-h, --help`  显示帮助信息
@@ -196,7 +196,7 @@ everai app queue [-h] [--output [OUTPUT]] [app_name]
 
 **参数**:  
 
- * `app_name`              The app name
+ * `app_name`              应用名称
 
 **选项**:  
 
