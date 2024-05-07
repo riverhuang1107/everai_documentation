@@ -17,7 +17,7 @@ everai app [-h] {create,run,get,upgrade,pause,deploy,prepare,list,ls,queue,q} ..
   * `queue (q)`           List queue of app  
 
 **选项**:  
-  * `-h, --help`            show this help message and exit
+  * `-h, --help`            显示帮助信息
 
 ## everai app create             
 Create an app  
@@ -41,7 +41,7 @@ everai app create [-h] [--route-name ROUTE_NAME] [name]
   * `name`                  The app name  
 
 **选项**:  
-* `-h, --help`            show this help message and exit  
+* `-h, --help`            显示帮助信息  
 * `--route-name ROUTE_NAME, -r ROUTE_NAME`
                         Globally unique route name. By default, it is same with the app name. Once the application name conflicts, route-name needs to be set explicitly.
 
@@ -59,7 +59,7 @@ everai app run [-h] [--port PORT] [--listen LISTEN]
 ```
 
 **选项**:  
-* `-h, --help`       show this help message and exit
+* `-h, --help`       显示帮助信息
 * `--port PORT`      The port to bind to
 * `--listen LISTEN`  The interface to bind to
 
@@ -80,10 +80,30 @@ everai app get [-h] name
   * `name`        The app name
 
 **选项**:
-* `-h, --help`  show this help message and exit
+* `-h, --help`  显示帮助信息
 
 ## everai app upgrade             
 Upgrade an app  
+
+**示例**:
+```bash
+everai app upgrade --image
+```
+
+**格式**: 
+```bash
+everai app upgrade [-h] [--autoscaling-policy] [--resource-requests] [--volume-requests] [--secret-requests] [--image] [--all]
+```
+
+**选项**:  
+
+  * `-h, --help`            显示帮助信息
+  * `--autoscaling-policy`  Upgrade the autoscaling policy only
+  * `--resource-requests`   Upgrade the resource requests only, this operation will trigger the worker rollout
+  * `--volume-requests`     Upgrade the volume requests only, this operation will trigger the worker rollout
+  * `--secret-requests`     Upgrade the secret requests only, this operation will trigger the worker rollout
+  * `--image`               Upgrade the image only, this operation will trigger the worker rollout
+  * `--all`                 Upgrade all of the settings, this operation will trigger the worker rollout
 
 ## everai app pause               
 Pause an app, all worker will be stopped  
@@ -107,10 +127,10 @@ everai app deploy [-h]
 ```
 
 **选项**:  
-* `-h, --help`  show this help message and exit
+* `-h, --help`  显示帮助信息
 
 ## everai app prepare             
-Prepare an app, all of function which decorated by @app.prepare would be called  
+Prepare an app, all of function which decorated by `@app.prepare` would be called  
 
 **示例**:  
 
@@ -129,7 +149,7 @@ everai app prepare [-h]
 ```
 
 **选项**:  
-* `-h, --help`  show this help message and exit  
+* `-h, --help`  显示帮助信息  
 
 ## everai app list (ls)           
 List all apps  
@@ -151,7 +171,7 @@ everai app list [-h] [--output [OUTPUT]]
 ```
 
 **选项**:  
-* `-h, --help`            show this help message and exit  
+* `-h, --help`            显示帮助信息  
 * `--output [OUTPUT], -o [OUTPUT]`
                         Output format, One of: (json, yaml, table, wide)
 
@@ -180,7 +200,7 @@ everai app queue [-h] [--output [OUTPUT]] [app_name]
 
 **选项**:  
 
- * `-h, --help`            show this help message and exit
+ * `-h, --help`            显示帮助信息
  * `--output [OUTPUT], -o [OUTPUT]`
                         Output format, One of: (json, yaml, table, wide)
                         

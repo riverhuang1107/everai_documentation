@@ -85,6 +85,26 @@ everai app get [-h] name
 ## everai app upgrade             
 Upgrade an app  
 
+**Example**:
+```bash
+everai app upgrade --image
+```
+
+**Usage**: 
+```bash
+everai app upgrade [-h] [--autoscaling-policy] [--resource-requests] [--volume-requests] [--secret-requests] [--image] [--all]
+```
+
+**Options**:  
+
+  * `-h, --help`            show this help message and exit
+  * `--autoscaling-policy`  Upgrade the autoscaling policy only
+  * `--resource-requests`   Upgrade the resource requests only, this operation will trigger the worker rollout
+  * `--volume-requests`     Upgrade the volume requests only, this operation will trigger the worker rollout
+  * `--secret-requests`     Upgrade the secret requests only, this operation will trigger the worker rollout
+  * `--image`               Upgrade the image only, this operation will trigger the worker rollout
+  * `--all`                 Upgrade all of the settings, this operation will trigger the worker rollout
+
 ## everai app pause               
 Pause an app, all worker will be stopped  
 
@@ -110,7 +130,7 @@ everai app deploy [-h]
 * `-h, --help`  show this help message and exit
 
 ## everai app prepare             
-Prepare an app, all of function which decorated by @app.prepare would be called  
+Prepare an app, all of function which decorated by `@app.prepare` would be called  
 
 **Example**:  
 
