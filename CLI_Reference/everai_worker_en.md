@@ -19,19 +19,19 @@ everai worker list <your app name>
 ```
 The result could be shown like this:  
 ```bash 
-ID                      STATUS                               DETAIL_STATUS                                CREATED_AT                DELETED_AT
-----------------------  -----------------------------------  -------------------------------------------  ------------------------  ------------
-RF7crg44K8QoYSzvKQCkhh  V1WorkerWorkerStatus.STATUS_RUNNING  WorkerWorkerDetailStatus.DETAIL_STATUS_FREE  2024-04-29 20:53:40+0800
+ID                      STATUS    DETAIL_STATUS    CREATED_AT                DELETED_AT
+----------------------  --------  ---------------  ------------------------  ------------
+RF7crg44K8QoYSzvKQCkhh  RUNNING   FREE             2024-04-29 20:53:40+0800
 ```
 ```bash
 everai worker list
 ```
 The output for this example is this:  
- 
+
 ```bash
-ID                      STATUS          DETAIL_STATUS       CREATED_AT                DELETED_AT
-----------------------  --------------  ------------------  ------------------------  ------------
-KFZtizCb6eR3E2RTvivzmP  STATUS_RUNNING  DETAIL_STATUS_FREE  2024-05-07 12:36:29+0800
+ID                      STATUS    DETAIL_STATUS    CREATED_AT                DELETED_AT
+----------------------  --------  ---------------  ------------------------  ------------
+KFZtizCb6eR3E2RTvivzmP  RUNNING   FREE             2024-05-07 12:36:29+0800
 ```
 **Usage**:  
 ```bash  

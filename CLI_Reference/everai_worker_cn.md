@@ -19,9 +19,9 @@ everai worker list <your app name>
 ```
 用例输出的结果如下所示：  
 ```bash 
-ID                      STATUS                               DETAIL_STATUS                                CREATED_AT                DELETED_AT
-----------------------  -----------------------------------  -------------------------------------------  ------------------------  ------------
-RF7crg44K8QoYSzvKQCkhh  V1WorkerWorkerStatus.STATUS_RUNNING  WorkerWorkerDetailStatus.DETAIL_STATUS_FREE  2024-04-29 20:53:40+0800
+ID                      STATUS    DETAIL_STATUS    CREATED_AT                DELETED_AT
+----------------------  --------  ---------------  ------------------------  ------------
+RF7crg44K8QoYSzvKQCkhh  RUNNING   FREE             2024-04-29 20:53:40+0800
 ```
 如果不输入应用名称，则会显示当前应用目录下该应用的worker列表。  
 
@@ -31,9 +31,9 @@ everai worker list
 用例输出的结果如下所示：  
 
 ```bash
-ID                      STATUS          DETAIL_STATUS       CREATED_AT                DELETED_AT
-----------------------  --------------  ------------------  ------------------------  ------------
-KFZtizCb6eR3E2RTvivzmP  STATUS_RUNNING  DETAIL_STATUS_FREE  2024-05-07 12:36:29+0800
+ID                      STATUS    DETAIL_STATUS    CREATED_AT                DELETED_AT
+----------------------  --------  ---------------  ------------------------  ------------
+KFZtizCb6eR3E2RTvivzmP  RUNNING   FREE             2024-05-07 12:36:29+0800
 ```
 **格式**:  
 ```bash  
