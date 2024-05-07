@@ -11,4 +11,4 @@ everai login [-h] --token TOKEN
 
 **选项**:  
  * `-h, --help`     显示帮助信息  
- * `--token` TOKEN  Get token from everai  
+ * `--token TOKEN`  从[EverAI](everai.expvent.com)获取到TOKEN  
