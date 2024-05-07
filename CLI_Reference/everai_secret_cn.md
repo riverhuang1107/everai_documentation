@@ -5,17 +5,17 @@ everai secret [-h] {create,delete,list,ls,get,update} ...
 ```
 
 **命令**:  
-* `create`              Create Secret from file or literal string  
-* `delete`              Delete secret  
-* `list (ls)`           List secret  
-* `get`                 Get secret  
-* `update`              Update the Secret from file or literal string  
+* `create`              从文件或者字符串创建密钥 
+* `delete`              删除密钥 
+* `list (ls)`           显示密钥列表 
+* `get`                 根据密钥名称查询密钥 
+* `update`              从文件或者字符串更新密钥 
 
 **选项**:  
 * `-h, --help`            显示帮助信息  
 
 ## everai secret create              
-Create Secret from file or literal string  
+从文件或者字符串创建密钥
 
 **示例**:  
 ```bash  
@@ -35,12 +35,12 @@ everai secret create [-h] [-l FROM_LITERAL] [-f FROM_FILE] name
 **选项**:  
 * `-h, --help`            显示帮助信息  
 * `-l FROM_LITERAL, --from-literal FROM_LITERAL`
-                        Create secret from literal, for example: --from-literal name=user  
+                        从字符串创建密钥，举例：`--from-literal name=user` 
 * `-f FROM_FILE, --from-file FROM_FILE`
-                        Create secret from file, for example: --from-file filename  
+                        通过文件创建密钥，举例：`--from-file filename`  
 
 ## everai secret delete              
-Delete secret  
+删除密钥
 
 **示例**:  
 ```bash
@@ -83,7 +83,7 @@ everai secret list [-h] [--output [OUTPUT]]
                         输出格式，可选（json, yaml, table, wide）
 
 ## everai secret get                 
-Get secret  
+根据密钥名称查询密钥
 
 **示例**:
 ```bash  
@@ -103,7 +103,7 @@ everai secret get [-h] [--output [OUTPUT]] name
                         输出格式，可选（json, yaml, table, wide）  
 
 ## everai secret update              
-Update the Secret from file or literal string  
+从文件或者字符串更新密钥  
 
 **示例**:  
 ```bash
@@ -122,8 +122,7 @@ everai secret update [-h] [-l FROM_LITERAL] [-f FROM_FILE] name
 **选项**:  
 * `-h, --help`            显示帮助信息  
 * `-l FROM_LITERAL, --from-literal FROM_LITERAL`
-                        Create secret from literal, for example: --from-literal name=user  
+                        通过字符串更新密钥，举例：`--from-literal name=user`  
 * `-f FROM_FILE, --from-file FROM_FILE`
-                        Create secret from file, for example: --from-file filename, file is yaml for simply key value,
-                        all value should be string  
+                        通过文件更新密钥，举例：`--from-file filename`  
 

@@ -35,9 +35,9 @@ everai secret create [-h] [-l FROM_LITERAL] [-f FROM_FILE] name
 **Options**:  
 * `-h, --help`            show this help message and exit  
 * `-l FROM_LITERAL, --from-literal FROM_LITERAL`
-                        Create secret from literal, for example: --from-literal name=user  
+                        Create secret from literal, for example: `--from-literal name=user`  
 * `-f FROM_FILE, --from-file FROM_FILE`
-                        Create secret from file, for example: --from-file filename  
+                        Create secret from file, for example: `--from-file filename`  
 
 ## everai secret delete              
 Delete secret  
@@ -122,8 +122,8 @@ everai secret update [-h] [-l FROM_LITERAL] [-f FROM_FILE] name
 **Options**:  
 * `-h, --help`            show this help message and exit  
 * `-l FROM_LITERAL, --from-literal FROM_LITERAL`
-                        Create secret from literal, for example: --from-literal name=user  
+                        Create secret from literal, for example: `--from-literal name=user`  
 * `-f FROM_FILE, --from-file FROM_FILE`
-                        Create secret from file, for example: --from-file filename, file is yaml for simply key value,
+                        Create secret from file, for example: `--from-file filename`, file is yaml for simply key value,
                         all value should be string  
 
