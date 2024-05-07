@@ -17,6 +17,23 @@ everai volume [-h] {create,list,ls,delete,get,pull,push} ...
 
 ## everai volume create              
 Create volume  
+
+**Example**:  
+```bash
+everai volume create test-volume
+```
+
+**Usage**:  
+```bash
+everai volume create [-h] name
+```
+
+**Positional arguments**:
+  * `name`        The volume name 
+
+**Options**:
+  * `-h, --help`  show this help message and exit 
+
 ## everai volume list (ls)           
 List volume  
 
