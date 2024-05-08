@@ -99,12 +99,12 @@ everai app upgrade [-h] [--autoscaling-policy] [--resource-requests] [--volume-r
 **选项**:  
 
   * `-h, --help`            显示帮助信息
-  * `--autoscaling-policy`  Upgrade the autoscaling policy only
-  * `--resource-requests`   Upgrade the resource requests only, this operation will trigger the worker rollout
-  * `--volume-requests`     Upgrade the volume requests only, this operation will trigger the worker rollout
-  * `--secret-requests`     Upgrade the secret requests only, this operation will trigger the worker rollout
-  * `--image`               Upgrade the image only, this operation will trigger the worker rollout
-  * `--all`                 Upgrade all of the settings, this operation will trigger the worker rollout
+  * `--autoscaling-policy`  只更新自动扩缩容策略
+  * `--resource-requests`   只更新资源请求，这个选项会引起worker重新部署
+  * `--volume-requests`     只更新存储对象请求，这个选项会引起worker重新部署
+  * `--secret-requests`     只更新密钥请求，这个选项会引起worker重新部署
+  * `--image`               只更新镜像请求，这个选项会引起worker重新部署
+  * `--all`                 更新所有设置，这个选项会引起worker重新部署
 
 ## everai app pause               
 停止应用，所有的worker都会停止  
