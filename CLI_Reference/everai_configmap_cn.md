@@ -6,17 +6,17 @@ everai configmap [-h] {create,delete,list,ls,get,update} ...
 
 **命令**:  
 
-* `create`              Create ConfigMap from file or literal string  
-* `delete`              Delete configmap  
-* `list (ls)`           List configmaps  
-* `get`                 Get configmap  
-* `update`              Update ConfigMap from file or literal string  
+* `create`              通过文件或者字符串创建ConfigMap  
+* `delete`              删除ConfigMap  
+* `list (ls)`           显示ConfigMap列表  
+* `get`                 显示一个ConfigMap的详细信息  
+* `update`              通过文件或者字符串更新ConfigMap  
 
 **选项**:  
 * `-h, --help`            显示帮助信息  
  
 ## everai configmap create              
-Create ConfigMap from file or literal string  
+通过文件或者字符串创建ConfigMap  
 
 **示例**:  
 ```bash  
@@ -29,17 +29,17 @@ everai configmap create [-h] [-l FROM_LITERAL] [-f FROM_FILE] name
 ```
 
 **参数**:  
-  * `name`                  The configmap name
+  * `name`                  ConfigMap名称
 
 **选项**:  
 * `-h, --help`            显示帮助信息  
 * `-l FROM_LITERAL, --from-literal FROM_LITERAL`
-                        Create configmap from literal, for example: --from-literal name=user  
+                        从字符串创建ConfigMap，举例：`--from-literal name=user`  
 * `-f FROM_FILE, --from-file FROM_FILE`
-                        Create configmap from file, for example: --from-file filename  
+                        通过文件创建ConfigMap，举例：`--from-file filename`  
 
 ## everai configmap delete              
-Delete configmap  
+删除ConfigMap  
 
 **示例**:  
 ```bash
@@ -51,13 +51,13 @@ everai configmap delete [-h] name
 ```
 
 **参数**:  
-  * `name`        The configmap name
+  * `name`        ConfigMap名称
 
 **选项**:
 * `-h, --help`  显示帮助信息
 
 ## everai configmap list (ls)           
-List configmaps  
+显示ConfigMap列表  
 
 **示例**:  
 ```bash
@@ -80,7 +80,7 @@ everai configmap list [-h] [--output [OUTPUT]]
                         输出格式，可选（json, yaml, table, wide），默认为table  
 
 ## everai configmap get                 
-Get configmap  
+显示一个ConfigMap的详细信息  
 
 **示例**:  
 ```bash  
@@ -93,7 +93,7 @@ everai configmap get [-h] [--output [OUTPUT]] name
 ```
 
 **参数**:  
-  * `name`                  The configmap name
+  * `name`                  ConfigMap名称
 
 **选项**:  
 * `-h, --help`            显示帮助信息  
@@ -101,7 +101,7 @@ everai configmap get [-h] [--output [OUTPUT]] name
                         输出格式，可选（json, yaml, table, wide），默认为table
 
 ## everai configmap update              
-Update ConfigMap from file or literal string  
+通过文件或者字符串更新ConfigMap  
 
 **示例**:  
 ```bash  
@@ -118,11 +118,12 @@ everai configmap update [-h] [-l FROM_LITERAL] [-f FROM_FILE] name
 ```
 
 **参数**:  
-  * `name`                  The configmap name
+  * `name`                  ConfigMap名称
 
 **选项**:  
 * `-h, --help`            显示帮助信息  
 * `-l FROM_LITERAL, --from-literal FROM_LITERAL`  
-                        Update configmap from literal, for example: --from-literal name=user
-`-f FROM_FILE, --from-file FROM_FILE`  
-                        Update configmap from file, for example: --from-file filename
+                        通过字符串更新ConfigMap，举例：`--from-literal name=user`  
+
+* `-f FROM_FILE, --from-file FROM_FILE`  
+                        通过文件更新ConfigMap，举例：`--from-file filename`  

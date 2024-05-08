@@ -34,9 +34,9 @@ everai configmap create [-h] [-l FROM_LITERAL] [-f FROM_FILE] name
 **Options**:  
 * `-h, --help`            show this help message and exit  
 * `-l FROM_LITERAL, --from-literal FROM_LITERAL`
-                        Create configmap from literal, for example: --from-literal name=user  
+                        Create configmap from literal, for example: `--from-literal name=user`  
 * `-f FROM_FILE, --from-file FROM_FILE`
-                        Create configmap from file, for example: --from-file filename  
+                        Create configmap from file, for example: `--from-file filename`  
 
 ## everai configmap delete              
 Delete configmap  
@@ -123,6 +123,6 @@ everai configmap update [-h] [-l FROM_LITERAL] [-f FROM_FILE] name
 **Options**:  
 * `-h, --help`            show this help message and exit  
 * `-l FROM_LITERAL, --from-literal FROM_LITERAL`  
-                        Update configmap from literal, for example: --from-literal name=user
-`-f FROM_FILE, --from-file FROM_FILE`  
-                        Update configmap from file, for example: --from-file filename
+                        Update configmap from literal, for example: `--from-literal name=user`
+* `-f FROM_FILE, --from-file FROM_FILE`  
+                        Update configmap from file, for example: `--from-file filename`
