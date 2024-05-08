@@ -122,7 +122,5 @@ everai configmap update [-h] [-l FROM_LITERAL] [-f FROM_FILE] name
 
 **Options**:  
 * `-h, --help`            show this help message and exit  
-* `-l FROM_LITERAL, --from-literal FROM_LITERAL`  
-                        Update configmap from literal, for example: `--from-literal name=user`
-* `-f FROM_FILE, --from-file FROM_FILE`  
-                        Update configmap from file, for example: `--from-file filename`
+* `-l FROM_LITERAL, --from-literal FROM_LITERAL`  Update configmap from literal, for example: `--from-literal name=user`
+* `-f FROM_FILE, --from-file FROM_FILE`  Update configmap from file, for example: `--from-file filename`

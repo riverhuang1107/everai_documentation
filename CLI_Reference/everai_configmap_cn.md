@@ -122,8 +122,5 @@ everai configmap update [-h] [-l FROM_LITERAL] [-f FROM_FILE] name
 
 **选项**:  
 * `-h, --help`            显示帮助信息  
-* `-l FROM_LITERAL, --from-literal FROM_LITERAL`  
-                        通过字符串更新ConfigMap，举例：`--from-literal name=user`  
-
-* `-f FROM_FILE, --from-file FROM_FILE`  
-                        通过文件更新ConfigMap，举例：`--from-file filename`  
+* `-l FROM_LITERAL, --from-literal FROM_LITERAL`  通过字符串更新ConfigMap，举例：`--from-literal name=user`  
+* `-f FROM_FILE, --from-file FROM_FILE`  通过文件更新ConfigMap，举例：`--from-file filename`  
