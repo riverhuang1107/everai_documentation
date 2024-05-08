@@ -18,21 +18,21 @@ everai volume [-h] {create,list,ls,delete,get,pull,push} ...
 ## everai volume create              
 创建一个存储对象  
 
-**Example**:  
+**示例**:  
 ```bash
 everai volume create test-volume
 ```
 
-**Usage**:  
+**格式**:  
 ```bash
 everai volume create [-h] name
 ```
 
-**Positional arguments**:  
+**参数**:  
 
   * `name`        存储对象名称
 
-**Options**:  
+**选项**:  
 
  * `-h, --help`  显示帮助信息
 
@@ -74,7 +74,7 @@ everai volume delete get-start-volume --all
 everai volume delete [-h] [--local] [--cloud] [--all] name
 ```
 
-**Positional arguments**:
+**参数**:
   * `name`        存储对象名称
 
 **选项**:
