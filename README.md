@@ -180,6 +180,9 @@ app = App(
 import time
 import flask
 
+# curl --no-buffer http://localhost:8866/sse
+# curl --no-buffer http://127.0.0.1:8866/sse
+# curl --no-buffer http://<your ip>:8866/sse
 @app.service.route('/sse', methods=['GET'])
 def sse():
     def generator():
@@ -269,8 +272,6 @@ get-start     DEPLOYED  2024-04-29 15:05:18+0800  got-started
 当你看到你的应用处于`STATUS_DEPLOYED`时，你可以执行下面的请求来测试你部署的代码是否符合你的预期：  
 ```bash
 curl --no-buffer -H'Authorization: Bearer <your_token>' https://everai.expvent.com/api/apps/v1/routes/<your app route name>/sse
-
-curl -X POST -H'Content-Type: application/json' -H'Authorization: Bearer <your_token>' https://everai.expvent.com/api/apps/v1/routes/<your app route name>/txt2img/jone -d '{"prompt": "say hello to"}'
 ```
 
 ## 开源协议
