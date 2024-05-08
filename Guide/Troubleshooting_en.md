@@ -25,6 +25,14 @@ When you run command in EverAI CLI like `everai app list`, the output shows erro
 ```
 This issue can pop up with macOS installations of Python. If you look in `Applications` > `Python 3.12` there's a script called `Install Certificates.command`. Running that often fixes this issue.
 
+## “Route path exist” error
+When you run command `everai app create`，the output shows the error like: `Route path exist`, you can change a app name, or set a new route name to solve this problem.
+```bash
+everai app create <your app name> --route-name <your app route name>
+```
+Globally unique route name. By default, it is same with the app name. Once the application name conflicts, route-name needs to be set explicitly.  
+
+
 ## Docker image build 401 UNAUTHORIZED error
 When you run command everai image build，the output shows the error like: `401 UNAUTHORIZED\nERRoR: failed to solve: failed to push`, you should run command `docker login` to login the docker image repository, this example shows the command to login `quay.io`.  
 ```bash
