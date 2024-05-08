@@ -194,6 +194,7 @@ Now, you could test in your local machine will following command.
 ```bash
 everai app run
 ```
+If you serve this web endpoint and hit it with `curl`, you will see the ten `SSE`(Server-Sent Events) events progressively appear in your terminal over a 10 second period.  
 
 ## Prepare volume
 Before your application is deployed in the cloud, you should construct your volume first, if your app uses at least one volume.  
