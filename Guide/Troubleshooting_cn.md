@@ -26,4 +26,12 @@ python -m site --user-site
 ```
 出现这个问题的原因是你的本地环境是macOS，并且使用了dmg软件包安装了Python环境。如果你在`应用程序`目录下存在`Python 3.12`文件夹，文件夹中有一个名为`Install Certificates.command`的脚本文件，运行安装这个文件后，再次执行EverAI CLI的命令，上述问题可以解决。
 
+## Docker image build 401 UNAUTHORIZED error
+执行`everai image build`命令时，如果出现类似`401 UNAUTHORIZED\nERRoR: failed to solve: failed to push`的错误提示，你需要执行`docker login`命令登录到docker镜像仓库，这里的示例是登录到`quay.io`镜像仓库。  
+
+```bash
+docker login quay.io
+```
+
+
 
