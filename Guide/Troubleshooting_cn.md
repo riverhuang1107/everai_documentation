@@ -43,7 +43,7 @@ docker login quay.io
 ```
 
 ## “Could not find a version that satisfies the requirement everai~=0.1.36” error
-执行`everai image build`命令时，如果出现类似`Could not find a version that satisfies the requirement everai~=0.1.36`的错误提示信息，说明在构建镜像时，不能找到在`requirement.txt`文件中指定版本的软件包。你可以执行命令`everai version`得到当前运行的everai CLI版本信息，然后更新`requirements.txt`。或者执行下面的命令重新生成`requirements.txt`.
+执行`everai image build`命令时，如果出现类似`Could not find a version that satisfies the requirement everai~=0.1.36`的错误提示信息，说明在构建镜像时，不能找到在`requirements.txt`文件中指定版本的软件包。你可以执行命令`everai version`得到当前运行的everai CLI版本信息，然后更新`requirements.txt`。或者执行下面的命令重新生成`requirements.txt`.
 
 ```bash
 pip install pipreqs
