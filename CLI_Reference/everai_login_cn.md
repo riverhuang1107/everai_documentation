@@ -1,5 +1,6 @@
 # everai login
-登录，如果你没有token，请访问[EverAI](everai.expvent.com)
+登录，如果你没有token，请访问[EverAI](everai.expvent.com)  
+
 **示例**:  
 ```bash
 everai login --token <your token>  
