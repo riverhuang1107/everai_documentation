@@ -1,4 +1,6 @@
 # everai logout
+登出  
+
 **示例**:  
 ```bash
 everai logout

@@ -1,4 +1,6 @@
 # everai app
+Manage app  
+
 **Usage**:   
 ```bash
 everai app [-h] {create,run,get,upgrade,pause,deploy,prepare,list,ls,queue,q} ...

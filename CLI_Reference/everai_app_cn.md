@@ -1,4 +1,6 @@
 # everai app
+应用管理  
+
 **格式**:   
 ```bash
 everai app [-h] {create,run,get,upgrade,pause,deploy,prepare,list,ls,queue,q} ...

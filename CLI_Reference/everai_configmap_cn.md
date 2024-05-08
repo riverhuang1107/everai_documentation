@@ -1,4 +1,6 @@
 # everai configmap
+ConfigMap管理  
+
 **格式**:  
 ```bash
 everai configmap [-h] {create,delete,list,ls,get,update} ...

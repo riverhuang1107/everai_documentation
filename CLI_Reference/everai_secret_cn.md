@@ -1,4 +1,6 @@
 # everai secret
+管理密钥  
+
 **格式**:  
 ```bash
 everai secret [-h] {create,delete,list,ls,get,update} ...

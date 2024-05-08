@@ -1,4 +1,6 @@
 # everai image
+Image management  
+
 **Usage**:  
 ```bash
 everai image [-h] {build} ...

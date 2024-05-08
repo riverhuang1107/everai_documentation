@@ -1,4 +1,6 @@
 # everai worker
+Manage the worker of app  
+
 **Usage**:   
 ```bash 
 everai worker [-h] {list,ls} ...  

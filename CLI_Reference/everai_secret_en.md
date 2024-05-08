@@ -1,4 +1,6 @@
 # everai secret
+Manage secrets  
+
 **Usage**:  
 ```bash
 everai secret [-h] {create,delete,list,ls,get,update} ...

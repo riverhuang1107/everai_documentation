@@ -1,4 +1,6 @@
 # everai worker
+管理应用的worker  
+
 **格式**:   
 ```bash 
 everai worker [-h] {list,ls} ...  

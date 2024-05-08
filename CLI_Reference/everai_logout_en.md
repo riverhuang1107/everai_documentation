@@ -1,4 +1,6 @@
 # everai logout
+Logout  
+
 **Example**:  
 ```bash
 everai logout

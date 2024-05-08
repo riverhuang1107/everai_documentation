@@ -1,4 +1,6 @@
 # everai volume
+管理存储对象  
+
 **格式**:  
 ```bash  
 everai volume [-h] {create,list,ls,delete,get,pull,push} ...

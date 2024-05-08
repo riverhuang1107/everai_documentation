@@ -1,4 +1,6 @@
 # everai configmap
+Manage configmaps  
+
 **Usage**:  
 ```bash
 everai configmap [-h] {create,delete,list,ls,get,update} ...
