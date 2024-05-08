@@ -99,18 +99,21 @@ pip uninstall everai
 
 ## 创建应用
 ### 文件目录结构
-在[EverAI](everai.expvent.com)平台创建应用前，首先要为应用创建一个文件夹，一般以你的应用名称命名。一个EverAI应用必须至少由以下三个文件构成：  
+在[EverAI](everai.expvent.com)平台创建应用前，首先要为应用创建一个文件夹，一般以你的应用名称命名。一个EverAI应用必须至少由以下四个文件构成：  
 * **`Dockerfile`** 用来构建镜像的文本文件，文本内容包含了构建镜像所需的指令和操作命令。  
 
 * **`app.py`** 对外提供应用服务的代码文件。  
 
 * **`image_builder.py`** 构建镜像的配置文件。  
 
+* **`requirements.txt`** 文件定义了运行Python应用的依赖包以及对应软件版本。
+
 ```bash
 <your app name>
 ├── Dockerfile
 ├── app.py
-└── image_builder.py
+├── image_builder.py
+└── requirements.txt
 ```
 
 ### 创建第一个应用
