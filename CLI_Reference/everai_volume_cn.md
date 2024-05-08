@@ -108,7 +108,7 @@ everai volume get [-h] name
 * `-h, --help`  显示帮助信息
 
 ## everai volume pull                
-推送一个存储对象到[EverAI](everai.expvent.com)平台
+从[EverAI](everai.expvent.com)平台拉取一个存储对象到本地
 
 **示例**:  
 ```bash
@@ -128,7 +128,7 @@ everai volume pull [-h] [--force] [--sync] name
 * `--sync`      从远端同步文件，如果你的文件在本地存在，但在远端已经不存在，同步后这个本地文件会被删除。注意：需要和`--force`一起使用, `--sync`才会生效。    
 
 ## everai volume push                
-从[EverAI](everai.expvent.com)平台拉取一个存储对象到本地  
+推送一个存储对象到[EverAI](everai.expvent.com)平台  
 
 **示例**:  
 ```bash
