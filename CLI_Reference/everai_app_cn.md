@@ -5,22 +5,21 @@ everai app [-h] {create,run,get,upgrade,pause,deploy,prepare,list,ls,queue,q} ..
 ```
 
 **命令**:  
-  * `create`              Create an app  
-  * `run`                 Local run a everai application for test  
-  * `get`                 Get app information  
-  * `upgrade`             Upgrade an app  
-  * `pause`               Pause an app, all worker will be stopped  
-  * `deploy`              Deploy an app to serving status  
-  * `pause`               Pause an app, all worker will be stopped  
-  * `prepare`             Prepare an app, all of function which decorated by `@app.prepare` would be called  
-  * `list (ls)`           List all apps  
-  * `queue (q)`           List queue of app  
+  * `create`              创建一个应用  
+  * `run`                 在本地环境运行应用进行测试  
+  * `get`                 获取一个应用的信息  
+  * `upgrade`             升级应用  
+  * `pause`               停止应用，所有的worker都会停止  
+  * `deploy`              部署应用到可用状态  
+  * `prepare`             准备应用，所有被`@app.prepare`注解的方法都会被执行  
+  * `list (ls)`           显示应用列表  
+  * `queue (q)`           显示应用队列  
 
 **选项**:  
   * `-h, --help`            显示帮助信息
 
 ## everai app create             
-Create an app  
+创建一个应用  
 
 **示例**:
 ```bash
@@ -46,7 +45,7 @@ everai app create [-h] [--route-name ROUTE_NAME] [name]
                         Globally unique route name. By default, it is same with the app name. Once the application name conflicts, route-name needs to be set explicitly.
 
 ## everai app run                 
-Local run a everai application for test  
+在本地环境运行应用进行测试  
 
 **示例**:
 ```bash
@@ -64,7 +63,7 @@ everai app run [-h] [--port PORT] [--listen LISTEN]
 * `--listen LISTEN`  The interface to bind to
 
 ## everai app get                 
-Get app information  
+获取一个应用的信息  
 
 **示例**:
 ```bash
@@ -83,7 +82,7 @@ everai app get [-h] name
 * `-h, --help`  显示帮助信息
 
 ## everai app upgrade             
-Upgrade an app  
+升级应用  
 
 **示例**:
 ```bash
@@ -106,10 +105,10 @@ everai app upgrade [-h] [--autoscaling-policy] [--resource-requests] [--volume-r
   * `--all`                 Upgrade all of the settings, this operation will trigger the worker rollout
 
 ## everai app pause               
-Pause an app, all worker will be stopped  
+停止应用，所有的worker都会停止  
 
 ## everai app deploy              
-Deploy an app to serving status  
+部署应用到可用状态  
 
 **示例**:  
 ```bash
@@ -130,15 +129,16 @@ everai app deploy [-h]
 * `-h, --help`  显示帮助信息
 
 ## everai app prepare             
-Prepare an app, all of function which decorated by `@app.prepare` would be called  
+准备应用，所有被@app.prepare注解的方法都会被执行    
 
 **示例**:  
 
-Before your application is deployed in the cloud, you should construct your volume first, if your app uses at least one volume.  
+ 如果你的应用需要用到文件对象存储，那么在你的应用部署到云环境之前，你需要先创建一个对象存储。  
 
-For production environment, the volumes are very important, you could call the following command to prepare it.  
+在生产环境，对象存储是非常重要的，你可以通过下面的命令准备它。  
 
-This command line will call all functions which are decorated by `@app.prepare`, in these functions you should set up volume data before the app use it.  
+这句命令会执行所有被`@app.prepare`注解过的方法，在这些方法中你应该配置好文件数据。  
+
 ```bash
 everai app prepare
 ```
@@ -152,7 +152,7 @@ everai app prepare [-h]
 * `-h, --help`  显示帮助信息  
 
 ## everai app list (ls)           
-List all apps  
+显示应用列表  
 
 **示例**:
 ```bash
@@ -176,7 +176,7 @@ everai app list [-h] [--output [OUTPUT]]
                         输出格式，可选（json, yaml, table, wide），默认为table
 
 ## everai app queue (q)           
-List queue of app  
+显示应用队列  
 
 **示例**:  
 ```bash
