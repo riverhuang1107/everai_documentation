@@ -9,8 +9,8 @@ everai volume [-h] {create,list,ls,delete,get,pull,push} ...
 * `list (ls)`           显示存储对象列表  
 * `delete`              删除一个存储对象  
 * `get`                 显示一个存储对象的详细信息  
-* `pull`                推送一个存储对象到[EverAI](everai.expvent.com)平台  
-* `push`                从[EverAI](everai.expvent.com)平台拉取一个存储对象到本地  
+* `pull`                从[EverAI](everai.expvent.com)平台拉取一个存储对象到本地  
+* `push`                推送一个存储对象到[EverAI](everai.expvent.com)平台  
 
 **选项**:  
 * `-h, --help`            显示帮助信息
