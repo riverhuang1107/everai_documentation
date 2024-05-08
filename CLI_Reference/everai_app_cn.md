@@ -158,7 +158,7 @@ everai app prepare [-h]
 ```bash
 everai app list
 ```
-The result could be shown like this:  
+用例输出的结果如下所示：    
 ```bash
 NAME          STATUS    CREATED_AT                ROUTE_NAME
 ------------  --------  ------------------------  ------------
