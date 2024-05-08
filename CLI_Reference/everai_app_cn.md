@@ -114,7 +114,7 @@ everai app upgrade [-h] [--autoscaling-policy] [--resource-requests] [--volume-r
 ```bash
  everai app deploy
 ```
-After running `everai app list`, you can see your app's status. If status is `DEPLOYED`, it means that your app is deployed successfully.   
+执行`everai app list`后，可以看到类似如下的输出结果。如果你的应用状态是`DEPLOYED`，意味着你的应用已经部署成功。   
 ```bash
 NAME          STATUS    CREATED_AT                ROUTE_NAME
 ------------  --------  ------------------------  ------------
