@@ -187,7 +187,7 @@ import flask
 def sse():
     def generator():
         for i in range(10):
-            yield f"hello again {i}"
+            yield f"hello again {i}\n\n"
             time.sleep(1)
 
     return flask.Response(generator(), mimetype='text/event-stream')

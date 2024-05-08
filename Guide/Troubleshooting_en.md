@@ -38,4 +38,12 @@ When you run command everai image build，the output shows the error like: `401 
 ```bash
 docker login quay.io
 ```
+## “Could not find a version that satisfies the requirement everai~=0.1.36” error
+When you run command `everai image build`，the output shows the error like: `Could not find a version that satisfies the requirement everai~=0.1.36`. It means that the package version in `requirements.txt` does not exist when building the image. You can run the command `everai version` to get the current version, then update the `requirements.txt`. Or run the following command to generate `requirements` automatically.  
+
+```bash
+pip install pipreqs
+pipreqs .
+```
+
 
