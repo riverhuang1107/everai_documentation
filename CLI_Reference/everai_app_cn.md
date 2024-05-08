@@ -44,7 +44,7 @@ everai app create [-h] [--route-name ROUTE_NAME] [name]
 **选项**:  
 * `-h, --help`            显示帮助信息  
 * `--route-name ROUTE_NAME, -r ROUTE_NAME`
-                        Globally unique route name. By default, it is same with the app name. Once the application name conflicts, route-name needs to be set explicitly.
+                        路由名称全局唯一。一般来说，路由名称与应用名称相同。如果你指定的应用名称系统中已存在，你需要指定一个新的路由名称。
 
 ## everai app run                 
 在本地环境运行应用进行测试  
@@ -184,7 +184,8 @@ everai app list [-h] [--output [OUTPUT]]
 ```bash
 everai app queue <your app name>
 ```
-The output for this example is this: 
+用例输出的结果如下所示：  
+
 ```bash
   QUEUE_INDEX  CREATE_AT                 QUEUE_REASON
 -------------  ------------------------  --------------
