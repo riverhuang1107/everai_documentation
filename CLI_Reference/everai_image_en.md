@@ -27,7 +27,7 @@ IMAGE = 'quay.io/<username>/<repo>:<tag>'
 ```
 The dependence of building image is docker and buildx installed on your machine. Otherwise we will have further prompts to help you install them.  
 ```bash
-docker login quary.io  
+docker login quay.io  
 
 docker buildx version
 ```

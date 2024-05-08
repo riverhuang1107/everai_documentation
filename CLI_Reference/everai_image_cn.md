@@ -29,7 +29,7 @@ IMAGE = 'quay.io/<username>/<repo>:<tag>'
 首先确保你的docker环境处于登录状态，以及你已经安装了docker buildx插件。  
 
 ```bash
-docker login quary.io  
+docker login quay.io  
 
 docker buildx version
 ```
