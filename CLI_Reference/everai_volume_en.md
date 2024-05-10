@@ -47,9 +47,10 @@ everai volume list
 The result could be shown like this:  
 
 ```bash
-NAME              REVISION    CREATED_AT                  FILES  SIZE
-----------------  ----------  ------------------------  -------  ------
-get-start-volume  000001-084  2024-04-29 15:41:34+0800        1  11 B
+NAME               REVISION    CREATED_AT                  FILES  SIZE    STATUS
+-----------------  ----------  ------------------------  -------  ------  --------
+demo-volume        000000-000  2024-05-10 14:10:25+0800        0  0 B     Public
+get-start-volume   000001-08a  2024-05-10 11:57:41+0800        1  11 B    Private
 ```
 
 **Usage**:
