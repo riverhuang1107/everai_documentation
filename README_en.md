@@ -29,14 +29,14 @@ Read and write data to highly-performant distributed file systems.
 EverAI CLI library requires Python 3.10+.  
 
 ### EverAI
-To continue with this quick start, you'll need access to the following from [EverAI](everai.expvent.com):  
+To continue with this quick start, you'll need access to the following from [EverAI](https://everai.expvent.com):  
 * **EverAI account**  
 
-  Create an account at [EverAI](everai.expvent.com).  
+  Create an account at [EverAI](https://everai.expvent.com).  
 
 * **EverAI Token**  
 
-  Get your account Token from [EverAI](everai.expvent.com).  
+  Get your account Token from [EverAI](https://everai.expvent.com).  
 
 ### Docker
 To build your Docker image, you'll need access to the following:  
@@ -95,7 +95,7 @@ pip uninstall everai
 
 ## Create an app
 ### File and folder structure
-Before creating app In [EverAI](everai.expvent.com), firstly you should create a folder which is named by your app name generally. A EverAI app must includes the following four files at least:  
+Before creating app In [EverAI](https://everai.expvent.com), firstly you should create a folder which is named by your app name generally. A EverAI app must includes the following four files at least:  
 
 * **`Dockerfile`** This is the text file which is used to build docker image, and it includes series of instructions and commands used to build image.  
 
@@ -114,7 +114,7 @@ Before creating app In [EverAI](everai.expvent.com), firstly you should create a
 ```
 
 ### Create your first app
-In your app directory, you should login by token you got in [EverAI](everai.expvent.com). After login successfully, run command `everai app create` to create your app.  
+In your app directory, you should login by token you got in [EverAI](https://everai.expvent.com). After login successfully, run command `everai app create` to create your app.  
 ```bash
 everai login --token <your token>
 
@@ -126,7 +126,7 @@ Secrets are a secure way to add credentials and other sensitive information to t
 
 This step is optional, depending on whether the model and Docker image require security certification.  
 
-You can create and edit secrets on [EverAI](everai.expvent.com), or programmatically from Python code.  
+You can create and edit secrets on [EverAI](https://everai.expvent.com), or programmatically from Python code.  
 
 In this case, we will create one secret for [quay.io](https://quay.io/) . 
 ```bash
@@ -254,7 +254,7 @@ everai image build
 ```
 
 ## Deploy image
-The final step is to deploy your app to [EverAI](everai.expvent.com) and keep it running.
+The final step is to deploy your app to [EverAI](https://everai.expvent.com) and keep it running.
 ```bash
 everai app deploy  
 ```

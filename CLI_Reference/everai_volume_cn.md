@@ -11,8 +11,9 @@ everai volume [-h] {create,list,ls,delete,get,pull,push} ...
 * `list (ls)`           显示存储对象列表  
 * `delete`              删除一个存储对象  
 * `get`                 显示一个存储对象的详细信息  
-* `pull`                从[EverAI](everai.expvent.com)平台拉取一个存储对象到本地  
-* `push`                推送一个存储对象到[EverAI](everai.expvent.com)平台  
+* `pull`                从[EverAI](https://everai.expvent.com)平台拉取一个存储对象到本地  
+* `push`                推送一个存储对象到[EverAI](https://everai.expvent.com)平台  
+* `publish`              把你的指定存储对象公开给所有人
 
 **选项**:  
 * `-h, --help`            显示帮助信息
@@ -146,4 +147,31 @@ everai volume push [-h] name
 
 **选项**:  
 * `-h, --help`  显示帮助信息
+
+## everai volume publish
+ 
+把你的指定存储对象公开给所有人  
+
+**示例**:  
+```bash   
+ everai volume publish demo-volume
+```  
+
+公开存储对象后，执行`everai volume list`后，可以看到，存储对象的状态变为`Public`。  
+```bash   
+NAME               REVISION    CREATED_AT                  FILES  SIZE    STATUS
+-----------------  ----------  ------------------------  -------  ------  --------
+demo-volume        000000-000  2024-05-10 14:10:25+0800        0  0 B     Public
+```
+**格式**:
+```bash 
+ever volume publish [-h] name
+```
+**参数**:  
+
+  `name`        存储对象名称
+
+**选项**:  
+
+ `-h, --help`  显示帮助信息
 
