@@ -130,7 +130,7 @@ You can create and edit secrets on [EverAI](https://everai.expvent.com), or prog
 
 In this case, we will create one secret for [quay.io](https://quay.io/) . 
 ```bash
-everai secret create your-quay-io-secret-name \
+everai secret create quay-secret \
   --from-literal username=<your username> \
   --from-literal password=<your password>
 ```

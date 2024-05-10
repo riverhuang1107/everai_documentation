@@ -135,7 +135,7 @@ everai app create <your app name>
 在这个例子中，我们会为[quay.io](https://quay.io/)创建一个密钥。  
 
 ```bash
-everai secret create your-quay-io-secret-name \
+everai secret create quay-secret \
   --from-literal username=<your username> \
   --from-literal password=<your password>
 ```
