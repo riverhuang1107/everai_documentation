@@ -123,12 +123,30 @@ everai configmap get [-h] [--output [OUTPUT]] name
 Update ConfigMap from file or literal string  
 
 **Example**:  
+
+Update a configmap from literal.  
+
 ```bash  
 everai configmap update --from-literal min_workers=1 \
   --from-literal max_workers=5 \
   --from-literal max_queue_size=2 \
   --from-literal scale_up_step=1 \
   --from-literal max_idle_time=60 get-start-configmap
+```
+Update a configmap from a `yaml` file.  
+
+Create a `yaml` file named test-configmap firstly, the data of the example like this: 
+```bash
+max_idle_time: '60'
+max_queue_size: '2'
+max_workers: '5'
+min_workers: '2'
+scale_up_step: '1'
+```
+
+Then, run the command like this:  
+```bash  
+everai configmap update --from-file configmap.yml test-configmap
 ```
 
 **Usage**: 

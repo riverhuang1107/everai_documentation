@@ -126,12 +126,33 @@ everai configmap get [-h] [--output [OUTPUT]] name
 通过文件或者字符串更新ConfigMap  
 
 **示例**:  
+
+通过字符串更新ConfigMap。
+
 ```bash  
 everai configmap update --from-literal min_workers=1 \
   --from-literal max_workers=5 \
   --from-literal max_queue_size=2 \
   --from-literal scale_up_step=1 \
   --from-literal max_idle_time=60 get-start-configmap
+```
+
+通过yaml文件更新ConfigMap。
+
+首先创建一个名为test-configmap的`yaml`文件，文件内容如下所示：  
+
+```bash
+max_idle_time: '60'
+max_queue_size: '2'
+max_workers: '5'
+min_workers: '2'
+scale_up_step: '1'
+```
+
+然后，运行如下所示命令更新ConfigMap。  
+
+```bash  
+everai configmap update --from-file configmap.yml test-configmap
 ```
 
 **格式**: 
