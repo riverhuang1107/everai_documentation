@@ -138,6 +138,14 @@ ID    STATUS    DETAIL_STATUS    CREATED_AT    DELETED_AT
 ----  --------  ---------------  ------------  ------------
 ```
 
+Run command `everai app list`, you can see that  the status of app is `PAUSED`.  
+
+```bash
+NAME          STATUS    CREATED_AT                ROUTE_NAME
+------------  --------  ------------------------  ------------
+test-start-5  PAUSED    2024-05-11 14:54:25+0800  test-start-4
+```
+
 **Usage**:  
 ```bash
 everai app pause [-h] [name]

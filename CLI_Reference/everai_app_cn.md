@@ -138,6 +138,14 @@ ID    STATUS    DETAIL_STATUS    CREATED_AT    DELETED_AT
 ----  --------  ---------------  ------------  ------------
 ```
 
+执行`everai app list`，可以看到此时应用的状态是`PAUSED`。  
+
+```bash
+NAME          STATUS    CREATED_AT                ROUTE_NAME
+------------  --------  ------------------------  ------------
+test-start-5  PAUSED    2024-05-11 14:54:25+0800  test-start-4
+```
+
 **格式**:  
 ```bash
 everai app pause [-h] [name]
