@@ -123,10 +123,25 @@ everai secret get [-h] [--output [OUTPUT]] name
 Update the Secret from file or literal string  
 
 **Example**:  
+
+Update a Secret from literal.  
+
 ```bash
 everai secret update \
   --from-literal username=<your username> \
   --from-literal password=<your password> your-quay-io-secret-name
+```
+
+Create a Secret from a `yaml` file.  
+
+Create a `yaml` file named test-secret firstly, the data of the example like this: 
+```bash
+username: bar
+password: foo
+```
+Then, run the command like this:  
+```bash  
+everai secret update --from-file test-secret.yml test-secret
 ```
 
 **Usage**:  

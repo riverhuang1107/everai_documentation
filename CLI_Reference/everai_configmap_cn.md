@@ -42,7 +42,7 @@ scale_up_step: '1'
 然后，运行如下所示命令创建ConfigMap。  
 
 ```bash  
-everai configmap create --from-file configmap.yml test-configmap
+everai configmap create --from-file test-configmap.yml test-configmap
 ```
 
 **格式**: 
@@ -152,7 +152,7 @@ scale_up_step: '1'
 然后，运行如下所示命令更新ConfigMap。  
 
 ```bash  
-everai configmap update --from-file configmap.yml test-configmap
+everai configmap update --from-file test-configmap.yml test-configmap
 ```
 
 **格式**: 

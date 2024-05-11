@@ -39,7 +39,7 @@ scale_up_step: '1'
 ```
 Then, run the command like this:  
 ```bash  
-everai configmap create --from-file configmap.yml test-configmap
+everai configmap create --from-file test-configmap.yml test-configmap
 ```
 
 **Usage**: 
@@ -146,7 +146,7 @@ scale_up_step: '1'
 
 Then, run the command like this:  
 ```bash  
-everai configmap update --from-file configmap.yml test-configmap
+everai configmap update --from-file test-configmap.yml test-configmap
 ```
 
 **Usage**: 

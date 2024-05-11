@@ -38,7 +38,7 @@ username: foo
 password: bar
 ```
 然后，运行如下所示命令创建密钥。 
- 
+
 ```bash  
 everai secret create --from-file test-secret.yml test-secret
 ```
@@ -125,11 +125,29 @@ everai secret get [-h] [--output [OUTPUT]] name
 从文件或者字符串更新密钥  
 
 **示例**:  
+
+从字符串更新一个密钥。  
+
 ```bash
 everai secret update \
   --from-literal username=<your username> \
   --from-literal password=<your password> your-quay-io-secret-name
 ```
+
+通过一个`yaml`文件创建一个密钥。  
+
+首先创建一个名为test-secret的`yaml`文件，文件内容如下所示：  
+
+```bash
+username: bar
+password: foo
+```
+然后，运行如下所示命令更新密钥。 
+ 
+```bash  
+everai secret update --from-file test-secret.yml test-secret
+```
+
 
 **格式**:  
 ```bash
