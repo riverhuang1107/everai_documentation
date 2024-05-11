@@ -132,7 +132,7 @@ everai secret update \
   --from-literal password=<your password> your-quay-io-secret-name
 ```
 
-Create a Secret from a `yaml` file.  
+Update a Secret from a `yaml` file.  
 
 Create a `yaml` file named test-secret firstly, the data of the example like this: 
 ```bash
