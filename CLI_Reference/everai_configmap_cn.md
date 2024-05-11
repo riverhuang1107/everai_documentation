@@ -21,8 +21,28 @@ everai configmap [-h] {create,delete,list,ls,get,update} ...
 通过文件或者字符串创建ConfigMap  
 
 **示例**:  
+
+从字符串创建一个ConfigMap。  
+
 ```bash  
 everai configmap create get-start-configmap --from-literal min_workers=1
+```
+
+通过一个`yaml`文件创建一个ConfigMap。  
+
+首先创建一个名为test-configmap的`yaml`文件，文件内容如下所示：  
+
+```bash
+max_idle_time: '60'
+max_queue_size: '2'
+max_workers: '5'
+min_workers: '1'
+scale_up_step: '1'
+```
+然后，运行如下所示命令创建ConfigMap。  
+
+```bash  
+everai configmap create --from-file configmap.yml test-configmap
 ```
 
 **格式**: 
