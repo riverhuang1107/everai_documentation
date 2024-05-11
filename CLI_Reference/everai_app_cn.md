@@ -109,6 +109,42 @@ everai app upgrade [-h] [--autoscaling-policy] [--resource-requests] [--volume-r
 ## everai app pause               
 停止应用，所有的worker都会停止  
 
+**示例**:
+```bash
+everai worker list test-start-4
+```
+
+用例输出的结果如下所示：  
+```bash
+ID                      STATUS    DETAIL_STATUS    CREATED_AT                DELETED_AT
+----------------------  --------  ---------------  ------------------------  ------------
+DFLH3kbnn9gyzzdk8Vypyx  RUNNING   FREE             2024-05-11 12:02:12+0800
+KN63GutywVFnutrrQ6wLvw  RUNNING   FREE             2024-05-11 12:02:12+0800
+```
+```bash
+everai app pause test-start-4
+```
+
+用例输出的结果如下所示：  
+```bash
+everai worker list test-start-4
+
+ID    STATUS    DETAIL_STATUS    CREATED_AT    DELETED_AT
+----  --------  ---------------  ------------  ------------
+```
+
+**格式**:  
+```bash
+everai app pause [-h] [name]
+```
+
+**参数**:  
+
+  * `name`        应用名称
+
+**选项**:
+  * `-h, --help`  显示帮助信息
+
 ## everai app deploy              
 部署应用到可用状态  
 

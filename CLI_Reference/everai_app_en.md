@@ -110,6 +110,44 @@ everai app upgrade [-h] [--autoscaling-policy] [--resource-requests] [--volume-r
 ## everai app pause               
 Pause an app, all worker will be stopped  
 
+**Example**:
+```bash
+everai worker list test-start-4
+```
+
+The result could be shown like this:  
+
+```bash
+ID                      STATUS    DETAIL_STATUS    CREATED_AT                DELETED_AT
+----------------------  --------  ---------------  ------------------------  ------------
+DFLH3kbnn9gyzzdk8Vypyx  RUNNING   FREE             2024-05-11 12:02:12+0800
+KN63GutywVFnutrrQ6wLvw  RUNNING   FREE             2024-05-11 12:02:12+0800
+```
+```bash
+everai app pause test-start-4
+```
+
+The result could be shown like this:  
+
+```bash
+everai worker list test-start-4
+
+ID    STATUS    DETAIL_STATUS    CREATED_AT    DELETED_AT
+----  --------  ---------------  ------------  ------------
+```
+
+**Usage**:  
+```bash
+everai app pause [-h] [name]
+```
+
+**Positional arguments**:  
+
+  * `name`        The app name 
+
+**Options**:
+  * `-h, --help`  show this help message and exit 
+
 ## everai app deploy              
 Deploy an app to serving status  
 
