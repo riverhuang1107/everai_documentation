@@ -137,7 +137,7 @@ everai configmap update --from-literal min_workers=1 \
   --from-literal max_idle_time=60 get-start-configmap
 ```
 
-通过yaml文件更新ConfigMap。
+通过`yaml`文件更新ConfigMap。
 
 首先创建一个名为test-configmap的`yaml`文件，文件内容如下所示：  
 

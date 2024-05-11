@@ -111,7 +111,7 @@ everai app upgrade [-h] [--autoscaling-policy] [--resource-requests] [--volume-r
 
 **示例**:
 ```bash
-everai worker list test-start-4
+everai worker list <your app name>
 ```
 
 查看应用的worker列表，可以看到有2个正在运行的worker。  
@@ -126,13 +126,13 @@ KN63GutywVFnutrrQ6wLvw  RUNNING   FREE             2024-05-11 12:02:12+0800
 执行如下的命令，停止示例中的应用。  
 
 ```bash
-everai app pause test-start-4
+everai app pause <your app name>
 ```
 
 再次查看应用的worker列表，可以看到之前在运行的2个worker已经被停止。  
  
 ```bash
-everai worker list test-start-4
+everai worker list <your app name>
 
 ID    STATUS    DETAIL_STATUS    CREATED_AT    DELETED_AT
 ----  --------  ---------------  ------------  ------------
@@ -143,7 +143,7 @@ ID    STATUS    DETAIL_STATUS    CREATED_AT    DELETED_AT
 ```bash
 NAME          STATUS    CREATED_AT                ROUTE_NAME
 ------------  --------  ------------------------  ------------
-test-start-5  PAUSED    2024-05-11 14:54:25+0800  test-start-4
+test-start-4  PAUSED    2024-05-11 14:54:25+0800  test-start-4
 ```
 
 **格式**:  

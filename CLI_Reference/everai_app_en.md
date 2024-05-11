@@ -112,7 +112,7 @@ Pause an app, all worker will be stopped
 
 **Example**:
 ```bash
-everai worker list test-start-4
+everai worker list <your app name>
 ```
 
 Show worker list of app，you can see 2 running workers.  
@@ -126,13 +126,13 @@ KN63GutywVFnutrrQ6wLvw  RUNNING   FREE             2024-05-11 12:02:12+0800
 Run the following command to stop app of the example.  
 
 ```bash
-everai app pause test-start-4
+everai app pause <your app name>
 ```
 
 Show the work list again, you can see nothing in worker list.  
 
 ```bash
-everai worker list test-start-4
+everai worker list <your app name>
 
 ID    STATUS    DETAIL_STATUS    CREATED_AT    DELETED_AT
 ----  --------  ---------------  ------------  ------------
@@ -143,7 +143,7 @@ Run command `everai app list`, you can see that  the status of app is `PAUSED`.
 ```bash
 NAME          STATUS    CREATED_AT                ROUTE_NAME
 ------------  --------  ------------------------  ------------
-test-start-5  PAUSED    2024-05-11 14:54:25+0800  test-start-4
+test-start-4  PAUSED    2024-05-11 14:54:25+0800  test-start-4
 ```
 
 **Usage**:  
