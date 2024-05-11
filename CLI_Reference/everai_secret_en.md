@@ -20,10 +20,25 @@ everai secret [-h] {create,delete,list,ls,get,update} ...
 Create Secret from file or literal string  
 
 **Example**:  
+
+Create a Secret from literal.  
+
 ```bash  
 everai secret create your-quay-io-secret-name \
   --from-literal username=<your username> \
   --from-literal password=<your password>
+```
+
+Create a Secret from a `yaml` file.  
+
+Create a `yaml` file named test-secret firstly, the data of the example like this: 
+```bash
+username: foo
+password: bar
+```
+Then, run the command like this:  
+```bash  
+everai secret create --from-file test-secret.yml test-secret
 ```
 
 **Usage**:
