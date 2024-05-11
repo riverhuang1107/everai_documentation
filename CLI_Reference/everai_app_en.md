@@ -115,7 +115,7 @@ Pause an app, all worker will be stopped
 everai worker list test-start-4
 ```
 
-The result could be shown like this:  
+Show worker list of app，you can see 2 running workers.  
 
 ```bash
 ID                      STATUS    DETAIL_STATUS    CREATED_AT                DELETED_AT
@@ -123,11 +123,13 @@ ID                      STATUS    DETAIL_STATUS    CREATED_AT                DEL
 DFLH3kbnn9gyzzdk8Vypyx  RUNNING   FREE             2024-05-11 12:02:12+0800
 KN63GutywVFnutrrQ6wLvw  RUNNING   FREE             2024-05-11 12:02:12+0800
 ```
+Run the following command to stop app of the example.  
+
 ```bash
 everai app pause test-start-4
 ```
 
-The result could be shown like this:  
+Show the work list again, you can see nothing in worker list.  
 
 ```bash
 everai worker list test-start-4
