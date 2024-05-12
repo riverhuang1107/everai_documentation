@@ -58,9 +58,9 @@ ULSUfqhnsEV35JyuWiuVyo  RUNNING   BUSY             2024-05-11 19:00:52+0800
 -------------  ------------------------  --------------
 ```
 
-现在，这一步你可以使用ab工具对你的应用进行性能测试，加大你应用的工作负载。并同时观察worker和队列的数量变化。
+现在，这一步你可以使用`ab`工具对你的应用进行性能测试，加大你应用的工作负载。并同时观察worker和队列的数量变化。
 ```bash
-ab -s 120 -t 120 -c 4 -n 300000 -H'Authorization: Bearer everai_637wE9obZtmGLyqIJp0lok' https://everai.expvent.com.cn:1111/api/apps/v1/routes/test-start-6/sse
+ab -s 120 -t 120 -c 4 -n 300000 -H'Authorization: Bearer everai_637wE9obZtmGLyqIJp0lok' https://everai.expvent.com/api/apps/v1/routes/test-start-6/sse
 ```
 
 在性能测试进行过程中，再次执行`everai worker list`和`everai app queue`，可以看到两者的变化。此时，队列列表中出现在排队的情况。
@@ -70,7 +70,7 @@ ab -s 120 -t 120 -c 4 -n 300000 -H'Authorization: Bearer everai_637wE9obZtmGLyqI
             0  2024-05-11 19:25:19+0800  WorkerBusy
             1  2024-05-11 19:25:28+0800  WorkerBusy
 ```
-在worker列表中可以看到目前已经有两个worker在同时工作，性能测试前的只有一个worker在工作。这意味着随着应用负载的加大，EverAI平台为你的应用自动完成了扩容的工作。  
+在worker列表中可以看到目前已经有两个worker在同时工作，性能测试前的只有一个worker在工作。这意味着随着应用负载的加大，[EverAI](https://everai.expvent.com)平台为你的应用自动完成了扩容的工作。  
 ```bash
 ID                      STATUS    DETAIL_STATUS    CREATED_AT                DELETED_AT
 ----------------------  --------  ---------------  ------------------------  ------------
