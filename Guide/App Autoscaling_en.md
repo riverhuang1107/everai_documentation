@@ -64,7 +64,7 @@ Run `everai app queue`, you can see the queue size is 0 in the queue list.
 In this step, you can use `ab` to test your app's performance, and expand your app's workload. At same time, you should observe that the changes in the number of workers and queues.
 
 ```bash
-ab -s 120 -t 120 -c 4 -n 300000 -H'Authorization: Bearer everai_637wE9obZtmGLyqIJp0lok' https://everai.expvent.com/api/apps/v1/routes/test-start-6/sse
+ab -s 120 -t 120 -c 4 -n 300000 -H'Authorization: Bearer <your_token>' https://everai.expvent.com/api/apps/v1/routes/test-start-6/sse
 ```
 
 During the performance test, run `everai worker list` and `everai app queue` agian, you can see the changes. Now, the queue size is 2 in queue list.  

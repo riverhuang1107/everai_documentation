@@ -13,7 +13,7 @@ bqZJ4eTjMmEbP9ncrvPgGg  RUNNING   FREE             2024-05-11 19:24:08+0800
 Use `curl` to run the test case, the output of the example is on the terminal.  
 
 ```bash
-curl -H'Authorization: Bearer everai_637wE9obZtmGLyqIJp0lok' https://everai.expvent.com/api/apps/v1/routes/test-start-4/show-volume
+curl -H'Authorization: Bearer <your_token>' https://everai.expvent.com/api/apps/v1/routes/<your app route name>/show-volume
 hello world
 hello world
 ```
@@ -56,7 +56,7 @@ GtxtbdHn2rFEkZqZxSesyE  RUNNING   FREE             2024-05-12 18:20:38+0800
 Use `curl` to run the test case agian, the new output of the example is on the terminal now.  
 
 ```bash
-curl -H'Authorization: Bearer everai_637wE9obZtmGLyqIJp0lok' https://everai.expvent.com/api/apps/v1/routes/test-start-4/show-volume
+curl -H'Authorization: Bearer <your_token>' https://everai.expvent.com/api/apps/v1/routes/<your app route name>/show-volume
 hello world
 hello world
 hello world
@@ -76,7 +76,7 @@ dEXndYfRrpqwAirhBdugYN  RUNNING   FREE             2024-05-11 14:54:27+0800
 Use `curl` to run the test case, the output of the example is on the terminal. This example sends active messages from the server to the client.  
 
 ```bash
-curl -H'Authorization: Bearer everai_637wE9obZtmGLyqIJp0lok' https://everai.expvent.com/api/apps/v1/routes/test-start-5/sse
+curl -H'Authorization: Bearer <your_token>' https://everai.expvent.com/api/apps/v1/routes/<your app route name>/sse
 hello again 0
 
 hello again 1
@@ -127,7 +127,7 @@ SeaNG9f6hKcQ9J3X93GQEx  RUNNING   FREE             2024-05-11 15:11:37+0800
 Use `curl` to run the test case again, the new output of the example is on the terminal. This example sends  new active messages from the server to the client.  
 
 ```bash
-curl -H'Authorization: Bearer everai_637wE9obZtmGLyqIJp0lok' https://everai.expvent.com.cn:1111/api/apps/v1/routes/test-start-5/sse
+curl -H'Authorization: Bearer <your_token>' https://everai.expvent.com.cn:1111/api/apps/v1/routes/<your app route name>/sse
 hello world again 0
 
 

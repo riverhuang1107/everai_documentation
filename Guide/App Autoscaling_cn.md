@@ -60,7 +60,7 @@ ULSUfqhnsEV35JyuWiuVyo  RUNNING   BUSY             2024-05-11 19:00:52+0800
 
 现在，这一步你可以使用`ab`工具对你的应用进行性能测试，加大你应用的工作负载。并同时观察worker和队列的数量变化。
 ```bash
-ab -s 120 -t 120 -c 4 -n 300000 -H'Authorization: Bearer everai_637wE9obZtmGLyqIJp0lok' https://everai.expvent.com/api/apps/v1/routes/test-start-6/sse
+ab -s 120 -t 120 -c 4 -n 300000 -H'Authorization: Bearer <your_token>' https://everai.expvent.com/api/apps/v1/routes/test-start-6/sse
 ```
 
 在性能测试进行过程中，再次执行`everai worker list`和`everai app queue`，可以看到两者的变化。此时，队列列表中出现在排队的情况。
