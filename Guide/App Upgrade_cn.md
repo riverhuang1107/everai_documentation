@@ -118,7 +118,6 @@ test-start-5  PREPARING  2024-05-11 14:54:25+0800  test-start-5
 
 运行`everai worker list`，看到原来在运行的worker正处于`REMOVE`状态，新的worker已经在运行中。  
 ```bash
-hhq@HHQ:~/app/test-start$ everai worker list
 ID                      STATUS    DETAIL_STATUS    CREATED_AT                DELETED_AT
 ----------------------  --------  ---------------  ------------------------  ------------
 dEXndYfRrpqwAirhBdugYN  RUNNING   REMOVE           2024-05-11 14:54:27+0800

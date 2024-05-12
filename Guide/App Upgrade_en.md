@@ -119,7 +119,6 @@ test-start-5  PREPARING  2024-05-11 14:54:25+0800  test-start-5
 Run `everai worker list`, you can see the older worker's detail status is `REMOVE`. And the new worker is running now.  
 
 ```bash
-hhq@HHQ:~/app/test-start$ everai worker list
 ID                      STATUS    DETAIL_STATUS    CREATED_AT                DELETED_AT
 ----------------------  --------  ---------------  ------------------------  ------------
 dEXndYfRrpqwAirhBdugYN  RUNNING   REMOVE           2024-05-11 14:54:27+0800
