@@ -97,7 +97,7 @@ def sse():
     return flask.Response(generator(), mimetype='text/event-stream')
 ```
 
-打开`image_builder.py`文件，更新需要上传镜像的版本号。并执行`everai image build`进行镜像构建，并推送镜像到quay.io镜像仓库。  
+打开`image_builder.py`文件，更新需要上传镜像的版本号。并执行`everai image build`进行镜像构建，并推送镜像到[quay.io](https://quay.io/)镜像仓库。  
 
 ```bash
 from everai.image import Builder

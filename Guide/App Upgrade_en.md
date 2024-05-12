@@ -98,7 +98,7 @@ def sse():
     return flask.Response(generator(), mimetype='text/event-stream')
 ```
 
-And then open `image_builder.py`, update your image registry's version. Run `everai image build` to buld image and push the image to quay.io.   
+And then open `image_builder.py`, update your image registry's version. Run `everai image build` to buld image and push the image to [quay.io](https://quay.io/).   
 
 ```bash
 from everai.image import Builder
