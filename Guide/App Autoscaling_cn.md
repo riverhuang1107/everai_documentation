@@ -44,7 +44,9 @@ app = App(
 everai app upgrade --image
 ```
 
-此时，你的应用已经具备了自动扩容的能力。执行`everai worker list`可以观察到目前在低负载的情况下，有一个worker在工作。
+此时，你的应用已经具备了自动扩容的能力。  
+
+执行`everai worker list`可以观察到目前在低负载的情况下，有一个worker在工作。
 ```bash
 ID                      STATUS    DETAIL_STATUS    CREATED_AT                DELETED_AT
 ----------------------  --------  ---------------  ------------------------  ------------
@@ -61,7 +63,7 @@ ULSUfqhnsEV35JyuWiuVyo  RUNNING   BUSY             2024-05-11 19:00:52+0800
 ab -s 120 -t 120 -c 4 -n 300000 -H'Authorization: Bearer everai_637wE9obZtmGLyqIJp0lok' https://everai.expvent.com.cn:1111/api/apps/v1/routes/test-start-6/sse
 ```
 
-在性能测试进行过程中，再次执行执行`everai worker list`和`everai app queue`，可以看到两者的变化。此时，队列列表中出现在排队的情况。
+在性能测试进行过程中，再次执行`everai worker list`和`everai app queue`，可以看到两者的变化。此时，队列列表中出现在排队的情况。
 ```bash
   QUEUE_INDEX  CREATE_AT                 QUEUE_REASON
 -------------  ------------------------  --------------

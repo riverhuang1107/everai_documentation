@@ -45,32 +45,38 @@ Secondly, you run `everai app run` to check your code locally. And then open  `i
 ```bash
 everai app upgrade --image
 ```
+Now, your app has the ability to autoscale.  
 
-此时，你的应用已经具备了自动扩容的能力。执行`everai worker list`可以观察到目前在低负载的情况下，有一个worker在工作。
+Run `everai worker list`, you can see that there is one worker under low load conditions.
+
 ```bash
 ID                      STATUS    DETAIL_STATUS    CREATED_AT                DELETED_AT
 ----------------------  --------  ---------------  ------------------------  ------------
 ULSUfqhnsEV35JyuWiuVyo  RUNNING   BUSY             2024-05-11 19:00:52+0800
 ```
-执行`everai app queue`可以观察到目前的应用队列中没有在排队的情况。
+Run `everai app queue`, you can see the queue size is 0 in the queue list.
+
 ```bash
   QUEUE_INDEX  CREATE_AT                 QUEUE_REASON
 -------------  ------------------------  --------------
 ```
 
-现在，这一步你可以使用ab工具对你的应用进行性能测试，加大你应用的工作负载。并同时观察worker和队列的数量变化。
+In this step, you can use `ab` to test your app's performance, and expand your app's workload. At same time, you should observe that the changes in the number of workers and queues.
+
 ```bash
 ab -s 120 -t 120 -c 4 -n 300000 -H'Authorization: Bearer everai_637wE9obZtmGLyqIJp0lok' https://everai.expvent.com.cn:1111/api/apps/v1/routes/test-start-6/sse
 ```
 
-在性能测试进行过程中，再次执行执行`everai worker list`和`everai app queue`，可以看到两者的变化。此时，队列列表中出现在排队的情况。
+During the performance test, run `everai worker list` and `everai app queue` agian, you can see the changes. Now, the queue size is 2 in queue list.  
+
 ```bash
   QUEUE_INDEX  CREATE_AT                 QUEUE_REASON
 -------------  ------------------------  --------------
             0  2024-05-11 19:25:19+0800  WorkerBusy
             1  2024-05-11 19:25:28+0800  WorkerBusy
 ```
-在worker列表中可以看到目前已经有两个worker在同时工作，性能测试前的只有一个worker在工作。这意味着随着应用负载的加大，EverAI平台为你的应用自动完成了扩容的工作。  
+In the worker list, you can see 2 workers running, there is just 1 worker running before the performance test. It means that the [EverAI](https://everai.expvent.com) platform has finished the scale job for your app automatically.  
+  
 ```bash
 ID                      STATUS    DETAIL_STATUS    CREATED_AT                DELETED_AT
 ----------------------  --------  ---------------  ------------------------  ------------
