@@ -25,7 +25,12 @@ Create ConfigMap from file or literal string
 Create a configmap from literal.  
 
 ```bash  
-everai configmap create get-start-configmap --from-literal min_workers=1
+everai configmap create test-configmap \ 
+  --from-literal min_workers=1 \
+  --from-literal max_workers=5 \
+  --from-literal max_queue_size=2 \
+  --from-literal scale_up_step=1 \
+  --from-literal max_idle_time=60
 ```
 Create a configmap from a `yaml` file.  
 
@@ -62,7 +67,7 @@ Delete configmap
 
 **Example**:  
 ```bash
-everai configmap delete get-start-configmap
+everai configmap delete test-configmap
 ```
 **Usage**: 
 ```bash
@@ -84,9 +89,10 @@ everai configmap list
 ```
 The result could be shown like this:  
 ```bash
-NAME                   ITEMS
--------------------  -------
-get-start-configmap        5
+NAME                    ITEMS
+--------------------  -------
+get-start-configmap         5
+test-configmap              5
 ```
 
 **Usage**: 
@@ -103,7 +109,7 @@ Get configmap
 
 **Example**:  
 ```bash  
-everai configmap get get-start-configmap
+everai configmap get test-configmap
 ```
 
 **Usage**:  
@@ -127,11 +133,11 @@ Update ConfigMap from file or literal string
 Update a configmap from literal.  
 
 ```bash  
-everai configmap update --from-literal min_workers=1 \
+everai configmap update --from-literal min_workers=2 \
   --from-literal max_workers=5 \
   --from-literal max_queue_size=2 \
   --from-literal scale_up_step=1 \
-  --from-literal max_idle_time=60 get-start-configmap
+  --from-literal max_idle_time=60 test-configmap
 ```
 Update a configmap from a `yaml` file.  
 

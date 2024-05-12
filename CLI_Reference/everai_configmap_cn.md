@@ -25,7 +25,12 @@ everai configmap [-h] {create,delete,list,ls,get,update} ...
 从字符串创建一个ConfigMap。  
 
 ```bash  
-everai configmap create get-start-configmap --from-literal min_workers=1
+everai configmap create test-configmap \ 
+  --from-literal min_workers=1 \
+  --from-literal max_workers=5 \
+  --from-literal max_queue_size=2 \
+  --from-literal scale_up_step=1 \
+  --from-literal max_idle_time=60
 ```
 
 通过一个`yaml`文件创建一个ConfigMap。  
@@ -65,7 +70,7 @@ everai configmap create [-h] [-l FROM_LITERAL] [-f FROM_FILE] name
 
 **示例**:  
 ```bash
-everai configmap delete get-start-configmap
+everai configmap delete test-configmap
 ```
 **格式**: 
 ```bash
@@ -87,9 +92,10 @@ everai configmap list
 ```
 用例输出的结果如下所示：    
 ```bash
-NAME                   ITEMS
--------------------  -------
-get-start-configmap        5
+NAME                    ITEMS
+--------------------  -------
+get-start-configmap         5
+test-configmap              5
 ```
 
 **格式**: 
@@ -106,7 +112,7 @@ everai configmap list [-h] [--output [OUTPUT]]
 
 **示例**:  
 ```bash  
-everai configmap get get-start-configmap
+everai configmap get test-configmap
 ```
 
 **格式**:  
@@ -130,11 +136,11 @@ everai configmap get [-h] [--output [OUTPUT]] name
 通过字符串更新ConfigMap。
 
 ```bash  
-everai configmap update --from-literal min_workers=1 \
+everai configmap update --from-literal min_workers=2 \
   --from-literal max_workers=5 \
   --from-literal max_queue_size=2 \
   --from-literal scale_up_step=1 \
-  --from-literal max_idle_time=60 get-start-configmap
+  --from-literal max_idle_time=60 test-configmap
 ```
 
 通过`yaml`文件更新ConfigMap。
