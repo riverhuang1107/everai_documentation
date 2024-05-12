@@ -40,7 +40,7 @@ password: bar
 然后，运行如下所示命令创建密钥。 
 
 ```bash  
-everai secret create --from-file test-secret.yml test-secret
+everai secret create --from-file test-secret.yml your-quay-io-secret-name
 ```
 
 **格式**:
@@ -145,7 +145,7 @@ password: foo
 然后，运行如下所示命令更新密钥。 
  
 ```bash  
-everai secret update --from-file test-secret.yml test-secret
+everai secret update --from-file test-secret.yml your-quay-io-secret-name
 ```
 
 

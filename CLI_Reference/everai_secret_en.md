@@ -38,7 +38,7 @@ password: bar
 ```
 Then, run the command like this:  
 ```bash  
-everai secret create --from-file test-secret.yml test-secret
+everai secret create --from-file test-secret.yml your-quay-io-secret-name
 ```
 
 **Usage**:
@@ -141,7 +141,7 @@ password: foo
 ```
 Then, run the command like this:  
 ```bash  
-everai secret update --from-file test-secret.yml test-secret
+everai secret update --from-file test-secret.yml your-quay-io-secret-name
 ```
 
 **Usage**:  
