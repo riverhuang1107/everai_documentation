@@ -14,7 +14,7 @@ ever configmap create get-start-configmap \
 ```
 Based on the `app.py` code in `quickstart`, When you define tha object of app,  you should add parameter `autoscaling_policy`.  
 
-```bash
+```python
 from everai.autoscaling import SimpleAutoScalingPolicy
 
 CONFIGMAP_NAME = 'get-start-configmap'

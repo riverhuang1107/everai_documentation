@@ -12,7 +12,7 @@ ever configmap create get-start-configmap \
   --from-literal max_idle_time=60
 ```
 基于`快速入门`中的`app.py`代码，在定义app对象时，需要加入`autoscaling_policy`参数。  
-```bash
+```python
 from everai.autoscaling import SimpleAutoScalingPolicy
 
 CONFIGMAP_NAME = 'get-start-configmap'
