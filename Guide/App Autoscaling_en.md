@@ -20,7 +20,7 @@ from everai.autoscaling import SimpleAutoScalingPolicy
 CONFIGMAP_NAME = 'get-start-configmap'
 
 app = App(
-    'get-start',
+    '<your app name>',
     image=image,
     volume_requests=[
         VolumeRequest(name=VOLUME_NAME, create_if_not_exists=True),
