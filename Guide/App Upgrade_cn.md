@@ -99,7 +99,7 @@ def sse():
 
 打开`image_builder.py`文件，更新需要上传镜像的版本号。并执行`everai image build`进行镜像构建，并推送镜像到[quay.io](https://quay.io/)镜像仓库。  
 
-```bash
+```python
 from everai.image import Builder
 
 IMAGE = 'quay.io/<username>/<repo>:<tag>'

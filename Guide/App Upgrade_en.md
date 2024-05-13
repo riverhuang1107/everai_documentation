@@ -100,7 +100,7 @@ def sse():
 
 And then open `image_builder.py`, update your image registry's version. Run `everai image build` to buld image and push the image to [quay.io](https://quay.io/).   
 
-```bash
+```python
 from everai.image import Builder
 
 IMAGE = 'quay.io/<username>/<repo>:<tag>'
