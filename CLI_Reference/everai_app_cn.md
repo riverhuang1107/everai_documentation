@@ -258,7 +258,22 @@ everai app queue [-h] [--output [OUTPUT]] [app_name]
  * `--output [OUTPUT], -o [OUTPUT]`
                         输出格式，可选（json, yaml, table, wide），默认为table
 
-## everai app worker (workers, w) list (ls)
+## everai app worker (workers, w)
+
+管理应用的worker  
+
+**Usage**:
+```bash 
+everai app worker [-h] {list,ls} ...
+```
+
+**Commands**:
+  * `list (ls)`    应用的worker列表
+
+**Options**:
+  * `-h, --help`   显示帮助信息
+  
+### everai app worker (workers, w) list (ls)
 
 应用的worker列表  
 

@@ -255,8 +255,22 @@ everai app queue [-h] [--output [OUTPUT]] [app_name]
  * `-h, --help`            show this help message and exit
  * `--output [OUTPUT], -o [OUTPUT]`
                         Output format, One of: (json, yaml, table, wide)
-                        
-## everai app worker (workers, w) list (ls)
+
+## everai app worker (workers, w)
+Manage the worker of app  
+
+**Usage**:
+```bash 
+everai app worker [-h] {list,ls} ...
+```
+
+**Commands**:
+  * `list (ls)`    List workers of app 
+
+**Options**:
+  * `-h, --help`  show this help message and exit 
+
+### everai app worker (workers, w) list (ls)
 
 List workers of app  
 
