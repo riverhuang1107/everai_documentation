@@ -27,6 +27,7 @@ everai app [-h] {create,run,get,upgrade,pause,deploy,prepare,list,ls,queue,q} ..
 ```bash
 everai app create <your app name>
 ```
+执行`everai app create`命令时，如果出现`Route path exist`报错提示信息，你可以通过指定一个新的路由名称来解决该问题。  
 
 ```bash
 everai app create <your app name> --route-name <your app route name>
