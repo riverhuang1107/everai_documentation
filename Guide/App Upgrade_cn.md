@@ -64,7 +64,7 @@ hello world
 
 ## everai app upgrade --image  
 
-如果你的应用已经在[EverAI](https://everai.expvent.com)平台云端部署，当你需要更新你存储对象中的文件内容时，可以使用`everai app upgrade --image`。[EverAI](https://everai.expvent.com)平台支持应用热升级，你的应用服务在整个升级更新过程中，始终处于在线运行状态。  
+如果你的应用已经在[EverAI](https://everai.expvent.com)平台云端部署，当你需要更新你应用中的代码时，可以使用`everai app upgrade --image`。[EverAI](https://everai.expvent.com)平台支持应用热升级，你的应用服务在整个升级更新过程中，始终处于在线运行状态。  
 
 运行`everai worker list`，看到有一个worker正在运行中。  
 ```bash
