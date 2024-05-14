@@ -1,6 +1,6 @@
 # App Autoscaling
 
-In the [Quickstart](https://github.com/riverhuang1107/everai_documentation/blob/main/README.md), we have created a simple application. But when the load of this application exceeds the endurance range of computing resources, the application's service response will slow down, time out, or even be unavailable. The [EverAI](https://everai.expvent.com) platform provides an autoscaling mechanism that can help your application automatically expand under high load conditions, eliminating the need for you to manually deploy new computing nodes. This enables your application to quickly increase its load capacity in a short period of time.    
+In the [Quickstart](https://github.com/riverhuang1107/everai_documentation/blob/main/README_en.md), we have created a simple application. But when the load of this application exceeds the endurance range of computing resources, the application's service response will slow down, time out, or even be unavailable. The [EverAI](https://everai.expvent.com) platform provides an autoscaling mechanism that can help your application automatically expand under high load conditions, eliminating the need for you to manually deploy new computing nodes. This enables your application to quickly increase its load capacity in a short period of time.    
 
 First you create a `configmap` by the following command, this `configmap` includes policy parameters about autoscaling, the example defines that the mini workers number is 1, the max workers number is 5, and the max queue size is 2.  
 
@@ -12,7 +12,7 @@ ever configmap create get-start-configmap \
   --from-literal scale_up_step=1 \
   --from-literal max_idle_time=60
 ```
-Based on the `app.py` code in [Quickstart](https://github.com/riverhuang1107/everai_documentation/blob/main/README.md), When you define tha object of app,  you should add parameter `autoscaling_policy`.  
+Based on the `app.py` code in [Quickstart](https://github.com/riverhuang1107/everai_documentation/blob/main/README_en.md), When you define tha object of app,  you should add parameter `autoscaling_policy`.  
 
 ```python
 from everai.autoscaling import SimpleAutoScalingPolicy
