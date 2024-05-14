@@ -89,7 +89,10 @@ everai app get [-h] name
 ## everai app upgrade             
 Upgrade an app  
 
-**Example**:
+**Example**:  
+
+When you want to update your code, you should update your app image. For detailed guidance on app image upgrade, check out [everai app upgrade --image](https://github.com/riverhuang1107/everai_documentation/blob/main/Guide/App_Upgrade_en.md#everai-app-upgrade---image).  
+
 ```bash
 everai app upgrade --image
 ```

@@ -88,7 +88,9 @@ everai app get [-h] name
 ## everai app upgrade             
 升级应用  
 
-**示例**:
+**示例**:  
+
+当你需要更新你应用中的代码时，你需要更新你的应用镜像。详细介绍请参考[everai app upgrade --image](https://github.com/riverhuang1107/everai_documentation/blob/main/Guide/App_Upgrade_cn.md#everai-app-upgrade---image)。  
 ```bash
 everai app upgrade --image
 ```
