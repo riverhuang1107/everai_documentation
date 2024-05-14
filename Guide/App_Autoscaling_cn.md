@@ -1,6 +1,6 @@
 # App Autoscaling
 
-在[快速入门](https://github.com/riverhuang1107/everai_documentation/blob/main/README.md)中，你已经创建了一个简单的应用。但这个应用的负载超出计算资源的可承受范围时，应用的服务响应会变慢，超时，甚至不可用。[EverAI](https://everai.expvent.com)平台提供了自动扩容机制，可以帮助你的应用在高负载的情况下自动扩容，省去你手动部署新计算节点的操作。能够使你的应用能在很短的时间内快速提升负载能力。  
+在[快速入门](https://github.com/riverhuang1107/everai_documentation/blob/main/README.md)中，你已经创建了一个简单的应用。但这个应用的负载超出计算资源的可承受范围时，应用的服务响应会变慢，超时，甚至不可用。[EverAI](https://everai.expvent.com)平台提供了自动扩缩容机制，可以帮助你的应用在高负载的情况下自动扩容，省去你手动部署新计算节点的操作。能够使你的应用能在很短的时间内快速提升负载能力。  
 
 首先，你创建一个`configmap`对象，用于存放自动扩容相关的策略参数，示例中的参数定义了最小的worker数量是1，最大的worker数量是5，最大的队列数量是2。  
 ```bash
@@ -50,7 +50,7 @@ everai app upgrade --image
 ```bash
 ID                      STATUS    DETAIL_STATUS    CREATED_AT                DELETED_AT
 ----------------------  --------  ---------------  ------------------------  ------------
-ULSUfqhnsEV35JyuWiuVyo  RUNNING   BUSY             2024-05-11 19:00:52+0800
+ULSUfqhnsEV35JyuWiuVyo  RUNNING   FREE             2024-05-11 19:00:52+0800
 ```
 执行`everai app queue`可以观察到目前的应用队列中没有在排队的情况。
 ```bash
@@ -78,4 +78,10 @@ ULSUfqhnsEV35JyuWiuVyo  RUNNING   BUSY             2024-05-11 19:00:52+0800
 bqZJ4eTjMmEbP9ncrvPgGg  RUNNING   BUSY             2024-05-11 19:24:08+0800
 ```
 
+当`ab`性能测试结束，应用业务负载的高峰期过去之后，系统会自动判断worker的负载情况，在设置的`max_idle_time`后，释放掉扩容产生的worker，恢复到设置的`mini_workers`数量。在这个示例中，执行`everai worker list`，可以看到应用的worker数量已经恢复到了扩容前的一个worker。系统已经为你的应用完成了自动缩容操作。 
+```bash
+ID                      STATUS    DETAIL_STATUS    CREATED_AT                DELETED_AT
+----------------------  --------  ---------------  ------------------------  ------------
+ULSUfqhnsEV35JyuWiuVyo  RUNNING   FREE             2024-05-11 19:00:52+0800
+```
 
