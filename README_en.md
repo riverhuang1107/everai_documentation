@@ -229,6 +229,9 @@ def prepare_model():
 For production environment, the volumes are very important, you could call the following command to prepare it.  
 
 This command line will call all functions which are decorated by `@app.prepare`, in these functions you should set up volume data before the app use it.  
+
+In this example code, `my-model` file in local volume will be pushed to the cloud, when you run `everai app prepare`.  
+
 ```bash
 everai app prepare
 ```

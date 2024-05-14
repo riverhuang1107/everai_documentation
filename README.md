@@ -234,7 +234,9 @@ def prepare_model():
 
 在生产环境，对象存储是非常重要的，你可以通过下面的命令准备它。  
 
-这句命令会执行所有被`@app.prepare`注解过的方法，在这些方法中你应该配置好文件数据。  
+这句命令会执行所有被`@app.prepare`注解过的方法，在这些方法中你应该配置好文件数据。 
+
+在示例代码中，本地存储对象中的文件`my-model`会通过`everai app prepare`命令，推送到云端。
 
 ```bash
 everai app prepare
