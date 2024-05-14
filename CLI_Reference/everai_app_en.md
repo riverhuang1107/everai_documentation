@@ -3,7 +3,7 @@ Manage app
 
 **Usage**:   
 ```bash
-everai app [-h] {create,run,get,upgrade,pause,deploy,prepare,list,ls,queue,q} ...
+everai app [-h] {create,run,get,upgrade,pause,deploy,prepare,list,ls,queue,q,worker,workers,w} ...
 ```
 
 **Commands**:  
@@ -17,6 +17,7 @@ everai app [-h] {create,run,get,upgrade,pause,deploy,prepare,list,ls,queue,q} ..
   * `prepare`             Prepare an app, all of function which decorated by `@app.prepare` would be called  
   * `list (ls)`           List all apps  
   * `queue (q)`           List queue of app  
+  * `worker (workers, w)`   Manage the worker of app
 
 **Options**:  
   * `-h, --help`            show this help message and exit
@@ -255,4 +256,47 @@ everai app queue [-h] [--output [OUTPUT]] [app_name]
  * `--output [OUTPUT], -o [OUTPUT]`
                         Output format, One of: (json, yaml, table, wide)
                         
+## everai app worker (workers, w) list (ls)
+
+List workers of app  
+
+**Example**:
+```bash
+everai app worker list <your app name>
+```
+The output for this example is this:  
+
+```bash
+ID                      STATUS    DETAIL_STATUS    CREATED_AT                DELETED_AT
+----------------------  --------  ---------------  ------------------------  ------------
+UskkMtU5HihJhiyWevc8We  RUNNING   FREE             2024-05-14 09:47:54+0800
+```
+If the app name is not attached, output shows the list of workers in current app directory.  
+
+```bash
+everai app worker list
+```
+The output for this example is this:  
+  
+```bash
+ID                      STATUS    DETAIL_STATUS    CREATED_AT                DELETED_AT
+----------------------  --------  ---------------  ------------------------  ------------
+NwKKpZHesYBUncaw4bZdYz  RUNNING   FREE             2024-05-14 12:59:04+0800
+```
+
+**Usage**:  
+```bash 
+everai app worker list [-h] [--output [OUTPUT]] [--all] [--recent-days [RECENT_DAYS]] [app_name]
+```
+
+**Positional arguments**:  
+  * `app_name`              The app name
+
+**Options**:
+  * `-h, --help`            show this help message and exit 
+  * `--output [OUTPUT], -o [OUTPUT]`
+                        Output format, One of: (json, yaml, table, wide) 
+  * `--all, -a`             show all workers, include deleted and errors 
+  * `--recent-days` [RECENT_DAYS], -d [RECENT_DAYS]
+                        show not running workers who is created in recent days 
 

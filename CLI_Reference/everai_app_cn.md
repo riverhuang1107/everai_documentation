@@ -3,7 +3,7 @@
 
 **格式**:   
 ```bash
-everai app [-h] {create,run,get,upgrade,pause,deploy,prepare,list,ls,queue,q} ...
+everai app [-h] {create,run,get,upgrade,pause,deploy,prepare,list,ls,queue,q,worker,workers,w} ...
 ```
 
 **命令**:  
@@ -16,6 +16,7 @@ everai app [-h] {create,run,get,upgrade,pause,deploy,prepare,list,ls,queue,q} ..
   * `prepare`             准备应用，所有被`@app.prepare`注解的方法都会被执行  
   * `list (ls)`           显示应用列表  
   * `queue (q)`           显示应用队列  
+  * `worker (workers, w)` 管理应用的worker 
 
 **选项**:  
   * `-h, --help`            显示帮助信息
@@ -256,5 +257,50 @@ everai app queue [-h] [--output [OUTPUT]] [app_name]
  * `-h, --help`            显示帮助信息
  * `--output [OUTPUT], -o [OUTPUT]`
                         输出格式，可选（json, yaml, table, wide），默认为table
+
+## everai app worker (workers, w) list (ls)
+
+应用的worker列表  
+
+**示例**:
+```bash
+everai app worker list <your app name>
+```
+
+用例输出的结果如下所示：  
+```bash
+ID                      STATUS    DETAIL_STATUS    CREATED_AT                DELETED_AT
+----------------------  --------  ---------------  ------------------------  ------------
+UskkMtU5HihJhiyWevc8We  RUNNING   FREE             2024-05-14 09:47:54+0800
+```
+
+如果不输入应用名称，则会显示当前应用目录下该应用的worker列表。  
+```bash
+everai app worker list
+```
+
+用例输出的结果如下所示：  
+```bash
+ID                      STATUS    DETAIL_STATUS    CREATED_AT                DELETED_AT
+----------------------  --------  ---------------  ------------------------  ------------
+NwKKpZHesYBUncaw4bZdYz  RUNNING   FREE             2024-05-14 12:59:04+0800
+```
+
+**格式**:  
+```bash 
+everai app worker list [-h] [--output [OUTPUT]] [--all] [--recent-days [RECENT_DAYS]] [app_name]
+```
+
+**参数**:  
+  * `app_name`              应用名称
+
+**选项**:
+  * `-h, --help`            显示帮助信息
+  * `--output [OUTPUT], -o [OUTPUT]`
+                        输出格式，可选（json, yaml, table, wide）
+  * `--all, -a`         显示该应用的所有worker，包括已经删除的和有问题的worker
+  * `--recent-days` [RECENT_DAYS], -d [RECENT_DAYS]
+                         显示最近天数内没有在运行中的worker
+
                         
 
