@@ -28,7 +28,7 @@ Create an app
 ```bash
 everai app create <your app name>
 ```
-When you run command `everai app create`，the output shows the error like: Route path exist, you can set a new route name to solve this problem.  
+When you run command `everai app create`，the output shows the error like: `Route path exist`, you can set a new route name to solve this problem.  
 
 ```bash
 everai app create <your app name> --route-name <your app route name>
