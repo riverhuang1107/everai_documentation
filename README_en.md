@@ -46,7 +46,8 @@ To build your Docker image, you'll need access to the following:
 
 * **Docker account**  
 
->[!NOTE]  
+>**NOTE**  
+>
 >Buildx could be used to build multiple-platform(x86, arm64) Docker Image.  
 
 ## Quick start
@@ -64,7 +65,8 @@ Open PowerShell as Administrator:
 pip install everai --user
 ```
 
->[!NOTE]  
+>**NOTE**  
+>  
 >If you installed EverAI CLI but you’re seeing an error like `everai: command not found` when trying to run the CLI, this means that the installation location of Python package executables (“binaries”) are not present on your system path. This is a common problem; you need to reconfigure your system’s environment variables to fix it.  
 >* **Linux(WSL)**  
 >```bash
