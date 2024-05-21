@@ -177,6 +177,7 @@ Now, you can make a test call for your app, in these examples looks like:
 curl -X POST -d '{"prompt": "a photo of a dog on the boat"}' -H 'Conte
 nt-Type: application/json' -H'Authorization: Bearer <your_token>' -o test.png https://everai.expvent.com/api/apps/v1/routes/<your app route name>/txt2img
 ```
+!<img src="imgs/example.png" width = "512" />
 
 
 
