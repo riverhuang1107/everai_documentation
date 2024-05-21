@@ -13,7 +13,7 @@ everai -v image build
 
 **Usage**:   
 ```bash
-everai [-h] [-v]  {login,logout,worker,workers,w,config,image,images,i,run,app,apps,a,secret,secrets,sec,s,volume,volumes,vol,autoscaling,configmap,cm,configmaps,version}...
+everai [-h] [-v]  {login,logout,worker,workers,w,config,image,images,i,run,app,apps,a,secret,secrets,sec,s,volume,volumes,vol,autoscaling,configmap,cm,configmaps,version} ...
 ```
 
 **Commands**:
