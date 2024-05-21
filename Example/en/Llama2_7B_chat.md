@@ -24,7 +24,7 @@ everai secret create your-quay-io-secret-name \
 ### Basic setup
 There is an example code in app.py.  
 
-First, import the required EverAI Python class library. Then define the variable names that need to be used, including the volume, the secret that accesses the image registry, and the file stored in the volume. Use the Image.from_registry static method to create a image instance. Create and define an app instance through the App class.  
+First, import the required EverAI Python class library. Then define the variable names that need to be used, including the volume, the secret that accesses the image registry, and the file stored in the volume. Use the `Image.from_registry` static method to create a image instance. Create and define an app instance through the App class.  
 
 What needs to be noted here is that you need to configure GPU resources for your application. The GPU model configured here is "A100 40G", and the number of GPU cards is 1.  
 
