@@ -82,9 +82,10 @@ app = App(
 
 如果你的应用需要用到文件对象存储，那么在你的应用部署到云环境之前，你需要先创建一个对象存储。
 你可以通过注解`@app.prepare`创建一个方法来管理和准备你的对象存储以及相关的文件。
-```python
+```bash
 everai volume pull expvent/stable-diffusion-v1-4
-
+```
+```python
 @app.prepare()
 def prepare_model():
     volume = context.get_volume(VOLUME_NAME)
@@ -109,7 +110,7 @@ def prepare_model():
 
 ### 实现推理服务
 
-加载`Stable Diffusion 1.4`模型后，这里的代码使用了flask实现了文生图的推理在线服务。  
+加载`Stable Diffusion 1.4`模型后，这里的代码使用了`flask`实现了文生图的推理在线服务。  
 ```python
 from diffusers import StableDiffusionPipeline
 import torch
