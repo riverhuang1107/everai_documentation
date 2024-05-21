@@ -80,12 +80,8 @@ app = App(
 
 ### 预加载模型
 
-如果你的应用需要用到文件对象存储，那么在你的应用部署到云环境之前，你需要先创建一个对象存储。  
+你可以使用我们提供的公开存储对象`expvent/stable-diffusion-v1-4`中的模型文件加载模型。  
 
-你可以通过注解`@app.prepare`创建一个方法来管理和准备你的对象存储以及相关的文件。
-```bash
-everai volume pull expvent/stable-diffusion-v1-4
-```
 ```python
 @app.prepare()
 def prepare_model():
@@ -104,6 +100,11 @@ def prepare_model():
                                                         low_cpu_mem_usage=False
                                                         )
     image_pipe.to("cuda")
+```
+如果你想在本地使用`everai app run`调试这个示例，你的本地调试环境需要有GPU资源，并且在调试代码前使用`everai volume pull`命令把云端的模型文件拉取到本地环境。  
+
+```bash
+everai volume pull expvent/stable-diffusion-v1-4
 ```
 
 ### 实现推理服务

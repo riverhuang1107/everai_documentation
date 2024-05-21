@@ -78,13 +78,9 @@ app = App(
 ```
 
 ### Load model
-Before your application is deployed in the cloud, you should construct your volume first, if your app uses at least one volume.  
 
-You can create a function by the `@app.prepare` decorator to manager and prepare your volume and related files.  
+You can load the model using the model file in the public volume `expvent/stable-diffusion-v1-4` we provide.  
 
-```bash
-everai volume pull expvent/stable-diffusion-v1-4
-```
 ```python
 @app.prepare()
 def prepare_model():
@@ -103,6 +99,11 @@ def prepare_model():
                                                         low_cpu_mem_usage=False
                                                         )
     image_pipe.to("cuda")
+```
+If you want to use `everai app run` to debug this example locally, your local debugging environment needs to have GPU resources, and use `everai volume pull` command to pull the model file from the cloud to the local environment before debugging the code.  
+
+```bash
+everai volume pull expvent/stable-diffusion-v1-4
 ```
 
 ### Generate inference service

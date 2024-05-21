@@ -80,13 +80,9 @@ app = App(
 ```
 
 ### Load model
-Before your application is deployed in the cloud, you should construct your volume first, if your app uses at least one volume.  
+  
+You can load the model using the model file in the public volume `expvent/llama2-7b-chat` we provide.  
 
-You can create a function by the `@app.prepare` decorator to manager and prepare your volume and related files.  
-
-```bash
-everai volume pull expvent/llama2-7b-chat
-```
 ```python
 @app.prepare()
 def prepare_model():
@@ -119,6 +115,11 @@ def prepare_model():
 
     tokenizer = LlamaTokenizer.from_pretrained(model_dir, local_files_only=True)
     print('tokenizer success loaded')
+```
+If you want to use `everai app run` to debug this example locally, your local debugging environment needs to have GPU resources, and use `everai volume pull` command to pull the model file from the cloud to the local environment before debugging the code.  
+
+```bash
+everai volume pull expvent/llama2-7b-chat
 ```
 
 ### Generate inference service
