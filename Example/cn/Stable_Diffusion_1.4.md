@@ -127,17 +127,12 @@ image_pipe = None
 def txt2img():    
     data = flask.request.json
     prompt = data['prompt']
-    #prompt = "a photo of a cat on the roof"
-    #prompt = "a photo of a company running AI forever"
 
     pipe_out = image_pipe(prompt)
 
     image_name = 'demo.png'
     image = pipe_out.images[0]
-    #image.save(f"demo.png")
     image.save(image_name)
-
-    #return f"{prompt} - txt2img finished!"
 
     image_dir = './' + image_name
     return send_file(image_dir, as_attachment=True)

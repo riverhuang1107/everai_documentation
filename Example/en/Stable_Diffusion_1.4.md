@@ -124,7 +124,6 @@ image_pipe = None
 def txt2img():    
     data = flask.request.json
     prompt = data['prompt']
-    #prompt = "a photo of a cat on the roof"
 
     pipe_out = image_pipe(prompt)
 
