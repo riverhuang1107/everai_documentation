@@ -78,7 +78,8 @@ app = App(
 ```
 
 ### Load model
-Before your application is deployed in the cloud, you should construct your volume first, if your app uses at least one volume.
+Before your application is deployed in the cloud, you should construct your volume first, if your app uses at least one volume.  
+
 You can create a function by the `@app.prepare` decorator to manager and prepare your volume and related files.  
 
 ```bash
@@ -98,10 +99,7 @@ def prepare_model():
     image_pipe = StableDiffusionPipeline.from_pretrained(model_dir,
                                                         local_files_only=True,
                                                         revision="fp16", 
-                                                        #variant="fp16",
-                                                        #subfolder="vae",
                                                         torch_dtype=torch.float16, 
-                                                        #use_safetensors=True,
                                                         low_cpu_mem_usage=False
                                                         )
     image_pipe.to("cuda")

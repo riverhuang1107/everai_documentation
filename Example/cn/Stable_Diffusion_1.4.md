@@ -80,7 +80,8 @@ app = App(
 
 ### 预加载模型
 
-如果你的应用需要用到文件对象存储，那么在你的应用部署到云环境之前，你需要先创建一个对象存储。
+如果你的应用需要用到文件对象存储，那么在你的应用部署到云环境之前，你需要先创建一个对象存储。  
+
 你可以通过注解`@app.prepare`创建一个方法来管理和准备你的对象存储以及相关的文件。
 ```bash
 everai volume pull expvent/stable-diffusion-v1-4
@@ -99,10 +100,7 @@ def prepare_model():
     image_pipe = StableDiffusionPipeline.from_pretrained(model_dir,
                                                         local_files_only=True,
                                                         revision="fp16", 
-                                                        #variant="fp16",
-                                                        #subfolder="vae",
                                                         torch_dtype=torch.float16, 
-                                                        #use_safetensors=True,
                                                         low_cpu_mem_usage=False
                                                         )
     image_pipe.to("cuda")
