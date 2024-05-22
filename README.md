@@ -280,7 +280,7 @@ curl --no-buffer -H'Authorization: Bearer <your_token>' https://everai.expvent.c
 ```
 ## One more thing
 
-到目前为止，你已经在[EverAI](https://everai.expvent.com)平台上成功部署了一个简单应用了。但这个应用的负载超出计算资源的可承受范围时，应用的服务响应会变慢，超时，甚至不可用。[EverAI](https://everai.expvent.com)平台提供了自动扩容机制，可以帮助你的应用在高负载的情况下自动扩容，省去你手动部署新计算节点的操作。关于这方面的介绍请参考[自动扩缩容](https://github.com/riverhuang1107/everai_documentation/blob/main/Guide/App_Autoscaling_cn.md)。 
+到目前为止，你已经在[EverAI](https://everai.expvent.com)平台上成功部署了一个简单应用了。但这个应用的负载超出计算资源的可承受范围时，应用的服务响应会变慢，超时，甚至不可用。[EverAI](https://everai.expvent.com)平台提供了自动扩容机制，可以帮助你的应用在高负载的情况下自动扩容，省去你手动部署新计算节点的操作。关于这方面的介绍请参考[自动扩缩容](https://expvent.com.cn:1111/everai-documentation-web/zh-cn/docs/Guide/App_Autoscaling)。 
 
 ## 开源协议
 MIT License协议。  

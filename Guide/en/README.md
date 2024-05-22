@@ -274,7 +274,7 @@ Now, you can make a test call for your app, in these examples looks like:
 curl --no-buffer -H'Authorization: Bearer <your_token>' https://everai.expvent.com/api/apps/v1/routes/<your app route name>/sse
 ```
 ## One more thing
-So far, you have created a simple application. But when the load of this application exceeds the endurance range of computing resources, the application's service response will slow down, time out, or even be unavailable. The [EverAI](https://everai.expvent.com) platform provides an autoscaling mechanism that can help your application automatically expand under high load conditions, eliminating the need for you to manually deploy new computing nodes.  For detailed guidance, check out [App Autoscaling](https://github.com/riverhuang1107/everai_documentation/blob/main/Guide/App_Autoscaling_en.md).  
+So far, you have created a simple application. But when the load of this application exceeds the endurance range of computing resources, the application's service response will slow down, time out, or even be unavailable. The [EverAI](https://everai.expvent.com) platform provides an autoscaling mechanism that can help your application automatically expand under high load conditions, eliminating the need for you to manually deploy new computing nodes.  For detailed guidance, check out [App Autoscaling](https://expvent.com.cn:1111/everai-documentation-web/zh-cn/docs/Guide/App_Autoscaling).  
 
 ## License
 The MIT License.  
