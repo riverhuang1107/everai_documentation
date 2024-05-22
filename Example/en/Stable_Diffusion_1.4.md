@@ -184,7 +184,7 @@ nt-Type: application/json' -H'Authorization: Bearer <your_token>' -o test.png ht
 Open the picture and you can see the following effect.  
 
 
-!<img src="imgs/example.png" width = "512" />
+!<img src="img/example.png" width = "512" />
 
 
 
