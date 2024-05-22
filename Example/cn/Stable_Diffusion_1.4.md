@@ -80,8 +80,11 @@ app = App(
 
 ### 预加载模型
 
-你可以使用我们提供的公开存储对象`expvent/stable-diffusion-v1-4`中的模型文件加载模型。  
-
+如果你的应用需要用到文件对象存储，那么在你的应用部署到云环境之前，你需要先创建一个对象存储。
+你可以通过注解`@app.prepare`创建一个方法来管理和准备你的对象存储以及相关的文件。
+```bash
+everai volume pull expvent/stable-diffusion-v1-4
+```
 ```python
 @app.prepare()
 def prepare_model():
@@ -96,15 +99,13 @@ def prepare_model():
     image_pipe = StableDiffusionPipeline.from_pretrained(model_dir,
                                                         local_files_only=True,
                                                         revision="fp16", 
+                                                        #variant="fp16",
+                                                        #subfolder="vae",
                                                         torch_dtype=torch.float16, 
+                                                        #use_safetensors=True,
                                                         low_cpu_mem_usage=False
                                                         )
     image_pipe.to("cuda")
-```
-如果你想在本地使用`everai app run`调试这个示例，你的本地调试环境需要有GPU资源，并且在调试代码前使用`everai volume pull`命令把云端的模型文件拉取到本地环境。  
-
-```bash
-everai volume pull expvent/stable-diffusion-v1-4
 ```
 
 ### 实现推理服务
@@ -161,7 +162,7 @@ everai image build
 
 ## 部署
 
-最后一步是把你的应用部署到EverAI。并使它保持在可用的状态。  
+最后一步是把你的应用部署到EverAI。并使它保持在运行状态。  
 ```bash
 everai app deploy
 ```
@@ -173,12 +174,16 @@ NAME                         STATUS     CREATED_AT                ROUTE_NAME
 stable-diffusion-v1-4        DEPLOYED   2024-05-19 18:47:32+0800  stable-diffusion-v1-4
 ```
 
-当你看到你的应用处于`DEPLOYED`时，你可以执行下面的请求来测试你部署的代码是否符合你的预期：  
+当你看到你的应用处于`DEPLOYED`时，你可以使用`curl`执行下面的请求来测试你部署的代码，在控制台上的当前目录下会产生一张由大模型`Stable Diffusion 1.4`生成的图片。 
+
 ```bash
 curl -X POST -d '{"prompt": "a photo of a dog on the boat"}' -H 'Conte
 nt-Type: application/json' -H'Authorization: Bearer <your_token>' -o test.png https://everai.expvent.com/api/apps/v1/routes/<your app route name>/txt2img
 ```
-!<img src="imgs/example.png" width = "600" />
+
+打开图片，可以看到如下效果。
+
+!<img src="imgs/example.png" width = "512" />
 
 
 
