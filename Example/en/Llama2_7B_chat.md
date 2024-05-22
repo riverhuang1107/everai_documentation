@@ -136,7 +136,7 @@ tokenizer: typing.Optional[PreTrainedTokenizerBase] = None
 model = None
 
 # service entrypoint
-# api service url looks https://everai.expvent.com/api/apps/v1/routes/llama2-7b-chat-example/chat
+# api service url looks https://everai.expvent.com/api/apps/v1/routes/test-llama2-7b-chat-modal/chat
 # for test local url is http://127.0.0.1:8866/chat
 @app.service.route('/chat', methods=['POST'])
 def chat():
