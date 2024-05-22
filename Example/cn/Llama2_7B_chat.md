@@ -190,7 +190,7 @@ everai image build
 
 ## 部署
 
-最后一步是把你的应用部署到EverAI。并使它保持在可用的状态。  
+最后一步是把你的应用部署到EverAI。并使它保持在运行状态。  
 ```bash
 everai app deploy
 ```
