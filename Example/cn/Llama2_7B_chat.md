@@ -145,8 +145,6 @@ model = None
 # for test local url is http://127.0.0.1:5050/chat
 @app.service.route('/chat', methods=['POST'])
 def chat():
-    #assert pipeline is not None
-
     data = flask.request.json
     prompt = data['prompt']
 
@@ -162,7 +160,6 @@ def chat():
     
     # return text with some information or any other struct that need
     resp = flask.Response(text, mimetype='text/plain', headers={'x-prompt-hash': 'xxxx'})
-    # context.Done()
     return resp
 ```
 ## 构建镜像
