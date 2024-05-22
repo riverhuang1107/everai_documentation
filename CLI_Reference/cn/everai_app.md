@@ -184,7 +184,7 @@ everai app deploy [-h]
 * `-h, --help`  显示帮助信息
 
 ## everai app prepare             
-准备应用，所有被@app.prepare注解的方法都会被执行    
+准备应用，所有被`@app.prepare`注解的方法都会被执行    
 
 **示例**:  
 
