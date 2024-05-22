@@ -96,10 +96,7 @@ def prepare_model():
     image_pipe = StableDiffusionPipeline.from_pretrained(model_dir,
                                                         local_files_only=True,
                                                         revision="fp16", 
-                                                        #variant="fp16",
-                                                        #subfolder="vae",
                                                         torch_dtype=torch.float16, 
-                                                        #use_safetensors=True,
                                                         low_cpu_mem_usage=False
                                                         )
     image_pipe.to("cuda")
