@@ -104,7 +104,7 @@ everai app upgrade [-h] [--autoscaling-policy] [--resource-requests] [--volume-r
 
   * `-h, --help`            显示帮助信息
   * `--autoscaling-policy`  只更新自动扩缩容策略
-  * `--resource-requests`   只更新资源，这个选项会引起worker重新部署
+  * `--resource-requests`   只更新计算资源，这个选项会引起worker重新部署
   * `--volume-requests`     只更新卷，这个选项会引起worker重新部署
   * `--secret-requests`     只更新密钥，这个选项会引起worker重新部署
   * `--image`               只更新镜像，这个选项会引起worker重新部署
