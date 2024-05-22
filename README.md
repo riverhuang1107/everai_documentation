@@ -203,9 +203,9 @@ everai app run
 
 
 ## 准备存储
-如果你的应用需要用到文件对象存储，那么在你的应用部署到云环境之前，你需要先创建一个对象存储。  
+如果你的应用需要用到文件对象存储，那么在你的应用部署到云环境之前，你需要先创建一个卷。  
 
-你可以通过注解`@app.prepare`创建一个方法来管理和准备你的对象存储以及相关的文件。  
+你可以通过注解`@app.prepare`创建一个方法来管理和准备你的卷以及相关的文件。  
 
 ```python
 import os
@@ -236,7 +236,7 @@ def prepare_model():
 
 这句命令会执行所有被`@app.prepare`注解过的方法，在这些方法中你应该配置好文件数据。 
 
-在示例代码中，本地存储对象中的文件`my-model`会通过`everai app prepare`命令，推送到云端。
+在示例代码中，本地卷中的文件`my-model`会通过`everai app prepare`命令，推送到云端。
 
 ```bash
 everai app prepare

@@ -25,7 +25,7 @@ everai [-h] [-v]  {login,logout,worker,workers,w,config,image,images,i,run,app,a
 * `run`                 在本地环境运行应用进行测试
 * `app (apps, a)`       应用管理
 * `secret (secrets, sec, s)`  管理密钥
-* `volume (volumes, vol)`  管理存储对象
+* `volume (volumes, vol)`  管理卷
 * `configmap (cm, configmaps)`  ConfigMap管理
 * `version`             显示EverAI CLI命令行工具和客户端的软件版本
 

@@ -104,10 +104,10 @@ everai app upgrade [-h] [--autoscaling-policy] [--resource-requests] [--volume-r
 
   * `-h, --help`            显示帮助信息
   * `--autoscaling-policy`  只更新自动扩缩容策略
-  * `--resource-requests`   只更新资源请求，这个选项会引起worker重新部署
-  * `--volume-requests`     只更新存储对象请求，这个选项会引起worker重新部署
-  * `--secret-requests`     只更新密钥请求，这个选项会引起worker重新部署
-  * `--image`               只更新镜像请求，这个选项会引起worker重新部署
+  * `--resource-requests`   只更新资源，这个选项会引起worker重新部署
+  * `--volume-requests`     只更新卷，这个选项会引起worker重新部署
+  * `--secret-requests`     只更新密钥，这个选项会引起worker重新部署
+  * `--image`               只更新镜像，这个选项会引起worker重新部署
   * `--all`                 更新所有设置，这个选项会引起worker重新部署
 
 ## everai app pause               
@@ -188,7 +188,7 @@ everai app deploy [-h]
 
 **示例**:  
 
- 如果你的应用需要用到文件对象存储，那么在你的应用部署到云环境之前，你需要先创建一个对象存储。  
+ 如果你的应用需要用到文件对象存储，那么在你的应用部署到云环境之前，你需要先创建一个卷。  
 
 在生产环境，对象存储是非常重要的，你可以通过下面的命令准备它。  
 
