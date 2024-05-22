@@ -86,7 +86,6 @@ You can load the model using the model file in the public volume `expvent/llama2
 ```python
 @app.prepare()
 def prepare_model():
-    print(context.volumes)
     volume = context.get_volume(VOLUME_NAME)
     assert volume is not None and volume.ready
 
@@ -107,14 +106,12 @@ def prepare_model():
     
     model = LlamaForCausalLM.from_pretrained(model_dir, torch_dtype=torch.float16, local_files_only=True)
     model.cuda(0)
-    print('model success loaded')
 
     #tokenizer = LlamaTokenizer.from_pretrained(MODEL_NAME,
     #                                           token=huggingface_token,
     #                                           cache_dir=model_dir)
 
     tokenizer = LlamaTokenizer.from_pretrained(model_dir, local_files_only=True)
-    print('tokenizer success loaded')
 ```
 If you want to use `everai app run` to debug this example locally, your local debugging environment needs to have GPU resources, and use `everai volume pull` command to pull the model file from the cloud to the local environment before debugging the code.  
 
@@ -143,13 +140,10 @@ def chat():
     data = flask.request.json
     prompt = data['prompt']
 
-    print(f'prompt: {prompt}')
-
     input_ids = tokenizer.encode(prompt, return_tensors="pt")
     input_ids = input_ids.to('cuda:0')
     output = model.generate(input_ids, max_length=256, num_beams=4, no_repeat_ngram_size=2)
     response = tokenizer.decode(output[0], skip_special_tokens=True)
-    print(f'response: {response}')
 
     text = f'{response}'
     

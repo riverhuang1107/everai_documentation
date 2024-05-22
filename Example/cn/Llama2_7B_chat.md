@@ -90,7 +90,6 @@ app = App(
 ```python
 @app.prepare()
 def prepare_model():
-    print(context.volumes)
     volume = context.get_volume(VOLUME_NAME)
     assert volume is not None and volume.ready
 
@@ -111,14 +110,12 @@ def prepare_model():
     
     model = LlamaForCausalLM.from_pretrained(model_dir, torch_dtype=torch.float16, local_files_only=True)
     model.cuda(0)
-    print('model success loaded')
 
     #tokenizer = LlamaTokenizer.from_pretrained(MODEL_NAME,
     #                                           token=huggingface_token,
     #                                           cache_dir=model_dir)
 
     tokenizer = LlamaTokenizer.from_pretrained(model_dir, local_files_only=True)
-    print('tokenizer success loaded')
 ```
 
 如果你想在本地使用`everai app run`调试这个示例，你的本地调试环境需要有GPU资源，并且在调试代码前使用`everai volume pull`命令把云端的模型文件拉取到本地环境。  
@@ -148,13 +145,10 @@ def chat():
     data = flask.request.json
     prompt = data['prompt']
 
-    print(f'prompt: {prompt}')
-
     input_ids = tokenizer.encode(prompt, return_tensors="pt")
     input_ids = input_ids.to('cuda:0')
     output = model.generate(input_ids, max_length=256, num_beams=4, no_repeat_ngram_size=2)
     response = tokenizer.decode(output[0], skip_special_tokens=True)
-    print(f'response: {response}')
 
     text = f'{response}'
     
