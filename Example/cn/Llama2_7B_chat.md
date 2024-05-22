@@ -85,7 +85,7 @@ app = App(
 
 ### 预加载模型
 
-你可以使用我们提供的公开存储对象`expvent/llama2-7b-chat`中的模型文件加载模型。 
+你可以使用我们提供的公开卷`expvent/llama2-7b-chat`中的模型文件加载模型。 
 
 ```python
 @app.prepare()

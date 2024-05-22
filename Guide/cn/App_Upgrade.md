@@ -1,7 +1,7 @@
 # App Upgrade
 ## everai app upgrade --volume-requests
 
-如果你的应用已经在[EverAI](https://everai.expvent.com)平台云端部署，当你需要更新你存储对象中的文件内容时，可以使用`everai app upgrade --volume-requests`。[EverAI](https://everai.expvent.com)平台支持应用热升级，你的应用服务在整个升级更新过程中，始终处于在线运行状态。  
+如果你的应用已经在[EverAI](https://everai.expvent.com)平台云端部署，当你需要更新卷中的文件内容时，可以使用`everai app upgrade --volume-requests`。[EverAI](https://everai.expvent.com)平台支持应用热升级，你的应用服务在整个升级更新过程中，始终处于在线运行状态。  
 
 运行`everai worker list`，看到有一个worker正在运行中。  
 ```bash
@@ -17,13 +17,13 @@ hello world
 hello world
 ```
 
-执行`everai volume get get-start-volume`，可以看到你的应用中使用到的存储对象的存放路径。  
+执行`everai volume get get-start-volume`，可以看到你的应用中使用到的卷的存放路径。  
 ```bash
 <Volume: id: R9cFpk2JgmLcuiEfgAxPRd, name: get-start-volume, revision: 000001-08a, files: 1, size: 11 B>
 path: /Users/<username>/.cache/everai/volumes/R9cFpk2JgmLcuiEfgAxPRd
 ```
 
-进入存储对象的所在路径，找到应用中使用到的文件`my-model`，打开文件修改文件内容后保存退出。在示例中，把文件内容更新为如下数据。  
+进入卷的所在路径，找到应用中使用到的文件`my-model`，打开文件修改文件内容后保存退出。在示例中，把文件内容更新为如下数据。  
 ```bash
 hello world
 hello world
