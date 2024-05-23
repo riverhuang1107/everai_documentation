@@ -117,7 +117,9 @@ from diffusers import StableDiffusionPipeline
 import torch
 
 import flask
-from flask import send_file
+from flask import Response
+
+import io
 
 image_pipe = None
 
