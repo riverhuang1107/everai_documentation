@@ -79,7 +79,7 @@ app = App(
 
 ### Load model
 
-If the `stable-diffusion-v1-5` model file already exists in your local debugging environment, you can get the local path of the volume `stable-diffusion-v1-5` through the `everai volume get` command. Copy the model file to the local path where the volume is located.
+If the `Stable Diffusion 1.5` model file already exists in your local debugging environment, you can get the local path of the volume `stable-diffusion-v1-5` through the `everai volume get` command. Copy the model file to the local path where the volume is located.
 
 ```bash
 everai volume get stable-diffusion-v1-5
