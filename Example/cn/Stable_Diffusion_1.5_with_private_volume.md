@@ -80,7 +80,7 @@ app = App(
 
 ### 预加载模型
 
-如果`Stable Diffusion 1.5`模型文件在你的本地调试环境已经存在，你可以通过`everai volume get`命令获取到卷`llama2-7b-chat`的本地路径。把模型文件复制到卷所在的本地路径下。  
+如果`Stable Diffusion 1.5`模型文件在你的本地调试环境已经存在，你可以通过`everai volume get`命令获取到卷`stable-diffusion-v1-5`的本地路径。把模型文件复制到卷所在的本地路径下。  
 
 ```bash
 everai volume get stable-diffusion-v1-5
