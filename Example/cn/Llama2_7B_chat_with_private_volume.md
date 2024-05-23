@@ -85,8 +85,6 @@ app = App(
 
 ### 预加载模型
 
-If the `llama2-7b-chat` model file already exists in your local debugging environment, you can get the local path of the volume `llama2-7b-chat` through the `everai volume get` command. Copy the model file to the local path where the volume is located.
-
 如果`llama2-7b-chat`模型文件在你的本地调试环境已经存在，你可以通过`everai volume get`命令获取到卷`llama2-7b-chat`的本地路径。把模型文件复制到卷所在的本地路径下。  
 
 ```bash
@@ -94,8 +92,6 @@ everai volume get llama2-7b-chat
 <Volume: id: hupa49MesPXwmhFSy9Ku44, name: llama2-7b-chat, revision: 000001-b9c, files: 1, size: 11 B>
 path: /home/<username>/.cache/everai/volumes/hupa49MesPXwmhFSy9Ku44
 ```
-When using `everai app run` to debug the sample code, the value of `is_prepare_mode` is `False`, and the operation of pushing local files to the cloud will not be performed. After your code is debugged, execute the `everai app prepare` command. This command will execute all methods annotated by `@app.prepare`. At this time, the value of `is_prepare_mode` is `True`. In the sample code, the model files in the local volume `llama2-7b-chat` will be pushed to the cloud when this command is executed.
-
 使用`everai app run`调试示例代码时，`is_prepare_mode`的值是`False`，不会执行把本地文件推送到云端的操作。待你的代码调试通过后，执行`everai app prepare`命令，该命令会执行所有被`@app.prepare`注解过的方法，此时`is_prepare_mode`的值是`True`，在示例代码中，本地卷`llama2-7b-chat`中的模型文件会在执行该命令时被推送到云端。
 
 ```python
