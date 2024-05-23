@@ -182,7 +182,7 @@ nt-Type: application/json' -H'Authorization: Bearer <your_token>' -o test.png ht
 
 打开图片，可以看到如下效果。
 
-!<img src="https://expvent.com.cn:1111/evfiles/v1/expvent/public/everai-documentation/example.png" width = "512" />
+<img src="https://expvent.com.cn:1111/evfiles/v1/expvent/public/everai-documentation/example.png" width = "512" />
 
 
 
