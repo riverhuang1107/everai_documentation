@@ -1,3 +1,8 @@
+---
+sidebar_position: 2
+sidebar_label: everai overview
+---
+
 # everai overview
 EverAI Client for manage your EverAI application and other asserts  
 
