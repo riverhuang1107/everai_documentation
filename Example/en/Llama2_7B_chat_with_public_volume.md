@@ -1,5 +1,5 @@
 # Llama-2(7B) Chat with public volume
-In the quickstart, you created a simple application. In this example, we use `Llama-2(7B)` to implement a  AIGC(AI generated content) online question and answer service.  
+In the quickstart, you created a simple application. In this example, we use a public volume to store the `Llama-2(7B)` model files and implement an AIGC(AI generated content) online question and answer service.  
 
 ## Create an app
 Create a directory for your app firstly. In your app directory, you should login by token you got in [EverAI](https://everai.expvent.com). After login successfully, run command `everai app create` to create your app.  

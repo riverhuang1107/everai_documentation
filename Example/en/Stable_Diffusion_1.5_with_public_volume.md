@@ -1,6 +1,5 @@
 # Stable Diffusion 1.5 with public volume
-In the quickstart, you created a simple application. In this example, we use `Stable Diffusion 1.5` to implement a AIGC(AI generated content) online service.  
-
+In the quickstart, you created a simple application. In this example, we use a public volume to store the `Stable Diffusion 1.5` model files and implement an AIGC(AI generated content) online service.    
 
 ## Create an app
 Create a directory for your app firstly. In your app directory, you should login by token you got in [EverAI](https://everai.expvent.com). After login successfully, run command `everai app create` to create your app.  
