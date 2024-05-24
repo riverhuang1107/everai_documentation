@@ -1,4 +1,4 @@
-# EverAI Stable Diffusion 1.5
+# Stable Diffusion 1.5 with private volume
 In the quickstart, you created a simple application. In this example, we use `Stable Diffusion 1.5` to implement a AIGC(AI generated content) online service.  
 
 

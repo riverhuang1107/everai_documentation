@@ -1,33 +1,34 @@
-# EverAI Stable Diffusion 1.5
-In the quickstart, you created a simple application. In this example, we use `Stable Diffusion 1.5` to implement a AIGC(AI generated content) online service.  
+# Stable Diffusion 1.5 with public volume
 
+在快速入门中，你已经创建了一个简单的应用。在这个示例中，我们使用`Stable Diffusion 1.5`来实现一个文生图的在线服务。  
 
-## Create an app
-Create a directory for your app firstly. In your app directory, you should login by token you got in [EverAI](https://everai.expvent.com). After login successfully, run command `everai app create` to create your app.  
+## 创建应用
 
+首先，为你的应用创建一个目录，进入应用目录后，首先需要使用你从[EverAI](https://everai.expvent.com)获取到的token进行登录。登录成功后，使用`everai app create`命令创建你的应用。
 ```bash
 everai login --token <your token>
 
 everai app create <your app name>
 ```
-## Create secret
-If you have already created a secret for your registry, you can skip this step.
+## 创建密钥
 
-In this case, we will create one secret for [quay.io](https://quay.io/).  
+如果你已经为你需要访问的镜像仓库创建过密钥，这一步可以跳过。  
 
+在这个例子中，我们会为[quay.io](https://quay.io/)创建一个密钥。
 ```bash
 everai secret create your-quay-io-secret-name \
   --from-literal username=<your username> \
   --from-literal password=<your password>
 ```
 
-## Write your app code in python
-### Basic setup
-There is an example code in app.py.  
+## 编写你的代码
+### 基本设置
 
-First, import the required EverAI Python class library. Then define the variable names that need to be used, including the volume, the secret that accesses the image registry, and the file stored in the volume. Use the `Image.from_registry` static method to create a image instance. Create and define an app instance through the App class.  
+这是一个关于app.py的示例代码。  
 
-What needs to be noted here is that you need to configure GPU resources for your application. The GPU model configured here is "A100 40G", and the number of GPU cards is 1.  
+首先，引入必要的EverAI Python类库。然后定义所需要用到的变量名，包括卷，访问镜像仓库的密钥，以及存放在卷中的文件等。使用`Image.from_registry`静态方法创建一个镜像实例。通过App类来创建定义一个app实例。  
+
+这里需要注意的是，你需要为你的应用配置GPU资源，这里配置的GPU型号是"A100 40G"，GPU卡的数量是1。  
 
 ```python
 from everai.app import App, context, VolumeRequest
@@ -77,9 +78,9 @@ app = App(
 )
 ```
 
-### Load model
+### 预加载模型
 
-You can load the model using the model file in the public volume `expvent/stable-diffusion-v1-5` we provide.  
+你可以使用我们提供的公开卷`expvent/stable-diffusion-v1-5`中的模型文件加载模型。
 
 ```python
 @app.prepare()
@@ -100,15 +101,15 @@ def prepare_model():
                                                         )
     image_pipe.to("cuda")
 ```
-If you want to use `everai app run` to debug this example locally, your local debugging environment needs to have GPU resources, and use `everai volume pull` command to pull the model file from the cloud to the local environment before debugging the code.  
+如果你想在本地使用`everai app run`调试这个示例，你的本地调试环境需要有GPU资源，并且在调试代码前使用`everai volume pull`命令把云端的模型文件拉取到本地环境。  
 
 ```bash
 everai volume pull expvent/stable-diffusion-v1-5
 ```
 
-### Generate inference service
-Aftering loading `Stable Diffusion 1.5` model, now you can write your Python code that uses `flask` to implement the inference online service of AIGC(AI generated content).  
+### 实现推理服务
 
+加载`Stable Diffusion 1.5`模型后，这里的代码使用了`flask`实现了文生图的推理在线服务。  
 ```python
 from diffusers import StableDiffusionPipeline
 import torch
@@ -138,50 +139,50 @@ def txt2img():
     return Response(byte_stream.getvalue(), mimetype="image/png")
 ```
 
-## Build image
-This step will build the container image, using two very simple files `Dockerfile` and `image_builder.py`.  
+## 构建镜像
 
-In `image_builder.py`, you should set your image repo.  
+这步需要使用`Dockerfile`和`image_builder.py`来为你的应用构建容器镜像。  
 
+在`image_builder.py`中，你需要配置你的镜像地址信息。
 ```python
 from everai.image import Builder
 
 IMAGE = 'quay.io/<username>/<repo>:<tag>'
 ```
-The dependence of this step is docker and buildx installed on your machine. Otherwise we will have further prompts to help you install them.  
 
+首先确保你的docker环境处于登录状态，以及你已经安装了docker buildx插件。  
 ```bash
 docker login quay.io
 docker buildx version
 ```
 
-Then call the following command will compile the image and push them to your specified registry.  
-
+然后执行以下命令打包镜像，并且把打包好的镜像推送到你指定的镜像仓库中。  
 ```bash
 everai image build
 ```
 
-## Deploy image
-The final step is to deploy your app to everai and keep it running.  
+## 部署
 
+最后一步是把你的应用部署到EverAI。并使它保持在运行状态。  
 ```bash
 everai app deploy
 ```
-After running `everai app list`, you can see the result similar to the following. If your app's status is `DEPLOYED`, it means that your app is deployed successfully.  
 
+执行`everai app list`后，可以看到类似如下的输出结果。如果你的应用状态是`DEPLOYED`，意味着你的应用已经部署成功。  
 ```bash
 NAME                         STATUS     CREATED_AT                ROUTE_NAME
 ---------------------------  ---------  ------------------------  ---------------------------
 stable-diffusion-v1-5        DEPLOYED   2024-05-19 18:47:32+0800  stable-diffusion-v1-5
 ```
-When your app is deployed, you can use `curl` to execute the following request to test your deployed code, A picture generated by the `Stable Diffusion 1.5` model will be downloaded in the current directory on the console.  
+
+当你看到你的应用处于`DEPLOYED`时，你可以使用`curl`执行下面的请求来测试你部署的代码，在控制台上的当前目录下会产生一张由大模型`Stable Diffusion 1.5`生成的图片。 
 
 ```bash
 curl -X POST -d '{"prompt": "a photo of a dog on the boat"}' -H 'Conte
 nt-Type: application/json' -H'Authorization: Bearer <your_token>' -o test.png https://everai.expvent.com/api/apps/v1/routes/<your app route name>/txt2img
 ```
 
-Open the picture and you can see the following effect.  
+打开图片，可以看到如下效果。
 
 <img src="https://expvent.com.cn:1111/evfiles/v1/expvent/public/everai-documentation/demo-cat.png" width = "512" />
 

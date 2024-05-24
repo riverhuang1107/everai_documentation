@@ -1,4 +1,4 @@
-# EverAI Stable Diffusion 1.5
+# Stable Diffusion 1.5 with private volume
 
 在快速入门中，你已经创建了一个简单的应用。在这个示例中，我们使用`Stable Diffusion 1.5`来实现一个文生图的在线服务。  
 

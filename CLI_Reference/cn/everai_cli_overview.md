@@ -3,7 +3,7 @@ sidebar_position: 2
 sidebar_label: everai overview
 ---
 
-# everai overview
+# everai cli overview
 
 EverAI CLI命令行用于管理你的EverAI应用和其他资产  
 
