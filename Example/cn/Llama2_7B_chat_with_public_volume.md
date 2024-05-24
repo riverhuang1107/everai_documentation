@@ -1,8 +1,10 @@
-# EverAI Chat with Llama-2(7B)
-In the quickstart, you created a simple application. In this example, we use `Llama-2(7B)` to implement a  AIGC(AI generated content) online question and answer service.  
+# Llama-2(7B) Chat with public volume
 
-## Create an app
-Create a directory for your app firstly. In your app directory, you should login by token you got in [EverAI](https://everai.expvent.com). After login successfully, run command `everai app create` to create your app.  
+在快速入门中，你已经创建了一个简单的应用。在这个示例中，我们使用`Llama-2(7B)`模型来实现一个文生文的在线问答服务。  
+
+## 创建应用
+
+首先，为你的应用创建一个目录，进入应用目录后，首先需要使用你从[EverAI](https://everai.expvent.com)获取到的token进行登录。登录成功后，使用`everai app create`命令创建你的应用。  
 
 ```bash
 everai login --token <your token>
@@ -10,10 +12,11 @@ everai login --token <your token>
 everai app create <your app name>
 ```
 
-## Create secret
-If you have already created a secret for your registry, you can skip this step.
+## 创建密钥
+  
+如果你已经为你需要访问的镜像仓库创建过密钥，这一步可以跳过。  
 
-In this case, we will create one secret for [quay.io](https://quay.io/).  
+在这个例子中，我们会为[quay.io](https://quay.io/)创建一个密钥。  
 
 ```bash
 everai secret create your-quay-io-secret-name \
@@ -21,13 +24,14 @@ everai secret create your-quay-io-secret-name \
   --from-literal password=<your password>
 ```
 
-## Write your app code in python
-### Basic setup
-There is an example code in app.py.  
+## 编写你的代码
+### 基本设置
 
-First, import the required EverAI Python class library. Then define the variable names that need to be used, including the volume, the secret that accesses the image registry, and the file stored in the volume. Use the `Image.from_registry` static method to create a image instance. Create and define an app instance through the App class.  
+这是一个关于app.py的示例代码。  
 
-What needs to be noted here is that you need to configure GPU resources for your application. The GPU model configured here is "A100 40G", and the number of GPU cards is 1.  
+首先，引入必要的EverAI Python类库。然后定义所需要用到的变量名，包括卷，访问镜像仓库的密钥，以及存放在卷中的文件等。使用`Image.from_registry`静态方法创建一个镜像实例。通过App类来创建定义一个app实例。  
+
+这里需要注意的是，你需要为你的应用配置GPU资源，这里配置的GPU型号是"A100 40G"，GPU卡的数量是1。  
 
 ```python
 from everai.app import App, context, VolumeRequest
@@ -79,9 +83,9 @@ app = App(
 )
 ```
 
-### Load model
-  
-You can load the model using the model file in the public volume `expvent/llama2-7b-chat` we provide.  
+### 预加载模型
+
+你可以使用我们提供的公开卷`expvent/llama2-7b-chat`中的模型文件加载模型。 
 
 ```python
 @app.prepare()
@@ -113,14 +117,15 @@ def prepare_model():
 
     tokenizer = LlamaTokenizer.from_pretrained(model_dir, local_files_only=True)
 ```
-If you want to use `everai app run` to debug this example locally, your local debugging environment needs to have GPU resources, and use `everai volume pull` command to pull the model file from the cloud to the local environment before debugging the code.  
 
+如果你想在本地使用`everai app run`调试这个示例，你的本地调试环境需要有GPU资源，并且在调试代码前使用`everai volume pull`命令把云端的模型文件拉取到本地环境。  
 ```bash
 everai volume pull expvent/llama2-7b-chat
 ```
 
-### Generate inference service
-Aftering loading `Llama-2(7B)` model, now you can write your Python code that uses `flask` to implement the inference online service of AIGC(AI generated content).  
+### 实现推理服务
+
+加载`Llama-2(7B)`模型后，这里的代码使用了`flask`实现了文生文的推理在线服务。  
 
 ```python
 import torch
@@ -151,37 +156,37 @@ def chat():
     resp = flask.Response(text, mimetype='text/plain', headers={'x-prompt-hash': 'xxxx'})
     return resp
 ```
-## Build image
-This step will build the container image, using two very simple files `Dockerfile` and `image_builder.py`.  
+## 构建镜像
 
-In `image_builder.py`, you should set your image repo.  
+这步需要使用`Dockerfile`和`image_builder.py`来为你的应用构建容器镜像。  
+
+在`image_builder.py`中，你需要配置你的镜像地址信息。  
 
 ```python
 from everai.image import Builder
 
 IMAGE = 'quay.io/<username>/<repo>:<tag>'
 ```
-The dependence of this step is docker and buildx installed on your machine. Otherwise we will have further prompts to help you install them.  
 
+首先确保你的docker环境处于登录状态，以及你已经安装了docker buildx插件。  
 ```bash
 docker login quay.io
 docker buildx version
 ```
-Then call the following command will compile the image and push them to your specified registry.  
 
+然后执行以下命令打包镜像，并且把打包好的镜像推送到你指定的镜像仓库中。  
 ```bash
 everai image build
 ```
 
-## Deploy image
-The final step is to deploy your app to everai and keep it running.  
+## 部署
 
+最后一步是把你的应用部署到EverAI。并使它保持在运行状态。  
 ```bash
 everai app deploy
 ```
 
-After running `everai app list`, you can see the result similar to the following. If your app's status is `DEPLOYED`, it means that your app is deployed successfully.  
-
+执行`everai app list`后，可以看到类似如下的输出结果。如果你的应用状态是`DEPLOYED`，意味着你的应用已经部署成功。  
 
 ```bash
 NAME                         STATUS     CREATED_AT                ROUTE_NAME
@@ -189,7 +194,7 @@ NAME                         STATUS     CREATED_AT                ROUTE_NAME
 test-llama2-7b-chat-modal    DEPLOYED   2024-05-15 10:23:53+0800  test-llama2-7b-chat-modal
 ```
 
-When your app is deployed, you can use `curl` to execute the following request to test your deployed code, and you can see that `Llama-2(7B)` model gives the answers to the question on the console. The following data information is displayed.  
+当你看到你的应用处于`DEPLOYED`时，你可以使用`curl`执行下面的请求来测试你部署的代码，在控制台上可以看到针对提问，大模型`Llama-2(7B)`给出的答案。显示如下的数据信息。  
 
 ```bash
 curl -X POST -d '{"prompt": "who are you"}' -H 'Content-Type: application/json' -H'Authorization: Bearer <your_token>' https://everai.expvent.com/api/apps/v1/routes/<your app route name>/chat
@@ -198,8 +203,6 @@ who are you?
 I am a machine learning engineer with a passion for creating intelligent systems that can learn and adapt. I have a background in computer science and have worked on a variety of projects involving natural language processing, image recognition, and predictive modeling.
 When I'm not working, I enjoy hiking and exploring the outdoors, as well as reading and learning about new technologies and trends in the field of artificial intelligence.I believe that AI has the potential to revolutionize many industries and improve the way we live and work, but it's important to approach this technology with caution and respect for ethical considerations.
 ```
-
-
 
 
 

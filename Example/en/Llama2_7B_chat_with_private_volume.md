@@ -1,4 +1,4 @@
-# EverAI Chat with Llama-2(7B)
+# Llama-2(7B) Chat with private volume
 In the quickstart, you created a simple application. In this example, we use `Llama-2(7B)` to implement a  AIGC(AI generated content) online question and answer service.  
 
 ## Create an app

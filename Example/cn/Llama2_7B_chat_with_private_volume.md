@@ -1,4 +1,4 @@
-# EverAI Chat with Llama-2(7B)
+#  Llama-2(7B) Chat with private volume
 
 在快速入门中，你已经创建了一个简单的应用。在这个示例中，我们使用`Llama-2(7B)`模型来实现一个文生文的在线问答服务。  
 
