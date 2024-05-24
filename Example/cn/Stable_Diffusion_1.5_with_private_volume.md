@@ -115,7 +115,13 @@ def prepare_model():
                                                         torch_dtype=torch.float16, 
                                                         low_cpu_mem_usage=False
                                                         )
-    image_pipe.to("cuda")
+
+    # only in prepare mode push volume
+    # to save gpu time (redundant sha256 checks)
+    if context.is_prepare_mode:
+        context.volume_manager.push(VOLUME_NAME)
+    else:
+        image_pipe.to("cuda")
 ```
 
 ### 实现推理服务
