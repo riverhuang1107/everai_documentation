@@ -41,6 +41,7 @@ from image_builder import IMAGE
 APP_NAME = '<your app name>'
 VOLUME_NAME = 'stable-diffusion-v1-5'
 QUAY_IO_SECRET_NAME = 'your-quay-io-secret-name'
+HUGGINGFACE_SECRET_NAME = 'your-huggingface-secret-name'
 
 image = Image.from_registry(IMAGE, auth=BasicAuth(
         username=Placeholder(QUAY_IO_SECRET_NAME, 'username', kind='Secret'),
@@ -54,6 +55,7 @@ app = App(
         VolumeRequest(name=VOLUME_NAME, create_if_not_exists=True),
     ],
     secret_requests=[
+        HUGGINGFACE_SECRET_NAME,
         QUAY_IO_SECRET_NAME,
     ],
     autoscaling_policy=SimpleAutoScalingPolicy(
@@ -98,6 +100,10 @@ MODEL_NAME = 'runwayml/stable-diffusion-v1-5'
 def prepare_model():
     volume = context.get_volume(VOLUME_NAME)
     assert volume is not None and volume.ready
+
+    secret = context.get_secret(HUGGINGFACE_SECRET_NAME)
+    assert secret is not None
+    huggingface_token = secret.get('token-key-as-your-wish')
 
     model_dir = volume.path
 
