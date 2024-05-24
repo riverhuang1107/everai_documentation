@@ -39,7 +39,7 @@ from everai.placeholder import Placeholder
 from image_builder import IMAGE
 
 APP_NAME = '<your app name>'
-VOLUME_NAME = 'expvent/stable-diffusion-v1-5'
+VOLUME_NAME = 'stable-diffusion-v1-5'
 QUAY_IO_SECRET_NAME = 'your-quay-io-secret-name'
 
 image = Image.from_registry(IMAGE, auth=BasicAuth(
@@ -80,7 +80,9 @@ app = App(
 
 ### 预加载模型
 
-如果`Stable Diffusion 1.5`模型文件在你的本地调试环境已经存在，你可以通过`everai volume get`命令获取到卷`stable-diffusion-v1-5`的本地路径。把模型文件复制到卷所在的本地路径下。  
+如果你的本地环境没有模型文件，你可以使用`StableDiffusionPipeline.from_pretrained`方法传入`MODEL_NAME`，从[Hugging Face](https://huggingface.co/)官网拉取模型文件。并且会通过设置`cache_dir`，把模型文件缓存到私有卷`stable-diffusion-v1-5`中。  
+
+你可以通过`everai volume get`命令获取到卷`stable-diffusion-v1-5`的本地路径。进入卷的本地路径后，可以看到已经被缓存的模型文件。  
 
 ```bash
 everai volume get stable-diffusion-v1-5
@@ -90,6 +92,8 @@ path: /root/.cache/everai/volumes/iRizusPqYZsqPPNLSTnogW
 使用`everai app run`调试示例代码时，`is_prepare_mode`的值是`False`，不会执行把本地文件推送到云端的操作。待你的代码调试通过后，执行`everai app prepare`命令，该命令会执行所有被`@app.prepare`注解过的方法，此时`is_prepare_mode`的值是`True`，在示例代码中，本地卷`stable-diffusion-v1-5`中的模型文件会在执行该命令时被推送到云端。
 
 ```python
+MODEL_NAME = 'runwayml/stable-diffusion-v1-5'
+
 @app.prepare()
 def prepare_model():
     volume = context.get_volume(VOLUME_NAME)
@@ -99,9 +103,9 @@ def prepare_model():
 
     global image_pipe
 
-    #image_pipe = StableDiffusionPipeline.from_pretrained("runwayml/stable-diffusion-v1-5")
-    image_pipe = StableDiffusionPipeline.from_pretrained(model_dir,
-                                                        local_files_only=True,
+    image_pipe = StableDiffusionPipeline.from_pretrained(MODEL_NAME,
+                                                        token=huggingface_token,
+                                                        cache_dir=model_dir,
                                                         revision="fp16", 
                                                         torch_dtype=torch.float16, 
                                                         low_cpu_mem_usage=False
