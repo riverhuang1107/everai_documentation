@@ -81,7 +81,9 @@ app = App(
 
 ### Load model
   
-If the `llama2-7b-chat` model file already exists in your local debugging environment, you can get the local path of the volume `llama2-7b-chat` through the `everai volume get` command. Copy the model file to the local path where the volume is located.
+If your local environment does not have a model file, you can use the `LlamaForCausalLM.from_pretrained` method to pass in `MODEL_NAME` to pull the model file from the [Hugging Face](https://huggingface.co/) official website. And by setting `cache_dir`, the model file will be cached in the private volume `llama2-7b-chat`.  
+
+You can get the local path of the volume `llama2-7b-chat` through the `everai volume get` command. After entering the local path of the volume, you can see the model files that have been cached.  
 
 ```bash
 everai volume get llama2-7b-chat

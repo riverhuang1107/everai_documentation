@@ -40,6 +40,7 @@ from image_builder import IMAGE
 APP_NAME = '<your app name>'
 VOLUME_NAME = 'stable-diffusion-v1-5'
 QUAY_IO_SECRET_NAME = 'your-quay-io-secret-name'
+MODEL_NAME = 'runwayml/stable-diffusion-v1-5'
 HUGGINGFACE_SECRET_NAME = 'your-huggingface-secret-name'
 
 image = Image.from_registry(IMAGE, auth=BasicAuth(
@@ -81,7 +82,9 @@ app = App(
 
 ### Load model
 
-If the `Stable Diffusion 1.5` model file already exists in your local debugging environment, you can get the local path of the volume `stable-diffusion-v1-5` through the `everai volume get` command. Copy the model file to the local path where the volume is located.
+If your local environment does not have a model file, you can use the `StableDiffusionPipeline.from_pretrained` method to pass in `MODEL_NAME` and pull the model file from the [Hugging Face](https://huggingface.co/) official website. And by setting `cache_dir`, the model file will be cached in the private volume `stable-diffusion-v1-5`.  
+
+You can get the local path of the volume `stable-diffusion-v1-5` through the `everai volume get` command. After entering the local path of the volume, you can see the model files that have been cached.
 
 ```bash
 everai volume get stable-diffusion-v1-5
@@ -91,8 +94,6 @@ path: /root/.cache/everai/volumes/iRizusPqYZsqPPNLSTnogW
 When using `everai app run` to debug the sample code, the value of `is_prepare_mode` is `False`, and the operation of pushing local files to the cloud will not be performed. After your code is debugged, execute the `everai app prepare` command. This command will execute all methods annotated by `@app.prepare`. At this time, the value of `is_prepare_mode` is `True`. In the sample code, the model files in the local volume `stable-diffusion-v1-5` will be pushed to the cloud when this command is executed.   
 
 ```python
-MODEL_NAME = 'runwayml/stable-diffusion-v1-5'
-
 @app.prepare()
 def prepare_model():
     volume = context.get_volume(VOLUME_NAME)
