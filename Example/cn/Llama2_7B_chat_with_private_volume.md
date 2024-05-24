@@ -116,8 +116,7 @@ def prepare_model():
     model = LlamaForCausalLM.from_pretrained(MODEL_NAME,
                                              token=huggingface_token,
                                              cache_dir=model_dir)    
-    model.cuda(0)
-
+                                             
     tokenizer = LlamaTokenizer.from_pretrained(MODEL_NAME,
                                                token=huggingface_token,
                                                cache_dir=model_dir)
