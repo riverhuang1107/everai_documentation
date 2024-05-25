@@ -139,7 +139,7 @@ import io
 image_pipe = None
 
 # service entrypoint
-# api service url looks https://everai.expvent.com/api/apps/v1/routes/stable-diffusion-v1-5/txt2img
+# api service url looks https://everai.expvent.com/api/routes/v1/stable-diffusion-v1-5/txt2img
 # for test local url is http://127.0.0.1:8866/txt2img
 @app.service.route('/txt2img', methods=['POST'])
 def txt2img():    
