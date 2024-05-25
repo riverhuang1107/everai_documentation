@@ -56,7 +56,7 @@ GtxtbdHn2rFEkZqZxSesyE  RUNNING   FREE             2024-05-12 18:20:38+0800
 Use `curl` to run the test case agian, the new output of the example is on the terminal now.  
 
 ```bash
-curl -H'Authorization: Bearer <your_token>' https://everai.expvent.com/api/apps/v1/routes/<your app route name>/show-volume
+curl -H'Authorization: Bearer <your_token>' https://everai.expvent.com/api/routes/v1/<your app route name>/show-volume
 hello world
 hello world
 hello world
@@ -76,7 +76,7 @@ dEXndYfRrpqwAirhBdugYN  RUNNING   FREE             2024-05-11 14:54:27+0800
 Use `curl` to run the test case, the output of the example is on the terminal. This example sends active messages from the server to the client.  
 
 ```bash
-curl -H'Authorization: Bearer <your_token>' https://everai.expvent.com/api/apps/v1/routes/<your app route name>/sse
+curl -H'Authorization: Bearer <your_token>' https://everai.expvent.com/api/routes/v1/<your app route name>/sse
 hello again 0
 
 hello again 1

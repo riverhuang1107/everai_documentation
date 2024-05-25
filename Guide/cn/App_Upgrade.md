@@ -55,7 +55,7 @@ GtxtbdHn2rFEkZqZxSesyE  RUNNING   FREE             2024-05-12 18:20:38+0800
 
 再次使用`curl`执行测试用例，在控制台显示如下的数据信息。可以看到显示的数据信息已经完成更新。  
 ```bash
-curl -H'Authorization: Bearer <your_token>' https://everai.expvent.com/api/apps/v1/routes/<your app route name>/show-volume
+curl -H'Authorization: Bearer <your_token>' https://everai.expvent.com/api/routes/v1/<your app route name>/show-volume
 hello world
 hello world
 hello world
