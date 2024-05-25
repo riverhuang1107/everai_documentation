@@ -90,7 +90,6 @@ def prepare_model():
 
     global image_pipe
 
-    #image_pipe = StableDiffusionPipeline.from_pretrained("runwayml/stable-diffusion-v1-5")
     image_pipe = StableDiffusionPipeline.from_pretrained(model_dir,
                                                         local_files_only=True,
                                                         revision="fp16", 
