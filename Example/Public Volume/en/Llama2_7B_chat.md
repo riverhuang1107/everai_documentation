@@ -35,12 +35,13 @@ from everai.autoscaling import SimpleAutoScalingPolicy
 from everai.image import Image, BasicAuth
 from everai.resource_requests import ResourceRequests
 from everai.placeholder import Placeholder
+from image_builder import IMAGE
 
 APP_NAME = '<your app name>'
 VOLUME_NAME = 'expvent/llama2-7b-chat'
 MODEL_NAME = 'meta-llama/Llama-2-7b-chat-hf'
-HUGGINGFACE_SECRET_NAME = 'your-huggingface-secret-name'
 QUAY_IO_SECRET_NAME = 'your-quay-io-secret-name'
+CONFIGMAP_NAME = 'llama2-configmap'
 
 image = Image.from_registry(IMAGE, auth=BasicAuth(
         username=Placeholder(QUAY_IO_SECRET_NAME, 'username', kind='Secret'),
@@ -54,19 +55,20 @@ app = App(
         VolumeRequest(name=VOLUME_NAME, create_if_not_exists=True),
     ],
     secret_requests=[
-        HUGGINGFACE_SECRET_NAME,
-        QUAY_IO_SECRET_NAME,
+        QUAY_IO_SECRET_NAME
     ],
     autoscaling_policy=SimpleAutoScalingPolicy(
         # keep running workers even no any requests, that make reaction immediately for new request
-        min_workers=1,
+        min_workers=Placeholder(kind='ConfigMap', name=CONFIGMAP_NAME, key='min_workers'),
         # the maximum works setting, protect your application avoid to pay a lot of money
         # when an attack or sudden traffic
-        max_workers=10,
-        # this factor control autoscaler how to scale up your app
-        max_queue_size=3,
-        # this factor control autoscaler how to scale down your app
-        max_idle_time=60,
+        max_workers=Placeholder(kind='ConfigMap', name=CONFIGMAP_NAME, key='max_workers'),
+        # this factor controls autoscaler how to scale up your app
+        max_queue_size=Placeholder(kind='ConfigMap', name=CONFIGMAP_NAME, key='max_queue_size'),
+        # this factor controls autoscaler how to scale down your app
+        max_idle_time=Placeholder(kind='ConfigMap', name=CONFIGMAP_NAME, key='max_idle_time'),
+        # this factor controls autoscaler how many steps to scale up your app from queue 
+        scale_up_step=Placeholder(kind='ConfigMap', name=CONFIGMAP_NAME, key='scale_up_step'),
     ),
     resource_requests=ResourceRequests(
         cpu_num=2,
@@ -84,14 +86,13 @@ app = App(
 You can load the model using the model file in the public volume `expvent/llama2-7b-chat` we provide.  
 
 ```python
+import torch
+from transformers import LlamaForCausalLM, LlamaTokenizer, PreTrainedTokenizerBase, TextIteratorStreamer
+
 @app.prepare()
 def prepare_model():
     volume = context.get_volume(VOLUME_NAME)
     assert volume is not None and volume.ready
-
-    secret = context.get_secret(HUGGINGFACE_SECRET_NAME)
-    assert secret is not None
-    huggingface_token = secret.get('token-key-as-your-wish')
 
     model_dir = volume.path
 
@@ -113,9 +114,6 @@ everai volume pull expvent/llama2-7b-chat
 Aftering loading `Llama-2(7B)` model, now you can write your Python code that uses `flask` to implement the inference online service of AIGC(AI generated content).  
 
 ```python
-import torch
-from transformers import LlamaForCausalLM, LlamaTokenizer, PreTrainedTokenizerBase, TextIteratorStreamer
-
 import flask
 import typing
 
