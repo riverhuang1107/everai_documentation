@@ -37,7 +37,7 @@ from everai.placeholder import Placeholder
 from image_builder import IMAGE
 
 APP_NAME = 'stable-diffusion-v1-5-img2img'
-VOLUME_NAME = 'expvent/models--runwayml--stable-diffusion-v1-5'
+VOLUME_NAME = 'expvent/stable-diffusion-v1-5'
 QUAY_IO_SECRET_NAME = 'your-quay-io-secret-name'
 CONFIGMAP_NAME = 'sd15-configmap'
 
@@ -81,7 +81,7 @@ app = App(
 
 ### Load model
 
-You can load the model using the model file in the public volume `expvent/models--runwayml--stable-diffusion-v1-5` we provide.  
+You can load the model using the model file in the public volume `expvent/stable-diffusion-v1-5` we provide.  
 
 ```python
 @app.prepare()
@@ -104,7 +104,7 @@ def prepare_model():
 If you want to use `everai app run` to debug this example locally, your local debugging environment needs to have GPU resources, and use `everai volume pull` command to pull the model file from the cloud to the local environment before debugging the code.  
 
 ```bash
-everai volume pull expvent/models--runwayml--stable-diffusion-v1-5
+everai volume pull expvent/mexpvent/stable-diffusion-v1-5
 ```
 
 ### Generate inference service
