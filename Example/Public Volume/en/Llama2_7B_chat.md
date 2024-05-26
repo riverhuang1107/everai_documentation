@@ -37,9 +37,8 @@ from everai.resource_requests import ResourceRequests
 from everai.placeholder import Placeholder
 from image_builder import IMAGE
 
-APP_NAME = '<your app name>'
+APP_NAME = 'test-llama2-7b-chat-modal'
 VOLUME_NAME = 'expvent/llama2-7b-chat'
-MODEL_NAME = 'meta-llama/Llama-2-7b-chat-hf'
 QUAY_IO_SECRET_NAME = 'your-quay-io-secret-name'
 CONFIGMAP_NAME = 'llama2-configmap'
 
