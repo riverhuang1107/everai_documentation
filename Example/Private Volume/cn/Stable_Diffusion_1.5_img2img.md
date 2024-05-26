@@ -202,15 +202,21 @@ NAME                         STATUS     CREATED_AT                ROUTE_NAME
 stable-diffusion-v1-5        DEPLOYED   2024-05-19 18:47:32+0800  stable-diffusion-v1-5
 ```
 
-当你看到你的应用处于`DEPLOYED`时，你可以使用`curl`执行下面的请求来测试你部署的代码，在控制台上的当前目录下会产生一张由大模型`Stable Diffusion 1.5`生成的图片。 
+当你看到你的应用处于`DEPLOYED`时，你可以使用`curl`执行下面的请求来测试你部署的代码。 
+
+在使用`curl`请求之前，你需要先把`sketch-mountains-input.jpg`下载到你的本地目录下，在控制台终端的该目录下执行`curl`，下会产生一张基于`sketch-mountains-input.jpg`这张原图和`prompt`由大模型`Stable Diffusion 1.5`生成的新的图片。
 
 ```bash
 curl -X POST -F 'file=@sketch-mountains-input.jpg' -F "text_field=prompt:A fantasy landscape, trending on artstation" -H'Authorization: Bearer everai_637wE9obZtmGLyqIJp0lok' -o test.jpg https://everai.expvent.com/api/routes/v1/<your app route name>/img2img
 ```
 
-打开图片，可以看到如下效果。
+原图示例如下所示。    
 
-<img src="https://expvent.com.cn:1111/evfiles/v1/expvent/public/everai-documentation/demo-cat.png" width = "512" />
+<img src="img/sketch-mountains-input.jpg" width = "512" />
+
+打开基于原图和prompt生成的新图片，可以看到如下效果。
+
+<img src="img/test.jpg" width = "512" />
 
 
 
