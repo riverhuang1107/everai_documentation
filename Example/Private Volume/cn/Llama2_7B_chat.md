@@ -39,12 +39,14 @@ from everai.autoscaling import SimpleAutoScalingPolicy
 from everai.image import Image, BasicAuth
 from everai.resource_requests import ResourceRequests
 from everai.placeholder import Placeholder
+from image_builder import IMAGE
 
 APP_NAME = '<your app name>'
 VOLUME_NAME = 'llama2-7b-chat'
 MODEL_NAME = 'meta-llama/Llama-2-7b-chat-hf'
 HUGGINGFACE_SECRET_NAME = 'your-huggingface-secret-name'
 QUAY_IO_SECRET_NAME = 'your-quay-io-secret-name'
+CONFIGMAP_NAME = 'llama2-configmap'
 
 image = Image.from_registry(IMAGE, auth=BasicAuth(
         username=Placeholder(QUAY_IO_SECRET_NAME, 'username', kind='Secret'),
@@ -63,14 +65,16 @@ app = App(
     ],
     autoscaling_policy=SimpleAutoScalingPolicy(
         # keep running workers even no any requests, that make reaction immediately for new request
-        min_workers=1,
+        min_workers=Placeholder(kind='ConfigMap', name=CONFIGMAP_NAME, key='min_workers'),
         # the maximum works setting, protect your application avoid to pay a lot of money
         # when an attack or sudden traffic
-        max_workers=10,
-        # this factor control autoscaler how to scale up your app
-        max_queue_size=3,
-        # this factor control autoscaler how to scale down your app
-        max_idle_time=60,
+        max_workers=Placeholder(kind='ConfigMap', name=CONFIGMAP_NAME, key='max_workers'),
+        # this factor controls autoscaler how to scale up your app
+        max_queue_size=Placeholder(kind='ConfigMap', name=CONFIGMAP_NAME, key='max_queue_size'),
+        # this factor controls autoscaler how to scale down your app
+        max_idle_time=Placeholder(kind='ConfigMap', name=CONFIGMAP_NAME, key='max_idle_time'),
+        # this factor controls autoscaler how many steps to scale up your app from queue 
+        scale_up_step=Placeholder(kind='ConfigMap', name=CONFIGMAP_NAME, key='scale_up_step'),
     ),
     resource_requests=ResourceRequests(
         cpu_num=2,
@@ -97,6 +101,9 @@ path: /home/<username>/.cache/everai/volumes/hupa49MesPXwmhFSy9Ku44
 使用`everai app run`调试示例代码时，`is_prepare_mode`的值是`False`，不会执行把本地文件推送到云端的操作。待你的代码调试通过后，执行`everai app prepare`命令，该命令会执行所有被`@app.prepare`注解过的方法，此时`is_prepare_mode`的值是`True`，在示例代码中，本地卷`llama2-7b-chat`中的模型文件会在执行该命令时被推送到云端。
 
 ```python
+import torch
+from transformers import LlamaForCausalLM, LlamaTokenizer, PreTrainedTokenizerBase, TextIteratorStreamer
+
 @app.prepare()
 def prepare_model():
     volume = context.get_volume(VOLUME_NAME)
@@ -134,9 +141,6 @@ def prepare_model():
 加载`Llama-2(7B)`模型后，这里的代码使用了`flask`实现了文生文的推理在线服务。  
 
 ```python
-import torch
-from transformers import LlamaForCausalLM, LlamaTokenizer, PreTrainedTokenizerBase, TextIteratorStreamer
-
 import flask
 import typing
 
