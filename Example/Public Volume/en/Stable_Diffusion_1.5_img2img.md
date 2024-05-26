@@ -93,7 +93,8 @@ def prepare_model():
 
     global image_pipe
 
-    image_pipe = StableDiffusionImg2ImgPipeline.from_pretrained(model_dir,
+    image_pipe = StableDiffusionImg2ImgPipeline.from_pretrained(model_dir,                                                     
+                                                     local_files_only=True,
                                                      revision="fp16",
                                                      torch_dtype=torch.float16, 
                                                      low_cpu_mem_usage=False
