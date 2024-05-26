@@ -1,4 +1,4 @@
-# Stable Diffusion 1.5 with private volume
+# Stable Diffusion 1.5: img2img with private volume
 In the quickstart, you created a simple application. In this example, we use a private volume to store the `Stable Diffusion 1.5` model files and implement an AIGC(AI generated content) online image-to-image service.  
 
 ## Create an app

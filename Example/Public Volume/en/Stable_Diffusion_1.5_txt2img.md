@@ -1,4 +1,4 @@
-# Stable Diffusion 1.5 with public volume
+# Stable Diffusion 1.5: txt2img with public volume
 In the quickstart, you created a simple application. In this example, we use the `Stable Diffusion 1.5` model files in public volume and implement an AIGC(AI generated content) online service.    
 
 ## Create an app

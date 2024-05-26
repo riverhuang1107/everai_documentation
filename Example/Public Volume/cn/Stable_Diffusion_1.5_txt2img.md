@@ -1,4 +1,4 @@
-# Stable Diffusion 1.5 with public volume
+# Stable Diffusion 1.5: txt2img with public volume
 
 在快速入门中，你已经创建了一个简单的应用。在这个示例中，我们使用公开卷中存放的`Stable Diffusion 1.5`模型文件，实现一个基于`Stable Diffusion 1.5`模型的文生图在线服务。  
 
