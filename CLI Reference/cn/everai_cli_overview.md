@@ -1,6 +1,6 @@
 ---
 sidebar_position: 2
-sidebar_label: everai overview
+sidebar_label: everai cli overview
 ---
 
 # everai cli overview
