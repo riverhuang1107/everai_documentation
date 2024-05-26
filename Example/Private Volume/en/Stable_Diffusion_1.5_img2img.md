@@ -1,5 +1,5 @@
-# Stable Diffusion 1.5: txt2img with private volume
-In the quickstart, you created a simple application. In this example, we use a private volume to store the `Stable Diffusion 1.5` model files and implement an AIGC(AI generated content) online text-to-image service.  
+# Stable Diffusion 1.5 with private volume
+In the quickstart, you created a simple application. In this example, we use a private volume to store the `Stable Diffusion 1.5` model files and implement an AIGC(AI generated content) online image-to-image service.  
 
 ## Create an app
 Create a directory for your app firstly. In your app directory, you should login by token you got in [EverAI](https://everai.expvent.com). After login successfully, run command `everai app create` to create your app.  
@@ -36,11 +36,12 @@ from everai.resource_requests import ResourceRequests
 from everai.placeholder import Placeholder
 from image_builder import IMAGE
 
-APP_NAME = '<your app name>'
-VOLUME_NAME = 'stable-diffusion-v1-5'
+APP_NAME = 'stable-diffusion-v1-5-img2img'
+VOLUME_NAME = 'models--runwayml--stable-diffusion-v1-5'
 QUAY_IO_SECRET_NAME = 'your-quay-io-secret-name'
-MODEL_NAME = 'runwayml/stable-diffusion-v1-5'
 HUGGINGFACE_SECRET_NAME = 'your-huggingface-secret-name'
+MODEL_NAME = 'runwayml/stable-diffusion-v1-5'
+CONFIGMAP_NAME = 'sd15-configmap'
 
 image = Image.from_registry(IMAGE, auth=BasicAuth(
         username=Placeholder(QUAY_IO_SECRET_NAME, 'username', kind='Secret'),
@@ -55,18 +56,20 @@ app = App(
     ],
     secret_requests=[
         HUGGINGFACE_SECRET_NAME,
-        QUAY_IO_SECRET_NAME,
+        QUAY_IO_SECRET_NAME
     ],
     autoscaling_policy=SimpleAutoScalingPolicy(
         # keep running workers even no any requests, that make reaction immediately for new request
-        min_workers=1,
+        min_workers=Placeholder(kind='ConfigMap', name=CONFIGMAP_NAME, key='min_workers'),
         # the maximum works setting, protect your application avoid to pay a lot of money
         # when an attack or sudden traffic
-        max_workers=10,
-        # this factor control autoscaler how to scale up your app
-        max_queue_size=3,
-        # this factor control autoscaler how to scale down your app
-        max_idle_time=60,
+        max_workers=Placeholder(kind='ConfigMap', name=CONFIGMAP_NAME, key='max_workers'),
+        # this factor controls autoscaler how to scale up your app
+        max_queue_size=Placeholder(kind='ConfigMap', name=CONFIGMAP_NAME, key='max_queue_size'),
+        # this factor controls autoscaler how to scale down your app
+        max_idle_time=Placeholder(kind='ConfigMap', name=CONFIGMAP_NAME, key='max_idle_time'),
+        # this factor controls autoscaler how many steps to scale up your app from queue 
+        scale_up_step=Placeholder(kind='ConfigMap', name=CONFIGMAP_NAME, key='scale_up_step'),
     ),
     resource_requests=ResourceRequests(
         cpu_num=2,
@@ -81,13 +84,13 @@ app = App(
 
 ### Load model
 
-If your local environment does not have a model file, you can use the `StableDiffusionPipeline.from_pretrained` method to pass in `MODEL_NAME` and pull the model file from the [Hugging Face](https://huggingface.co/) official website. And by setting `cache_dir`, the model file will be cached in the private volume `stable-diffusion-v1-5`.  
+If your local environment does not have a model file, you can use the `StableDiffusionImg2ImgPipeline.from_pretrained` method to pass in `MODEL_NAME` and pull the model file from the [Hugging Face](https://huggingface.co/) official website. And by setting `cache_dir`, the model file will be cached in the private volume `models--runwayml--stable-diffusion-v1-5`.  
 
-You can get the local path of the volume `stable-diffusion-v1-5` through the `everai volume get` command. After entering the local path of the volume, you can see the model files that have been cached.
+You can get the local path of the volume `models--runwayml--stable-diffusion-v1-5` through the `everai volume get` command. After entering the local path of the volume, you can see the model files that have been cached.
 
 ```bash
-everai volume get stable-diffusion-v1-5
-<Volume: id: iRizusPqYZsqPPNLSTnogW, name: stable-diffusion-v1-5, revision: 000001-e72, files: 19, size: 10.22 GiB>
+everai volume get models--runwayml--stable-diffusion-v1-5
+<Volume: id: iRizusPqYZsqPPNLSTnogW, name: models--runwayml--stable-diffusion-v1-5, revision: 000001-e72, files: 19, size: 10.22 GiB>
 path: /root/.cache/everai/volumes/iRizusPqYZsqPPNLSTnogW
 ```
 When using `everai app run` to debug the sample code, the value of `is_prepare_mode` is `False`, and the operation of pushing local files to the cloud will not be performed. After your code is debugged, execute the `everai app prepare` command. This command will execute all methods annotated by `@app.prepare`. At this time, the value of `is_prepare_mode` is `True`. In the sample code, the model files in the local volume `stable-diffusion-v1-5` will be pushed to the cloud when this command is executed.   
@@ -106,14 +109,13 @@ def prepare_model():
 
     global image_pipe
 
-    image_pipe = StableDiffusionPipeline.from_pretrained(MODEL_NAME,
-                                                        token=huggingface_token,
-                                                        cache_dir=model_dir,
-                                                        revision="fp16", 
-                                                        torch_dtype=torch.float16, 
-                                                        low_cpu_mem_usage=False
-                                                        )
-
+    image_pipe = StableDiffusionImg2ImgPipeline.from_pretrained(MODEL_NAME,
+                                                     token=huggingface_token,
+                                                     cache_dir=model_dir,
+                                                     revision="fp16",
+                                                     torch_dtype=torch.float16, 
+                                                     low_cpu_mem_usage=False
+                                                     )   
     # only in prepare mode push volume
     # to save gpu time (redundant sha256 checks)
     if context.is_prepare_mode:
@@ -123,35 +125,44 @@ def prepare_model():
 ```
 
 ### Generate inference service
-Aftering loading `Stable Diffusion 1.5` model, now you can write your Python code that uses `flask` to implement the inference online text-to-image service of AIGC(AI generated content).  
+Aftering loading `Stable Diffusion 1.5` model, now you can write your Python code that uses `flask` to implement the inference online image-to-image service of AIGC(AI generated content).  
 
 ```python
-from diffusers import StableDiffusionPipeline
+```python
+from diffusers import StableDiffusionImg2ImgPipeline
 import torch
 
 import flask
 from flask import Response
 
 import io
+import PIL
+from io import BytesIO
 
 image_pipe = None
 
 # service entrypoint
-# api service url looks https://everai.expvent.com/api/routes/v1/stable-diffusion-v1-5/txt2img
-# for test local url is http://127.0.0.1:8866/txt2img
-@app.service.route('/txt2img', methods=['POST'])
-def txt2img():    
-    data = flask.request.json
-    prompt = data['prompt']
+# api service url looks https://everai.expvent.com/api/routes/v1/stable-diffusion-v1-5-img2img/img2img
+# for test local url is http://127.0.0.1:8866/img2img
+@app.service.route('/img2img', methods=['POST'])
+def img2img():        
+    f = flask.request.files['file']
+    img = f.read()
 
-    pipe_out = image_pipe(prompt)
+    prompt = flask.request.form['text_field']
+    prompt = prompt.split(':')[1]
+    
+    init_image = PIL.Image.open(BytesIO(img)).convert("RGB")
+    init_image = init_image.resize((768, 512))
+
+    pipe_out = image_pipe(prompt=prompt, image=init_image, strength=0.75, guidance_scale=7.5)
 
     image_obj = pipe_out.images[0]
 
     byte_stream = io.BytesIO()
-    image_obj.save(byte_stream, format="PNG")
+    image_obj.save(byte_stream, format="JPEG")
 
-    return Response(byte_stream.getvalue(), mimetype="image/png")
+    return Response(byte_stream.getvalue(), mimetype="image/jpg")
 ```
 
 ## Build image
@@ -186,17 +197,23 @@ everai app deploy
 After running `everai app list`, you can see the result similar to the following. If your app's status is `DEPLOYED`, it means that your app is deployed successfully.  
 
 ```bash
-NAME                         STATUS     CREATED_AT                ROUTE_NAME
----------------------------  ---------  ------------------------  ---------------------------
-stable-diffusion-v1-5        DEPLOYED   2024-05-19 18:47:32+0800  stable-diffusion-v1-5
+NAME                           STATUS     CREATED_AT                ROUTE_NAME
+-----------------------------  ---------  ------------------------  -----------------------------
+stable-diffusion-v1-5-img2img  DEPLOYED   2024-05-26 10:23:13+0800  stable-diffusion-v1-5-img2img
 ```
-When your app is deployed, you can use `curl` to execute the following request to test your deployed code, A picture generated by the `Stable Diffusion 1.5` model will be downloaded in the current directory on the console.  
+When your app is deployed, you can use `curl` to execute the following request to test your deployed code.  
+
+Before using `curl` to request, you need to download `sketch-mountains-input.jpg` to your local directory, execute `curl` in the directory of the console terminal, and a new image based on this original image of `sketch-mountains-input.jpg` and `prompt` will be generated by the large model `Stable Diffusion 1.5`.  
+
 
 ```bash
-curl -X POST -d '{"prompt": "a photo of a cat on the boat"}' -H 'Conte
-nt-Type: application/json' -H'Authorization: Bearer <your_token>' -o test.png https://everai.expvent.com/api/routes/v1/<your app route name>/txt2img
+curl -X POST -F 'file=@sketch-mountains-input.jpg' -F "text_field=prompt:A fantasy landscape, trending on artstation" -H'Authorization: Bearer everai_637wE9obZtmGLyqIJp0lok' -o test.jpg https://everai.expvent.com/api/routes/v1/<your app route name>/img2img
 ```
 
-Open the picture and you can see the following effect.  
+An example of the original image is shown below.  
 
-<img src="https://expvent.com.cn:1111/evfiles/v1/expvent/public/everai-documentation/demo-cat.png" width = "512" />
+<img src="img/sketch-mountains-input.jpg" width = "512" />
+
+Open the new picture and you can see the following effect.  
+
+<img src="img/test.jpg" width = "512" />
