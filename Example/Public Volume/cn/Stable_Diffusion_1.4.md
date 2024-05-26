@@ -83,6 +83,9 @@ app = App(
 你可以使用我们提供的公开卷`expvent/stable-diffusion-v1-4`中的模型文件加载模型。
 
 ```python
+from diffusers import StableDiffusionPipeline
+import torch
+
 @app.prepare()
 def prepare_model():
     volume = context.get_volume(VOLUME_NAME)
@@ -111,16 +114,13 @@ everai volume pull expvent/stable-diffusion-v1-4
 
 加载`Stable Diffusion 1.4`模型后，这里的代码使用了`flask`实现了文生图的推理在线服务。  
 ```python
-from diffusers import StableDiffusionPipeline
-import torch
-
 import flask
 from flask import send_file
 
 image_pipe = None
 
 # service entrypoint
-# api service url looks https://everai.expvent.com/api/apps/v1/routes/stable-diffusion-v1-4/txt2img
+# api service url looks https://everai.expvent.com/api/routes/v1/stable-diffusion-v1-4/txt2img
 # for test local url is http://127.0.0.1:8866/txt2img
 @app.service.route('/txt2img', methods=['POST'])
 def txt2img():    
