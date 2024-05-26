@@ -56,7 +56,6 @@ app = App(
         VolumeRequest(name=VOLUME_NAME, create_if_not_exists=True),
     ],
     secret_requests=[
-        HUGGINGFACE_SECRET_NAME,
         QUAY_IO_SECRET_NAME
     ],
     autoscaling_policy=SimpleAutoScalingPolicy(
