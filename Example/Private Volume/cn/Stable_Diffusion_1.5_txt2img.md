@@ -39,7 +39,7 @@ from everai.placeholder import Placeholder
 from image_builder import IMAGE
 
 APP_NAME = '<your app name>'
-VOLUME_NAME = 'stable-diffusion-v1-5'
+VOLUME_NAME = 'models--runwayml--stable-diffusion-v1-5'
 QUAY_IO_SECRET_NAME = 'your-quay-io-secret-name'
 MODEL_NAME = 'runwayml/stable-diffusion-v1-5'
 HUGGINGFACE_SECRET_NAME = 'your-huggingface-secret-name'
@@ -90,9 +90,9 @@ app = App(
 你可以通过`everai volume get`命令获取到卷`stable-diffusion-v1-5`的本地路径。进入卷的本地路径后，可以看到已经被缓存的模型文件。  
 
 ```bash
-everai volume get stable-diffusion-v1-5
-<Volume: id: iRizusPqYZsqPPNLSTnogW, name: stable-diffusion-v1-5, revision: 000001-e72, files: 19, size: 10.22 GiB>
-path: /root/.cache/everai/volumes/iRizusPqYZsqPPNLSTnogW
+everai volume get models--runwayml--stable-diffusion-v1-5
+<Volume: id: Xo6zoFc4986CrD7dYuNrwr, name: models--runwayml--stable-diffusion-v1-5, revision: 000001-12d, files: 76, size: 10.21 GiB>
+path: /root/.cache/everai/volumes/Xo6zoFc4986CrD7dYuNrwr
 ```
 使用`everai app run`调试示例代码时，`is_prepare_mode`的值是`False`，不会执行把本地文件推送到云端的操作。待你的代码调试通过后，执行`everai app prepare`命令，该命令会执行所有被`@app.prepare`注解过的方法，此时`is_prepare_mode`的值是`True`，在示例代码中，本地卷`stable-diffusion-v1-5`中的模型文件会在执行该命令时被推送到云端。
 
