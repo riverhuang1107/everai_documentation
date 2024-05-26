@@ -91,7 +91,7 @@ app = App(
 你可以通过`everai volume get`命令获取到卷`models--runwayml--stable-diffusion-v1-5`的本地路径。进入卷的本地路径后，可以看到已经被缓存的模型文件。  
 
 ```bash
-everai volume get stable-diffusion-v1-5
+everai volume get models--runwayml--stable-diffusion-v1-5
 <Volume: id: iRizusPqYZsqPPNLSTnogW, name: stable-diffusion-v1-5, revision: 000001-e72, files: 19, size: 10.22 GiB>
 path: /root/.cache/everai/volumes/iRizusPqYZsqPPNLSTnogW
 ```
@@ -143,7 +143,7 @@ from io import BytesIO
 image_pipe = None
 
 # service entrypoint
-# api service url looks https://everai.expvent.com/api/routes/v1/stable-diffusion-v1-5/img2img
+# api service url looks https://everai.expvent.com/api/routes/v1/stable-diffusion-v1-5-img2img/img2img
 # for test local url is http://127.0.0.1:8866/img2img
 @app.service.route('/img2img', methods=['POST'])
 def img2img():        
