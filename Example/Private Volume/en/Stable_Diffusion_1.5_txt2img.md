@@ -95,6 +95,9 @@ path: /root/.cache/everai/volumes/Xo6zoFc4986CrD7dYuNrwr
 When using `everai app run` to debug the sample code, the value of `is_prepare_mode` is `False`, and the operation of pushing local files to the cloud will not be performed. After your code is debugged, execute the `everai app prepare` command. This command will execute all methods annotated by `@app.prepare`. At this time, the value of `is_prepare_mode` is `True`. In the sample code, the model files in the local volume `stable-diffusion-v1-5` will be pushed to the cloud when this command is executed.   
 
 ```python
+from diffusers import StableDiffusionPipeline
+import torch
+
 @app.prepare()
 def prepare_model():
     volume = context.get_volume(VOLUME_NAME)
@@ -128,9 +131,6 @@ def prepare_model():
 Aftering loading `Stable Diffusion 1.5` model, now you can write your Python code that uses `flask` to implement the inference online text-to-image service of AIGC(AI generated content).  
 
 ```python
-from diffusers import StableDiffusionPipeline
-import torch
-
 import flask
 from flask import Response
 

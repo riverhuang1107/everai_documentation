@@ -83,6 +83,9 @@ app = App(
 You can load the model using the model file in the public volume `expvent/stable-diffusion-v1-5` we provide.  
 
 ```python
+from diffusers import StableDiffusionPipeline
+import torch
+
 @app.prepare()
 def prepare_model():
     volume = context.get_volume(VOLUME_NAME)
@@ -110,9 +113,6 @@ everai volume pull expvent/stable-diffusion-v1-5
 Aftering loading `Stable Diffusion 1.5` model, now you can write your Python code that uses `flask` to implement the inference online service of AIGC(AI generated content).  
 
 ```python
-from diffusers import StableDiffusionPipeline
-import torch
-
 import flask
 from flask import Response
 
