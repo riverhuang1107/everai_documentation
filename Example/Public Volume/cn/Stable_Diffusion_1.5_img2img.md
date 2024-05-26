@@ -101,12 +101,7 @@ def prepare_model():
                                                      torch_dtype=torch.float16, 
                                                      low_cpu_mem_usage=False
                                                      )   
-    # only in prepare mode push volume
-    # to save gpu time (redundant sha256 checks)
-    if context.is_prepare_mode:
-        context.volume_manager.push(VOLUME_NAME)
-    else:
-        image_pipe.to("cuda")
+    image_pipe.to("cuda")
 ```
 如果你想在本地使用`everai app run`调试这个示例，你的本地调试环境需要有GPU资源，并且在调试代码前使用`everai volume pull`命令把云端的模型文件拉取到本地环境。  
 
