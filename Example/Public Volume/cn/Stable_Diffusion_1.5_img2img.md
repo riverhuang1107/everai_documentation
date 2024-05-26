@@ -86,6 +86,9 @@ app = App(
 你可以使用我们提供的公开卷`expvent/stable-diffusion-v1-5`中的模型文件加载模型。
 
 ```python
+from diffusers import StableDiffusionImg2ImgPipeline
+import torch
+
 @app.prepare()
 def prepare_model():
     volume = context.get_volume(VOLUME_NAME)
@@ -113,9 +116,6 @@ everai volume pull expvent/stable-diffusion-v1-5
 
 加载`Stable Diffusion 1.5`模型后，这里的代码使用了`flask`实现了图生图的推理在线服务。  
 ```python
-from diffusers import StableDiffusionImg2ImgPipeline
-import torch
-
 import flask
 from flask import Response
 

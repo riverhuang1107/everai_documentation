@@ -97,6 +97,9 @@ When using `everai app run` to debug the sample code, the value of `is_prepare_m
 
 ```python
 @app.prepare()
+from diffusers import StableDiffusionImg2ImgPipeline
+import torch
+
 def prepare_model():
     volume = context.get_volume(VOLUME_NAME)
     assert volume is not None and volume.ready
@@ -128,10 +131,6 @@ def prepare_model():
 Aftering loading `Stable Diffusion 1.5` model, now you can write your Python code that uses `flask` to implement the inference online image-to-image service of AIGC(AI generated content).  
 
 ```python
-```python
-from diffusers import StableDiffusionImg2ImgPipeline
-import torch
-
 import flask
 from flask import Response
 
