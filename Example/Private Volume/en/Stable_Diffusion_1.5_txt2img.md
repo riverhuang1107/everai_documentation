@@ -83,9 +83,9 @@ app = App(
 
 ### Load model
 
-If your local environment does not have a model file, you can use the `StableDiffusionPipeline.from_pretrained` method to pass in `MODEL_NAME` and pull the model file from the [Hugging Face](https://huggingface.co/) official website. And by setting `cache_dir`, the model file will be cached in the private volume `stable-diffusion-v1-5`.  
+If your local environment does not have a model file, you can use the `StableDiffusionPipeline.from_pretrained` method to pass in `MODEL_NAME` and pull the model file from the [Hugging Face](https://huggingface.co/) official website. And by setting `cache_dir`, the model file will be cached in the private volume `models--runwayml--stable-diffusion-v1-5`.  
 
-You can get the local path of the volume `stable-diffusion-v1-5` through the `everai volume get` command. After entering the local path of the volume, you can see the model files that have been cached.
+You can get the local path of the volume `models--runwayml--stable-diffusion-v1-5` through the `everai volume get` command. After entering the local path of the volume, you can see the model files that have been cached.
 
 ```bash
 everai volume get models--runwayml--stable-diffusion-v1-5
