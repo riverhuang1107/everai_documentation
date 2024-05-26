@@ -59,14 +59,16 @@ app = App(
     ],
     autoscaling_policy=SimpleAutoScalingPolicy(
         # keep running workers even no any requests, that make reaction immediately for new request
-        min_workers=1,
+        min_workers=Placeholder(kind='ConfigMap', name=CONFIGMAP_NAME, key='min_workers'),
         # the maximum works setting, protect your application avoid to pay a lot of money
         # when an attack or sudden traffic
-        max_workers=10,
-        # this factor control autoscaler how to scale up your app
-        max_queue_size=3,
-        # this factor control autoscaler how to scale down your app
-        max_idle_time=60,
+        max_workers=Placeholder(kind='ConfigMap', name=CONFIGMAP_NAME, key='max_workers'),
+        # this factor controls autoscaler how to scale up your app
+        max_queue_size=Placeholder(kind='ConfigMap', name=CONFIGMAP_NAME, key='max_queue_size'),
+        # this factor controls autoscaler how to scale down your app
+        max_idle_time=Placeholder(kind='ConfigMap', name=CONFIGMAP_NAME, key='max_idle_time'),
+        # this factor controls autoscaler how many steps to scale up your app from queue 
+        scale_up_step=Placeholder(kind='ConfigMap', name=CONFIGMAP_NAME, key='scale_up_step'),
     ),
     resource_requests=ResourceRequests(
         cpu_num=2,
