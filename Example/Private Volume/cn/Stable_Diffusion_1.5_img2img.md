@@ -38,7 +38,7 @@ from everai.resource_requests import ResourceRequests
 from everai.placeholder import Placeholder
 from image_builder import IMAGE
 
-APP_NAME = 'stable-diffusion-v1-5-img2img'
+APP_NAME = '<your app name>'
 VOLUME_NAME = 'models--runwayml--stable-diffusion-v1-5'
 QUAY_IO_SECRET_NAME = 'your-quay-io-secret-name'
 HUGGINGFACE_SECRET_NAME = 'your-huggingface-secret-name'
