@@ -1,3 +1,7 @@
+---
+sidebar_position: 3
+---
+
 # Getting started
 ## Introduction
 EverAI's platform empowers data/AI/ML teams to develop faster at lower cost, while scaling production workloads to thousands of CPUs and GPUs.

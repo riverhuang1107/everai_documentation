@@ -1,3 +1,7 @@
+---
+sidebar_position: 3
+---
+
 # Getting started
 ## 简介
 EverAI平台提供数据/AI/机器学习研发团队以更低的运营研发成本来快速迭代产品，尤其是在你团队的AI产品运行时需要消耗大规模CPU和GPU计算资源的时候。  
