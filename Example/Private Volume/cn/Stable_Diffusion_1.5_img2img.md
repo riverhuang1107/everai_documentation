@@ -213,11 +213,11 @@ curl -X POST -F 'file=@sketch-mountains-input.jpg' -F "text_field=prompt:A fanta
 
 原图示例如下所示。    
 
-<img src="img/sketch-mountains-input.jpg" width = "512" />
+<img src="https://expvent.com.cn:1111/evfiles/v1/expvent/public/everai-documentation/sketch-mountains-input.jpg" width = "512" />
 
 打开基于原图和`prompt`生成的新图片，可以看到如下效果。
 
-<img src="img/test.jpg" width = "512" />
+<img src="https://expvent.com.cn:1111/evfiles/v1/expvent/public/everai-documentation/img2img-output.jpg" width = "512" />
 
 
 

@@ -195,8 +195,8 @@ curl -X POST -F 'file=@sketch-mountains-input.jpg' -F "text_field=prompt:A fanta
 
 An example of the original image is shown below.  
 
-<img src="img/sketch-mountains-input.jpg" width = "512" />
+<img src="https://expvent.com.cn:1111/evfiles/v1/expvent/public/everai-documentation/sketch-mountains-input.jpg" width = "512" />
 
 Open the new picture and you can see the following effect.  
 
-<img src="img/test.jpg" width = "512" />
+<img src="https://expvent.com.cn:1111/evfiles/v1/expvent/public/everai-documentation/img2img-output.jpg" width = "512" />
