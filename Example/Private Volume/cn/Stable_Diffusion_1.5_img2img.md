@@ -24,7 +24,7 @@ everai secret create your-quay-io-secret-name \
 ## 编写你的代码
 ### 基本设置
 
-这是一个关于app.py的示例代码。  
+这是一个关于[app.py](https://github.com/everai-example/stable-diffusion-v1-5-img2img-with-private-volume/blob/main/app.py)的示例代码。  
 
 首先，引入必要的EverAI Python类库。然后定义所需要用到的变量名，包括卷，访问镜像仓库的密钥，以及存放在卷中的文件等。使用`Image.from_registry`静态方法创建一个镜像实例。通过App类来创建定义一个app实例。  
 
@@ -174,6 +174,8 @@ def img2img():
 ## 构建镜像
 
 这步需要使用`Dockerfile`和`image_builder.py`来为你的应用构建容器镜像。  
+
+这是一个关于[image_builder.py](https://github.com/everai-example/stable-diffusion-v1-5-img2img-with-private-volume/blob/main/image_builder.py)的示例代码。  
 
 在`image_builder.py`中，你需要配置你的镜像地址信息。
 ```python
