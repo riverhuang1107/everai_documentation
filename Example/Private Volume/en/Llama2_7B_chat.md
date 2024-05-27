@@ -59,6 +59,7 @@ app = App(
         HUGGINGFACE_SECRET_NAME,
         QUAY_IO_SECRET_NAME,
     ],
+    configmap_requests=[CONFIGMAP_NAME],
     autoscaling_policy=SimpleAutoScalingPolicy(
         # keep running workers even no any requests, that make reaction immediately for new request
         min_workers=Placeholder(kind='ConfigMap', name=CONFIGMAP_NAME, key='min_workers'),

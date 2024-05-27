@@ -39,6 +39,7 @@ from image_builder import IMAGE
 APP_NAME = '<your app name>'
 VOLUME_NAME = 'expvent/stable-diffusion-v1-5'
 QUAY_IO_SECRET_NAME = 'your-quay-io-secret-name'
+CONFIGMAP_NAME = 'sd15-configmap'
 
 image = Image.from_registry(IMAGE, auth=BasicAuth(
         username=Placeholder(QUAY_IO_SECRET_NAME, 'username', kind='Secret'),
@@ -54,6 +55,7 @@ app = App(
     secret_requests=[
         QUAY_IO_SECRET_NAME,
     ],
+    configmap_requests=[CONFIGMAP_NAME],
     autoscaling_policy=SimpleAutoScalingPolicy(
         # keep running workers even no any requests, that make reaction immediately for new request
         min_workers=Placeholder(kind='ConfigMap', name=CONFIGMAP_NAME, key='min_workers'),
