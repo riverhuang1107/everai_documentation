@@ -125,10 +125,13 @@ image_pipe = None
 # service entrypoint
 # api service url looks https://everai.expvent.com/api/routes/v1/stable-diffusion-v1-5/txt2img
 # for test local url is http://127.0.0.1:8866/txt2img
-@app.service.route('/txt2img', methods=['POST'])
+@app.service.route('/txt2img', methods=['GET','POST'])
 def txt2img():    
-    data = flask.request.json
-    prompt = data['prompt']
+    if flask.request.method == 'POST':
+        data = flask.request.json
+        prompt = data['prompt']
+    else:
+        prompt = flask.request.args["prompt"]
 
     pipe_out = image_pipe(prompt)
 
