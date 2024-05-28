@@ -118,17 +118,13 @@ def prepare_model():
     global model
     global tokenizer
 
-    model_name_or_model_dir = MODEL_NAME
-    if context.is_prepare_mode:
-        model_name_or_model_dir = model_dir
-
     # huggingface from_pretrained will use local cached file if these exist
     # so if your volume constructs correctly, the worker run don't need any extra data pull
-    model = LlamaForCausalLM.from_pretrained(model_name_or_model_dir,
+    model = LlamaForCausalLM.from_pretrained(MODEL_NAME,
                                              token=huggingface_token,
                                              cache_dir=model_dir)
 
-    tokenizer = LlamaTokenizer.from_pretrained(model_name_or_model_dir,
+    tokenizer = LlamaTokenizer.from_pretrained(MODEL_NAME,
                                                token=huggingface_token,
                                                cache_dir=model_dir)
 

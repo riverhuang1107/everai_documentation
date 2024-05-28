@@ -118,11 +118,7 @@ def prepare_model():
 
     global image_pipe
 
-    model_name_or_model_dir = MODEL_NAME
-    if context.is_prepare_mode:
-        model_name_or_model_dir = model_dir
-
-    image_pipe = StableDiffusionImg2ImgPipeline.from_pretrained(model_name_or_model_dir,
+    image_pipe = StableDiffusionImg2ImgPipeline.from_pretrained(MODEL_NAME,
                                                                 token=huggingface_token,
                                                                 cache_dir=model_dir,
                                                                 revision="fp16",
