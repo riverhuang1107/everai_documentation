@@ -179,8 +179,7 @@ When your app is deployed, you can use `curl` to execute the following request t
  
 
 ```bash
-curl -X POST -d '{"prompt": "a photo of a dog on the boat"}' -H 'Conte
-nt-Type: application/json' -H'Authorization: Bearer <your_token>' -o test.png https://everai.expvent.com/api/routes/v1/<your app route name>/txt2img
+curl -X POST -d '{"prompt": "a photo of a dog on the boat"}' -H 'Content-Type: application/json' -H'Authorization: Bearer <your_token>' -o test.png https://everai.expvent.com/api/routes/v1/<your app route name>/txt2img
 ```
 
 Open the picture and you can see the following effect.  
