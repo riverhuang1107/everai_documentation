@@ -214,8 +214,7 @@ stable-diffusion-v1-5        DEPLOYED   2024-05-19 18:47:32+0800  stable-diffusi
 当你看到你的应用处于`DEPLOYED`时，你可以使用`curl`执行下面的请求来测试你部署的代码，在控制台上的当前目录下会产生一张由大模型`Stable Diffusion 1.5`生成的图片。 
 
 ```bash
-curl -X POST -d '{"prompt": "a photo of a cat on the boat"}' -H 'Conte
-nt-Type: application/json' -H'Authorization: Bearer <your_token>' -o test.png https://everai.expvent.com/api/routes/v1/<your app route name>/txt2img
+curl -X POST -d '{"prompt": "a photo of a cat on the boat"}' -H 'Content-Type: application/json' -H'Authorization: Bearer <your_token>' -o test.png https://everai.expvent.com/api/routes/v1/<your app route name>/txt2img
 ```
 
 打开图片，可以看到如下效果。
