@@ -150,6 +150,8 @@ There is an example code in [image_builder.py](https://github.com/everai-example
 
 In `image_builder.py`, you should set your image repo.  
 
+In this example, we choose to use quay.io as the public image registry to store application images. You can also use well-known image registry similar to quay.io, such as Docker Hub, GitHub Container Registry, Google Container Registry, etc. If you have a self-built image registry and the image can be accessed on the Internet, you can also use it.  
+
 ```python
 from everai.image import Builder
 

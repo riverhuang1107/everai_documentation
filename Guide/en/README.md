@@ -140,6 +140,9 @@ everai secret create quay-secret \
   --from-literal username=<your username> \
   --from-literal password=<your password>
 ```
+>**NOTE**
+>
+>quay.io is a well-known public image registry. Well-known image registry similar to quay.io include Docker Hub, GitHub Container Registry, Google Container Registry, etc.  
 
 ## Write your app code in python
 There is an example code in [app.py](https://github.com/everai-example/get-start/blob/main/app.py).  
@@ -245,7 +248,10 @@ everai app prepare
 ## Build image
 This step will build the container image, using two very simple files `Dockerfile` and `image_builder.py`.  
 
-In `image_builder.py`, you should set your image repo.
+In `image_builder.py`, you should set your image repo.  
+
+In this example, we choose to use quay.io as the public image registry to store application images. You can also use well-known image registry similar to quay.io, such as Docker Hub, GitHub Container Registry, Google Container Registry, etc. If you have a self-built image registry and the image can be accessed on the Internet, you can also use it.  
+
 ```python
 from everai.image import Builder
 
