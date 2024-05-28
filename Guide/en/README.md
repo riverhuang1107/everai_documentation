@@ -134,7 +134,7 @@ This step is optional, depending on whether the model and Docker image require s
 
 You can create and edit secrets on [EverAI](https://everai.expvent.com), or programmatically from Python code.  
 
-In this case, we will create one secret for [quay.io](https://quay.io/) . 
+In this case, we will create one secret for [quay.io](https://quay.io/). 
 ```bash
 everai secret create quay-secret \
   --from-literal username=<your username> \
@@ -142,7 +142,7 @@ everai secret create quay-secret \
 ```
 >**NOTE**
 >
->quay.io is a well-known public image registry. Well-known image registry similar to quay.io include Docker Hub, GitHub Container Registry, Google Container Registry, etc.  
+>[quay.io](https://quay.io/) is a well-known public image registry. Well-known image registry similar to [quay.io](https://quay.io/) include [Docker Hub](https://hub.docker.com/), [GitHub Container Registry](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry), [Google Container Registry](https://cloud.google.com/artifact-registry), Google Container Registry, etc.  
 
 ## Write your app code in python
 There is an example code in [app.py](https://github.com/everai-example/get-start/blob/main/app.py).  
@@ -250,7 +250,7 @@ This step will build the container image, using two very simple files `Dockerfil
 
 In `image_builder.py`, you should set your image repo.  
 
-In this example, we choose to use quay.io as the public image registry to store application images. You can also use well-known image registry similar to quay.io, such as Docker Hub, GitHub Container Registry, Google Container Registry, etc. If you have a self-built image registry and the image can be accessed on the Internet, you can also use it.  
+In this example, we choose to use [quay.io](https://quay.io/) as the public image registry to store application images. You can also use well-known image registry similar to [quay.io](https://quay.io/), such as [Docker Hub](https://hub.docker.com/), [GitHub Container Registry](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry), [Google Container Registry](https://cloud.google.com/artifact-registry), etc. If you have a self-built image registry and the image can be accessed on the Internet, you can also use it.  
 
 ```python
 from everai.image import Builder

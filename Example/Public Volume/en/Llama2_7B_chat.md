@@ -20,6 +20,9 @@ everai secret create your-quay-io-secret-name \
   --from-literal username=<your username> \
   --from-literal password=<your password>
 ```
+>**NOTE**
+>
+>[quay.io](https://quay.io/) is a well-known public image registry. Well-known image registry similar to [quay.io](https://quay.io/) include [Docker Hub](https://hub.docker.com/), [GitHub Container Registry](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry), [Google Container Registry](https://cloud.google.com/artifact-registry), Google Container Registry, etc.  
 
 ## Write your app code in python
 ### Basic setup
@@ -146,7 +149,7 @@ There is an example code in [image_builder.py](https://github.com/everai-example
 
 In `image_builder.py`, you should set your image repo.  
 
-In this example, we choose to use quay.io as the public image registry to store application images. You can also use well-known image registry similar to quay.io, such as Docker Hub, GitHub Container Registry, Google Container Registry, etc. If you have a self-built image registry and the image can be accessed on the Internet, you can also use it.  
+In this example, we choose to use [quay.io](https://quay.io/) as the public image registry to store application images. You can also use well-known image registry similar to [quay.io](https://quay.io/), such as [Docker Hub](https://hub.docker.com/), [GitHub Container Registry](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry), [Google Container Registry](https://cloud.google.com/artifact-registry), etc. If you have a self-built image registry and the image can be accessed on the Internet, you can also use it.  
 
 ```python
 from everai.image import Builder
