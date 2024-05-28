@@ -143,6 +143,9 @@ everai secret create quay-secret \
   --from-literal username=<your username> \
   --from-literal password=<your password>
 ```
+>**小贴士**  
+>
+>quay.io是一个知名的公共镜像仓库，和quay.io类似的知名镜像仓库还有Docker Hub，GitHub Container Registry，Google Container Registry等。
 
 ## 编写你的代码
 这是一个[app.py](https://github.com/everai-example/get-start/blob/main/app.py)的示例代码。  
@@ -249,7 +252,10 @@ everai app prepare
 ## 构建镜像
 这步需要使用`Dockerfile`和`image_builder.py`来为你的应用构建容器镜像。  
 
-在`image_builder.py`中，你需要配置你的镜像地址信息。  
+在`image_builder.py`中，你需要配置你的镜像地址信息。 
+
+在这个示例中，我们选择使用quay.io作为公共镜像仓库，存放应用镜像。你也可以使用和quay.io类似的知名镜像仓库，如：Docker Hub，GitHub Container Registry，Google Container Registry等。如果你有自建的镜像仓库，并且镜像可以在互联网上被访问，同样可以使用。  
+
 ```python
 from everai.image import Builder
 
