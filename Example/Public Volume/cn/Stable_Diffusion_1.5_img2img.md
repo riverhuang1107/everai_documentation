@@ -134,8 +134,7 @@ def img2img():
     f = flask.request.files['file']
     img = f.read()
 
-    prompt = flask.request.form['text_field']
-    prompt = prompt.split(':')[1]
+    prompt = flask.request.form['prompt']
     
     init_image = PIL.Image.open(BytesIO(img)).convert("RGB")
     init_image = init_image.resize((768, 512))
