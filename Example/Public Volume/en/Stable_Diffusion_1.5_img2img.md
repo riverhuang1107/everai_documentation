@@ -191,7 +191,7 @@ Before using `curl` to request, you need to download `sketch-mountains-input.jpg
 
 
 ```bash
-curl -X POST -F 'file=@sketch-mountains-input.jpg' -F "prompt=A fantasy landscape, trending on artstation" -H'Authorization: Bearer everai_637wE9obZtmGLyqIJp0lok' -o test.jpg https://everai.expvent.com/api/routes/v1/<your app route name>/img2img
+curl -X POST -F 'file=@sketch-mountains-input.jpg' -F "prompt=A fantasy landscape, trending on artstation" -H'Authorization: Bearer <your_token>' -o test.jpg https://everai.expvent.com/api/routes/v1/<your app route name>/img2img
 ```
 
 An example of the original image is shown below.  
