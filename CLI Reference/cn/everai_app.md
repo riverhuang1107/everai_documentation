@@ -90,7 +90,7 @@ everai app get [-h] name
 
 **示例**:  
 
-当你需要更新你应用中的代码时，你需要更新你的应用镜像。详细介绍请参考[everai app upgrade --image](https://expvent.com.cn:1111/everai-documentation-web/zh-cn/docs/Guide/App_Upgrade#everai-app-upgrade---image)。  
+当你需要更新你应用中的代码时，你需要更新你的应用镜像。详细介绍请参考[everai app upgrade --image](https://expvent.com/documentation/zh-cn/docs/Guide/App_Upgrade#everai-app-upgrade---image)。  
 ```bash
 everai app upgrade --image
 ```

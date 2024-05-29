@@ -91,7 +91,7 @@ Upgrade an app
 
 **Example**:  
 
-When you want to update your code, you should update your app image. For detailed guidance on app image upgrade, check out [everai app upgrade --image](https://expvent.com.cn:1111/everai-documentation-web/docs/Guide/App_Upgrade#everai-app-upgrade---image).  
+When you want to update your code, you should update your app image. For detailed guidance on app image upgrade, check out [everai app upgrade --image](https://expvent.com/documentation/docs/Guide/App_Upgrade#everai-app-upgrade---image).  
 
 ```bash
 everai app upgrade --image
