@@ -4,7 +4,7 @@ sidebar_label: everai cli overview
 ---
 
 # everai cli overview
-EverAI Client for manage your EverAI application and other asserts  
+EverAI Client for managing your EverAI application and other asserts  
 
 
 **Example**:  

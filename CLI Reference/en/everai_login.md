@@ -1,5 +1,5 @@
 # everai login
-Login, if you do not have a token, [EverAI](https://everai.expvent.com)  
+Login, if you do not have a token, please visit [EverAI](https://everai.expvent.com)  
 
 **Example**:  
 ```bash
