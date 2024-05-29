@@ -126,7 +126,7 @@ SeaNG9f6hKcQ9J3X93GQEx  RUNNING   FREE             2024-05-11 15:11:37+0800
 
 再次使用`curl`执行测试用例，在控制台显示如下的数据信息。可以看到服务器端向客户端持续推送消息已经被更新。  
 ```bash
-curl -H'Authorization: Bearer <your_token>' https://everai.expvent.com.cn:1111/api/routes/v1/<your app route name>/sse
+curl -H'Authorization: Bearer <your_token>' https://everai.expvent.com/api/routes/v1/<your app route name>/sse
 hello world again 0
 
 
