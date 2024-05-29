@@ -41,7 +41,7 @@ from everai.placeholder import Placeholder
 from image_builder import IMAGE
 
 APP_NAME = '<your app name>'
-VOLUME_NAME = 'llama2-7b-chat'
+VOLUME_NAME = 'models--meta-llama--llama-2-7b-chat-hf'
 MODEL_NAME = 'meta-llama/Llama-2-7b-chat-hf'
 HUGGINGFACE_SECRET_NAME = 'your-huggingface-secret-name'
 QUAY_IO_SECRET_NAME = 'your-quay-io-secret-name'
@@ -89,14 +89,14 @@ app = App(
 
 ### Load model
   
-If your local environment does not have a model file, you can use the `LlamaForCausalLM.from_pretrained` method to pass in `MODEL_NAME` to pull the model file from the [Hugging Face](https://huggingface.co/) official website. And by setting `cache_dir`, the model file will be cached in the private volume `llama2-7b-chat`.  
+If your local environment does not have a model file, you can use the `LlamaForCausalLM.from_pretrained` method to pass in `MODEL_NAME` to pull the model file from the [Hugging Face](https://huggingface.co/) official website. And by setting `cache_dir`, the model file will be cached in the private volume `models--meta-llama--llama-2-7b-chat-hf`.  
 
-You can get the local path of the volume `llama2-7b-chat` through the `everai volume get` command. After entering the local path of the volume, you can see the model files that have been cached.  
+You can get the local path of the volume `models--meta-llama--llama-2-7b-chat-hf` through the `everai volume get` command. After entering the local path of the volume, you can see the model files that have been cached.  
 
 ```bash
-everai volume get llama2-7b-chat
-<Volume: id: hupa49MesPXwmhFSy9Ku44, name: llama2-7b-chat, revision: 000001-b9c, files: 1, size: 11 B>
-path: /home/<username>/.cache/everai/volumes/hupa49MesPXwmhFSy9Ku44
+everai volume get models--meta-llama--llama-2-7b-chat-hf
+<Volume: id: UoswTkyjkPZU3qb27s4B9E, name: models--meta-llama--llama-2-7b-chat-hf, revision: 000001-821, files: 21, size: 25.11 GiB>
+path: /root/.cache/everai/volumes/UoswTkyjkPZU3qb27s4B9E
 ```
 When using `everai app run` to debug the sample code, the value of `is_prepare_mode` is `False`, and the operation of pushing local files to the cloud will not be performed. After your code is debugged, execute the `everai app prepare` command. This command will execute all methods annotated by `@app.prepare`. At this time, the value of `is_prepare_mode` is `True`. In the sample code, the model files in the local volume `llama2-7b-chat` will be pushed to the cloud when this command is executed.
 

@@ -45,7 +45,7 @@ from everai.placeholder import Placeholder
 from image_builder import IMAGE
 
 APP_NAME = '<your app name>'
-VOLUME_NAME = 'llama2-7b-chat'
+VOLUME_NAME = 'models--meta-llama--llama-2-7b-chat-hf'
 MODEL_NAME = 'meta-llama/Llama-2-7b-chat-hf'
 HUGGINGFACE_SECRET_NAME = 'your-huggingface-secret-name'
 QUAY_IO_SECRET_NAME = 'your-quay-io-secret-name'
@@ -93,14 +93,14 @@ app = App(
 
 ### 预加载模型
 
-如果你的本地环境没有模型文件，你可以使用`LlamaForCausalLM.from_pretrained`方法传入`MODEL_NAME`，从[Hugging Face](https://huggingface.co/)官网拉取模型文件。并且会通过设置`cache_dir`，把模型文件缓存到私有卷`llama2-7b-chat`中。  
+如果你的本地环境没有模型文件，你可以使用`LlamaForCausalLM.from_pretrained`方法传入`MODEL_NAME`，从[Hugging Face](https://huggingface.co/)官网拉取模型文件。并且会通过设置`cache_dir`，把模型文件缓存到私有卷`models--meta-llama--llama-2-7b-chat-hf`中。  
 
-你可以通过`everai volume get`命令获取到卷`llama2-7b-chat`的本地路径。进入卷的本地路径后，可以看到已经被缓存的模型文件。  
+你可以通过`everai volume get`命令获取到卷`models--meta-llama--llama-2-7b-chat-hf`的本地路径。进入卷的本地路径后，可以看到已经被缓存的模型文件。  
 
 ```bash
-everai volume get llama2-7b-chat
-<Volume: id: hupa49MesPXwmhFSy9Ku44, name: llama2-7b-chat, revision: 000001-b9c, files: 1, size: 11 B>
-path: /home/<username>/.cache/everai/volumes/hupa49MesPXwmhFSy9Ku44
+everai volume get models--meta-llama--llama-2-7b-chat-hf
+<Volume: id: UoswTkyjkPZU3qb27s4B9E, name: models--meta-llama--llama-2-7b-chat-hf, revision: 000001-821, files: 21, size: 25.11 GiB>
+path: /root/.cache/everai/volumes/UoswTkyjkPZU3qb27s4B9E
 ```
 使用`everai app run`调试示例代码时，`is_prepare_mode`的值是`False`，不会执行把本地文件推送到云端的操作。待你的代码调试通过后，执行`everai app prepare`命令，该命令会执行所有被`@app.prepare`注解过的方法，此时`is_prepare_mode`的值是`True`，在示例代码中，本地卷`llama2-7b-chat`中的模型文件会在执行该命令时被推送到云端。
 
