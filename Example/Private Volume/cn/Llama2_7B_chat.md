@@ -102,7 +102,7 @@ everai volume get models--meta-llama--llama-2-7b-chat-hf
 <Volume: id: UoswTkyjkPZU3qb27s4B9E, name: models--meta-llama--llama-2-7b-chat-hf, revision: 000001-821, files: 21, size: 25.11 GiB>
 path: /root/.cache/everai/volumes/UoswTkyjkPZU3qb27s4B9E
 ```
-使用`everai app run`调试示例代码时，`is_prepare_mode`的值是`False`，不会执行把本地文件推送到云端的操作。待你的代码调试通过后，执行`everai app prepare`命令，该命令会执行所有被`@app.prepare`注解过的方法，此时`is_prepare_mode`的值是`True`，在示例代码中，本地卷`llama2-7b-chat`中的模型文件会在执行该命令时被推送到云端。
+使用`everai app run`调试示例代码时，`is_prepare_mode`的值是`False`，不会执行把本地文件推送到云端的操作。待你的代码调试通过后，执行`everai app prepare`命令，该命令会执行所有被`@app.prepare`注解过的方法，此时`is_prepare_mode`的值是`True`，在示例代码中，本地卷`models--meta-llama--llama-2-7b-chat-hf`中的模型文件会在执行该命令时被推送到云端。
 
 ```python
 import torch
