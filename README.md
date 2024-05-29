@@ -110,7 +110,7 @@ pip uninstall everai
 
 * **`image_builder.py`** 构建镜像的配置文件。  
 
-* **`requirements.txt`** 文件定义了运行Python应用的依赖包以及对应软件版本。
+* **`requirements.txt`** 文件定义了运行Python应用的依赖包以及对应软件版本。你可以使用`pipreqs .`获取到最新软件依赖包和对应版本。
 
 ```bash
 <your app name>
