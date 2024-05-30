@@ -10,7 +10,7 @@ everai login --token <your token>
 everai app create <your app name>
 ```
 
-## Create secret
+## Create secrets
 If you have already created a secret for your registry, you can skip this step.
 
 In this case, we will create one secret for [quay.io](https://quay.io/).  
