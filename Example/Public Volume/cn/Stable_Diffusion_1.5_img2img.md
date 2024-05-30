@@ -42,8 +42,10 @@ from everai.placeholder import Placeholder
 from image_builder import IMAGE
 
 APP_NAME = '<your app name>'
-VOLUME_NAME = 'expvent/stable-diffusion-v1-5'
+VOLUME_NAME = 'expvent/models--runwayml--stable-diffusion-v1-5'
 QUAY_IO_SECRET_NAME = 'your-quay-io-secret-name'
+HUGGINGFACE_SECRET_NAME = 'your-huggingface-secret-name'
+MODEL_NAME = 'runwayml/stable-diffusion-v1-5'
 CONFIGMAP_NAME = 'sd15-configmap'
 
 image = Image.from_registry(IMAGE, auth=BasicAuth(
@@ -98,16 +100,22 @@ def prepare_model():
     volume = context.get_volume(VOLUME_NAME)
     assert volume is not None and volume.ready
 
+    secret = context.get_secret(HUGGINGFACE_SECRET_NAME)
+    assert secret is not None
+    huggingface_token = secret.get('token-key-as-your-wish')
+
     model_dir = volume.path
 
     global image_pipe
 
-    image_pipe = StableDiffusionImg2ImgPipeline.from_pretrained(model_dir,
-                                                                local_files_only=True,
+    image_pipe = StableDiffusionImg2ImgPipeline.from_pretrained(MODEL_NAME,
+                                                                token=huggingface_token,
+                                                                cache_dir=model_dir,
                                                                 revision="fp16",
                                                                 torch_dtype=torch.float16, 
-                                                                low_cpu_mem_usage=False
-                                                                ) 
+                                                                low_cpu_mem_usage=False,
+                                                                local_files_only=True
+                                                                )
     image_pipe.to("cuda")
 ```
 如果你想在本地使用`everai app run`调试这个示例，你的本地调试环境需要有GPU资源，并且在调试代码前使用`everai volume pull`命令把云端的模型文件拉取到本地环境。  
