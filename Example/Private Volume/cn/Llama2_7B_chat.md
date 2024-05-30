@@ -27,6 +27,12 @@ everai secret create your-quay-io-secret-name \
 >
 >[quay.io](https://quay.io/)是一个知名的公共镜像仓库，与之类似的知名镜像仓库还有[Docker Hub](https://hub.docker.com/)，[GitHub Container Registry](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry)，[Google Container Registry](https://cloud.google.com/artifact-registry)等。  
 
+此外，还需要为访问[Hugging Face](https://huggingface.co/)的token设置一个密钥。
+```bash
+everai secret create your-huggingface-secret-name \
+  --from-literal token-key-as-your-wish=<your huggingface token>
+```
+
 ## 编写你的代码
 ### 基本设置
 

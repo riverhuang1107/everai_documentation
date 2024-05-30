@@ -79,7 +79,7 @@ pip install everai --user
 >
 >We know that the scripts go to the `bin/` folder where the packages are installed. So we concatenate the paths with `bin/`. Finally, in order to avoid repeating the `export` command we add it to our `.bashrc` file and we run `source` to run the new changes.  
 >```bash
->export PATH="/home/hhq/.local/bin:$PATH"
+>export PATH="/home/<username>/.local/bin:$PATH"
 >```
 >* **Windows PowerShell**  
 >```bash
