@@ -60,6 +60,7 @@ app = App(
         VolumeRequest(name=VOLUME_NAME, create_if_not_exists=True),
     ],
     secret_requests=[
+        HUGGINGFACE_SECRET_NAME,
         QUAY_IO_SECRET_NAME
     ],
     configmap_requests=[CONFIGMAP_NAME],
@@ -89,7 +90,7 @@ app = App(
 
 ### 预加载模型
 
-你可以使用我们提供的公开卷`expvent/stable-diffusion-v1-5`中的模型文件加载模型。
+你可以使用我们提供的公开卷`expvent/models--runwayml--stable-diffusion-v1-5`中的模型文件加载模型。
 
 ```python
 from diffusers import StableDiffusionImg2ImgPipeline
@@ -121,7 +122,7 @@ def prepare_model():
 如果你想在本地使用`everai app run`调试这个示例，你的本地调试环境需要有GPU资源，并且在调试代码前使用`everai volume pull`命令把云端的模型文件拉取到本地环境。  
 
 ```bash
-everai volume pull expvent/stable-diffusion-v1-5
+everai volume pull expvent/models--runwayml--stable-diffusion-v1-5
 ```
 
 ### 实现推理服务

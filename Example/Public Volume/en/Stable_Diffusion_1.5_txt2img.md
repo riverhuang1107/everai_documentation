@@ -40,8 +40,10 @@ from everai.placeholder import Placeholder
 from image_builder import IMAGE
 
 APP_NAME = '<your app name>'
-VOLUME_NAME = 'expvent/stable-diffusion-v1-5'
+VOLUME_NAME = 'expvent/models--runwayml--stable-diffusion-v1-5'
 QUAY_IO_SECRET_NAME = 'your-quay-io-secret-name'
+HUGGINGFACE_SECRET_NAME = 'your-huggingface-secret-name'
+MODEL_NAME = 'runwayml/stable-diffusion-v1-5'
 CONFIGMAP_NAME = 'sd15-configmap'
 
 image = Image.from_registry(IMAGE, auth=BasicAuth(
@@ -56,6 +58,7 @@ app = App(
         VolumeRequest(name=VOLUME_NAME, create_if_not_exists=True),
     ],
     secret_requests=[
+        HUGGINGFACE_SECRET_NAME,
         QUAY_IO_SECRET_NAME,
     ],
     configmap_requests=[CONFIGMAP_NAME],
@@ -85,7 +88,7 @@ app = App(
 
 ### Load model
 
-You can load the model using the model file in the public volume `expvent/stable-diffusion-v1-5` we provide.  
+You can load the model using the model file in the public volume `expvent/models--runwayml--stable-diffusion-v1-5` we provide.  
 
 ```python
 from diffusers import StableDiffusionPipeline
@@ -96,22 +99,29 @@ def prepare_model():
     volume = context.get_volume(VOLUME_NAME)
     assert volume is not None and volume.ready
 
+    secret = context.get_secret(HUGGINGFACE_SECRET_NAME)
+    assert secret is not None
+    huggingface_token = secret.get('token-key-as-your-wish')
+
     model_dir = volume.path
 
     global image_pipe
 
-    image_pipe = StableDiffusionPipeline.from_pretrained(model_dir,
-                                                        local_files_only=True,
-                                                        revision="fp16", 
-                                                        torch_dtype=torch.float16, 
-                                                        low_cpu_mem_usage=False
+    image_pipe = StableDiffusionPipeline.from_pretrained(MODEL_NAME,
+                                                        token=huggingface_token,
+                                                        cache_dir=model_dir,
+                                                        revision="fp16",
+                                                        torch_dtype=torch.float16,
+                                                        low_cpu_mem_usage=False,
+                                                        local_files_only=True
                                                         )
+
     image_pipe.to("cuda")
 ```
 If you want to use `everai app run` to debug this example locally, your local debugging environment needs to have GPU resources, and use `everai volume pull` command to pull the model file from the cloud to the local environment before debugging the code.  
 
 ```bash
-everai volume pull expvent/stable-diffusion-v1-5
+everai volume pull expvent/models--runwayml--stable-diffusion-v1-5
 ```
 
 ### Generate inference service
