@@ -93,7 +93,7 @@ app = App(
 
 ### 预加载模型
 
-你可以使用我们提供的公开卷`expvent/llama2-7b-chat`中的模型文件加载模型。 
+你可以使用我们提供的公开卷`expvent/models--meta-llama--llama-2-7b-chat-hf`中的模型文件加载模型。 
 
 ```python
 import torch
@@ -131,7 +131,7 @@ def prepare_model():
 
 如果你想在本地使用`everai app run`调试这个示例，你的本地调试环境需要有GPU资源，并且在调试代码前使用`everai volume pull`命令把云端的模型文件拉取到本地环境。  
 ```bash
-everai volume pull expvent/llama2-7b-chat
+everai volume pull expvent/models--meta-llama--llama-2-7b-chat-hf
 ```
 
 ### 实现推理服务

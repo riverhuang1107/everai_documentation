@@ -89,7 +89,7 @@ app = App(
 
 ### Load model
   
-You can load the model using the model file in the public volume `expvent/llama2-7b-chat` we provide.  
+You can load the model using the model file in the public volume `expvent/models--meta-llama--llama-2-7b-chat-hf` we provide.  
 
 ```python
 import torch
@@ -127,7 +127,7 @@ def prepare_model():
 If you want to use `everai app run` to debug this example locally, your local debugging environment needs to have GPU resources, and use `everai volume pull` command to pull the model file from the cloud to the local environment before debugging the code.  
 
 ```bash
-everai volume pull expvent/llama2-7b-chat
+everai volume pull expvent/models--meta-llama--llama-2-7b-chat-hf
 ```
 
 ### Generate inference service
