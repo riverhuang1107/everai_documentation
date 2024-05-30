@@ -45,7 +45,9 @@ from everai.placeholder import Placeholder
 from image_builder import IMAGE
 
 APP_NAME = '<your app name>'
-VOLUME_NAME = 'expvent/llama2-7b-chat'
+VOLUME_NAME = 'expvent/models--meta-llama--llama-2-7b-chat-hf'
+MODEL_NAME = 'meta-llama/Llama-2-7b-chat-hf'
+HUGGINGFACE_SECRET_NAME = 'your-huggingface-secret-name'
 QUAY_IO_SECRET_NAME = 'your-quay-io-secret-name'
 CONFIGMAP_NAME = 'llama2-configmap'
 
@@ -61,6 +63,7 @@ app = App(
         VolumeRequest(name=VOLUME_NAME, create_if_not_exists=True),
     ],
     secret_requests=[
+        HUGGINGFACE_SECRET_NAME,
         QUAY_IO_SECRET_NAME
     ],
     configmap_requests=[CONFIGMAP_NAME],
@@ -101,15 +104,29 @@ def prepare_model():
     volume = context.get_volume(VOLUME_NAME)
     assert volume is not None and volume.ready
 
+    secret = context.get_secret(HUGGINGFACE_SECRET_NAME)
+    assert secret is not None
+    huggingface_token = secret.get('token-key-as-your-wish')
+
     model_dir = volume.path
 
     global model
     global tokenizer
 
-    model = LlamaForCausalLM.from_pretrained(model_dir, torch_dtype=torch.float16, local_files_only=True)
+    #model = LlamaForCausalLM.from_pretrained(model_dir, torch_dtype=torch.float16, local_files_only=True)
+    model = LlamaForCausalLM.from_pretrained(MODEL_NAME,
+                                             token=huggingface_token,
+                                             cache_dir=model_dir,
+                                             torch_dtype=torch.float16,
+                                             local_files_only=True)
+    
+    #tokenizer = LlamaTokenizer.from_pretrained(model_dir, local_files_only=True)
+    tokenizer = LlamaTokenizer.from_pretrained(MODEL_NAME,
+                                               token=huggingface_token,
+                                               cache_dir=model_dir,
+                                               local_files_only=True)
+    
     model.cuda(0)
-
-    tokenizer = LlamaTokenizer.from_pretrained(model_dir, local_files_only=True)
 ```
 
 如果你想在本地使用`everai app run`调试这个示例，你的本地调试环境需要有GPU资源，并且在调试代码前使用`everai volume pull`命令把云端的模型文件拉取到本地环境。  
