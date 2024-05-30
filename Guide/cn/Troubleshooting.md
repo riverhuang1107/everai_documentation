@@ -9,7 +9,7 @@ python3 -m site --user-base
 
 执行上述命令获得目录，如`/home/<username>/.local/`，Python的二进制包文件安装在该目录的`bin/`下。我们可以把两者进行组合，得到路径`/home/<username>/.local/bin`。为了避免每次使用时设置该环境变量，我们可以把该命令加入到`.bashrc`，并且执行`source`命令，使之立即生效。  
 ```bash
-export PATH="/home/hhq/.local/bin:$PATH"
+export PATH="/home/<username>/.local/bin:$PATH"
 ```
 * **Windows PowerShell**  
 ```bash
