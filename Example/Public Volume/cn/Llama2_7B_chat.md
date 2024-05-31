@@ -113,14 +113,12 @@ def prepare_model():
     global model
     global tokenizer
 
-    #model = LlamaForCausalLM.from_pretrained(model_dir, torch_dtype=torch.float16, local_files_only=True)
     model = LlamaForCausalLM.from_pretrained(MODEL_NAME,
                                              token=huggingface_token,
                                              cache_dir=model_dir,
                                              torch_dtype=torch.float16,
                                              local_files_only=True)
     
-    #tokenizer = LlamaTokenizer.from_pretrained(model_dir, local_files_only=True)
     tokenizer = LlamaTokenizer.from_pretrained(MODEL_NAME,
                                                token=huggingface_token,
                                                cache_dir=model_dir,
