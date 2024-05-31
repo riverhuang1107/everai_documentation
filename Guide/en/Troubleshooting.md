@@ -32,6 +32,12 @@ everai app create <your app name> --route-name <your app route name>
 ```
 Globally unique route name. By default, it is same with the app name. Once the application name conflicts, route-name needs to be set explicitly.  
 
+## "No app found in app.py" error
+When running `everai app run`, an error message similar to `No app found in app.py` appears. You can use the `everai app check` command to further troubleshoot the problem. This command will display the specific problems encountered by your code. The output results are as follows:  
+
+```bash
+find object in app.py: 'Service' object has no attribute 'rout'
+```
 
 ## Docker image build 401 UNAUTHORIZED error
 When you run command everai image build，the output shows the error like: `401 UNAUTHORIZED\nERRoR: failed to solve: failed to push`, you should run command `docker login` to login the docker image repository, this example shows the command to login `quay.io`.  

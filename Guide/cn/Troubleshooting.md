@@ -35,6 +35,13 @@ everai app create <your app name> --route-name <your app route name>
 
 这是因为在系统中路由名称是全局唯一的。一般来说，路由名称与应用名称相同。如果你指定的应用名称系统中已存在，你需要指定一个新的路由名称。
 
+## "No app found in app.py" error
+执行`everai app run`时，出现类似`No app found in app.py`这样的错误信息，你可以使用`everai app check`命令进一步排查问题，该指令会显示你的代码遇到的具体问题。输出的结果如下所示：
+
+```bash
+find object in app.py: 'Service' object has no attribute 'rout'
+```
+
 ## Docker image build 401 UNAUTHORIZED error
 执行`everai image build`命令时，如果出现类似`401 UNAUTHORIZED\nERRoR: failed to solve: failed to push`的错误提示，你需要执行`docker login`命令登录到docker镜像仓库，这里的示例是登录到`quay.io`镜像仓库。  
 
