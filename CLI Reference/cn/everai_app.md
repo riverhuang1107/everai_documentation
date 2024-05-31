@@ -327,6 +327,11 @@ everai app worker list [-h] [--output [OUTPUT]] [--all] [--recent-days [RECENT_D
 ```bash
 everai app check
 ```
+如果应用目录下的代码有语法错误，会出现如下的输出结果：  
+
+```bash
+find object in app.py: 'Service' object has no attribute 'rout'
+```
 
 **格式**: 
 ```bash 

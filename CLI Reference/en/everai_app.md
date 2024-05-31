@@ -325,6 +325,11 @@ Check whether app is correct in app directory
 ```bash
 everai app check
 ```
+If the code in the application directory has syntax errors, the following output will appear:    
+
+```bash
+find object in app.py: 'Service' object has no attribute 'rout'
+```
 
 **Usage**: 
 ```bash 
