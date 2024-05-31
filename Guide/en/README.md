@@ -20,7 +20,7 @@ You always pay for what you use and nothing more. You never pay for idle resourc
 Deploy your apps as serverless REST APIs, or an web endpoint, all with just a single line of code. Don't focus on the hardware infrastructure. We run the infrastructure.  
 
 * **Provide multiple models of GPUs**  
-You can choose the suitable GPU model according to your app workload. Deploy autoscaling inference endpoints on GPUs(4090s, A100s, L40s), when your app gets an influx of traffic.  
+You can choose the suitable GPU model according to your app workload. Deploy autoscaling inference endpoints on GPUs(4090s, A100s), when your app gets an influx of traffic.  
 
 * **Develop locally on remote hardware**  
 You can write code on your laptop and execute it on cloud hardware immediately, with lightning fast build times. Run AI models in the cloud scalably and performantly.  
