@@ -1,4 +1,4 @@
-# App Upgrade
+# 应用热升级
 ## everai app upgrade --volume-requests
 
 如果你的应用已经在[EverAI](https://everai.expvent.com)平台云端部署，当你需要更新卷中的文件内容时，可以使用`everai app upgrade --volume-requests`。[EverAI](https://everai.expvent.com)平台支持应用热升级，你的应用服务在整个升级更新过程中，始终处于在线运行状态。  
