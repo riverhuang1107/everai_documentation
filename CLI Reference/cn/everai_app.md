@@ -17,6 +17,7 @@ everai app [-h] {create,run,get,upgrade,pause,deploy,prepare,list,ls,queue,q,wor
   * `list (ls)`           显示应用列表  
   * `queue (q)`           显示应用队列  
   * `worker (workers, w)` 管理应用的worker 
+  * `check`               检查应用目录下的代码编译是否通过
 
 **选项**:  
   * `-h, --help`            显示帮助信息
@@ -319,5 +320,19 @@ everai app worker list [-h] [--output [OUTPUT]] [--all] [--recent-days [RECENT_D
   * `--recent-days` [RECENT_DAYS], -d [RECENT_DAYS]
                          显示最近天数内没有在运行中的worker
 
-                        
+## everai app check                 
+检查应用目录下的代码编译是否通过  
+
+**示例**:
+```bash
+everai app check
+```
+
+**格式**: 
+```bash 
+everai app check [-h]
+```
+
+**选项**:  
+* `-h, --help`       show this help message and exit                        
 

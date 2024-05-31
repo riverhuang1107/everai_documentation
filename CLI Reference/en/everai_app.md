@@ -18,6 +18,7 @@ everai app [-h] {create,run,get,upgrade,pause,deploy,prepare,list,ls,queue,q,wor
   * `list (ls)`           List all apps  
   * `queue (q)`           List queue of app  
   * `worker (workers, w)`   Manage the worker of app
+  * `check`                 Check whether app is correct in app directory
 
 **Options**:  
   * `-h, --help`            show this help message and exit
@@ -317,3 +318,18 @@ everai app worker list [-h] [--output [OUTPUT]] [--all] [--recent-days [RECENT_D
   * `--recent-days` [RECENT_DAYS], -d [RECENT_DAYS]
                         show not running workers who is created in recent days 
 
+## everai app check                 
+Check whether app is correct in app directory  
+
+**Example**:
+```bash
+everai app check
+```
+
+**Usage**: 
+```bash 
+everai app check [-h]
+```
+
+**Options**:  
+* `-h, --help`       show this help message and exit
