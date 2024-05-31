@@ -216,9 +216,9 @@ everai app deploy
 执行`everai app list`后，可以看到类似如下的输出结果。如果你的应用状态是`DEPLOYED`，意味着你的应用已经部署成功。  
 
 ```bash
-NAME                         STATUS     CREATED_AT                ROUTE_NAME
----------------------------  ---------  ------------------------  ---------------------------
-test-llama2-7b-chat-modal    DEPLOYED   2024-05-15 10:23:53+0800  test-llama2-7b-chat-modal
+NAME                           STATUS    CREATED_AT                ROUTE_NAME
+-----------------------------  --------  ------------------------  -----------------------------
+llama2-7b-chat                 DEPLOYED  2024-05-28 22:55:16+0800  llama2-7b-chat
 ```
 
 当你看到你的应用处于`DEPLOYED`时，你可以使用`curl`执行下面的请求来测试你部署的代码，在控制台上可以看到针对提问，大模型`Llama-2(7B)`给出的答案。显示如下的数据信息。  
