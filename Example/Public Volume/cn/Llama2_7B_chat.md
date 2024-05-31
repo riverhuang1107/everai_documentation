@@ -144,12 +144,15 @@ tokenizer: typing.Optional[PreTrainedTokenizerBase] = None
 model = None
 
 # service entrypoint
-# api service url looks https://everai.expvent.com/api/apps/v1/routes/test-llama2-7b-chat-modal/chat
+# api service url looks https://everai.expvent.com/api/routes/v1/llama2-7b-chat/chat
 # for test local url is http://127.0.0.1:8866/chat
-@app.service.route('/chat', methods=['POST'])
+@app.service.route('/chat', methods=['GET','POST'])
 def chat():
-    data = flask.request.json
-    prompt = data['prompt']
+    if flask.request.method == 'POST':
+        data = flask.request.json
+        prompt = data['prompt']
+    else:
+        prompt = flask.request.args["prompt"]
 
     input_ids = tokenizer.encode(prompt, return_tensors="pt")
     input_ids = input_ids.to('cuda:0')
