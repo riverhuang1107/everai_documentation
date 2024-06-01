@@ -25,6 +25,9 @@ ID                      STATUS    DETAIL_STATUS    CREATED_AT                DEL
 ----------------------  --------  ---------------  ------------------------  ------------
 RF7crg44K8QoYSzvKQCkhh  RUNNING   FREE             2024-04-29 20:53:40+0800
 ```
+
+If the app name is not attached, output shows the list of workers in current app directory.  
+
 ```bash
 everai worker list
 ```
