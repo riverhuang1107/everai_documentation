@@ -208,7 +208,7 @@ everai app run
 
 
 ## 准备存储
-如果你的应用需要用到文件对象存储，那么在你的应用部署到云环境之前，你需要先创建一个卷。  
+如果你的应用需要用到文件对象存储，那么在你的应用部署到云环境之前，你需要至少先创建一个卷。  
 
 你可以通过注解`@app.prepare`创建一个方法来管理和准备你的卷以及相关的文件。  
 
@@ -216,8 +216,6 @@ everai app run
 import os
 import time
 from everai.app import App, context, VolumeRequest
-
-VOLUME_NAME = 'get-start-volume'
 
 @app.prepare()
 def prepare_model():
@@ -237,15 +235,15 @@ def prepare_model():
     time.sleep(5)
 ```
 
-在生产环境，对象存储是非常重要的，你可以通过下面的命令准备它。  
-
-这句命令会执行所有被`@app.prepare`注解过的方法，在这些方法中你应该配置好文件数据。 
-
-在示例代码中，本地卷中的文件`my-model`会通过`everai app prepare`命令，推送到云端。
+在生产环境，文件对象存储是非常重要的，你可以通过下面的命令准备它。  
 
 ```bash
 everai app prepare
 ```
+
+这句命令会执行所有被`@app.prepare`注解过的方法，在这些方法中你应该配置好文件数据。 
+
+在示例代码中，卷`get-start-volume`在本地环境中的文件`my-model`会通过`everai app prepare`命令，推送到云端。
 
 ## 构建镜像
 这步需要使用`Dockerfile`和`image_builder.py`来为你的应用构建容器镜像。  
