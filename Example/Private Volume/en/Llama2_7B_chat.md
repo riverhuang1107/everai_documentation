@@ -104,7 +104,9 @@ everai volume get models--meta-llama--llama-2-7b-chat-hf
 <Volume: id: UoswTkyjkPZU3qb27s4B9E, name: models--meta-llama--llama-2-7b-chat-hf, revision: 000001-821, files: 21, size: 25.11 GiB>
 path: /root/.cache/everai/volumes/UoswTkyjkPZU3qb27s4B9E
 ```
-When using `everai app run` to debug the sample code, the value of `is_prepare_mode` is `False`, and the operation of pushing local files to the cloud will not be performed. After your code is debugged, execute the `everai app prepare` command. This command will execute all methods annotated by `@app.prepare`. At this time, the value of `is_prepare_mode` is `True`. In the sample code, the model files of volume `models--meta-llama--llama-2-7b-chat-hf` in the local environment will be pushed to the cloud when this command is executed.
+When using `everai app run` to debug the sample code in the local environment, the value of `is_prepare_mode` is `False`, and the operation of pushing local files to the cloud will not be performed. If your local debugging environment has GPU resources, the system will successfully execute `model.cuda(0)`.  
+
+After your code is debugged, execute the `everai app prepare` command. This command will execute all methods annotated by `@app.prepare`. At this time, the value of `is_prepare_mode` is `True`. In the sample code, the model files of volume `models--meta-llama--llama-2-7b-chat-hf` in the local environment will be pushed to the cloud when this command is executed.
 
 ```python
 import torch
