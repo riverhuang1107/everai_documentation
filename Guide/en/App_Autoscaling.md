@@ -2,10 +2,10 @@
 
 In the [Getting started](https://expvent.com/documentation/docs/), we have created a simple application. But when the load of this application exceeds the endurance range of computing resources, the application's service response will slow down, time out, or even be unavailable. The [EverAI](https://everai.expvent.com) platform provides an autoscaling mechanism that can help your application automatically expand under high load conditions, eliminating the need for you to manually deploy new computing nodes. This enables your application to quickly increase its load capacity in a short period of time.    
 
-First you create a `configmap` by the following command, this `configmap` includes policy parameters about autoscaling, the example defines that the mini workers number is 1, the max workers number is 5, and the max queue size is 2.  
+First you create a `configmap` by the following command, this `configmap` includes policy parameters about autoscaling, the example defines that the mini workers number is 1, the max workers number is 5, and the max queue size is 2, The step size of worker for scaling up is 1 (the number of workers for each scaling up is 1).    
 
 ```bash
-ever configmap create get-start-configmap \ 
+everai configmap create get-start-configmap \ 
   --from-literal min_workers=1 \
   --from-literal max_workers=5 \
   --from-literal max_queue_size=2 \
