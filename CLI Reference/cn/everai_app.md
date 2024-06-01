@@ -64,7 +64,7 @@ everai app run [-h] [--port PORT] [--listen LISTEN]
 
 **选项**:  
 * `-h, --help`       显示帮助信息
-* `--port PORT`      The port to bind to
+* `--port PORT`      指定服务端口，默认为8866
 * `--listen LISTEN`  The interface to bind to
 
 ## everai app get                 
