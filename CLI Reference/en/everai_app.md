@@ -66,7 +66,7 @@ everai app run [-h] [--port PORT] [--listen LISTEN]
 **Options**:  
 * `-h, --help`       show this help message and exit
 * `--port PORT`      The port to bind to
-* `--listen LISTEN`  The interface to bind to
+* `--listen LISTEN`  The specific network interface to bind the app to restrict communication. It can be a specific IP address, for example: 192.168.1.123. Defaults to 0.0.0.0, which supports receiving traffic from any network interface.
 
 ## everai app get                 
 Get app information  
