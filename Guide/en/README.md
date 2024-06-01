@@ -14,7 +14,7 @@ The EverAI Python library provides convenient, on-demand access to serverless cl
 
 ## Features
 * **Pay as you go**  
-You always pay for what you use and nothing more. You never pay for idle resources — just actual compute time. Only pay by the hour.  
+You always pay for what you use and nothing more. You never pay for idle resources — just actual compute time. Only pay by the second.  
 
 * **Focus on your code**  
 Deploy your apps as serverless REST APIs, or an web endpoint, all with just a single line of code. Don't focus on the hardware infrastructure. We run the infrastructure.  
@@ -54,16 +54,15 @@ To build your Docker image, you'll need access to the following:
 >
 >Buildx could be used to build multiple-platform(x86, arm64) Docker Image.  
 
-## Quick start
-### Install, Upgrade and Uninstall
-#### Install
+## Install, Upgrade and Uninstall
+### Install
 Install the package with `pip`. Run this in order to install the Python library locally.   
-##### Linux(WSL) & MacOS  
+#### Linux(WSL) & MacOS  
 ```bash
 pip install everai
 ```
 
-##### Windows PowerShell  
+#### Windows PowerShell  
 Open PowerShell as Administrator:  
 ```bash
 pip install everai --user
@@ -88,12 +87,12 @@ pip install everai --user
 >
 >you can find the user base binary directory and replacing `site-packages` with `Scripts`. For example, this could return 			`C:\Users\<Username>\AppData\Roaming\Python\Python311\site-packages` so you would need to set your PATH to include `C:\Users\<Username>\AppData\Roaming\Python\Python311\Scripts`. You can set your user PATH permanently in the Control Panel. You may need to log out for the PATH changes to take effect.  
 
-#### Upgrade
+### Upgrade
 Upgrade the package with `pip`(Linux, WSL, macOS, Windows PowerShell):  
 ```bash
 pip install --upgrade everai
 ```
-#### Uninstall
+### Uninstall
 Uninstall the package with `pip`(Linux, WSL, macOS, Windows PowerShell):  
 ```bash
 pip uninstall everai

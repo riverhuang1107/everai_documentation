@@ -14,7 +14,7 @@ EverAI CLI命令行工具提供了一种便捷的按需计费的接入方式，�
 
 ## 产品特性
 * **按需付费**  
-你只需要为你真正在使用的计算资源时长支付费用。你不再需要为空闲时的资源支付任何费用。并且是按小时计费。  
+你只需要为你真正在使用的计算资源时长支付费用。你不再需要为空闲时的资源支付任何费用。并且按秒计费。  
 
 * **关注你的代码**  
 以无服务的云计算架构方式部署你的应用。你不用关注硬件基础设施。我们来负责底层硬件的基础设施。  
@@ -55,17 +55,15 @@ EverAI CLI需要Python版本为3.10及以上版本。
 >
 >Buildx用于构建多平台（x86，arm64）构架Docker镜像。
 
-
-## 快速入门
-### 安装，更新和卸载
-#### 安装
+## 安装，更新和卸载
+### 安装
 使用`pip`工具安装EverAI CLI命令行工具。安装后，你可以在本地环境运行该工具。  
-##### Linux(WSL) & MacOS  
+#### Linux(WSL) & MacOS  
 ```bash
 pip install everai
 ```
 
-##### Windows PowerShell  
+#### Windows PowerShell  
 以管理员身份运行PowerShell：  
 ```bash
 pip install everai --user
@@ -90,12 +88,12 @@ pip install everai --user
 >
 >执行上述命令，你可以得到存放Python二进制包的基础路径，然后把路径中的`site-packages`替换成`Scripts`。举例来说，如果命令返回的是`C:\Users\<Username>\AppData\Roaming\Python\Python311\site-packages`，那么你需要在你的环境变量中添加`C:\Users\<Username>\AppData\Roaming\Python\Python311\Scripts`。你可以在系统属性的环境变量中，添加这条路径。最后你需要关闭`PowerShell`窗口，重新打开后使之生效。  
 
-#### 更新
+### 更新
 使用`pip`工具升级EverAI CLI命令行工具，以下命令适用于Linux(WSL)，macOS， Windows PowerShell。  
 ```bash
 pip install --upgrade everai
 ```
-#### 卸载
+### 卸载
 使用`pip`工具卸载EverAI CLI命令行工具，以下命令适用于Linux(WSL)，macOS， Windows PowerShell。  
 ```bash
 pip uninstall everai
