@@ -144,6 +144,7 @@ everai secret create quay-secret \
 >[quay.io](https://quay.io/) is a well-known public image registry. Well-known image registry similar to [quay.io](https://quay.io/) include [Docker Hub](https://hub.docker.com/), [GitHub Container Registry](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry), [Google Container Registry](https://cloud.google.com/artifact-registry), etc.  
 
 ## Write your app code in python
+### Basic setup
 There is an example code in [app.py](https://github.com/everai-example/get-start/blob/main/app.py).  
 
 First, import the required EverAI Python class library. Then define the variable names that need to be used, including the volume, the secret that accesses the image registry, and the file stored in the volume. Use the `Image.from_registry` static method to create a image instance. Create and define an app instance through the App class.  
@@ -178,33 +179,8 @@ app = App(
     ),
 )
 ```
-Aftering creating a app instance, now you can write your Python code. This example uses `flask` to implement a external web service that sends active messages from the server to the client.  
 
-```python
-import time
-import flask
-
-# curl --no-buffer http://localhost:8866/sse
-# curl --no-buffer http://127.0.0.1:8866/sse
-# curl --no-buffer http://<your ip>:8866/sse
-@app.service.route('/sse', methods=['GET'])
-def sse():
-    def generator():
-        for i in range(10):
-            yield f"hello again {i}\n\n"
-            time.sleep(1)
-
-    return flask.Response(generator(), mimetype='text/event-stream')
-```
-
-Now, you could test in your local machine will following command.  
-
-```bash
-everai app run
-```
-If you serve this web endpoint and hit it with `curl`, you will see the ten `SSE`(Server-Sent Events) events progressively appear in your terminal over a 10 second period.  
-
-## Prepare volume
+### Prepare volume
 Before your application is deployed in the cloud, you should construct your volume first, if your app uses at least one volume.  
 
 You can create a function by the `@app.prepare` decorator to manager and prepare your volume and related files.  
@@ -241,6 +217,57 @@ everai app prepare
 This command line will call all functions which are decorated by `@app.prepare`, in these functions you should set up volume data before the app use it.  
 
 In this example code, `my-model` file of volume `get-start-volume` in the local environment will be pushed to the cloud, when you run `everai app prepare`.  
+
+### Generate API endpoint service
+
+Aftering creating a app instance, now you can write your Python code. The example here uses `flask` to implement an external service that reads the file `my-model` information in the volume `get-start-volume`.  
+
+```python
+import flask
+
+# curl http://localhost:8866/show-volume
+# curl http://127.0.0.1:8866/show-volume
+# curl http://<your ip>:8866/show-volume
+@app.service.route('/show-volume', methods=['GET'])
+def show_volume():
+    volume = context.get_volume(VOLUME_NAME)
+    model_path = os.path.join(volume.path, MODEL_FILE_NAME)
+    with open(model_path, 'r') as f:
+        return f.read()
+```
+
+Now，you could test in your local machine will following command.  
+
+```bash
+everai app run
+```
+You can use `curl` to request this API endpoint service and see hello world displayed on your terminal. This information is written to the file `my-model` when performing the previous step of `prepare_model`.  
+
+```bash
+curl -H'Authorization: Bearer <your_token>' https://<your ip>:8866/<your app route name>/show-volume
+```
+
+In addition, in the same application, you can implement multiple API endpoint services. This example uses `flask` to implement a external web service that sends active messages from the server to the client.  
+
+```python
+# curl --no-buffer http://localhost:8866/sse
+# curl --no-buffer http://127.0.0.1:8866/sse
+# curl --no-buffer http://<your ip>:8866/sse
+@app.service.route('/sse', methods=['GET'])
+def sse():
+    def generator():
+        for i in range(10):
+            yield f"hello again {i}\n\n"
+            time.sleep(1)
+
+    return flask.Response(generator(), mimetype='text/event-stream')
+```
+
+You can execute `everai app run` again, serving this web endpoint and hit it with `curl`, you will see the ten `SSE`(Server-Sent Events) events progressively appear in your terminal over a 10 second period.  
+
+```bash
+curl --no-buffer -H'Authorization: Bearer <your_token>' https://<your ip>:8866/<your app route name>/sse
+```
 
 ## Build image
 This step will build the container image, using two very simple files `Dockerfile` and `image_builder.py`.  

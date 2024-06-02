@@ -146,6 +146,7 @@ everai secret create quay-secret \
 >[quay.io](https://quay.io/)是一个知名的公共镜像仓库，与之类似的知名镜像仓库还有[Docker Hub](https://hub.docker.com/)，[GitHub Container Registry](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry)，[Google Container Registry](https://cloud.google.com/artifact-registry)等。
 
 ## 编写你的代码
+### 基本设置
 这是一个[app.py](https://github.com/everai-example/get-start/blob/main/app.py)的示例代码。  
 
 首先，引入必要的EverAI Python类库。然后定义所需要用到的变量名，包括对象存储，访问镜像仓库的密钥，以及存放在对象存储中的文件等。使用`Image.from_registry`静态方法创建一个镜像实例。通过App类来创建定义一个app实例。  
@@ -179,35 +180,8 @@ app = App(
     ),
 )
 ```
-创建了应用实例后，你可以编写自己的代码。这里的示例使用了`flask`实现了一个服务器端向客户端推送消息的对外服务。  
 
-```python
-import time
-import flask
-
-# curl --no-buffer http://localhost:8866/sse
-# curl --no-buffer http://127.0.0.1:8866/sse
-# curl --no-buffer http://<your ip>:8866/sse
-@app.service.route('/sse', methods=['GET'])
-def sse():
-    def generator():
-        for i in range(10):
-            yield f"hello again {i}\n\n"
-            time.sleep(1)
-
-    return flask.Response(generator(), mimetype='text/event-stream')
-```
-
-现在，你可以通过下面的命令在你的本地环境测试你的代码。  
-
-```bash
-everai app run
-```
-
-你可以使用`curl`来请求这个`SSE`(Server-Sent Events)服务，并看到10秒内，有10个SSE事件出现在你的终端上。
-
-
-## 准备存储
+### 准备存储
 如果你的应用需要用到文件对象存储，那么在你的应用部署到云环境之前，你需要至少先创建一个卷。  
 
 你可以通过注解`@app.prepare`创建一个方法来管理和准备你的卷以及相关的文件。  
@@ -244,6 +218,58 @@ everai app prepare
 这句命令会执行所有被`@app.prepare`注解过的方法，在这些方法中你应该配置好文件数据。 
 
 在示例代码中，卷`get-start-volume`在本地环境中的文件`my-model`会通过`everai app prepare`命令，推送到云端。
+
+### 实现API端点服务
+
+创建了应用实例后，你可以编写自己的代码。这里的示例使用了`flask`实现了一个读取卷`get-start-volume`中文件`my-model`信息的对外服务。
+
+```python
+import flask
+
+# curl http://localhost:8866/show-volume
+# curl http://127.0.0.1:8866/show-volume
+# curl http://<your ip>:8866/show-volume
+@app.service.route('/show-volume', methods=['GET'])
+def show_volume():
+    volume = context.get_volume(VOLUME_NAME)
+    model_path = os.path.join(volume.path, MODEL_FILE_NAME)
+    with open(model_path, 'r') as f:
+        return f.read()
+```
+
+现在，你可以通过下面的命令在你的本地环境测试你的代码。  
+
+```bash
+everai app run
+```
+
+你可以使用`curl`来请求这个API端点服务，并看到在你的终端上显示`hello world`。该信息是在执行上一步操作`prepare_model`时，写入文件`my-model`中的。  
+
+```bash
+curl -H'Authorization: Bearer <your_token>' https://<your ip>:8866/<your app route name>/show-volume
+```
+
+此外，在同一个应用中，你可以实现多个API端点服务。这里的示例使用了`flask`实现了一个服务器端向客户端推送消息的对外服务。
+
+```python
+# curl --no-buffer http://localhost:8866/sse
+# curl --no-buffer http://127.0.0.1:8866/sse
+# curl --no-buffer http://<your ip>:8866/sse
+@app.service.route('/sse', methods=['GET'])
+def sse():
+    def generator():
+        for i in range(10):
+            yield f"hello again {i}\n\n"
+            time.sleep(1)
+
+    return flask.Response(generator(), mimetype='text/event-stream')
+```
+
+你可以再次执行`everai app run`，使用`curl`来请求这个`SSE`（Server-Sent Events）服务，并看到10秒内，有10个SSE事件出现在你的终端上。
+
+```bash
+curl --no-buffer -H'Authorization: Bearer <your_token>' https://<your ip>:8866/<your app route name>/sse
+```
 
 ## 构建镜像
 这步需要使用`Dockerfile`和`image_builder.py`来为你的应用构建容器镜像。  
