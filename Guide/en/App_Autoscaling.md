@@ -12,7 +12,7 @@ everai configmap create get-start-configmap \
   --from-literal scale_up_step=1 \
   --from-literal max_idle_time=60
 ```
-Based on the `app.py` code in [Getting started](https://expvent.com/documentation/zh-cn/docs/), When you define tha object of app,  you should add parameter `autoscaling_policy`.  
+Based on the `app.py` code in [Getting started](https://expvent.com/documentation/docs/), When you define tha object of app,  you should add parameter `autoscaling_policy`.  
 
 ```python
 from everai.autoscaling import SimpleAutoScalingPolicy
