@@ -220,7 +220,7 @@ In this example code, `my-model` file of volume `get-start-volume` in the local 
 
 ### Generate API endpoint service
 
-Aftering creating a app instance, now you can write your Python code. The example here uses `flask` to implement an external service that reads the file `my-model` information in the volume `get-start-volume`.  
+Now you can write your own Python code to implement the API endpoint service. The example here uses `flask` to implement an external service that reads the file `my-model` information in the volume `get-start-volume`.  
 
 ```python
 import flask

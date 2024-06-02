@@ -221,7 +221,7 @@ everai app prepare
 
 ### 实现API端点服务
 
-创建了应用实例后，你可以编写自己的代码。这里的示例使用了`flask`实现了一个读取卷`get-start-volume`中文件`my-model`信息的对外服务。
+现在你可以编写自己的代码，实现API端点服务。这里的示例使用`flask`实现了一个读取卷`get-start-volume`中文件`my-model`信息的对外服务。
 
 ```python
 import flask
