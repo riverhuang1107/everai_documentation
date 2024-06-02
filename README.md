@@ -243,13 +243,13 @@ def show_volume():
 everai app run
 ```
 
-你可以使用`curl`来请求这个API端点服务，并看到在你的终端上显示`hello world`。该信息是在执行上一步操作`prepare_model`时，写入文件`my-model`中的。  
+使用`curl`来请求这个API端点服务，并看到在你的终端上显示`hello world`。该信息是在执行上一步操作`prepare_model`时，写入文件`my-model`中的。  
 
 ```bash
 curl -H'Authorization: Bearer <your_token>' https://<your ip>:8866/<your app route name>/show-volume
 ```
 
-此外，在同一个应用中，你可以实现多个API端点服务。这里的示例使用了`flask`实现了一个服务器端向客户端推送消息的对外服务。
+此外，在同一个应用中，你可以实现多个API端点服务。这里的示例使用`flask`又实现了一个服务器端向客户端推送消息的对外服务。
 
 ```python
 # curl --no-buffer http://localhost:8866/sse
@@ -265,7 +265,7 @@ def sse():
     return flask.Response(generator(), mimetype='text/event-stream')
 ```
 
-你可以再次执行`everai app run`，使用`curl`来请求这个`SSE`（Server-Sent Events）服务，并看到10秒内，有10个SSE事件出现在你的终端上。
+再次执行`everai app run`，使用`curl`来请求这个`SSE`（Server-Sent Events）服务，并看到10秒内，有10个SSE事件出现在你的终端上。
 
 ```bash
 curl --no-buffer -H'Authorization: Bearer <your_token>' https://<your ip>:8866/<your app route name>/sse
