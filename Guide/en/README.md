@@ -244,7 +244,7 @@ everai app run
 You can use `curl` to request this API endpoint service and see `hello world` displayed on your terminal. This information is written to the file `my-model` when performing the previous step of `prepare_model`.  
 
 ```bash
-curl -H'Authorization: Bearer <your_token>' http://<your ip>:8866/<your app route name>/show-volume
+curl http://<your ip>:8866/<your app route name>/show-volume
 ```
 
 In addition, in the same application, you can implement multiple API endpoint services. This example uses `flask` to implement a external web service that sends active messages from the server to the client.  
@@ -266,7 +266,7 @@ def sse():
 You can execute `everai app run` again, serving this web endpoint and hit it with `curl`, you will see the ten `SSE`(Server-Sent Events) events progressively appear in your terminal over a 10 second period.  
 
 ```bash
-curl --no-buffer -H'Authorization: Bearer <your_token>' http://<your ip>:8866/<your app route name>/sse
+curl --no-buffer http://<your ip>:8866/<your app route name>/sse
 ```
 
 ## Build image
