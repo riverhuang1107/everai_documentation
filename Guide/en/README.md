@@ -241,7 +241,7 @@ Now，you could test in your local machine will following command.
 ```bash
 everai app run
 ```
-You can use `curl` to request this API endpoint service and see hello world displayed on your terminal. This information is written to the file `my-model` when performing the previous step of `prepare_model`.  
+You can use `curl` to request this API endpoint service and see `hello world` displayed on your terminal. This information is written to the file `my-model` when performing the previous step of `prepare_model`.  
 
 ```bash
 curl -H'Authorization: Bearer <your_token>' http://<your ip>:8866/<your app route name>/show-volume
