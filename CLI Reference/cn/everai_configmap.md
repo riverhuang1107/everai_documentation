@@ -160,6 +160,7 @@ scale_up_step: '1'
 ```bash  
 everai configmap update --from-file test-configmap.yml test-configmap
 ```
+`everai configmap update`执行后，使用该ConfigMap名称的应用都会更新相关配置参数。举例来说，把`min_workers`从1更新为2，系统会把相关涉及到的应用的最小运行worker数量都扩容到2。
 
 **格式**: 
 ```bash
