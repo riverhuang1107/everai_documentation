@@ -155,7 +155,7 @@ Then, run the command like this:
 everai configmap update --from-file test-configmap.yml test-configmap
 ```
 
-After `everai configmap update` is executed, applications using the ConfigMap name will update relevant configuration parameters. For example, if you update `min_workers` from 1 to 2, the system will expand the minimum number of running workers for the related applications to 2.  
+After `everai configmap update` is executed, applications using this updated ConfigMap will update relevant policies. For example, if you update `min_workers` from 1 to 2, the system will expand the minimum number of running workers for the related applications to 2.  
 
 **Usage**: 
 ```bash
