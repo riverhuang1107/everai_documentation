@@ -211,7 +211,7 @@ def img2img():
 
 这步需要使用`Dockerfile`和`image_builder.py`来为你的应用构建容器镜像。  
 
-这是一个关于[image_builder.py](https://github.com/everai-example/stable-diffusion-v1-5-txt2img-with-public-volume/blob/main/image_builder.py)的示例代码。  
+这是一个关于[image_builder.py](https://github.com/everai-example/stable-diffusion-v1-5-with-public-volume/blob/main/image_builder.py)的示例代码。  
 
 在`image_builder.py`中，你需要配置你的镜像地址信息。  
 
