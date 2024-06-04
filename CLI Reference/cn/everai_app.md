@@ -168,6 +168,9 @@ everai app pause [-h] [name]
 恢复使用应用    
 
 **示例**:
+
+当你想恢复被停止（应用的状态为`PAUSED`）的应用时，可以执行如下命令：  
+
 ```bash
 everai app resume <your app name>
 ```

@@ -169,6 +169,9 @@ everai app pause [-h] [name]
 Resume an app  
 
 **Example**:
+
+When you want to resume an application that has been stopped (the application status is `PAUSED`), you can execute the following command:  
+
 ```bash
 everai app resume <your app name>
 ```
