@@ -130,11 +130,14 @@ def prepare_model():
     # so if your volume constructs correctly, the worker run don't need any extra data pull
     model = LlamaForCausalLM.from_pretrained(MODEL_NAME,
                                              token=huggingface_token,
-                                             cache_dir=model_dir)
-
+                                             cache_dir=model_dir,
+                                             torch_dtype=torch.float16,
+                                             local_files_only=context.is_in_cloud)
+    
     tokenizer = LlamaTokenizer.from_pretrained(MODEL_NAME,
                                                token=huggingface_token,
-                                               cache_dir=model_dir)
+                                               cache_dir=model_dir,
+                                               local_files_only=context.is_in_cloud)
 
     # only in prepare mode push volume
     # to save gpu time (redundant sha256 checks)
