@@ -120,7 +120,8 @@ def prepare_model():
                                                cache_dir=model_dir,
                                                local_files_only=True)
     
-    model.cuda(0)
+    if torch.cuda.is_available():
+        model.cuda(0)
 ```
 If you want to use `everai app run` to debug this example locally, your local debugging environment needs to have GPU resources, and use `everai volume pull` command to pull the model file from the cloud to the local environment before debugging the code.  
 

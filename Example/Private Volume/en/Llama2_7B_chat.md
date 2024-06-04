@@ -141,7 +141,8 @@ def prepare_model():
     if context.is_prepare_mode:
         context.volume_manager.push(VOLUME_NAME)
     else:
-        model.cuda(0)
+        if torch.cuda.is_available():
+            model.cuda(0)
 ```
 
 ### Generate inference service
