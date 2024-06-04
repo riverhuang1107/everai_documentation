@@ -11,7 +11,7 @@ everai app create <your app name>
 ```
 
 ## Create secrets
-If you have already created a secret for your registry, you can skip this step.
+This step is optional, if you have already created a secret for the registry you need to access, or if your registry is publicly accessible.  
 
 In this case, we will create one secret for [quay.io](https://quay.io/).  
 
