@@ -1,4 +1,4 @@
-# Stable Diffusion 1.5 with private volume
+# 使用私有卷搭建Stable Diffusion 1.5模型图片生成服务
 
 在快速入门中，你已经创建了一个简单的应用。在这个示例中，我们使用私有卷存放`Stable Diffusion 1.5`模型文件，实现一个基于`Stable Diffusion 1.5`模型的文生图在线服务。  
 
