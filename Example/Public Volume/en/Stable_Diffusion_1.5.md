@@ -212,7 +212,7 @@ def img2img():
 ## Build image
 This step will build the container image, using two very simple files `Dockerfile` and `image_builder.py`.  
 
-There is an example code in [image_builder.py](https://github.com/everai-example/stable-diffusion-v1-5-img2img-with-public-volume/blob/main/image_builder.py).
+There is an example code in [image_builder.py](https://github.com/everai-example/stable-diffusion-v1-5-with-public-volume/blob/main/image_builder.py).
 
 In `image_builder.py`, you should set your image repo.  
 

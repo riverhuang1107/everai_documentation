@@ -27,7 +27,7 @@ everai secret create your-quay-io-secret-name \
 ## 编写你的代码
 ### 基本设置
 
-这是一个关于[app.py](https://github.com/everai-example/stable-diffusion-v1-5-txt2img-with-public-volume/blob/main/app.py)的示例代码。  
+这是一个关于[app.py](https://github.com/everai-example/stable-diffusion-v1-5-with-public-volume/blob/main/app.py)的示例代码。  
 
 首先，引入必要的EverAI Python类库。然后定义所需要用到的变量名，包括卷，访问镜像仓库的密钥，以及存放在卷中的文件等。使用`Image.from_registry`静态方法创建一个镜像实例。通过App类来创建定义一个app实例。  
 
