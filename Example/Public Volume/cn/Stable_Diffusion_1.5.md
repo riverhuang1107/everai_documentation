@@ -1,6 +1,6 @@
-# Stable Diffusion 1.5 with private volume
+# 使用公开卷搭建Stable Diffusion 1.5模型图片生成服务
 
-在快速入门中，你已经创建了一个简单的应用。在这个示例中，我们使用私有卷存放`Stable Diffusion 1.5`模型文件，实现一个基于`Stable Diffusion 1.5`模型的文生图在线服务。  
+在快速入门中，你已经创建了一个简单的应用。在这个示例中，我们使用公开卷中存放的`Stable Diffusion 1.5`模型文件，实现一个基于`Stable Diffusion 1.5`模型的文生图在线服务。  
 
 ## 创建应用
 
@@ -24,16 +24,10 @@ everai secret create your-quay-io-secret-name \
 >
 >[quay.io](https://quay.io/)是一个知名的公共镜像仓库，与之类似的知名镜像仓库还有[Docker Hub](https://hub.docker.com/)，[GitHub Container Registry](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry)，[Google Container Registry](https://cloud.google.com/artifact-registry)等。  
 
-此外，还需要为访问[Hugging Face](https://huggingface.co/)的token设置一个密钥。
-```bash
-everai secret create your-huggingface-secret-name \
-  --from-literal token-key-as-your-wish=<your huggingface token>
-```
-
 ## 编写你的代码
 ### 基本设置
 
-这是一个关于[app.py](https://github.com/everai-example/stable-diffusion-v1-5-with-private-volume/blob/main/app.py)的示例代码。  
+这是一个关于[app.py](https://github.com/everai-example/stable-diffusion-v1-5-txt2img-with-public-volume/blob/main/app.py)的示例代码。  
 
 首先，引入必要的EverAI Python类库。然后定义所需要用到的变量名，包括卷，访问镜像仓库的密钥，以及存放在卷中的文件等。使用`Image.from_registry`静态方法创建一个镜像实例。通过App类来创建定义一个app实例。  
 
@@ -48,10 +42,10 @@ from everai.placeholder import Placeholder
 from image_builder import IMAGE
 
 APP_NAME = '<your app name>'
-VOLUME_NAME = 'models--runwayml--stable-diffusion-v1-5'
+VOLUME_NAME = 'expvent/models--runwayml--stable-diffusion-v1-5'
 QUAY_IO_SECRET_NAME = 'your-quay-io-secret-name'
-MODEL_NAME = 'runwayml/stable-diffusion-v1-5'
 HUGGINGFACE_SECRET_NAME = 'your-huggingface-secret-name'
+MODEL_NAME = 'runwayml/stable-diffusion-v1-5'
 CONFIGMAP_NAME = 'sd15-configmap'
 
 image = Image.from_registry(IMAGE, auth=BasicAuth(
@@ -66,8 +60,7 @@ app = App(
         VolumeRequest(name=VOLUME_NAME, create_if_not_exists=True),
     ],
     secret_requests=[
-        HUGGINGFACE_SECRET_NAME,
-        QUAY_IO_SECRET_NAME
+        QUAY_IO_SECRET_NAME,
     ],
     configmap_requests=[CONFIGMAP_NAME],
     autoscaling_policy=SimpleAutoScalingPolicy(
@@ -96,19 +89,7 @@ app = App(
 
 ### 预加载模型
 
-如果你的本地环境没有模型文件，你可以使用`StableDiffusionPipeline.from_pretrained`方法传入`MODEL_NAME`，从[Hugging Face](https://huggingface.co/)官网拉取模型文件。并且会通过设置`cache_dir`，把模型文件缓存到私有卷`models--runwayml--stable-diffusion-v1-5`中。  
-
-你可以通过`everai volume get`命令获取到卷`models--runwayml--stable-diffusion-v1-5`的本地路径。进入卷的本地路径后，可以看到已经被缓存的模型文件。  
-
-```bash
-everai volume get models--runwayml--stable-diffusion-v1-5
-<Volume: id: Xo6zoFc4986CrD7dYuNrwr, name: models--runwayml--stable-diffusion-v1-5, revision: 000001-12d, files: 76, size: 10.21 GiB>
-path: /root/.cache/everai/volumes/Xo6zoFc4986CrD7dYuNrwr
-```
-
-你在本地环境使用`everai app run`调试示例代码时，`is_prepare_mode`的值是`False`，不会执行把本地文件推送到云端的操作。如果你的本地调试环境有GPU资源，系统会成功执行`image_pipe.to("cuda")`。  
-
-待你的代码调试通过后，执行`everai app prepare`命令，该命令会执行所有被`@app.prepare`注解过的方法，此时`is_prepare_mode`的值是`True`，在示例代码中，卷`models--runwayml--stable-diffusion-v1-5`在本地环境中的模型文件会在执行该命令时被推送到云端。
+你可以使用我们提供的公开卷`expvent/models--runwayml--stable-diffusion-v1-5`中的模型文件加载模型。
 
 ```python
 from diffusers import StableDiffusionPipeline, StableDiffusionImg2ImgPipeline
@@ -127,44 +108,43 @@ def prepare_model():
     huggingface_token = secret.get('token-key-as-your-wish')
 
     model_dir = volume.path
-    is_in_cloud = context.is_in_cloud
 
     global txt2img_pipe
     global img2img_pipe
-    
+
     txt2img_pipe = StableDiffusionPipeline.from_pretrained(MODEL_NAME,
                                                         token=huggingface_token,
                                                         cache_dir=model_dir,
                                                         revision="fp16", 
                                                         torch_dtype=torch.float16, 
                                                         low_cpu_mem_usage=False,
-                                                        local_files_only=is_in_cloud
+                                                        local_files_only=True
                                                         )
-
+    
     # The self.components property can be useful to run different pipelines with the same weights and configurations without reallocating additional memory.
     # If you just want to use img2img pipeline, you should use StableDiffusionImg2ImgPipeline.from_pretrained below.
     img2img_pipe = StableDiffusionImg2ImgPipeline(**txt2img_pipe.components)
-    #img2img_pipe = StableDiffusionImg2ImgPipeline.from_pretrained(MODEL_NAME,
+    #image_pipe = StableDiffusionImg2ImgPipeline.from_pretrained(MODEL_NAME,
     #                                                            token=huggingface_token,
     #                                                            cache_dir=model_dir,
     #                                                            revision="fp16",
-    #                                                            torch_dtype=torch.float16,
+    #                                                            torch_dtype=torch.float16, 
     #                                                            low_cpu_mem_usage=False,
-    #                                                            local_files_only=is_in_cloud
+    #                                                            local_files_only=True
     #                                                            )
-       
-    # only in prepare mode push volume
-    # to save gpu time (redundant sha256 checks)
-    if context.is_prepare_mode:
-        context.volume_manager.push(VOLUME_NAME)
-    else:
-        if torch.cuda.is_available():
+      
+    if torch.cuda.is_available():
             txt2img_pipe.to("cuda")
             img2img_pipe.to("cuda")
-        elif torch.backends.mps.is_available():
-            mps_device = torch.device("mps")
-            txt2img_pipe.to(mps_device)
-            img2img_pipe.to(mps_device)
+    elif torch.backends.mps.is_available():
+        mps_device = torch.device("mps")
+        txt2img_pipe.to(mps_device)
+        img2img_pipe.to(mps_device)
+```
+如果你想在本地使用`everai app run`调试这个示例，你的本地调试环境需要有GPU资源，并且在调试代码前使用`everai volume pull`命令把云端的模型文件拉取到本地环境。  
+
+```bash
+everai volume pull expvent/models--runwayml--stable-diffusion-v1-5
 ```
 
 ### 实现推理服务
@@ -175,6 +155,8 @@ import flask
 from flask import Response
 
 import io
+
+image_pipe = None
 
 # service entrypoint
 # api service url looks https://everai.expvent.com/api/routes/v1/stable-diffusion-v1-5/txt2img
@@ -196,10 +178,8 @@ def txt2img():
 
     return Response(byte_stream.getvalue(), mimetype="image/png")
 ```
-
 #### 图生图
 这里的代码使用了`flask`实现了图生图的推理在线服务。  
-
 ```python
 import PIL
 from io import BytesIO
@@ -231,7 +211,7 @@ def img2img():
 
 这步需要使用`Dockerfile`和`image_builder.py`来为你的应用构建容器镜像。  
 
-这是一个关于[image_builder.py](https://github.com/everai-example/stable-diffusion-v1-5-txt2img-with-private-volume/blob/main/image_builder.py)的示例代码。  
+这是一个关于[image_builder.py](https://github.com/everai-example/stable-diffusion-v1-5-txt2img-with-public-volume/blob/main/image_builder.py)的示例代码。  
 
 在`image_builder.py`中，你需要配置你的镜像地址信息。  
 
@@ -276,7 +256,7 @@ curl -X POST -d '{"prompt": "a photo of a cat on the boat"}' -H 'Content-Type: a
 
 打开图片，可以看到如下效果。
 
-<img src="https://expvent.com.cn:1111/evfiles/v1/expvent/public/everai-documentation/demo-cat.png" width = "512" />
+<img src="https://expvent.com.cn:1111/evfiles/v1/expvent/public/everai-documentation/demo-cat.png" width = "512" /> 
 
 此外，你还可以使用`curl`执行下面的请求来测试你部署的图生图代码。 
 
