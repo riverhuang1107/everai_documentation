@@ -141,7 +141,7 @@ def prepare_model():
         txt2img_pipe.to(mps_device)
         img2img_pipe.to(mps_device)
 ```
-如果你想在本地使用`everai app run`调试这个示例，你的本地调试环境需要有GPU资源，并且在调试代码前使用`everai volume pull`命令把云端的模型文件拉取到本地环境。  
+如果你想在本地使用`everai app run`调试这个示例，你的本地调试环境需要有GPU资源（英伟达GPU或者具有Metal编程框架的苹果GPU），并且在调试代码前使用`everai volume pull`命令把云端的模型文件拉取到本地环境。  
 
 ```bash
 everai volume pull expvent/models--runwayml--stable-diffusion-v1-5
