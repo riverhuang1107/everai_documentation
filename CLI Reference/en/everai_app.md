@@ -11,7 +11,8 @@ everai app [-h] {create,run,get,upgrade,pause,deploy,prepare,list,ls,queue,q,wor
   * `run`                 Local run a everai application for test  
   * `get`                 Get app information  
   * `upgrade`             Upgrade an app  
-  * `pause`               Pause an app, all worker will be stopped  
+  * `pause`               Pause an app, all worker will be stopped
+  * `resume`              Resume an app   
   * `deploy`              Deploy an app to serving status  
   * `pause`               Pause an app, all worker will be stopped  
   * `prepare`             Prepare an app, all of function which decorated by `@app.prepare` would be called  
@@ -163,6 +164,26 @@ everai app pause [-h] [name]
 
 **Options**:
   * `-h, --help`  show this help message and exit 
+
+## everai app resume           
+Resume an app  
+
+**Example**:
+```bash
+everai app resume <your app name>
+```
+
+**Usage**:  
+```bash
+everai app resume [-h] [name]
+```
+
+**Positional arguments**:  
+
+  * `name`        The app name 
+
+**Options**:  
+* `-h, --help`            show this help message and exit  
 
 ## everai app deploy              
 Deploy an app to serving status  

@@ -11,7 +11,8 @@ everai app [-h] {create,run,get,upgrade,pause,deploy,prepare,list,ls,queue,q,wor
   * `run`                 在本地环境运行应用进行测试  
   * `get`                 获取一个应用的信息  
   * `upgrade`             升级应用  
-  * `pause`               停止应用，所有的worker都会停止  
+  * `pause`               停止应用，所有的worker都会停止
+  * `resume`              恢复使用应用  
   * `deploy`              部署应用到可用状态  
   * `prepare`             准备应用，所有被`@app.prepare`注解的方法都会被执行  
   * `list (ls)`           显示应用列表  
@@ -162,6 +163,26 @@ everai app pause [-h] [name]
 
 **选项**:
   * `-h, --help`  显示帮助信息
+
+## everai app resume           
+恢复使用应用    
+
+**示例**:
+```bash
+everai app resume <your app name>
+```
+
+**格式**:  
+```bash
+everai app resume [-h] [name]
+```
+
+**参数**:  
+
+  * `name`        应用名称 
+
+**选项**:  
+* `-h, --help`            显示帮助信息  
 
 ## everai app deploy              
 部署应用到可用状态  
