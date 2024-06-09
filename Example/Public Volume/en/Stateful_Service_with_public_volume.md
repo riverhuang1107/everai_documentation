@@ -1,5 +1,5 @@
 # Stable Diffusion 1.5 with public volume
-In the quickstart, you created a simple application. In this example, we use the `Stable Diffusion 1.5` model files in public volume and implement an AIGC(AI generated content) online text-to-image and image-to-image service.  
+In the quickstart, you created a simple application. In this example, we use the `Stable Diffusion 1.5` model files in public volume and implement an AIGC(AI generated content) online stateful inference service.  
 
 ## Create an app
 Create a directory for your app firstly. In your app directory, you should login by token you got in [EverAI](https://everai.expvent.com). After login successfully, run command `everai app create` to create your app.  
@@ -121,16 +121,7 @@ def prepare_model():
                                                         )
     
     # The self.components property can be useful to run different pipelines with the same weights and configurations without reallocating additional memory.
-    # If you just want to use img2img pipeline, you should use StableDiffusionImg2ImgPipeline.from_pretrained below.
     img2img_pipe = StableDiffusionImg2ImgPipeline(**txt2img_pipe.components)
-    #image_pipe = StableDiffusionImg2ImgPipeline.from_pretrained(MODEL_NAME,
-    #                                                            token=huggingface_token,
-    #                                                            cache_dir=model_dir,
-    #                                                            revision="fp16",
-    #                                                            torch_dtype=torch.float16, 
-    #                                                            low_cpu_mem_usage=False,
-    #                                                            local_files_only=True
-    #                                                            )
       
     if torch.cuda.is_available():
             txt2img_pipe.to("cuda")
@@ -146,7 +137,10 @@ If you want to use `everai app run` to debug this example locally, your local de
 everai volume pull expvent/models--runwayml--stable-diffusion-v1-5
 ```
 
-### Generate inference service
+### Generate stateful inference service
+
+We use the `/txt2img` endpoint service to generate a image in the `/tmp` directory in the worker. Then, read the image in the `/tmp` directory under the same worker through the `/img2img` endpoint service, and generate a new image of this image.  
+
 #### Text generates image
 Aftering loading `Stable Diffusion 1.5` model, now you can write your Python code that uses `flask` to implement the inference online service of AIGC(AI generated content).  
 
@@ -154,10 +148,13 @@ Aftering loading `Stable Diffusion 1.5` model, now you can write your Python cod
 import flask
 from flask import Response
 
+import os
 import io
 
+image_pipe = None
+
 # service entrypoint
-# api service url looks https://everai.expvent.com/api/routes/v1/stable-diffusion-v1-5/txt2img
+# api service url looks https://everai.expvent.com/api/routes/v1/sd-v1-5-stateful-service/txt2img
 # for test local url is http://127.0.0.1:8866/txt2img
 @app.service.route('/txt2img', methods=['GET','POST'])
 def txt2img():    
@@ -168,12 +165,17 @@ def txt2img():
         prompt = flask.request.args["prompt"]
 
     pipe_out = txt2img_pipe(prompt)
+    
+    tmp_dir = '/tmp'
+    image_name = 'demo.png'
+    image_name = os.path.join(tmp_dir, image_name)
 
     image_obj = pipe_out.images[0]
+    image_obj.save(image_name)
 
     byte_stream = io.BytesIO()
     image_obj.save(byte_stream, format="PNG")
-
+    
     return Response(byte_stream.getvalue(), mimetype="image/png")
 ```
 
@@ -184,17 +186,20 @@ Now you can write your Python code that uses `flask` to implement the inference 
 import PIL
 from io import BytesIO
 
-image_pipe = None
-
 # service entrypoint
-# api service url looks https://everai.expvent.com/api/routes/v1/stable-diffusion-v1-5/img2img
+# api service url looks https://everai.expvent.com/api/routes/v1/sd-v1-5-stateful-service/img2img
 # for test local url is http://127.0.0.1:8866/img2img
-@app.service.route('/img2img', methods=['POST'])
+@app.service.route('/img2img', methods=['GET','POST'])
 def img2img():        
-    f = flask.request.files['file']
-    img = f.read()
-
-    prompt = flask.request.form['prompt']
+    tmp_dir = '/tmp'
+    image_name = 'demo.png'
+    image_name = os.path.join(tmp_dir, image_name)
+    img = open(image_name, 'rb').read()
+    
+    if flask.request.method == 'POST':
+        prompt = flask.request.form['prompt']
+    else:
+        prompt = flask.request.args["prompt"]
     
     init_image = PIL.Image.open(BytesIO(img)).convert("RGB")
     init_image = init_image.resize((768, 512))
@@ -212,9 +217,17 @@ def img2img():
 ## Build image
 This step will build the container image, using two very simple files `Dockerfile` and `image_builder.py`.  
 
-There is an example code in [image_builder.py](https://github.com/everai-example/stable-diffusion-v1-5-with-public-volume/blob/main/image_builder.py).
+In this example, a temporary directory `/tmp` needs to be defined and created for the worker container in the `Dockerfile`.
+
+```
+ENV TMPDIR=/tmp
+
+RUN mkdir -p $TMPDIR
+```
 
 In `image_builder.py`, you should set your image repo.  
+
+There is an example code in [image_builder.py](https://github.com/everai-example/stable-diffusion-v1-5-with-public-volume/blob/main/image_builder.py).
 
 In this example, we choose to use [quay.io](https://quay.io/) as the public image registry to store application images. You can also use well-known image registry similar to [quay.io](https://quay.io/), such as [Docker Hub](https://hub.docker.com/), [GitHub Container Registry](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry), [Google Container Registry](https://cloud.google.com/artifact-registry), etc. If you have a self-built image registry and the image can be accessed on the Internet, you can also use it.  
 
@@ -245,34 +258,21 @@ everai app deploy
 After running `everai app list`, you can see the result similar to the following. If your app's status is `DEPLOYED`, it means that your app is deployed successfully.  
 
 ```bash
-NAME                         STATUS     CREATED_AT                ROUTE_NAME
----------------------------  ---------  ------------------------  ---------------------------
-stable-diffusion-v1-5        DEPLOYED   2024-05-19 18:47:32+0800  stable-diffusion-v1-5
+NAME                           STATUS    CREATED_AT                ROUTE_NAME
+-----------------------------  --------  ------------------------  -----------------------------
+sd-v1-5-stateful-service       DEPLOYED  2024-06-05 15:29:22+0800  sd-v1-5-stateful-service
 ```
 
 When your app is deployed, you can use `curl` to execute the following request to test your deployed text-to-image code, A picture generated by the `Stable Diffusion 1.5` model will be downloaded in the current directory on the console.  
 
-```bash
-curl -X POST -d '{"prompt": "a photo of a cat on the boat"}' -H 'Content-Type: application/json' -H'Authorization: Bearer <your_token>' -o test.png https://everai.expvent.com/api/routes/v1/<your app route name>/txt2img
-```
-
-Open the picture and you can see the following effect.  
-
-<img src="https://expvent.com.cn:1111/evfiles/v1/expvent/public/everai-documentation/demo-cat.png" width = "512" />  
-
-You also can use `curl` to execute the following request to test your deployed image-to-image code.  
-
-Before using `curl` to request, you need to download `sketch-mountains-input.jpg` to your local directory, execute `curl` in the directory of the console terminal, and a new image based on this original image of `sketch-mountains-input.jpg` and `prompt` will be generated by the large model `Stable Diffusion 1.5`.  
-
+The generated images are stored in the `/tmp` directory of the worker container. In order to ensure that the image-to-image service can read the image in the `/tmp` directory, you need to customize the header `x-everai-session-id`, and the value can be `uuid`.  
 
 ```bash
-curl -X POST -F 'file=@sketch-mountains-input.jpg' -F "prompt=A fantasy landscape, trending on artstation" -H'Authorization: Bearer <your_token>' -o test.jpg https://everai.expvent.com/api/routes/v1/<your app route name>/img2img
+curl -H 'x-everai-session-id: <uuid>' -o test.png -v https://everai.expvent.com/api/routes/v1/sd-v1-5-stateful-service/txt2img?prompt=cat%20on%20the%20boat
 ```
 
-An example of the original image is shown below.  
+Use `curl` to execute the following request to test your deployed image-to-image code. The header `x-everai-session-id` needs to be customized, and the value `uuid` must be exactly the same as the `uuid` used in the text-to-image service. This ensures that the request can read the image generated by the text-to-image service in the `/tmp` directory of the worker container.
 
-<img src="https://expvent.com.cn:1111/evfiles/v1/expvent/public/everai-documentation/sketch-mountains-input.jpg" width = "512" />
-
-Open the new picture and you can see the following effect.  
-
-<img src="https://expvent.com.cn:1111/evfiles/v1/expvent/public/everai-documentation/img2img-output.jpg" width = "512" />
+```bash
+curl -H 'x-everai-session-id: <uuid>' -o test.jpg -v https://everai.expvent.com/api/routes/v1/sd-v1-5-stateful-service/img2img?prompt=sketchup%20of%20cartoon%20cat
+```
