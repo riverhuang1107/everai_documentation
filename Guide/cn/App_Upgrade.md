@@ -124,7 +124,7 @@ dEXndYfRrpqwAirhBdugYN  RUNNING   REMOVE           2024-05-11 14:54:27+0800
 SeaNG9f6hKcQ9J3X93GQEx  RUNNING   FREE             2024-05-11 15:11:37+0800
 ```
 
-再次使用`curl`执行测试用例，在控制台显示如下的数据信息。可以看到服务器端向客户端持续推送消息已经被更新。  
+再次使用`curl`执行测试用例，在终端控制台显示如下的数据信息。可以看到服务器端向客户端持续推送消息已经被更新。  
 ```bash
 curl -H'Authorization: Bearer <your_token>' https://everai.expvent.com/api/routes/v1/<your app route name>/sse
 hello world again 0
@@ -139,3 +139,29 @@ hello world again 2
 hello world again 3
 ```
 
+## everai app upgrade --resource-requests
+
+如果你的应用已经在[EverAI](https://everai.expvent.com)平台云端部署，当你需要调整你的计算资源（CPU，内存，GPU卡数量或者GPU型号）时，可以使用`everai app upgrade ----resource-requests`。[EverAI](https://everai.expvent.com)平台支持应用热升级，你的应用服务在整个升级更新过程中，始终处于在线运行状态。  
+
+打开`app.py`文件，在通过App类来创建定义一个app实例的代码中，修改`resource_requests`参数：  
+```python
+resource_requests=ResourceRequests(
+    cpu_num=2,
+    memory_mb=20480,
+    gpu_num=1,
+    gpu_constraints=[
+        "A100 40G",
+        "RTX 4090"
+    ],
+)
+```
+
+保存退出`app.py`文件后，执行如下命令，完成应用计算资源的调整。  
+
+```bash
+everai app upgrade ----resource-requests
+```
+
+执行`everai app list`，可以看到需要被更新的应用的状态是`PREPARING`。  
+
+运行`everai worker list`，看到原来在运行的worker正处于`REMOVE`状态，新的worker已经在运行中。
