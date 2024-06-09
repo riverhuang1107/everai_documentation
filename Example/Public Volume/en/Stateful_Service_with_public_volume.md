@@ -1,4 +1,4 @@
-# Stable Diffusion 1.5 with public volume
+# Stateful inference service with public volume
 In the quickstart, you created a simple application. In this example, we use the `Stable Diffusion 1.5` model files in public volume and implement an AIGC(AI generated content) online stateful inference service.  
 
 ## Create an app
