@@ -1,6 +1,6 @@
 # App Endpoint Authentication
 
-[EverAI](https://everai.expvent.com)  platform supports three identity authentication methods for application endpoint services, namely private, public and third-party authentication.
+[EverAI](https://everai.expvent.com) platform supports three identity authentication methods for application endpoint services, namely private, public and third-party authentication.
 
 ## Private
 
