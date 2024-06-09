@@ -1,4 +1,4 @@
-# 按需运行应用
+# 应用按需运行
 
 在[EverAI](https://everai.expvent.com)平台，你只需要为你真正在使用的计算资源时长支付费用。你不再需要为业务空闲时的资源支付任何费用。通过合理使用`everai app pause`和`everai app resume`即可达成这个目标。  
 
