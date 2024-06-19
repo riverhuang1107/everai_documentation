@@ -138,8 +138,8 @@ tokenizer: typing.Optional[PreTrainedTokenizerBase] = None
 model = None
 
 # service entrypoint
-# api service url looks https://everai.expvent.com/api/routes/v1/llama2-7b-chat/chat
-# for test local url is http://127.0.0.1:8866/chat
+# api service url looks https://everai.expvent.com/api/routes/v1/default/llama2-7b-chat/chat
+# for test local url is http://127.0.0.1/chat
 @app.service.route('/chat', methods=['GET','POST'])
 def chat():
     if flask.request.method == 'POST':
