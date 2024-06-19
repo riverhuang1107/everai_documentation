@@ -223,9 +223,9 @@ Now you can write your own Python code to implement the API endpoint service. Th
 ```python
 import flask
 
-# curl http://localhost:8866/show-volume
-# curl http://127.0.0.1:8866/show-volume
-# curl http://<your ip>:8866/show-volume
+# curl http://localhost/show-volume
+# curl http://127.0.0.1/show-volume
+# curl http://<your ip>/show-volume
 @app.service.route('/show-volume', methods=['GET'])
 def show_volume():
     volume = context.get_volume(VOLUME_NAME)
@@ -242,15 +242,15 @@ everai app run
 You can use `curl` to request this API endpoint service and see `hello world` displayed on your terminal. This information is written to the file `my-model` when performing the previous step of `prepare_model`.  
 
 ```bash
-curl http://<your ip>:8866/show-volume
+curl http://<your ip>/show-volume
 ```
 
 In addition, in the same application, you can implement multiple API endpoint services. This example uses `flask` to implement a external web service that sends active messages from the server to the client.  
 
 ```python
-# curl --no-buffer http://localhost:8866/sse
-# curl --no-buffer http://127.0.0.1:8866/sse
-# curl --no-buffer http://<your ip>:8866/sse
+# curl --no-buffer http://localhost/sse
+# curl --no-buffer http://127.0.0.1/sse
+# curl --no-buffer http://<your ip>/sse
 @app.service.route('/sse', methods=['GET'])
 def sse():
     def generator():
@@ -264,7 +264,7 @@ def sse():
 You can execute `everai app run` again, serving this web endpoint and hit it with `curl`, you will see the ten `SSE`(Server-Sent Events) events progressively appear in your terminal over a 10 second period.  
 
 ```bash
-curl --no-buffer http://<your ip>:8866/sse
+curl --no-buffer http://<your ip>/sse
 ```
 
 ## Build image

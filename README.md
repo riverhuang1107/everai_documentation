@@ -224,9 +224,9 @@ everai app prepare
 ```python
 import flask
 
-# curl http://localhost:8866/show-volume
-# curl http://127.0.0.1:8866/show-volume
-# curl http://<your ip>:8866/show-volume
+# curl http://localhost/show-volume
+# curl http://127.0.0.1/show-volume
+# curl http://<your ip>/show-volume
 @app.service.route('/show-volume', methods=['GET'])
 def show_volume():
     volume = context.get_volume(VOLUME_NAME)
@@ -244,15 +244,15 @@ everai app run
 使用`curl`来请求这个API端点服务，并看到在你的终端上显示`hello world`。该信息是在执行上一步操作`prepare_model`时，写入文件`my-model`中的。  
 
 ```bash
-curl http://<your ip>:8866/show-volume
+curl http://<your ip>/show-volume
 ```
 
 此外，在同一个应用中，你可以实现多个API端点服务。这里的示例使用`flask`又实现了一个服务器端向客户端推送消息的对外服务。
 
 ```python
-# curl --no-buffer http://localhost:8866/sse
-# curl --no-buffer http://127.0.0.1:8866/sse
-# curl --no-buffer http://<your ip>:8866/sse
+# curl --no-buffer http://localhost/sse
+# curl --no-buffer http://127.0.0.1/sse
+# curl --no-buffer http://<your ip>/sse
 @app.service.route('/sse', methods=['GET'])
 def sse():
     def generator():
@@ -266,7 +266,7 @@ def sse():
 再次执行`everai app run`，使用`curl`来请求这个`SSE`（Server-Sent Events）服务，并看到10秒内，有10个SSE事件出现在你的终端上。
 
 ```bash
-curl --no-buffer http://<your ip>:8866/sse
+curl --no-buffer http://<your ip>/sse
 ```
 
 ## 构建镜像
