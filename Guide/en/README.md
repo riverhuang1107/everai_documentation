@@ -108,7 +108,7 @@ Before creating app In [EverAI](https://everai.expvent.com), firstly you should 
 
 * **`image_builder.py`** This is the config file that is used to build docker image.
 
-* **`requirements.txt`** This file defines the dependent packages and corresponding software versions for running Python application. You can use `pipreqs.` to obtain the latest software dependency packages and corresponding versions.
+* **`requirements.txt`** This file defines the dependent packages and corresponding software versions for running Python application. You can use `pipreqs .` to obtain the latest software dependency packages and corresponding versions.
 
 ```bash
 <your app name>
