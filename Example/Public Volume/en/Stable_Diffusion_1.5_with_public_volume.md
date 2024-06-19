@@ -6,8 +6,6 @@ Create a directory for your app firstly. In your app directory, you should login
 
 ```bash
 everai login --token <your token>
-
-everai app create <your app name>
 ```
 ## Create secrets
 If you have already created a secret for your registry, you can skip this step.
@@ -33,7 +31,7 @@ What needs to be noted here is that you need to configure GPU resources for your
 
 ```python
 from everai.app import App, context, VolumeRequest
-from everai.autoscaling import SimpleAutoScalingPolicy
+from everai_autoscaler.builtin import SimpleAutoScaler
 from everai.image import Image, BasicAuth
 from everai.resource_requests import ResourceRequests
 from everai.placeholder import Placeholder
@@ -62,7 +60,7 @@ app = App(
         QUAY_IO_SECRET_NAME
     ],
     configmap_requests=[CONFIGMAP_NAME],
-    autoscaling_policy=SimpleAutoScalingPolicy(
+    autoscaler=SimpleAutoScaler(
         # keep running workers even no any requests, that make reaction immediately for new request
         min_workers=Placeholder(kind='ConfigMap', name=CONFIGMAP_NAME, key='min_workers'),
         # the maximum works setting, protect your application avoid to pay a lot of money
@@ -240,7 +238,7 @@ everai image build
 The final step is to deploy your app to everai and keep it running.  
 
 ```bash
-everai app deploy
+everai app create
 ```
 After running `everai app list`, you can see the result similar to the following. If your app's status is `DEPLOYED`, it means that your app is deployed successfully.  
 

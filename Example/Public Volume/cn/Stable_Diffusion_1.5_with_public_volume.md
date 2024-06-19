@@ -7,8 +7,6 @@
 首先，为你的应用创建一个目录，进入应用目录后，首先需要使用你从[EverAI](https://everai.expvent.com)获取到的token进行登录。登录成功后，使用`everai app create`命令创建你的应用。
 ```bash
 everai login --token <your token>
-
-everai app create <your app name>
 ```
 ## 创建密钥
 
@@ -35,7 +33,7 @@ everai secret create your-quay-io-secret-name \
 
 ```python
 from everai.app import App, context, VolumeRequest
-from everai.autoscaling import SimpleAutoScalingPolicy
+from everai_autoscaler.builtin import SimpleAutoScaler
 from everai.image import Image, BasicAuth
 from everai.resource_requests import ResourceRequests
 from everai.placeholder import Placeholder
@@ -63,7 +61,7 @@ app = App(
         QUAY_IO_SECRET_NAME,
     ],
     configmap_requests=[CONFIGMAP_NAME],
-    autoscaling_policy=SimpleAutoScalingPolicy(
+    autoscaler=SimpleAutoScaler(
         # keep running workers even no any requests, that make reaction immediately for new request
         min_workers=Placeholder(kind='ConfigMap', name=CONFIGMAP_NAME, key='min_workers'),
         # the maximum works setting, protect your application avoid to pay a lot of money
@@ -238,7 +236,7 @@ everai image build
 
 最后一步是把你的应用部署到EverAI。并使它保持在运行状态。  
 ```bash
-everai app deploy
+everai app create
 ```
 
 执行`everai app list`后，可以看到类似如下的输出结果。如果你的应用状态是`DEPLOYED`，意味着你的应用已经部署成功。  
