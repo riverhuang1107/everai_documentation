@@ -98,9 +98,9 @@ Uninstall the package with `pip`(Linux, WSL, macOS, Windows PowerShell):
 pip uninstall everai
 ```
 
-## Create an app
-### File and folder structure
-Before creating app In [EverAI](https://everai.expvent.com), firstly you should create a folder which is named by your app name generally. A EverAI app must includes the following four files at least:  
+## Create an app directory
+### File and directory structure
+Before creating app In [EverAI](https://everai.expvent.com), firstly you should create a directory which is named by your app name generally. A EverAI app must includes the following four files at least:  
 
 * **`Dockerfile`** This is the text file which is used to build docker image, and it includes series of instructions and commands used to build image.  
 
@@ -118,7 +118,7 @@ Before creating app In [EverAI](https://everai.expvent.com), firstly you should 
 └── requirements.txt
 ```
 
-### Create your first app
+### Login EVERAI CLI
 In your app directory, you should login by token you got in [EverAI](https://everai.expvent.com). After login successfully, run command `everai app create` to create your app.  
 ```bash
 everai login --token <your token>
