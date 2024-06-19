@@ -201,15 +201,15 @@ everai app create
 执行`everai app list`后，可以看到类似如下的输出结果。如果你的应用状态是`DEPLOYED`，意味着你的应用已经部署成功。  
 
 ```bash
-NAME                           STATUS    CREATED_AT                ROUTE_NAME
------------------------------  --------  ------------------------  -----------------------------
-llama2-7b-chat                 DEPLOYED  2024-05-28 22:55:16+0800  llama2-7b-chat
+NAME                   NAMESPACE    STATUS    WORKERS    CREATED_AT
+---------------------  -----------  --------  ---------  ------------------------
+llama2-7b-chat         default      DEPLOYED  1/1        2024-06-19T08:07:24+0000
 ```
 
 当你看到你的应用处于`DEPLOYED`时，你可以使用`curl`执行下面的请求来测试你部署的代码，在控制台上可以看到针对提问，大模型`Llama-2(7B)`给出的答案。显示如下的数据信息。  
 
 ```bash
-curl -X POST -d '{"prompt": "who are you"}' -H 'Content-Type: application/json' -H'Authorization: Bearer <your_token>' https://everai.expvent.com/api/routes/v1/<your app route name>/chat
+curl -X POST -d '{"prompt": "who are you"}' -H 'Content-Type: application/json' -H'Authorization: Bearer <your_token>' https://everai.expvent.com/api/routes/v1/<your namespace>/<your app name>/chat
 who are you?
 
 I am a machine learning engineer with a passion for creating intelligent systems that can learn and adapt. I have a background in computer science and have worked on a variety of projects involving natural language processing, image recognition, and predictive modeling.

@@ -195,15 +195,15 @@ everai app create
 After running `everai app list`, you can see the result similar to the following. If your app's status is `DEPLOYED`, it means that your app is deployed successfully.  
 
 ```bash
-NAME                           STATUS    CREATED_AT                ROUTE_NAME
------------------------------  --------  ------------------------  -----------------------------
-llama2-7b-chat                 DEPLOYED  2024-05-28 22:55:16+0800  llama2-7b-chat
+NAME                   NAMESPACE    STATUS    WORKERS    CREATED_AT
+---------------------  -----------  --------  ---------  ------------------------
+llama2-7b-chat         default      DEPLOYED  1/1        2024-06-19T08:07:24+0000
 ```
 
 When your app is deployed, you can use `curl` to execute the following request to test your deployed code, and you can see that `Llama-2(7B)` model gives the answers to the question on the console. The following data information is displayed.  
 
 ```bash
-curl -X POST -d '{"prompt": "who are you"}' -H 'Content-Type: application/json' -H'Authorization: Bearer <your_token>' https://everai.expvent.com/api/routes/v1/<your app route name>/chat
+curl -X POST -d '{"prompt": "who are you"}' -H 'Content-Type: application/json' -H'Authorization: Bearer <your_token>' https://everai.expvent.com/api/routes/v1/<your namespace>/<your app name>/chat
 who are you?
 
 I am a machine learning engineer with a passion for creating intelligent systems that can learn and adapt. I have a background in computer science and have worked on a variety of projects involving natural language processing, image recognition, and predictive modeling.
