@@ -155,7 +155,7 @@ from flask import Response
 import io
 
 # service entrypoint
-# api service url looks https://everai.expvent.com/api/routes/v1/stable-diffusion-v1-5/default/txt2img
+# api service url looks https://everai.expvent.com/api/routes/v1/default/stable-diffusion-v1-5/txt2img
 # for test local url is http://127.0.0.1/txt2img
 @app.service.route('/txt2img', methods=['GET','POST'])
 def txt2img():    
