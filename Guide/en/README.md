@@ -122,8 +122,6 @@ Before creating app In [EverAI](https://everai.expvent.com), firstly you should 
 In your app directory, you should login by token you got in [EverAI](https://everai.expvent.com). After login successfully, run command `everai app create` to create your app.  
 ```bash
 everai login --token <your token>
-
-everai app create <your app name>
 ```
 
 ## Create secrets
@@ -244,7 +242,7 @@ everai app run
 You can use `curl` to request this API endpoint service and see `hello world` displayed on your terminal. This information is written to the file `my-model` when performing the previous step of `prepare_model`.  
 
 ```bash
-curl http://<your ip>:8866/<your app route name>/show-volume
+curl http://<your ip>:8866/show-volume
 ```
 
 In addition, in the same application, you can implement multiple API endpoint services. This example uses `flask` to implement a external web service that sends active messages from the server to the client.  
@@ -266,7 +264,7 @@ def sse():
 You can execute `everai app run` again, serving this web endpoint and hit it with `curl`, you will see the ten `SSE`(Server-Sent Events) events progressively appear in your terminal over a 10 second period.  
 
 ```bash
-curl --no-buffer http://<your ip>:8866/<your app route name>/sse
+curl --no-buffer http://<your ip>:8866/sse
 ```
 
 ## Build image
@@ -295,17 +293,17 @@ everai image build
 ## Deploy image
 The final step is to deploy your app to [EverAI](https://everai.expvent.com) and keep it running.
 ```bash
-everai app deploy  
+everai app create  
 ```
 After running `everai app list`, you can see the result similar to the following. If your app's status is `DEPLOYED`, it means that your app is deployed successfully.   
 ```bash
-NAME          STATUS    CREATED_AT                ROUTE_NAME
-------------  --------  ------------------------  ------------
-get-start     DEPLOYED  2024-04-29 15:05:18+0800  got-started
+NAME       NAMESPACE    STATUS    WORKERS    CREATED_AT
+---------  -----------  --------  ---------  ------------------------
+get-start  default      DEPLOYED  3/3        2024-06-18T04:21:37+0000
 ```
 Now, you can make a test call for your app, in these examples looks like:  
 ```bash
-curl --no-buffer -H'Authorization: Bearer <your_token>' https://everai.expvent.com/api/routes/v1/<your app route name>/sse
+curl --no-buffer -H'Authorization: Bearer <your_token>' https://everai.expvent.com/api/routes/v1/<your namespace>/<your app route name>/sse
 ```
 ## One more thing
 So far, you have created a simple application. But when the load of this application exceeds the endurance range of computing resources, the application's service response will slow down, time out, or even be unavailable. The [EverAI](https://everai.expvent.com) platform provides an autoscaling mechanism that can help your application automatically expand under high load conditions, eliminating the need for you to manually deploy new computing nodes.  For detailed guidance, check out [App Autoscaling](https://expvent.com/documentation/docs/Guide/App_Autoscaling).  

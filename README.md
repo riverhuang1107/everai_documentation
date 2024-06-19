@@ -99,7 +99,7 @@ pip install --upgrade everai
 pip uninstall everai
 ```
 
-## 创建应用
+## 创建应用目录
 ### 文件目录结构
 在[EverAI](https://everai.expvent.com)平台创建应用前，首先要为应用创建一个文件夹，一般以你的应用名称命名。一个EverAI应用必须至少由以下四个文件构成：  
 * **`Dockerfile`** 用来构建镜像的文本文件，文本内容包含了构建镜像所需的指令和操作命令。  
@@ -118,13 +118,11 @@ pip uninstall everai
 └── requirements.txt
 ```
 
-### 创建第一个应用
-进入应用目录后，首先需要使用你从[EverAI](https://everai.expvent.com)获取到的token进行登录。登录成功后，使用`everai app create`命令创建你的应用。  
+### 登录EVERAI客户端
+进入应用目录后，首先需要使用你从[EverAI](https://everai.expvent.com)获取到的token进行登录。  
 
 ```bash
 everai login --token <your token>
-
-everai app create <your app name>
 ```
 
 ## 创建密钥
@@ -246,7 +244,7 @@ everai app run
 使用`curl`来请求这个API端点服务，并看到在你的终端上显示`hello world`。该信息是在执行上一步操作`prepare_model`时，写入文件`my-model`中的。  
 
 ```bash
-curl http://<your ip>:8866/<your app route name>/show-volume
+curl http://<your ip>:8866/show-volume
 ```
 
 此外，在同一个应用中，你可以实现多个API端点服务。这里的示例使用`flask`又实现了一个服务器端向客户端推送消息的对外服务。
@@ -268,7 +266,7 @@ def sse():
 再次执行`everai app run`，使用`curl`来请求这个`SSE`（Server-Sent Events）服务，并看到10秒内，有10个SSE事件出现在你的终端上。
 
 ```bash
-curl --no-buffer http://<your ip>:8866/<your app route name>/sse
+curl --no-buffer http://<your ip>:8866/sse
 ```
 
 ## 构建镜像
@@ -297,18 +295,18 @@ everai image build
 
 ## 部署
 最后一步是把你的应用部署到[EverAI](https://everai.expvent.com)。并使它保持在可用的状态。  
-```bash
-everai app deploy  
+```bash  
+everai app create
 ```
 执行`everai app list`后，可以看到类似如下的输出结果。如果你的应用状态是`DEPLOYED`，意味着你的应用已经部署成功。    
 ```bash
-NAME          STATUS    CREATED_AT                ROUTE_NAME
-------------  --------  ------------------------  ------------
-get-start     DEPLOYED  2024-04-29 15:05:18+0800  got-started
+NAME       NAMESPACE    STATUS    WORKERS    CREATED_AT
+---------  -----------  --------  ---------  ------------------------
+get-start  default      DEPLOYED  3/3        2024-06-18T04:21:37+0000
 ```
 当你看到你的应用处于`DEPLOYED`时，你可以执行下面的请求来测试你部署的代码是否符合你的预期：  
 ```bash
-curl --no-buffer -H'Authorization: Bearer <your_token>' https://everai.expvent.com/api/routes/v1/<your app route name>/sse
+curl --no-buffer -H'Authorization: Bearer <your_token>' https://everai.expvent.com/api/routes/v1/<your namespace>/<your app name>/sse
 ```
 ## One more thing
 
