@@ -262,9 +262,9 @@ everai app create
 
 执行`everai app list`后，可以看到类似如下的输出结果。如果你的应用状态是`DEPLOYED`，意味着你的应用已经部署成功。  
 ```bash
-NAME                         STATUS     CREATED_AT                ROUTE_NAME
----------------------------  ---------  ------------------------  ---------------------------
-stable-diffusion-v1-5        DEPLOYED   2024-05-19 18:47:32+0800  stable-diffusion-v1-5
+NAME                   NAMESPACE    STATUS    WORKERS    CREATED_AT
+---------------------  -----------  --------  ---------  ------------------------
+stable-diffusion-v1-5  default      DEPLOYED  1/1        2024-06-19T05:16:05+0000
 ```
 
 当你看到你的应用处于`DEPLOYED`时，你可以使用`curl`执行下面的请求来测试你部署的文生图代码，在控制台上的当前目录下会产生一张由大模型`Stable Diffusion 1.5`生成的图片。 
