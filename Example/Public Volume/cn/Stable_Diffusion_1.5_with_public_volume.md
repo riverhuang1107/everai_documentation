@@ -2,9 +2,9 @@
 
 在快速入门中，你已经创建了一个简单的应用。在这个示例中，我们使用公开卷中存放的`Stable Diffusion 1.5`模型文件，实现一个基于`Stable Diffusion 1.5`模型的图片生成在线服务。  
 
-## 创建应用
+## 登录EVERAI客户端
 
-首先，为你的应用创建一个目录，进入应用目录后，首先需要使用你从[EverAI](https://everai.expvent.com)获取到的token进行登录。登录成功后，使用`everai app create`命令创建你的应用。
+首先，为你的应用创建一个目录，进入应用目录后，首先需要使用你从[EverAI](https://everai.expvent.com)获取到的token进行登录。
 ```bash
 everai login --token <your token>
 ```
