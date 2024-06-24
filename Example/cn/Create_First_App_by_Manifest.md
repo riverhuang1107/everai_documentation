@@ -101,7 +101,7 @@ if __name__ == '__main__':
 python app.py
 ```
 
-使用`curl`来请求这个API端点服务，并看到在你的终端上显示`hello world`。该信息是在执行上一步操作`prepare_model`时，写入文件`my-model`中的。  
+使用`curl`来请求这个API端点服务，并看到在你的终端上显示`hello world`。    
 
 ```bash
 curl http://<your ip>:8866/show-volume
@@ -146,9 +146,7 @@ everai secret create quay-secret \
 >[quay.io](https://quay.io/)是一个知名的公共镜像仓库，与之类似的知名镜像仓库还有[Docker Hub](https://hub.docker.com/)，[GitHub Container Registry](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry)，[Google Container Registry](https://cloud.google.com/artifact-registry)等。
 
 ## 构建镜像
-这步需要使用`Dockerfile`和`image_builder.py`来为你的应用构建容器镜像。  
-
-在这个示例中，我们选择使用[quay.io](https://quay.io/)作为公共镜像仓库，存放应用镜像。你也可以使用与之类似的知名镜像仓库，如：[Docker Hub](https://hub.docker.com/)，[GitHub Container Registry](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry)，[Google Container Registry](https://cloud.google.com/artifact-registry)等。如果你有自建的镜像仓库，并且镜像可以在互联网上被访问，同样可以使用。  
+这步需要使用`Dockerfile`来为你的应用构建容器镜像。  
 
 ```
 WORKDIR /workspace
@@ -156,15 +154,19 @@ WORKDIR /workspace
 RUN mkdir -p $WORKDIR/volume
 RUN mkdir -p $WORKDIR/volume-test
 ```
-首先确保你的docker环境处于登录状态，以及你已经安装了docker buildx插件。  
+
+在这个示例中，我们选择使用[quay.io](https://quay.io/)作为公共镜像仓库，存放应用镜像。你也可以使用与之类似的知名镜像仓库，如：[Docker Hub](https://hub.docker.com/)，[GitHub Container Registry](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry)，[Google Container Registry](https://cloud.google.com/artifact-registry)等。如果你有自建的镜像仓库，并且镜像可以在互联网上被访问，同样可以使用。  
+
+首先确保你的docker环境处于登录状态。  
+
 ```bash
 docker login quay.io
 
-docker build -t quay.io/riverhuang1107/test-start-manifest:v0.0.1 .
+docker build -t quay.io/<username>/<repo>:<tag> .
 ```
 然后执行以下命令打包镜像，并且把打包好的镜像推送到你指定的镜像仓库中。
 ```bash
-docker push quay.io/riverhuang1107/test-start-manifest:v0.0.1
+docker push quay.io/<username>/<repo>:<tag>
 ```
 
 ## 定义Manifest文件

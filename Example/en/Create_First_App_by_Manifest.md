@@ -11,7 +11,7 @@ Before creating app In [EverAI](https://everai.expvent.com), firstly you should 
 
 * **`app.yaml`** This is the manifest file which mainly defines various information required to create an EverAI application, including application name, image name, key information, data volume information, etc.  
 
-* **`requirements.txt`** This file defines the dependent packages and corresponding software versions for running Python application. You can use `pipreqs.` to obtain the latest software dependency packages and corresponding versions.
+* **`requirements.txt`** This file defines the dependent packages and corresponding software versions for running Python application. You can use `pipreqs .` to obtain the latest software dependency packages and corresponding versions.
 
 ```bash
 <your app name>
@@ -99,7 +99,7 @@ Now，you could test in your local machine will following command.
 ```bash
 python app.py
 ```
-You can use `curl` to request this API endpoint service and see `hello world` displayed on your terminal. This information is written to the file `my-model` when performing the previous step of `prepare_model`.  
+You can use `curl` to request this API endpoint service and see `hello world` displayed on your terminal.    
 
 ```bash
 curl http://<your ip>:8866/show-volume
@@ -144,9 +144,7 @@ everai secret create quay-secret \
 >[quay.io](https://quay.io/) is a well-known public image registry. Well-known image registry similar to [quay.io](https://quay.io/) include [Docker Hub](https://hub.docker.com/), [GitHub Container Registry](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry), [Google Container Registry](https://cloud.google.com/artifact-registry), etc.  
 
 ## Build image
-This step will build the container image, using two very simple files `Dockerfile` and `image_builder.py`.  
-
-In this example, we choose to use [quay.io](https://quay.io/) as the public image registry to store application images. You can also use well-known image registry similar to [quay.io](https://quay.io/), such as [Docker Hub](https://hub.docker.com/), [GitHub Container Registry](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry), [Google Container Registry](https://cloud.google.com/artifact-registry), etc. If you have a self-built image registry and the image can be accessed on the Internet, you can also use it.  
+This step will build the container image using `Dockerfile`.    
 
 ```
 WORKDIR /workspace
@@ -154,15 +152,19 @@ WORKDIR /workspace
 RUN mkdir -p $WORKDIR/volume
 RUN mkdir -p $WORKDIR/volume-test
 ```
-The dependence of this step is docker and buildx installed on your machine. Otherwise we will have further prompts to help you install them.  
+
+In this example, we choose to use [quay.io](https://quay.io/) as the public image registry to store application images. You can also use well-known image registry similar to [quay.io](https://quay.io/), such as [Docker Hub](https://hub.docker.com/), [GitHub Container Registry](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry), [Google Container Registry](https://cloud.google.com/artifact-registry), etc. If you have a self-built image registry and the image can be accessed on the Internet, you can also use it.  
+
+The dependence of this step is docker installed on your machine.  
+
 ```bash
 docker login quay.io
 
-docker build -t quay.io/riverhuang1107/test-start-manifest:v0.0.1 .
+docker build -t quay.io/<username>/<repo>:<tag> .
 ```
 Then call the following command will compile the image and push them to your specified registry.  
 ```bash
-docker push quay.io/riverhuang1107/test-start-manifest:v0.0.1
+docker push quay.io/<username>/<repo>:<tag>
 ```
 
 ## Define manifest file
