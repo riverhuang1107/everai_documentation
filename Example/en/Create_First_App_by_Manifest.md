@@ -120,7 +120,7 @@ def sse():
     return flask.Response(generator(), mimetype='text/event-stream')
 ```
 
-You can execute `everai app run` again, serving this web endpoint and hit it with `curl`, you will see the ten `SSE`(Server-Sent Events) events progressively appear in your terminal over a 10 second period.  
+You can execute `python app.py` again, serving this web endpoint and hit it with `curl`, you will see the ten `SSE`(Server-Sent Events) events progressively appear in your terminal over a 10 second period.  
 
 ```bash
 curl --no-buffer http://<your ip>:8866/sse
