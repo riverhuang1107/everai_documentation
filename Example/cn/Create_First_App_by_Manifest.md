@@ -122,7 +122,7 @@ def sse():
     return flask.Response(generator(), mimetype='text/event-stream')
 ```
 
-再次执行`everai app run`，使用`curl`来请求这个`SSE`（Server-Sent Events）服务，并看到10秒内，有10个SSE事件出现在你的终端上。
+再次执行`python app.py`，使用`curl`来请求这个`SSE`（Server-Sent Events）服务，并看到10秒内，有10个SSE事件出现在你的终端上。
 
 ```bash
 curl --no-buffer http://<your ip>:8866/sse
@@ -179,7 +179,7 @@ kind: App
 metadata:
   name: test-start-manifest-volumes                          # application name
 spec:
-  image: quay.io/riverhuang1107/test-start-manifest:v0.0.2       # image for serverless app
+  image: quay.io/<username>/<repo>:<tag>       # image for serverless app
   volumeMounts:
     - name: get-start-volume                                    # name
       mountPath: /workspace/volume       # mount path in container

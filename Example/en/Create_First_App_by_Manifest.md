@@ -175,7 +175,7 @@ kind: App
 metadata:
   name: test-start-manifest-volumes                          # application name
 spec:
-  image: quay.io/riverhuang1107/test-start-manifest:v0.0.2       # image for serverless app
+  image: quay.io/<username>/<repo>:<tag>       # image for serverless app
   volumeMounts:
     - name: get-start-volume                                    # name
       mountPath: /workspace/volume       # mount path in container
