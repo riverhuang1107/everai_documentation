@@ -19,8 +19,8 @@ Before creating app In [EverAI](https://everai.expvent.com), firstly you should 
 ├── app.py
 ├── app.yaml
 ├── requirements.txt
-├── volume -> /home/hhq/.cache/everai/volumes/NYygLnXsD9sHYtn9C7y7hN
-└── volume-test -> /home/hhq/.cache/everai/volumes/hupa49MesPXwmhFSy9Ku44
+├── volume -> /root/.cache/everai/volumes/NYygLnXsD9sHYtn9C7y7hN
+└── volume-test -> /root/.cache/everai/volumes/hupa49MesPXwmhFSy9Ku44
 ```
 
 ### Login EVERAI CLI
