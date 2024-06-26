@@ -369,3 +369,22 @@ everai app check [-h]
 
 **Options**:  
 * `-h, --help`       show this help message and exit
+
+## everai app delete                 
+Delete an app  
+
+**Example**:
+```bash
+everai app delete <your app name>
+```
+
+**Usage**: 
+```bash 
+everai app delete [-h] [--namespace [NAMESPACE]] [--force] name
+```
+
+**Options**:  
+* `-h, --help`       show this help message and exit
+* `--namespace [NAMESPACE], -n [NAMESPACE]`
+                        The namespace of app
+* `--force`

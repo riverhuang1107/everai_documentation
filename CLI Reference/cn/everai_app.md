@@ -366,5 +366,22 @@ everai app check [-h]
 ```
 
 **选项**:  
-* `-h, --help`       show this help message and exit                        
+* `-h, --help`       显示帮助信息  
 
+## everai app delete                 
+删除应用  
+
+**示例**:
+```bash
+everai app delete <your app name>
+```
+
+**格式**: 
+```bash 
+everai app delete [-h] [--namespace [NAMESPACE]] [--force] name
+```
+
+**选项**:  
+* `-h, --help`       显示帮助信息
+* `--namespace [NAMESPACE], -n [NAMESPACE]` 应用的命名空间
+* `--force`
