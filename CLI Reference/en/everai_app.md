@@ -75,7 +75,7 @@ everai app get <your app name>
 
 **Usage**: 
 ```bash 
-everai app get [-h] name
+everai app get [-h] [--namespace [NAMESPACE]] [--output [OUTPUT]] name
 ```
 
 **Positional arguments**:  
@@ -83,6 +83,10 @@ everai app get [-h] name
 
 **Options**:
 * `-h, --help`  show this help message and exit
+* `--namespace [NAMESPACE], -n [NAMESPACE]`
+                        The namespace of app
+* `--output [OUTPUT], -o [OUTPUT]`
+                        Output format, One of: (json, yaml, table, wide)
 
 ## everai app update             
 Update an app from manifest file or an App object in `app.py`.

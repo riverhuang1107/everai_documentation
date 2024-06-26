@@ -73,7 +73,7 @@ everai app get <your app name>
 
 **格式**: 
 ```bash 
-everai app get [-h] name
+everai app get [-h] [--namespace [NAMESPACE]] [--output [OUTPUT]] name
 ```
 
 **参数**:  
@@ -81,6 +81,9 @@ everai app get [-h] name
 
 **选项**:
 * `-h, --help`  显示帮助信息
+* `--namespace [NAMESPACE], -n [NAMESPACE]` 应用的命名空间
+* `--output [OUTPUT], -o [OUTPUT]`
+                        输出格式，可选（json, yaml, table, wide），默认为table
 
 ## everai app update             
 通过manifest文件或者在`app.py`中创建App对象来更新一个应用。
