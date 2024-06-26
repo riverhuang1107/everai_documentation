@@ -233,10 +233,9 @@ everai app list
 ```
 The result could be shown like this:  
 ```bash
-NAME          STATUS    CREATED_AT                ROUTE_NAME
-------------  --------  ------------------------  ------------
-get-start     DEPLOYED  2024-04-29 15:05:18+0800  got-started
-test-start-2  DEPLOYED  2024-05-06 18:36:35+0800  test-start-2
+NAME       NAMESPACE    STATUS    WORKERS    CREATED_AT
+---------  -----------  --------  ---------  ------------------------
+get-start  default      DEPLOYED  3/3        2024-06-18T04:21:37+0000
 ```
 **Usage**:  
 ```bash
@@ -276,6 +275,40 @@ everai app queue [-h] [--output [OUTPUT]] [app_name]
  * `-h, --help`            show this help message and exit
  * `--output [OUTPUT], -o [OUTPUT]`
                         Output format, One of: (json, yaml, table, wide)
+
+## everai app event           
+List events of app  
+
+**Example**:  
+```bash
+everai app event <your app name>
+```
+The output for this example is this: 
+```bash
+TYPE    FROM       CREATED_AT                MESSAGE
+------  ---------  ------------------------  ------------------------------------------------------------------------------------------------
+NORMAL  AppSever   2024-06-25T12:27:05+0000  Worker/oFHDnZHrDMo5WHnQkhcegx is ready now
+NORMAL  AppSever   2024-06-25T12:27:05+0000  Worker/jQd38Z5HwRLv24x459CSBG is ready now
+NORMAL  Scheduler  2024-06-25T12:26:59+0000  Successfully assigned worker/oFHDnZHrDMo5WHnQkhcegx to node/5a684c93-84c0-4078-821c-a4aeccb61407
+NORMAL  Scheduler  2024-06-25T12:26:59+0000  Successfully assigned worker/jQd38Z5HwRLv24x459CSBG to node/5a684c93-84c0-4078-821c-a4aeccb61407
+```
+
+**Usage**: 
+```bash
+everai app events [-h] [-n [NAMESPACE]] [--output [OUTPUT]] name
+```
+
+**Positional arguments**:  
+
+ * `name`              The app name
+
+**Options**:  
+
+ * `-h, --help`            show this help message and exit
+ * `-n [NAMESPACE], --namespace [NAMESPACE]` The namespace of app
+ * `--output [OUTPUT], -o [OUTPUT]`
+                        Output format, One of: (json, yaml, table, wide)
+
 
 ## everai app worker (workers, w)
 Manage the worker of app  
