@@ -82,30 +82,26 @@ everai app get [-h] name
 **选项**:
 * `-h, --help`  显示帮助信息
 
-## everai app upgrade             
-升级应用  
+## everai app update             
+通过manifest文件或者在`app.py`中创建App对象来更新一个应用。
 
 **示例**:  
 
-当你需要更新你应用中的代码时，你需要更新你的应用镜像。详细介绍请参考[everai app upgrade --image](https://expvent.com/documentation/zh-cn/docs/Guide/App_Upgrade#everai-app-upgrade---image)。  
 ```bash
-everai app upgrade --image
+everai app update
 ```
 
 **格式**: 
 ```bash
-everai app upgrade [-h] [--autoscaling-policy] [--resource-requests] [--volume-requests] [--secret-requests] [--image] [--all]
+everai app update [-h] [--dry-run] [-f FROM_FILE]
 ```
 
 **选项**:  
 
   * `-h, --help`            显示帮助信息
-  * `--autoscaling-policy`  只更新自动扩缩容策略
-  * `--resource-requests`   只更新计算资源，这个选项会引起worker重新部署
-  * `--volume-requests`     只更新卷，这个选项会引起worker重新部署
-  * `--secret-requests`     只更新密钥，这个选项会引起worker重新部署
-  * `--image`               只更新镜像，这个选项会引起worker重新部署
-  * `--all`                 更新所有设置，这个选项会引起worker重新部署
+  * `--dry-run`
+  * `-f FROM_FILE, --from-file FROM_FILE`
+                        通过manifest文件（yaml格式）更新应用，示例：`--from-file <filename>`
 
 ## everai app pause               
 停止应用，所有的worker都会停止  

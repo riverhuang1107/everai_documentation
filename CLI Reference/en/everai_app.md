@@ -83,31 +83,29 @@ everai app get [-h] name
 **Options**:
 * `-h, --help`  show this help message and exit
 
-## everai app upgrade             
-Upgrade an app  
-
+## everai app update             
+Update an app from manifest file or an App object in app.py.
+--from-file indicates a manifest file for update app,
+otherwise, everai command line tools find App in app.py
+this operation may be trigger the worker rollout, if image, command ... changed  
+  
 **Example**:  
 
-When you want to update your code, you should update your app image. For detailed guidance on app image upgrade, check out [everai app upgrade --image](https://expvent.com/documentation/docs/Guide/App_Upgrade#everai-app-upgrade---image).  
-
 ```bash
-everai app upgrade --image
+everai app update
 ```
 
 **Usage**: 
 ```bash
-everai app upgrade [-h] [--autoscaling-policy] [--resource-requests] [--volume-requests] [--secret-requests] [--image] [--all]
+everai app update [-h] [--dry-run] [-f FROM_FILE]
 ```
 
 **Options**:  
 
   * `-h, --help`            show this help message and exit
-  * `--autoscaling-policy`  Upgrade the autoscaling policy only
-  * `--resource-requests`   Upgrade the resource requests only, this operation will trigger the worker rollout
-  * `--volume-requests`     Upgrade the volume requests only, this operation will trigger the worker rollout
-  * `--secret-requests`     Upgrade the secret requests only, this operation will trigger the worker rollout
-  * `--image`               Upgrade the image only, this operation will trigger the worker rollout
-  * `--all`                 Upgrade all of the settings, this operation will trigger the worker rollout
+  * `--dry-run`
+  * `-f FROM_FILE, --from-file FROM_FILE`
+                        Update app from manifest file (format in yaml), for example: `--from-file <filename>`
 
 ## everai app pause               
 Pause an app, all worker will be stopped  
