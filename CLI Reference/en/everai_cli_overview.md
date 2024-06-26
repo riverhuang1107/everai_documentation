@@ -18,7 +18,7 @@ everai -v image build
 
 **Usage**:   
 ```bash
-everai [-h] [-v]  {login,logout,worker,workers,w,config,image,images,i,run,app,apps,a,secret,secrets,sec,s,volume,volumes,vol,autoscaling,configmap,cm,configmaps,version} ...
+everai [-h] [-v]  {login,logout,worker,workers,w,config,image,images,i,run,app,apps,a,secret,secrets,sec,s,volume,volumes,vol,autoscaler,configmap,cm,configmaps,resources,res,resource,namespace,namespaces,ns,version} ...
 ```
 
 **Commands**:
@@ -32,6 +32,8 @@ everai [-h] [-v]  {login,logout,worker,workers,w,config,image,images,i,run,app,a
 * `secret (secrets, sec, s)`  Manage secrets 
 * `volume (volumes, vol)`  Manage volume 
 * `configmap (cm, configmaps)`  Manage configmaps 
+* `resources (res, resource)` Show available resources
+* `namespace (namespaces, ns)` Manage the namespaces
 * `version`             Show package and client version 
 
 **Options**:  

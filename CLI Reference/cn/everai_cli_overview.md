@@ -18,7 +18,7 @@ everai -v image build
 
 **格式**:   
 ```bash
-everai [-h] [-v]  {login,logout,worker,workers,w,config,image,images,i,run,app,apps,a,secret,secrets,sec,s,volume,volumes,vol,autoscaling,configmap,cm,configmaps,version} ...
+everai [-h] [-v]  {login,logout,worker,workers,w,config,image,images,i,run,app,apps,a,secret,secrets,sec,s,volume,volumes,vol,autoscaler,configmap,cm,configmaps,resources,res,resource,namespace,namespaces,ns,version} ...
 ```
 
 **命令**:
@@ -32,6 +32,8 @@ everai [-h] [-v]  {login,logout,worker,workers,w,config,image,images,i,run,app,a
 * `secret (secrets, sec, s)`  管理密钥
 * `volume (volumes, vol)`  管理卷
 * `configmap (cm, configmaps)`  ConfigMap管理
+* `resources (res, resource)` 显示可用的计算资源
+* `namespace (namespaces, ns)` 命名空间管理
 * `version`             显示EverAI CLI命令行工具和客户端的软件版本
 
 **选项**:  
