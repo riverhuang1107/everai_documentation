@@ -36,7 +36,7 @@ everai worker list
 ```bash
 ID                      STATUS    DETAIL_STATUS    CREATED_AT                DELETED_AT
 ----------------------  --------  ---------------  ------------------------  ------------
-KFZtizCb6eR3E2RTvivzmP  RUNNING   FREE             2024-05-07 12:36:29+0800
+8UtmxyvQ4qC67awQMKDgJb  RUNNING   FREE             2024-06-26T08:54:23+0000
 ```
 **格式**:  
 ```bash  
