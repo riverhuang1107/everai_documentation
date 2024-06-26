@@ -144,12 +144,12 @@ ID    STATUS    DETAIL_STATUS    CREATED_AT    DELETED_AT
 ----  --------  ---------------  ------------  ------------
 ```
 
-Run command `everai app list`, you can see that  the status of app is `PAUSED`.  
+Run command `everai app list`, you can see that the status of app is `PAUSED`.  
 
 ```bash
-NAME          STATUS    CREATED_AT                ROUTE_NAME
-------------  --------  ------------------------  ------------
-test-start-4  PAUSED    2024-05-11 14:54:25+0800  test-start-4
+NAME                             NAMESPACE    STATUS    WORKERS    CREATED_AT
+-------------------------------  -----------  --------  ---------  ------------------------
+test-start-14                    default      PAUSED    0/0        2024-06-18T08:49:30+0000
 ```
 
 **Usage**:  
@@ -335,7 +335,7 @@ The output for this example is this:
 ```bash
 ID                      STATUS    DETAIL_STATUS    CREATED_AT                DELETED_AT
 ----------------------  --------  ---------------  ------------------------  ------------
-NwKKpZHesYBUncaw4bZdYz  RUNNING   FREE             2024-05-14 12:59:04+0800
+8UtmxyvQ4qC67awQMKDgJb  RUNNING   FREE             2024-06-26T08:54:23+0000
 ```
 
 **Usage**:  
