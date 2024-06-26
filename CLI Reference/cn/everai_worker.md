@@ -23,7 +23,8 @@ everai worker list <your app name>
 ```bash 
 ID                      STATUS    DETAIL_STATUS    CREATED_AT                DELETED_AT
 ----------------------  --------  ---------------  ------------------------  ------------
-RF7crg44K8QoYSzvKQCkhh  RUNNING   FREE             2024-04-29 20:53:40+0800
+4gexdRcjZyAwPGNeNFNHpr  RUNNING   FREE             2024-06-25T12:19:05+0000
+mHFmmq7fJWWtERAyFDLrcA  RUNNING   FREE             2024-06-25T12:19:05+0000
 ```
 如果不输入应用名称，则会显示当前应用目录下该应用的worker列表。  
 
