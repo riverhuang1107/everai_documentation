@@ -352,7 +352,9 @@ everai app worker list [-h] [--output [OUTPUT]] [--all] [--recent-days [RECENT_D
                         Output format, One of: (json, yaml, table, wide) 
   * `--all, -a`             show all workers, include deleted and errors 
   * `--recent-days [RECENT_DAYS], -d [RECENT_DAYS]`
-                        show not running workers who is created in recent days 
+                        show not running workers who is created in recent days
+  * `--namespace [NAMESPACE], -n [NAMESPACE]`
+                        namespace of app 
 
 ## everai app check                 
 Check whether app is correct in app directory  

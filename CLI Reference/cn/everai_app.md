@@ -350,6 +350,8 @@ everai app worker list [-h] [--output [OUTPUT]] [--all] [--recent-days [RECENT_D
   * `--all, -a`         显示该应用的所有worker，包括已经删除的和有问题的worker
   * `--recent-days [RECENT_DAYS], -d [RECENT_DAYS]`
                          显示最近天数内没有在运行中的worker
+  * `--namespace [NAMESPACE], -n [NAMESPACE]`
+                        应用的命名空间
 
 ## everai app check                 
 检查应用目录下的代码编译是否通过  
