@@ -3,7 +3,7 @@
 
 **格式**:   
 ```bash
-everai app [-h] {create,run,get,upgrade,pause,resume,deploy,prepare,list,ls,queue,q,worker,workers,w,check} ...
+everai app [-h] {create,run,get,update,pause,resume,prepare,list,ls,queue,q,events,e,event,worker,workers,w,check,delete} ...
 ```
 
 **命令**:  
