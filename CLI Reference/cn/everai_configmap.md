@@ -38,11 +38,13 @@ everai configmap create test-configmap \
 首先创建一个名为test-configmap的`yaml`文件，文件内容如下所示：  
 
 ```bash
-max_idle_time: '60'
-max_queue_size: '2'
-max_workers: '5'
-min_workers: '1'
-scale_up_step: '1'
+name: test-configmap
+data:
+  max_idle_time: '60'
+  max_queue_size: '2'
+  max_workers: '5'
+  min_workers: '1'
+  scale_up_step: '1'
 ```
 然后，运行如下所示命令创建ConfigMap。  
 
@@ -148,11 +150,13 @@ everai configmap update --from-literal min_workers=2 \
 首先创建一个名为test-configmap的`yaml`文件，文件内容如下所示：  
 
 ```bash
-max_idle_time: '60'
-max_queue_size: '2'
-max_workers: '5'
-min_workers: '2'
-scale_up_step: '1'
+name: test-configmap
+data:
+  max_idle_time: '60'
+  max_queue_size: '2'
+  max_workers: '5'
+  min_workers: '2'
+  scale_up_step: '1'
 ```
 
 然后，运行如下所示命令更新ConfigMap。  

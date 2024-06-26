@@ -36,11 +36,13 @@ Create a configmap from a `yaml` file.
 
 Create a `yaml` file named test-configmap firstly, the data of the example like this: 
 ```bash
-max_idle_time: '60'
-max_queue_size: '2'
-max_workers: '5'
-min_workers: '1'
-scale_up_step: '1'
+name: test-configmap
+data:
+  max_idle_time: '60'
+  max_queue_size: '2'
+  max_workers: '5'
+  min_workers: '1'
+  scale_up_step: '1'
 ```
 Then, run the command like this:  
 ```bash  
@@ -143,11 +145,13 @@ Update a configmap from a `yaml` file.
 
 Create a `yaml` file named test-configmap firstly, the data of the example like this: 
 ```bash
-max_idle_time: '60'
-max_queue_size: '2'
-max_workers: '5'
-min_workers: '2'
-scale_up_step: '1'
+name: test-configmap
+data:
+  max_idle_time: '60'
+  max_queue_size: '2'
+  max_workers: '5'
+  min_workers: '2'
+  scale_up_step: '1'
 ```
 
 Then, run the command like this:  
