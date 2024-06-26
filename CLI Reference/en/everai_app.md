@@ -26,7 +26,8 @@ everai app [-h] {create,run,get,upgrade,pause,resume,deploy,prepare,list,ls,queu
 
 ## everai app create             
 Create an app from manifest file or an App object in `app.py`.
---from-file indicates a manifest file for create app, otherwise, everai command line tool find app setup in `app.py`.  
+
+`--from-file` indicates a manifest file for create app, otherwise, everai command line tool find app setup in `app.py`.  
 
 **Example**:
 ```bash
@@ -84,9 +85,10 @@ everai app get [-h] name
 * `-h, --help`  show this help message and exit
 
 ## everai app update             
-Update an app from manifest file or an App object in app.py.
---from-file indicates a manifest file for update app,
-otherwise, everai command line tools find App in app.py
+Update an app from manifest file or an App object in `app.py`.
+
+`--from-file` indicates a manifest file for update app, otherwise, everai command line tools find App in `app.py`.  
+
 this operation may be trigger the worker rollout, if image, command ... changed  
   
 **Example**:  
@@ -180,27 +182,6 @@ everai app resume [-h] [name]
 
 **Options**:  
 * `-h, --help`            show this help message and exit  
-
-## everai app deploy              
-Deploy an app to serving status  
-
-**Example**:  
-```bash
- everai app deploy
-```
-After running `everai app list`, you can see your app's status. If status is `DEPLOYED`, it means that your app is deployed successfully.   
-```bash
-NAME          STATUS    CREATED_AT                ROUTE_NAME
-------------  --------  ------------------------  ------------
-get-start     DEPLOYED  2024-04-29 15:05:18+0800  got-started
-```
-**Usage**:  
-```bash
-everai app deploy [-h]
-```
-
-**Options**:  
-* `-h, --help`  show this help message and exit
 
 ## everai app prepare             
 Prepare an app, all of function which decorated by `@app.prepare` would be called  

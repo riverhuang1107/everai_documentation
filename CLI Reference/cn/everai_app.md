@@ -178,27 +178,6 @@ everai app resume [-h] [name]
 **选项**:  
 * `-h, --help`            显示帮助信息  
 
-## everai app deploy              
-部署应用到可用状态  
-
-**示例**:  
-```bash
- everai app deploy
-```
-执行`everai app list`后，可以看到类似如下的输出结果。如果你的应用状态是`DEPLOYED`，意味着你的应用已经部署成功。   
-```bash
-NAME          STATUS    CREATED_AT                ROUTE_NAME
-------------  --------  ------------------------  ------------
-get-start     DEPLOYED  2024-04-29 15:05:18+0800  got-started
-```
-**格式**:  
-```bash
-everai app deploy [-h]
-```
-
-**选项**:  
-* `-h, --help`  显示帮助信息
-
 ## everai app prepare             
 准备应用，所有被`@app.prepare`注解的方法都会被执行    
 
