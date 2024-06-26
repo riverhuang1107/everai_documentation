@@ -25,31 +25,26 @@ everai app [-h] {create,run,get,upgrade,pause,resume,deploy,prepare,list,ls,queu
   * `-h, --help`            show this help message and exit
 
 ## everai app create             
-Create an app  
+Create an app from manifest file or an App object in `app.py`.
+--from-file indicates a manifest file for create app, otherwise, everai command line tool find app setup in `app.py`.  
 
 **Example**:
 ```bash
-everai app create <your app name>
-```
-When you run command `everai app create`，the output shows the error like: `Route path exist`, you can set a new route name to solve this problem.  
-
-```bash
-everai app create <your app name> --route-name <your app route name>
+everai app create
 ```
 
 **Usage**: 
 ```bash 
-everai app create [-h] [--route-name ROUTE_NAME] [name]
+everai app create [-h] [--dry-run] [-f FROM_FILE] [-n NAMESPACE]
 ```
-
-**Positional arguments**:  
-
-  * `name`                  The app name  
 
 **Options**:  
 * `-h, --help`            show this help message and exit  
-* `--route-name ROUTE_NAME, -r ROUTE_NAME`
-                        Globally unique route name. By default, it is same with the app name. Once the application name conflicts, route-name needs to be set explicitly.
+* `--dry-run`
+* `-n NAMESPACE, --namespace NAMESPACE`
+                        indicate namespace of the app, commandline > [yaml file | `app.py`] > default
+* `-f FROM_FILE, --from-file FROM_FILE`
+                        Create app from manifest file (format in yaml), for example: `--from-file filename`
 
 ## everai app run                 
 Locally run a everai application for test  

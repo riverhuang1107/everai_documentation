@@ -25,31 +25,25 @@ everai app [-h] {create,run,get,upgrade,pause,resume,deploy,prepare,list,ls,queu
   * `-h, --help`            显示帮助信息
 
 ## everai app create             
-创建一个应用  
+通过manifest文件或者在`app.py`中创建App对象来创建一个应用。  
 
 **示例**:
 ```bash
-everai app create <your app name>
-```
-执行`everai app create`命令时，如果出现`Route path exist`报错提示信息，你可以通过指定一个新的路由名称来解决该问题。  
-
-```bash
-everai app create <your app name> --route-name <your app route name>
+everai app create
 ```
 
 **格式**: 
 ```bash 
-everai app create [-h] [--route-name ROUTE_NAME] [name]
+everai app create [-h] [--dry-run] [-f FROM_FILE] [-n NAMESPACE]
 ```
-
-**参数**:  
-
-  * `name`                  应用名称  
 
 **选项**:  
 * `-h, --help`            显示帮助信息  
-* `--route-name ROUTE_NAME, -r ROUTE_NAME`
-                        路由名称全局唯一。一般来说，路由名称与应用名称相同。如果你指定的应用名称系统中已存在，你需要指定一个新的路由名称。
+* `--dry-run`
+* `-n NAMESPACE, --namespace NAMESPACE`
+                        为应用指定命名空间，指定优先级：命令行 > [manifest文件 | `app.py`] > `default`
+* `-f FROM_FILE, --from-file FROM_FILE`
+                        通过manifest文件（yaml格式）创建应用，示例：`--from-file <filename>`
 
 ## everai app run                 
 在本地环境运行应用进行测试  
