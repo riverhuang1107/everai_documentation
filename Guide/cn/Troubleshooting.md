@@ -26,15 +26,6 @@ python -m site --user-site
 ```
 出现这个问题的原因是你的本地环境是macOS，并且使用了dmg软件包安装了Python环境。如果你在`应用程序`目录下存在`Python 3.12`文件夹，文件夹中有一个名为`Install Certificates.command`的脚本文件，运行安装这个文件后，再次执行EverAI CLI的命令，上述问题可以解决。
 
-## “Route path exist” error
-执行`everai app create`命令时，如果出现`Route path exist`报错提示信息，你可以通过修改你的应用名称，或者指定一个新的路由名称来解决该问题。  
-
-```bash
-everai app create <your app name> --route-name <your app route name>
-```
-
-这是因为在系统中路由名称是全局唯一的。一般来说，路由名称与应用名称相同。如果你指定的应用名称系统中已存在，你需要指定一个新的路由名称。
-
 ## "No app found in app.py" error
 执行`everai app run`时，出现类似`No app found in app.py`这样的错误信息，你可以使用`everai app check`命令进一步排查问题，该指令会显示你的代码遇到的具体问题。输出的结果如下所示：
 

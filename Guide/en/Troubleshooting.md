@@ -25,13 +25,6 @@ When you run command in EverAI CLI like `everai app list`, the output shows erro
 ```
 This issue can pop up with macOS installations of Python. If you look in `Applications` > `Python 3.12` there's a script called `Install Certificates.command`. Running that often fixes this issue.
 
-## “Route path exist” error
-When you run command `everai app create`，the output shows the error like: `Route path exist`, you can change a app name, or set a new route name to solve this problem.
-```bash
-everai app create <your app name> --route-name <your app route name>
-```
-Globally unique route name. By default, it is same with the app name. Once the application name conflicts, route-name needs to be set explicitly.  
-
 ## "No app found in app.py" error
 When running `everai app run`, an error message similar to `No app found in app.py` appears. You can use the `everai app check` command to further troubleshoot the problem. This command will display the specific problems encountered by your code. The output results are as follows:  
 
