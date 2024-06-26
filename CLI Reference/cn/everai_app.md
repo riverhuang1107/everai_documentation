@@ -10,15 +10,16 @@ everai app [-h] {create,run,get,upgrade,pause,resume,deploy,prepare,list,ls,queu
   * `create`              创建一个应用  
   * `run`                 在本地环境运行应用进行测试  
   * `get`                 获取一个应用的信息  
-  * `upgrade`             升级应用  
+  * `update`              更新应用  
   * `pause`               停止应用，所有的worker都会停止
   * `resume`              恢复使用应用  
-  * `deploy`              部署应用到可用状态  
   * `prepare`             准备应用，所有被`@app.prepare`注解的方法都会被执行  
   * `list (ls)`           显示应用列表  
   * `queue (q)`           显示应用队列  
+  * `events (e, event)`   显示应用事件
   * `worker (workers, w)` 管理应用的worker 
   * `check`               检查应用目录下的代码编译是否通过
+  * `delete`              删除应用
 
 **选项**:  
   * `-h, --help`            显示帮助信息
