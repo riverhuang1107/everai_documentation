@@ -126,8 +126,8 @@ Show worker list of app，you can see 2 running workers.
 ```bash
 ID                      STATUS    DETAIL_STATUS    CREATED_AT                DELETED_AT
 ----------------------  --------  ---------------  ------------------------  ------------
-DFLH3kbnn9gyzzdk8Vypyx  RUNNING   FREE             2024-05-11 12:02:12+0800
-KN63GutywVFnutrrQ6wLvw  RUNNING   FREE             2024-05-11 12:02:12+0800
+8UtmxyvQ4qC67awQMKDgJb  RUNNING   FREE             2024-06-26T08:54:23+0000
+Q6FRr6sRVPwFyyMfDCCEFY  RUNNING   FREE             2024-06-26T08:54:23+0000
 ```
 Run the following command to stop app of the example.  
 
