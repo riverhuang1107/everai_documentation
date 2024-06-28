@@ -24,7 +24,8 @@ Before creating app In [EverAI](https://everai.expvent.com), firstly you should 
 ```
 
 ### Login EVERAI CLI
-In your app directory, you should login by token you got in [EverAI](https://everai.expvent.com). After login successfully, run command `everai app create` to create your app.  
+In your app directory, you should login by token you got in [EverAI](https://everai.expvent.com).  
+   
 ```bash
 everai login --token <your token>
 ```
