@@ -155,7 +155,7 @@ image_pipe = None
 
 # service entrypoint
 # api service url looks https://everai.expvent.com/api/routes/v1/sd-v1-5-stateful-service/txt2img
-# for test local url is http://127.0.0.1:8866/txt2img
+# for test local url is http://127.0.0.1:80/txt2img
 @app.service.route('/txt2img', methods=['GET','POST'])
 def txt2img():    
     if flask.request.method == 'POST':
@@ -187,8 +187,8 @@ import PIL
 from io import BytesIO
 
 # service entrypoint
-# api service url looks https://everai.expvent.com/api/routes/v1/sd-v1-5-stateful-service/img2img
-# for test local url is http://127.0.0.1:8866/img2img
+# api service url looks https://everai.expvent.com/api/routes/v1/default/sd-v1-5-stateful-service/img2img
+# for test local url is http://127.0.0.1:80/img2img
 @app.service.route('/img2img', methods=['GET','POST'])
 def img2img():        
     tmp_dir = '/tmp'
