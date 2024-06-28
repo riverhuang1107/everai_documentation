@@ -158,7 +158,7 @@ model = None
 
 # service entrypoint
 # api service url looks https://everai.expvent.com/api/routes/v1/default/llama2-7b-chat/chat
-# for test local url is http://127.0.0.1:8866/chat
+# for test local url is http://127.0.0.1:80/chat
 @app.service.route('/chat', methods=['GET','POST'])
 def chat():
     if flask.request.method == 'POST':
