@@ -1,5 +1,5 @@
 # Create first app by manifest yaml file
-In the quickstart, we have seen how to create an EverAI application by creating an app object in app.py. In addition to using the app object to create applications, we also provide a method to quickly create applications by defining a manifest yaml file. This method can deploy your application to the EverAI platform without importing the EverAI SDK code into your existing code.
+In the quickstart, we have seen how to create an EverAI application by creating an app object in [app.py](https://github.com/everai-example/get-start/blob/main/app.py). In addition to using the app object to create applications, we also provide a method to quickly create applications by defining a manifest yaml file. This method can deploy your application to the EverAI platform without importing the EverAI SDK code into your existing code.
 
 ## Create an app directory
 ### File and directory structure
@@ -61,6 +61,8 @@ everai volume push get-start-volume
 ```
 
 ### Generate API endpoint service
+
+There is an example code in [app.py](https://github.com/everai-example/get-start-manifest/blob/main/app.py).  
 
 Now you can write your own Python code to implement the API endpoint service. The example here uses `flask` to implement an external service that reads the file `my-model` information in the volume `get-start-volume`.  
 
@@ -169,7 +171,10 @@ docker push quay.io/<username>/<repo>:<tag>
 ```
 
 ## Define manifest file
-The manifest file defines various information required to create an EverAI application, including application name, image name, key information, data volume information, etc.
+The manifest file defines various information required to create an EverAI application, including application name, image name, key information, data volume information, etc.  
+
+There is an example code in [app.yaml](https://github.com/everai-example/get-start-manifest/blob/main/app.yaml).  
+
 ```yaml
 version: everai/v1alpha1
 kind: App

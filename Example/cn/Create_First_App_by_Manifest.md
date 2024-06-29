@@ -1,5 +1,5 @@
 # 使用manifest yaml文件创建第一个应用
-在快速入门中，我们已经了解了如何通过在app.py中创建一个app对象来创建一个EverAI应用。除了使用app对象这种方法来创建应用，我们还提供了一种方法，通过定义一个manifest yaml文件，即可快速创建应用。这种方法无需在你的已有的业务代码中导入EverAI SDK代码，便可以把你的应用部署到EverAI平台。
+在快速入门中，我们已经了解了如何通过在[app.py](https://github.com/everai-example/get-start/blob/main/app.py)中创建一个app对象来创建一个EverAI应用。除了使用app对象这种方法来创建应用，我们还提供了一种方法，通过定义一个manifest yaml文件，即可快速创建应用。这种方法无需在你的已有的业务代码中导入EverAI SDK代码，便可以把你的应用部署到EverAI平台。
 
 ## 创建应用目录
 ### 文件目录结构
@@ -61,6 +61,8 @@ everai volume push get-start-volume
 ```
 
 ### 实现API端点服务
+
+这是一个关于[app.py](https://github.com/everai-example/get-start-manifest/blob/main/app.py)的示例代码。  
 
 现在你可以编写自己的代码，实现API端点服务。这里的示例使用`flask`实现了一个读取卷`get-start-volume`中文件`my-model`信息的对外服务。
 
@@ -171,7 +173,9 @@ docker push quay.io/<username>/<repo>:<tag>
 
 ## 定义Manifest文件
 
-manifest文件定义了创建EverAI应用所需要的各种信息，包括应用名称，镜像名称，密钥信息，数据卷信息等。
+manifest文件定义了创建EverAI应用所需要的各种信息，包括应用名称，镜像名称，密钥信息，数据卷信息等。  
+
+这是一个关于[app.yaml](https://github.com/everai-example/get-start-manifest/blob/main/app.yaml)的示例代码。
 
 ```yaml
 version: everai/v1alpha1
