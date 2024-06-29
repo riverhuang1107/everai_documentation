@@ -129,23 +129,6 @@ def sse():
 ```bash
 curl --no-buffer http://<your ip>:8866/sse
 ```
-## 创建密钥
-密钥管理提供了一种安全的方法，可以添加凭证和其他敏感信息到你的应用容器中。  
-
-是否需要创建密钥，取决于下载模型文件和拉取Docker镜像时是否需要安全验证。  
-
-你可以在[EverAI](https://everai.expvent.com)中创建和编辑密钥，或者通过编写Python代码来管理它。  
-
-在这个例子中，我们会为[quay.io](https://quay.io/)创建一个密钥。  
-
-```bash
-everai secret create quay-secret \
-  --from-literal username=<your username> \
-  --from-literal password=<your password>
-```
->**小贴士**  
->
->[quay.io](https://quay.io/)是一个知名的公共镜像仓库，与之类似的知名镜像仓库还有[Docker Hub](https://hub.docker.com/)，[GitHub Container Registry](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry)，[Google Container Registry](https://cloud.google.com/artifact-registry)等。
 
 ## 构建镜像
 这步需要使用`Dockerfile`来为你的应用构建容器镜像。  
@@ -171,6 +154,35 @@ docker build -t quay.io/<username>/<repo>:<tag> .
 docker push quay.io/<username>/<repo>:<tag>
 ```
 
+## 创建密钥
+密钥管理提供了一种安全的方法，可以添加凭证和其他敏感信息到你的应用容器中。  
+
+是否需要创建密钥，取决于下载模型文件和拉取Docker镜像时是否需要安全验证。  
+
+你可以在[EverAI](https://everai.expvent.com)中创建和编辑密钥，或者通过编写Python代码来管理它。  
+
+在这个例子中，我们会为[quay.io](https://quay.io/)创建一个密钥。  
+
+```bash
+everai secret create quay-secret \
+  --from-literal username=<your username> \
+  --from-literal password=<your password>
+```
+>**小贴士**  
+>
+>[quay.io](https://quay.io/)是一个知名的公共镜像仓库，与之类似的知名镜像仓库还有[Docker Hub](https://hub.docker.com/)，[GitHub Container Registry](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry)，[Google Container Registry](https://cloud.google.com/artifact-registry)等。
+
+## Create configmap
+>该步骤可选，如果你配置了configmap，你可以在部署镜像后使用configmap调整你的自动扩缩容策略。 
+```shell
+ever configmap create get-start-configmap \ 
+  --from-literal min_workers=1 \
+  --from-literal max_workers=5 \
+  --from-literal max_queue_size=2 \
+  --from-literal scale_up_step=1 \
+  --from-literal max_idle_time=60
+```
+
 ## 定义Manifest文件
 
 manifest文件定义了创建EverAI应用所需要的各种信息，包括应用名称，镜像名称，密钥信息，数据卷信息等。  
@@ -181,7 +193,7 @@ manifest文件定义了创建EverAI应用所需要的各种信息，包括应用
 version: everai/v1alpha1
 kind: App
 metadata:
-  name: get-start-manifest                          # application name
+  name: <your app name>                          # application name
 spec:
   image: quay.io/<username>/<repo>:<tag>       # image for serverless app
   imagePullSecrets:

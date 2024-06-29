@@ -129,23 +129,6 @@ You can execute `python app.py` again, serving this web endpoint and hit it with
 curl --no-buffer http://<your ip>:8866/sse
 ```
 
-## Create secrets
-Secrets are a secure way to add credentials and other sensitive information to the containers your functions run in.  
-
-This step is optional, depending on whether the model and Docker image require security certification.  
-
-You can create and edit secrets on [EverAI](https://everai.expvent.com), or programmatically from Python code.  
-
-In this case, we will create one secret for [quay.io](https://quay.io/). 
-```bash
-everai secret create quay-secret \
-  --from-literal username=<your username> \
-  --from-literal password=<your password>
-```
->**NOTE**
->
->[quay.io](https://quay.io/) is a well-known public image registry. Well-known image registry similar to [quay.io](https://quay.io/) include [Docker Hub](https://hub.docker.com/), [GitHub Container Registry](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry), [Google Container Registry](https://cloud.google.com/artifact-registry), etc.  
-
 ## Build image
 This step will build the container image using `Dockerfile`.    
 
@@ -170,6 +153,34 @@ Then call the following command will compile the image and push them to your spe
 docker push quay.io/<username>/<repo>:<tag>
 ```
 
+## Create secrets
+Secrets are a secure way to add credentials and other sensitive information to the containers your functions run in.  
+
+This step is optional, depending on whether the model and Docker image require security certification.  
+
+You can create and edit secrets on [EverAI](https://everai.expvent.com), or programmatically from Python code.  
+
+In this case, we will create one secret for [quay.io](https://quay.io/). 
+```bash
+everai secret create quay-secret \
+  --from-literal username=<your username> \
+  --from-literal password=<your password>
+```
+>**NOTE**
+>
+>[quay.io](https://quay.io/) is a well-known public image registry. Well-known image registry similar to [quay.io](https://quay.io/) include [Docker Hub](https://hub.docker.com/), [GitHub Container Registry](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry), [Google Container Registry](https://cloud.google.com/artifact-registry), etc.  
+
+## Create configmap
+>Optional, but you can use configmap for adjust autoscaling policy after deploying the image. 
+```shell
+ever configmap create get-start-configmap \ 
+  --from-literal min_workers=1 \
+  --from-literal max_workers=5 \
+  --from-literal max_queue_size=2 \
+  --from-literal scale_up_step=1 \
+  --from-literal max_idle_time=60
+```
+
 ## Define manifest file
 The manifest file defines various information required to create an EverAI application, including application name, image name, key information, data volume information, etc.  
 
@@ -179,7 +190,7 @@ There is an example code in [app.yaml](https://github.com/everai-example/get-sta
 version: everai/v1alpha1
 kind: App
 metadata:
-  name: get-start-manifest                          # application name
+  name: <your app name>                          # application name
 spec:
   image: quay.io/<username>/<repo>:<tag>       # image for serverless app
   imagePullSecrets:
