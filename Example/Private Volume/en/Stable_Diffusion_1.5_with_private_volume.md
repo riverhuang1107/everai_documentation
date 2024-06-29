@@ -1,5 +1,5 @@
 # Stable Diffusion 1.5 with private volume
-In the quickstart, you created a simple application. In this example, we use a private volume to store the `Stable Diffusion 1.5` model files and implement an AIGC(AI generated content) online text-to-image and image-to-image service.  
+In the [quickstart](https://github.com/everai-example/get-start), you created a simple application. In this example, we use a private volume to store the `Stable Diffusion 1.5` model files and implement an AIGC(AI generated content) online text-to-image and image-to-image service.  
 
 ## Login EVERAI CLI
 Create a directory for your app firstly. In your app directory, you should login by token you got in [EverAI](https://everai.expvent.com).  

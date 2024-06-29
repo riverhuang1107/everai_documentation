@@ -1,5 +1,5 @@
 # Create first app by manifest yaml file
-In the quickstart, we have seen how to create an EverAI application by creating an app object in [app.py](https://github.com/everai-example/get-start/blob/main/app.py). In addition to using the app object to create applications, we also provide a method to quickly create applications by defining a manifest yaml file. This method can deploy your application to the EverAI platform without importing the EverAI SDK code into your existing code.
+In the [quickstart](https://github.com/everai-example/get-start), we have seen how to create an EverAI application by creating an app object in [app.py](https://github.com/everai-example/get-start/blob/main/app.py). In addition to using the app object to create applications, we also provide a method to quickly create applications by defining a manifest yaml file. This method can deploy your application to the EverAI platform without importing the EverAI SDK code into your existing code.
 
 ## Create an app directory
 ### File and directory structure

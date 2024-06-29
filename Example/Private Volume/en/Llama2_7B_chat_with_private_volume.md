@@ -1,5 +1,5 @@
 # Llama-2(7B) Chat with private volume
-In the quickstart, you created a simple application. In this example, we use a private volume to store the `Llama-2(7B)` model files and implement an AIGC(AI generated content) online question and answer service.  
+In the [quickstart](https://github.com/everai-example/get-start), you created a simple application. In this example, we use a private volume to store the `Llama-2(7B)` model files and implement an AIGC(AI generated content) online question and answer service.  
 
 ## Login EVERAI CLI
 Create a directory for your app firstly. In your app directory, you should login by token you got in [EverAI](https://everai.expvent.com).  
