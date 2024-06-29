@@ -1,5 +1,5 @@
 # 使用manifest yaml文件创建第一个应用
-在[快速入门](https://github.com/everai-example/get-start)中，我们已经了解了如何通过在[app.py](https://github.com/everai-example/get-start/blob/main/app.py)中创建一个app对象来创建一个EverAI应用。除了使用app对象这种方法来创建应用，我们还提供了一种方法，通过定义一个manifest yaml文件，即可快速创建应用。这种方法无需在你的已有的业务代码中导入EverAI SDK代码，便可以把你的应用部署到EverAI平台。
+在[快速入门](https://github.com/everai-example/get-start)中，我们已经了解了如何通过在[app.py](https://github.com/everai-example/get-start/blob/main/app.py)中创建一个app对象来创建一个EverAI应用。除了使用app对象这种方法来创建应用，我们还提供了一种方法，通过定义一个manifest yaml文件，即可快速创建应用。这种方法无需在你的已有的业务代码中引入EverAI SDK代码，便可以把你的应用部署到EverAI平台。
 
 ## 创建应用目录
 ### 文件目录结构
