@@ -4,7 +4,7 @@ In this example, we can implement an AIGC(AI generated content) online question 
 
 ## Login EVERAI CLI
 
-In your app directory, you should login by token you got in [EverAI](https://everai.expvent.com).  
+Create a directory for your app firstly. In your app directory, you should login by token you got in [EverAI](https://everai.expvent.com).  
     
 ```bash
 everai login --token <your token>
