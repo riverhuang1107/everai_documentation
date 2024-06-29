@@ -83,7 +83,9 @@ everai secret delete [-h] name
 ```bash  
 everai secret list
 ```
-The result could be shown like this:  
+
+用例输出的结果如下所示：  
+
 ```bash 
 NAME                        ITEMS
 ------------------------  -------
