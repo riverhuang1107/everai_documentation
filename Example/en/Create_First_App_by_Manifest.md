@@ -109,7 +109,7 @@ curl http://<your ip>:8866/show-volume
 In addition, in the same application, you can implement multiple API endpoint services. This example uses `flask` to implement a external web service that sends active messages from the server to the client.  
 
 ```python
-# https://everai.expvent.com/api/routes/v1/default/get-start/sse
+# https://everai.expvent.com/api/routes/v1/default/get-start-manifest/sse
 # http://localhost:8866/sse
 @app.route('/sse', methods=['GET'])
 def sse():
@@ -174,7 +174,7 @@ The manifest file defines various information required to create an EverAI appli
 version: everai/v1alpha1
 kind: App
 metadata:
-  name: test-start-manifest-volumes                          # application name
+  name: get-start-manifest                          # application name
 spec:
   image: quay.io/<username>/<repo>:<tag>       # image for serverless app
   volumeMounts:
@@ -215,9 +215,9 @@ everai app create --from-file app.yaml
 ```
 After running `everai app list`, you can see the result similar to the following. If your app's status is `DEPLOYED`, it means that your app is deployed successfully.   
 ```bash
-NAME       NAMESPACE    STATUS    WORKERS    CREATED_AT
----------  -----------  --------  ---------  ------------------------
-get-start  default      DEPLOYED  3/3        2024-06-18T04:21:37+0000
+NAME                             NAMESPACE    STATUS    WORKERS    CREATED_AT
+-------------------------------  -----------  --------  ---------  ------------------------
+get-start-manifest               default      DEPLOYED  1/1        2024-06-29T08:32:33+0000
 ```
 Now, you can make a test call for your app, in these examples looks like:  
 ```bash

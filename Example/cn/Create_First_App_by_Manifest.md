@@ -110,7 +110,7 @@ curl http://<your ip>:8866/show-volume
 此外，在同一个应用中，你可以实现多个API端点服务。这里的示例使用`flask`又实现了一个服务器端向客户端推送消息的对外服务。
 
 ```python
-# https://everai.expvent.com/api/routes/v1/default/get-start/sse
+# https://everai.expvent.com/api/routes/v1/default/get-start-manifest/sse
 # http://localhost:8866/sse
 @app.route('/sse', methods=['GET'])
 def sse():
@@ -177,7 +177,7 @@ manifest文件定义了创建EverAI应用所需要的各种信息，包括应用
 version: everai/v1alpha1
 kind: App
 metadata:
-  name: test-start-manifest-volumes                          # application name
+  name: get-start-manifest                          # application name
 spec:
   image: quay.io/<username>/<repo>:<tag>       # image for serverless app
   volumeMounts:
@@ -218,9 +218,9 @@ everai app create --from-file app.yaml
 ```
 执行`everai app list`后，可以看到类似如下的输出结果。如果你的应用状态是`DEPLOYED`，意味着你的应用已经部署成功。    
 ```bash
-NAME       NAMESPACE    STATUS    WORKERS    CREATED_AT
----------  -----------  --------  ---------  ------------------------
-get-start  default      DEPLOYED  3/3        2024-06-18T04:21:37+0000
+NAME                             NAMESPACE    STATUS    WORKERS    CREATED_AT
+-------------------------------  -----------  --------  ---------  ------------------------
+get-start-manifest               default      DEPLOYED  1/1        2024-06-29T08:32:33+0000
 ```
 当你看到你的应用处于`DEPLOYED`时，你可以执行下面的请求来测试你部署的代码是否符合你的预期：  
 ```bash
