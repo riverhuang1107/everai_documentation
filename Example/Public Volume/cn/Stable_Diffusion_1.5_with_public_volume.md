@@ -1,6 +1,6 @@
 # 使用公开卷搭建Stable Diffusion 1.5模型图片生成服务
 
-在快速入门中，你已经创建了一个简单的应用。在这个示例中，我们使用公开卷中存放的`Stable Diffusion 1.5`模型文件，实现一个基于`Stable Diffusion 1.5`模型的图片生成在线服务。  
+在[快速入门](https://github.com/everai-example/get-start)中，你已经创建了一个简单的应用。在这个示例中，我们使用公开卷中存放的`Stable Diffusion 1.5`模型文件，实现一个基于`Stable Diffusion 1.5`模型的图片生成在线服务。  
 
 ## 登录EVERAI客户端
 
