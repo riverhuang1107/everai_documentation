@@ -51,7 +51,7 @@ everai configmap create --from-file test-configmap.yml test-configmap
 
 **Usage**: 
 ```bash 
-everai configmap create [-h] [-l FROM_LITERAL] [-f FROM_FILE] name
+everai configmap create [-h] [-f FROM_FILE] [-l FROM_LITERAL] [name]
 ```
 
 **Positional arguments**:  
@@ -163,7 +163,7 @@ After `everai configmap update` is executed, applications using this updated Con
 
 **Usage**: 
 ```bash
-everai configmap update [-h] [-l FROM_LITERAL] [-f FROM_FILE] name
+everai configmap update [-h] [-f FROM_FILE] [-l FROM_LITERAL] [name]
 ```
 
 **Positional arguments**:  

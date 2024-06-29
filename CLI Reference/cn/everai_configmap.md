@@ -54,7 +54,7 @@ everai configmap create --from-file test-configmap.yml test-configmap
 
 **格式**: 
 ```bash 
-everai configmap create [-h] [-l FROM_LITERAL] [-f FROM_FILE] name
+everai configmap create [-h] [-f FROM_FILE] [-l FROM_LITERAL] [name]
 ```
 
 **参数**:  
@@ -168,7 +168,7 @@ everai configmap update --from-file test-configmap.yml test-configmap
 
 **格式**: 
 ```bash
-everai configmap update [-h] [-l FROM_LITERAL] [-f FROM_FILE] name
+everai configmap update [-h] [-f FROM_FILE] [-l FROM_LITERAL] [name]
 ```
 
 **参数**:  
