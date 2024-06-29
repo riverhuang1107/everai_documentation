@@ -12,7 +12,7 @@ everai login --token <your token>
 
 ## Prepare volume
 
-First, create a data volume to store model files.  
+Create a data volume to store model files.  
 
 ```bash
 everai volume create models--meta-llama--llama-2-7b-chat-hf

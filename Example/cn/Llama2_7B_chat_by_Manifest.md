@@ -11,7 +11,7 @@ everai login --token <your token>
 
 ## 准备存储
 
-首先，创建一个数据卷用于存放模型文件。  
+创建一个数据卷用于存放模型文件。  
 
 ```bash
 everai volume create models--meta-llama--llama-2-7b-chat-hf
