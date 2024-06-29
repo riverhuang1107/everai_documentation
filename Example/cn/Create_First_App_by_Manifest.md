@@ -184,6 +184,17 @@ metadata:
   name: get-start-manifest                          # application name
 spec:
   image: quay.io/<username>/<repo>:<tag>       # image for serverless app
+  imagePullSecrets:
+    username:
+      valueFrom:
+        secretKeyRef:
+          name: quay-secret
+          key: username
+    password:
+      valueFrom:
+        secretKeyRef:
+          name: quay-secret
+          key: password
   volumeMounts:
     - name: get-start-volume                                    # name
       mountPath: /workspace/volume       # mount path in container
@@ -209,7 +220,10 @@ spec:
     - name: test-start-volume                                    # volume name
       volume:
         volume: test-start-volume          # use a private volume or a public volume from other user
-    
+    - name: quay-secret
+      secret:
+        secretName: quay-secret
+
   resource:
     cpu: 1
     memory: 1 GiB
