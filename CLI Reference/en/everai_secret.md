@@ -43,7 +43,7 @@ everai secret create --from-file test-secret.yml your-quay-io-secret-name
 
 **Usage**:
 ```bash  
-everai secret create [-h] [-l FROM_LITERAL] [-f FROM_FILE] name  
+everai secret create [-h] [-f FROM_FILE] [-l FROM_LITERAL] [name]  
 ```
 
 **Positional arguments**:  
@@ -146,7 +146,7 @@ everai secret update --from-file test-secret.yml your-quay-io-secret-name
 
 **Usage**:  
 ```bash
-everai secret update [-h] [-l FROM_LITERAL] [-f FROM_FILE] name
+everai secret update [-h] [-f FROM_FILE] [-l FROM_LITERAL] [name]
 ```
 **Positional arguments**:  
   * `name`                  The secret name  

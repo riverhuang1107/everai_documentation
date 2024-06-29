@@ -45,7 +45,7 @@ everai secret create --from-file test-secret.yml your-quay-io-secret-name
 
 **格式**:
 ```bash  
-everai secret create [-h] [-l FROM_LITERAL] [-f FROM_FILE] name  
+everai secret create [-h] [-f FROM_FILE] [-l FROM_LITERAL] [name]  
 ```
 
 **参数**:  
@@ -151,7 +151,7 @@ everai secret update --from-file test-secret.yml your-quay-io-secret-name
 
 **格式**:  
 ```bash
-everai secret update [-h] [-l FROM_LITERAL] [-f FROM_FILE] name
+everai secret update [-h] [-f FROM_FILE] [-l FROM_LITERAL] [name]
 ```
 **参数**:  
   * `name`                  密钥名称  
