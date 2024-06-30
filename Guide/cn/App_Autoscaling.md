@@ -12,7 +12,7 @@ everai configmap create get-start-configmap \
   --from-literal scale_up_step=1 \
   --from-literal max_idle_time=60
 ```
-基于[新手指引](https://expvent.com/documentation/zh-cn/docs/)中的`app.py`代码，在定义app对象时，需要加入`autoscaling_policy`参数。  
+基于[新手指引](https://expvent.com/documentation/zh-cn/docs/)中的`app.py`代码，在定义app对象时，需要加入`autoscaler`参数。  
 ```python
 from everai_autoscaler.builtin import SimpleAutoScaler
 
