@@ -39,7 +39,7 @@ everai app create [-h] [--dry-run] [-f FROM_FILE] [-n NAMESPACE]
 
 **选项**:  
 * `-h, --help`            显示帮助信息  
-* `--dry-run`
+* `--dry-run`             在客户端中试运行
 * `-n NAMESPACE, --namespace NAMESPACE`
                         为应用指定命名空间，指定优先级：命令行 > [manifest文件 | `app.py`] > `default`
 * `-f FROM_FILE, --from-file FROM_FILE`

@@ -109,7 +109,7 @@ everai app update [-h] [--dry-run] [-f FROM_FILE]
 **Options**:  
 
   * `-h, --help`            show this help message and exit
-  * `--dry-run`
+  * `--dry-run`             dry run in client
   * `-f FROM_FILE, --from-file FROM_FILE`
                         Update app from manifest file (format in yaml), for example: `--from-file <filename>`
 
