@@ -188,7 +188,7 @@ You can create and edit secrets on [EverAI](https://everai.expvent.com), or prog
 
 In this case, we will create one secret for [quay.io](https://quay.io/). 
 ```bash
-everai secret create quay-secret \
+everai secret create your-quay-io-secret-name \
   --from-literal username=<your username> \
   --from-literal password=<your password>
 ```
@@ -199,7 +199,7 @@ everai secret create quay-secret \
 ## Create configmap
 >Optional, but you can use configmap for adjust autoscaling policy after deploying the image. 
 ```shell
-ever configmap create get-start-configmap \ 
+ever configmap create sd15-configmap \ 
   --from-literal min_workers=1 \
   --from-literal max_workers=5 \
   --from-literal max_queue_size=2 \

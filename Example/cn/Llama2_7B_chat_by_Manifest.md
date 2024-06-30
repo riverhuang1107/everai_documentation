@@ -141,7 +141,7 @@ docker push quay.io/<username>/<repo>:<tag>
 在这个例子中，我们会为[quay.io](https://quay.io/)创建一个密钥。  
 
 ```bash
-everai secret create quay-secret \
+everai secret create your-quay-io-secret-name \
   --from-literal username=<your username> \
   --from-literal password=<your password>
 ```
@@ -152,7 +152,7 @@ everai secret create quay-secret \
 ## 创建configmap
 >该步骤可选，如果你配置了configmap，你可以在部署镜像后使用configmap调整你的自动扩缩容策略。 
 ```shell
-ever configmap create get-start-configmap \ 
+ever configmap create llama2-configmap \ 
   --from-literal min_workers=1 \
   --from-literal max_workers=5 \
   --from-literal max_queue_size=2 \
