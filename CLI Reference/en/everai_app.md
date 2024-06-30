@@ -154,7 +154,7 @@ test-start-14                    default      PAUSED    0/0        2024-06-18T08
 
 **Usage**:  
 ```bash
-everai app pause [-h] [name]
+everai app pause [-h] [-n [NAMESPACE]] [--dry-run] name
 ```
 
 **Positional arguments**:  
@@ -163,6 +163,9 @@ everai app pause [-h] [name]
 
 **Options**:
   * `-h, --help`  show this help message and exit 
+  * `-n [NAMESPACE], --namespace [NAMESPACE]`
+                        The namespace of app
+  * `--dry-run`             dry run in client
 
 ## everai app resume           
 Resume an app  
@@ -172,7 +175,7 @@ Resume an app
 When you want to resume an application that has been stopped (the application status is `PAUSED`), you can execute the following command:  
 
 ```bash
-everai app resume <your app name>
+everai app resume [-h] [-n [NAMESPACE]] name
 ```
 
 **Usage**:  
@@ -185,7 +188,9 @@ everai app resume [-h] [name]
   * `name`        The app name 
 
 **Options**:  
-* `-h, --help`            show this help message and exit  
+* `-h, --help`            show this help message and exit
+* `-n [NAMESPACE], --namespace [NAMESPACE]`
+                        The namespace of app  
 
 ## everai app prepare             
 Prepare an app, all of function which decorated by `@app.prepare` would be called  
@@ -224,11 +229,14 @@ get-start  default      DEPLOYED  3/3        2024-06-18T04:21:37+0000
 ```
 **Usage**:  
 ```bash
-everai app list [-h] [--output [OUTPUT]]
+everai app list [-h] [-n NAMESPACE] [-A] [--output [OUTPUT]]
 ```
 
 **Options**:  
 * `-h, --help`            show this help message and exit  
+* `-n NAMESPACE, --namespace NAMESPACE`
+                        List all apps in specified namespaces
+* `-A, --all-namespaces`  List all apps in all namespaces
 * `--output [OUTPUT], -o [OUTPUT]`
                         Output format, One of: (json, yaml, table, wide)
 
@@ -248,7 +256,7 @@ The output for this example is this:
 
 **Usage**: 
 ```bash
-everai app queue [-h] [--output [OUTPUT]] [app_name]
+everai app queue [-h] [-n [NAMESPACE]] [--output [OUTPUT]] name
 ```
 
 **Positional arguments**:  
@@ -340,7 +348,7 @@ ID                      STATUS    DETAIL_STATUS    CREATED_AT                DEL
 
 **Usage**:  
 ```bash 
-everai app worker list [-h] [--output [OUTPUT]] [--all] [--recent-days [RECENT_DAYS]] [app_name]
+everai app worker list [-h] [--output [OUTPUT]] [--all] [--recent-days [RECENT_DAYS]] [--namespace [NAMESPACE]] app_name
 ```
 
 **Positional arguments**:  
