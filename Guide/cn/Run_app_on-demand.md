@@ -16,9 +16,9 @@ ID    STATUS    DETAIL_STATUS    CREATED_AT    DELETED_AT
 
 执行`everai app list`，可以看到此时应用的状态是`PAUSED`。  
 ```bash
-NAME          STATUS     CREATED_AT                ROUTE_NAME
-------------  ---------  ------------------------  ------------
-test-start-8  PAUSED     2024-05-13 20:34:36+0800  test-start-8
+NAME                             NAMESPACE    STATUS    WORKERS    CREATED_AT
+-------------------------------  -----------  --------  ---------  ------------------------
+test-start-004                   default      PAUSED    0/0        2024-06-28T05:27:24+0000
 ```
 
 worker被停止后，你的应用的计费也会被随之停止。根据你的实际业务需要，当你再次部署该应用后，应用会被系统继续计费。  
@@ -28,9 +28,9 @@ worker被停止后，你的应用的计费也会被随之停止。根据你的�
 
 执行`everai app list`后，可以看到类似如下的输出结果。如果你的应用状态是`DEPLOYED`，意味着你的应用已经被再次部署。  
 ```bash
-NAME          STATUS     CREATED_AT                ROUTE_NAME
-------------  ---------  ------------------------  ------------
-test-start-8  DEPLOYED   2024-05-13 20:34:36+0800  test-start-8
+NAME                             NAMESPACE    STATUS    WORKERS    CREATED_AT
+-------------------------------  -----------  --------  ---------  ------------------------
+test-start-004                   default      DEPLOYED  1/1        2024-06-28T05:27:24+0000
 ```
 
 

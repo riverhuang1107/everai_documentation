@@ -16,9 +16,9 @@ ID    STATUS    DETAIL_STATUS    CREATED_AT    DELETED_AT
 Run command `everai app list`, you can see that  the status of app is `PAUSED`.   
 
 ```bash
-NAME          STATUS     CREATED_AT                ROUTE_NAME
-------------  ---------  ------------------------  ------------
-test-start-8  PAUSED     2024-05-13 20:34:36+0800  test-start-8
+NAME                             NAMESPACE    STATUS    WORKERS    CREATED_AT
+-------------------------------  -----------  --------  ---------  ------------------------
+test-start-004                   default      PAUSED    0/0        2024-06-28T05:27:24+0000
 ```
 After the worker is stopped, your application's billing will also be stopped. Based on your actual business needs, when you deploy the application again, the application will continue to be billed by the system.  
 
@@ -28,9 +28,9 @@ After the worker is stopped, your application's billing will also be stopped. Ba
 After running `everai app list`, you can see your app's status.  If status is `DEPLOYED`, it means that your app is deployed once again successfully.  
 
 ```bash
-NAME          STATUS     CREATED_AT                ROUTE_NAME
-------------  ---------  ------------------------  ------------
-test-start-8  DEPLOYED   2024-05-13 20:34:36+0800  test-start-8
+NAME                             NAMESPACE    STATUS    WORKERS    CREATED_AT
+-------------------------------  -----------  --------  ---------  ------------------------
+test-start-004                   default      DEPLOYED  1/1        2024-06-28T05:27:24+0000
 ```
 
 
