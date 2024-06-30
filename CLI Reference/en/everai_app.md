@@ -41,7 +41,7 @@ everai app create [-h] [--dry-run] [-f FROM_FILE] [-n NAMESPACE]
 
 **Options**:  
 * `-h, --help`            show this help message and exit  
-* `--dry-run`
+* `--dry-run`             dry run in client
 * `-n NAMESPACE, --namespace NAMESPACE`
                         indicate namespace of the app, commandline > [yaml file | `app.py`] > default
 * `-f FROM_FILE, --from-file FROM_FILE`
@@ -266,6 +266,8 @@ everai app queue [-h] [-n [NAMESPACE]] [--output [OUTPUT]] name
 **Options**:  
 
  * `-h, --help`            show this help message and exit
+ * `-n [NAMESPACE], --namespace [NAMESPACE]`
+                        The namespace of app  
  * `--output [OUTPUT], -o [OUTPUT]`
                         Output format, One of: (json, yaml, table, wide)
 

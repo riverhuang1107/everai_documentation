@@ -102,7 +102,7 @@ everai app update [-h] [--dry-run] [-f FROM_FILE]
 **选项**:  
 
   * `-h, --help`            显示帮助信息
-  * `--dry-run`
+  * `--dry-run`             在客户端中试运行
   * `-f FROM_FILE, --from-file FROM_FILE`
                         通过manifest文件（yaml格式）更新应用，示例：`--from-file <filename>`
 
@@ -148,7 +148,7 @@ test-start-14                    default      PAUSED    0/0        2024-06-18T08
 
 **格式**:  
 ```bash
-everai app pause [-h] [name]
+everai app pause [-h] [-n [NAMESPACE]] [--dry-run] name
 ```
 
 **参数**:  
@@ -157,6 +157,9 @@ everai app pause [-h] [name]
 
 **选项**:
   * `-h, --help`  显示帮助信息
+  * `-n [NAMESPACE], --namespace [NAMESPACE]`
+                        应用的命名空间
+  * `--dry-run`             在客户端中试运行
 
 ## everai app resume           
 恢复使用应用    
@@ -171,7 +174,7 @@ everai app resume <your app name>
 
 **格式**:  
 ```bash
-everai app resume [-h] [name]
+everai app resume [-h] [-n [NAMESPACE]] name
 ```
 
 **参数**:  
@@ -180,6 +183,8 @@ everai app resume [-h] [name]
 
 **选项**:  
 * `-h, --help`            显示帮助信息  
+* `-n [NAMESPACE], --namespace [NAMESPACE]`
+                        应用的命名空间  
 
 ## everai app prepare             
 准备应用，所有被`@app.prepare`注解的方法都会被执行    
@@ -219,11 +224,14 @@ get-start  default      DEPLOYED  3/3        2024-06-18T04:21:37+0000
 ```
 **格式**:  
 ```bash
-everai app list [-h] [--output [OUTPUT]]
+everai app list [-h] [-n NAMESPACE] [-A] [--output [OUTPUT]]
 ```
 
 **选项**:  
-* `-h, --help`            显示帮助信息  
+* `-h, --help`            显示帮助信息
+* `-n NAMESPACE, --namespace NAMESPACE`
+                        显示指定命名空间下的应用列表
+* `-A, --all-namespaces`  显示所有命名空间下的应用列表  
 * `--output [OUTPUT], -o [OUTPUT]`
                         输出格式，可选（json, yaml, table, wide），默认为table
 
@@ -244,7 +252,7 @@ everai app queue <your app name>
 
 **格式**: 
 ```bash
-everai app queue [-h] [--output [OUTPUT]] [app_name]
+everai app queue [-h] [-n [NAMESPACE]] [--output [OUTPUT]] name
 ```
 
 **参数**:  
@@ -254,6 +262,8 @@ everai app queue [-h] [--output [OUTPUT]] [app_name]
 **选项**:  
 
  * `-h, --help`            显示帮助信息
+ * `-n [NAMESPACE], --namespace [NAMESPACE]`
+                        应用的命名空间  
  * `--output [OUTPUT], -o [OUTPUT]`
                         输出格式，可选（json, yaml, table, wide），默认为table
 
@@ -337,7 +347,7 @@ ID                      STATUS    DETAIL_STATUS    CREATED_AT                DEL
 
 **格式**:  
 ```bash 
-everai app worker list [-h] [--output [OUTPUT]] [--all] [--recent-days [RECENT_DAYS]] [app_name]
+everai app worker list [-h] [--output [OUTPUT]] [--all] [--recent-days [RECENT_DAYS]] [--namespace [NAMESPACE]] app_name
 ```
 
 **参数**:  
