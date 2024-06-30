@@ -154,7 +154,7 @@ def img2img():
     return Response(byte_stream.getvalue(), mimetype="image/jpg")
 ```
 
-#### 实现就绪探针服务
+### 实现就绪探针服务
 
 如果设置了就绪探针服务，探针状态准备好（状态码为`200`）之前，不会有任何客户端请求被路由到这个worker容器中。否则， 只要容器状态可用，即使worker容器中的模型文件加载到GPU内存的过程还没完成，EverAI平台就会路由客户端请求到这个worker容器。
 
