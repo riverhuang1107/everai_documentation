@@ -108,6 +108,23 @@ def chat():
     return resp
 ```
 
+### 实现就绪探针服务
+
+如果设置了就绪探针服务，探针状态准备好（状态码为`200`）之前，不会有任何客户端请求被路由到这个worker容器中。否则， 只要容器状态可用，即使worker容器中的模型文件加载到GPU内存的过程还没完成，EverAI平台就会路由客户端请求到这个worker容器。
+
+目前探针实现只支持`HTTP`的`get`和`post`方法。
+
+```python
+@app.route('/healthy-check', methods=['GET'])
+def healthy():
+    resp = 'service is ready'
+    return resp
+
+if __name__ == '__main__':
+    prepare_model()
+    app.run(host="0.0.0.0", debug=False, port=8866)
+```
+
 ## 构建镜像
 这步需要使用`Dockerfile`来为你的应用构建容器镜像。  
 
