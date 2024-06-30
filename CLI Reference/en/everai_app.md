@@ -175,12 +175,12 @@ Resume an app
 When you want to resume an application that has been stopped (the application status is `PAUSED`), you can execute the following command:  
 
 ```bash
-everai app resume [-h] [-n [NAMESPACE]] name
+everai app resume <your app name>
 ```
 
 **Usage**:  
 ```bash
-everai app resume [-h] [name]
+everai app resume [-h] [-n [NAMESPACE]] name
 ```
 
 **Positional arguments**:  
