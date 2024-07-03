@@ -51,7 +51,7 @@ everai app update
 ```bash
 ID                      STATUS    DETAIL_STATUS    CREATED_AT                DELETED_AT
 ----------------------  --------  ---------------  ------------------------  ------------
-ULSUfqhnsEV35JyuWiuVyo  RUNNING   FREE             2024-05-11 19:00:52+0800
+PWwUmUqNYuzzM5sa98ajJL  RUNNING   FREE             2024-07-01T09:47:31+0000
 ```
 执行`everai app queue`可以观察到目前的应用队列中没有在排队的情况。
 ```bash
@@ -68,21 +68,21 @@ ab -s 120 -t 120 -c 4 -n 300000 -H'Authorization: Bearer <your_token>' https://e
 ```bash
   QUEUE_INDEX  CREATE_AT                 QUEUE_REASON
 -------------  ------------------------  --------------
-            0  2024-05-11 19:25:19+0800  WorkerBusy
-            1  2024-05-11 19:25:28+0800  WorkerBusy
+            0  2024-07-03T22:24:07+0000  WorkerBusy
+            1  2024-07-03T22:24:07+0000  WorkerBusy
 ```
 在worker列表中可以看到目前已经有两个worker在同时工作，性能测试前的只有一个worker在工作。这意味着随着应用负载的加大，[EverAI](https://everai.expvent.com)平台为你的应用自动完成了扩容的工作。  
 ```bash
 ID                      STATUS    DETAIL_STATUS    CREATED_AT                DELETED_AT
 ----------------------  --------  ---------------  ------------------------  ------------
-ULSUfqhnsEV35JyuWiuVyo  RUNNING   BUSY             2024-05-11 19:00:52+0800
-bqZJ4eTjMmEbP9ncrvPgGg  RUNNING   BUSY             2024-05-11 19:24:08+0800
+PWwUmUqNYuzzM5sa98ajJL  RUNNING   BUSY             2024-07-01T09:47:31+0000
+dweBRSPD395BvtBDsZYum8  RUNNING   BUSY             2024-07-03T22:24:08+0000
 ```
 
 当`ab`性能测试结束，应用业务负载的高峰期过去之后，系统会自动判断worker的负载情况，在设置的`max_idle_time`后，释放掉扩容产生的worker，恢复到设置的`mini_workers`数量。在这个示例中，执行`everai worker list`，可以看到应用的worker数量已经恢复到了扩容前的一个worker。系统已经为你的应用完成了自动缩容操作。 
 ```bash
 ID                      STATUS    DETAIL_STATUS    CREATED_AT                DELETED_AT
 ----------------------  --------  ---------------  ------------------------  ------------
-ULSUfqhnsEV35JyuWiuVyo  RUNNING   FREE             2024-05-11 19:00:52+0800
+PWwUmUqNYuzzM5sa98ajJL  RUNNING   FREE             2024-07-01T09:47:31+0000
 ```
 
