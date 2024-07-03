@@ -8,6 +8,7 @@ everai worker [-h] {list,ls} ...
 
 **Commands**:    
 * `list (ls)` List workers of app  
+* `exec`          Run a command in a running worker
 
 **Options**:  
 * `-h, --help`  show this help message and exit  
@@ -57,3 +58,32 @@ everai worker list [-h] [--output [OUTPUT]] [--all] [--recent-days [RECENT_DAYS]
                         show not running workers who is created in recent days
 * `--namespace [NAMESPACE], -n [NAMESPACE]`
                         namespace of app  
+
+## everai worker exec
+Run a command in a running worker  
+
+**Example**:  
+```bash 
+everai worker exec -it dweBRSPD395BvtBDsZYum8 bash
+```
+
+The result could be shown like this:  
+
+```bash 
+root@b0b6f096aeab:/workspace#
+```
+
+**Usage**:  
+```bash  
+everai app worker exec [-h] [--interactive] [--tty] worker command ...
+```
+
+**Positional arguments**:  
+  * `worker`             worker id
+  * `command`            command
+  * `args`               arguments for command in worker
+
+**Options**:  
+* `-h, --help`            show this help message and exit  
+* `--interactive, -i`  Keep STDIN open even if not attached
+* `--tty, -t`          Allocate a pseudo-TTY, just for compatible client, no effect
