@@ -43,7 +43,7 @@ app = App(
 Secondly, you run `everai app run` to check your code locally. And then open  `image_builder.py`, update your image registry's version. Run `everai image build` to buld image and push the image to [quay.io](https://quay.io/). Aftering build image, you can run the following command to upgrade your app.  
 
 ```bash
-everai app upgrade --image
+everai app update
 ```
 Now, your app has the ability to autoscale.  
 
@@ -64,7 +64,7 @@ Run `everai app queue`, you can see the queue size is 0 in the queue list.
 In this step, you can use `ab` to test your app's performance, and expand your app's workload. At same time, you should observe that the changes in the number of workers and queues.
 
 ```bash
-ab -s 120 -t 120 -c 4 -n 300000 -H'Authorization: Bearer <your_token>' https://everai.expvent.com/api/routes/v1/<your app route name>/sse
+ab -s 120 -t 120 -c 4 -n 300000 -H'Authorization: Bearer <your_token>' https://everai.expvent.com/api/routes/v1/<your namespace>/<your app name>/sse
 ```
 
 During the performance test, run `everai worker list` and `everai app queue` agian, you can see the changes. Now, the queue size is 2 in queue list.  

@@ -42,7 +42,7 @@ app = App(
 
 第二步，你执行`everai app run`确保你的代码运行正常。然后打开`image_builder.py`文件，更新你的镜像版本。并执行`everai image build`进行镜像构建，并推送镜像到[quay.io](https://quay.io/)镜像仓库。镜像构建完成后，你需要执行如下命令进行应用更新。  
 ```bash
-everai app upgrade --image
+everai app update
 ```
 
 此时，你的应用已经具备了自动扩容的能力。  
@@ -61,7 +61,7 @@ ULSUfqhnsEV35JyuWiuVyo  RUNNING   FREE             2024-05-11 19:00:52+0800
 
 现在，这一步你可以使用`ab`工具对你的应用进行性能测试，加大你应用的工作负载。并同时观察worker和队列的数量变化。
 ```bash
-ab -s 120 -t 120 -c 4 -n 300000 -H'Authorization: Bearer <your_token>' https://everai.expvent.com/api/routes/v1/<your app route name>/sse
+ab -s 120 -t 120 -c 4 -n 300000 -H'Authorization: Bearer <your_token>' https://everai.expvent.com/api/routes/v1/<your namespace>/<your app name>/sse
 ```
 
 在性能测试进行过程中，再次执行`everai worker list`和`everai app queue`，可以看到两者的变化。此时，队列列表中出现在排队的情况。
