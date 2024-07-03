@@ -8,6 +8,7 @@ everai worker [-h] {list,ls} ...
 
 **命令**:    
 * `list (ls)` 显示属于该应用的worker列表  
+* `exec`          在运行中的worker容器中执行命令
 
 **选项**:  
 * `-h, --help`  显示帮助信息  
@@ -55,3 +56,32 @@ everai worker list [-h] [--output [OUTPUT]] [--all] [--recent-days [RECENT_DAYS]
                         显示最近天数内没有在运行中的worker
 * `--namespace [NAMESPACE], -n [NAMESPACE]`
                         应用的命名空间  
+
+## everai worker exec
+在运行中的worker容器中执行命令  
+
+**示例**:  
+```bash 
+everai worker exec -it dweBRSPD395BvtBDsZYum8 bash
+```
+
+用例输出的结果如下所示：  
+
+```bash 
+root@b0b6f096aeab:/workspace#
+```
+
+**格式**:  
+```bash  
+everai worker exec [-h] [--interactive] [--tty] worker command ...
+```
+
+**参数**:  
+  * `worker`             worker id
+  * `command`            命令
+  * `args`               worker容器中的命令参数
+
+**选项**:  
+* `-h, --help`            显示帮助信息  
+* `--interactive, -i`  以交互模式执行命令，允许输入和输出
+* `--tty, -t`          为worker容器分配一个伪终端或终端

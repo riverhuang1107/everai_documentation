@@ -75,7 +75,7 @@ root@b0b6f096aeab:/workspace#
 
 **Usage**:  
 ```bash  
-everai app worker exec [-h] [--interactive] [--tty] worker command ...
+everai worker exec [-h] [--interactive] [--tty] worker command ...
 ```
 
 **Positional arguments**:  

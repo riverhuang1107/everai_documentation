@@ -374,7 +374,7 @@ Run a command in a running worker
 
 **Example**:  
 ```bash 
-everai worker exec -it dweBRSPD395BvtBDsZYum8 bash
+everai app worker exec -it dweBRSPD395BvtBDsZYum8 bash
 ```
 
 The result could be shown like this:  
