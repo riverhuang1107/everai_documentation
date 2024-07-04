@@ -93,7 +93,7 @@ Update an app from manifest file or an App object in `app.py`.
 
 `--from-file` indicates a manifest file for update app, otherwise, everai command line tools find App in `app.py`.  
 
-this operation may be trigger the worker rollout, if image, command ... changed  
+This operation may be trigger the worker rollout, if image, command ... changed  
   
 **Example**:  
 
