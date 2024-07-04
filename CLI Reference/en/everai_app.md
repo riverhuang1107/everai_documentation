@@ -310,7 +310,7 @@ Manage the worker of app
 
 **Usage**:
 ```bash 
-everai app worker [-h] {list,ls} ...
+everai app worker [-h] {list,ls,exec} ...
 ```
 
 **Commands**:

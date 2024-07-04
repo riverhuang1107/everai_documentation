@@ -3,7 +3,7 @@
 
 **格式**:   
 ```bash 
-everai worker [-h] {list,ls} ...  
+everai worker [-h] {list,ls,exec} ...
 ```
 
 **命令**:    

@@ -3,7 +3,7 @@ Manage the worker of app
 
 **Usage**:   
 ```bash 
-everai worker [-h] {list,ls} ...  
+everai worker [-h] {list,ls,exec} ...
 ```
 
 **Commands**:    

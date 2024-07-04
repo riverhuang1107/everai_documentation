@@ -307,7 +307,7 @@ everai app events [-h] [-n [NAMESPACE]] [--output [OUTPUT]] name
 
 **格式**:
 ```bash 
-everai app worker [-h] {list,ls} ...
+everai app worker [-h] {list,ls,exec} ...
 ```
 
 **命令**:
