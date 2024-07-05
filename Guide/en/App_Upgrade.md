@@ -74,15 +74,6 @@ ID                      STATUS    DETAIL_STATUS    CREATED_AT                DEL
 PNLENbRP7AabNy6ZQWTogb  RUNNING   FREE             2024-07-05T06:45:19+0000
 ```
 
-Until the new worker is in the `RUNNING` state, the original worker is already in the `TERMINATED` state.  
-
-```bash
-ID                      STATUS      DETAIL_STATUS    CREATED_AT                DELETED_AT
-----------------------  ----------  ---------------  ------------------------  ------------------------
-PNLENbRP7AabNy6ZQWTogb  TERMINATED                   2024-07-05T06:45:19+0000  2024-07-05T08:42:28+0000
-kEEBkaoEaZrxPgzab2ChjQ  RUNNING     FREE             2024-07-05T08:41:49+0000
-```
-
 Use `curl` to run the test case, the output of the example is on the terminal. This example sends active messages from the server to the client.  
 
 ```bash
@@ -129,6 +120,16 @@ ID                      STATUS       DETAIL_STATUS    CREATED_AT                
 PNLENbRP7AabNy6ZQWTogb  RUNNING      FREE             2024-07-05T06:45:19+0000
 kEEBkaoEaZrxPgzab2ChjQ  INITIALIZED  IN_FLIGHT        2024-07-05T08:41:49+0000
 ```
+
+Until the new worker is in the `RUNNING` state, the original worker is already in the `TERMINATED` state.  
+
+```bash
+ID                      STATUS      DETAIL_STATUS    CREATED_AT                DELETED_AT
+----------------------  ----------  ---------------  ------------------------  ------------------------
+PNLENbRP7AabNy6ZQWTogb  TERMINATED                   2024-07-05T06:45:19+0000  2024-07-05T08:42:28+0000
+kEEBkaoEaZrxPgzab2ChjQ  RUNNING     FREE             2024-07-05T08:41:49+0000
+```
+
 Use `curl` to run the test case again, the new output of the example is on the terminal. This example sends  new active messages from the server to the client.  
 
 ```bash
