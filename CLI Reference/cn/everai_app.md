@@ -27,6 +27,8 @@ everai app [-h] {create,run,get,update,pause,resume,prepare,list,ls,queue,q,even
 ## everai app create             
 通过manifest文件或者在`app.py`中创建App对象来创建一个应用。  
 
+`--from-file`通过一个manifest文件中的设置来创建应用，否则命令行工具会根据`app.py`中的设置创建应用. 
+
 **示例**:
 ```bash
 everai app create
@@ -88,7 +90,7 @@ everai app get [-h] [--namespace [NAMESPACE]] [--output [OUTPUT]] name
 ## everai app update             
 通过manifest文件或者在`app.py`中创建App对象来更新一个应用。  
 
-`--from-file`通过一个manifest文件来更新应用，否则命令行工具会更新`app.py`中的应用.  
+`--from-file`通过一个manifest文件中的设置来更新应用，否则命令行工具会根据`app.py`中的设置更新应用.  
 
 这个操作可能会引起worker容器的重新部署，比如镜像发生变化。
 
