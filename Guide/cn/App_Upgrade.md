@@ -7,7 +7,7 @@
 ```bash
 ID                      STATUS    DETAIL_STATUS    CREATED_AT                DELETED_AT
 ----------------------  --------  ---------------  ------------------------  ------------
-bqZJ4eTjMmEbP9ncrvPgGg  RUNNING   FREE             2024-05-11 19:24:08+0800
+kEEBkaoEaZrxPgzab2ChjQ  RUNNING   FREE             2024-07-05T08:41:49+0000
 ```
 
 使用`curl`执行测试用例，在终端显示如下的数据信息。  
@@ -38,19 +38,20 @@ hello world
 everai app update
 ```
 
-再次运行`everai worker list`，看到原来的worker依然在运行中。同时一个全新的worker已经在部署中。  
+再次运行`everai worker list -a`，看到原来的worker依然在运行中。同时一个全新的worker已经在部署中。 
 ```bash
-ID                      STATUS    DETAIL_STATUS    CREATED_AT                DELETED_AT
-----------------------  --------  ---------------  ------------------------  ------------
-bqZJ4eTjMmEbP9ncrvPgGg  RUNNING   FREE             2024-05-11 19:24:08+0800
-GtxtbdHn2rFEkZqZxSesyE  RUNNING   NSPECIFIED       2024-05-12 18:20:38+0800
+ID                      STATUS      DETAIL_STATUS    CREATED_AT                DELETED_AT
+----------------------  ----------  ---------------  ------------------------  ------------------------
+kEEBkaoEaZrxPgzab2ChjQ  RUNNING     FREE             2024-07-05T08:41:49+0000
+mNTAJoqyMRHDyDoLTCSjPn  CREATED     IN_FLIGHT        2024-07-05T13:11:59+0000
 ```
 
-直到系统把新的worker部署完成后，原来的worker会被停止工作。执行`everai worker list`可以看到新的worker已经处于运行状态。  
+直到系统把新的worker部署完成后，原来的worker会被停止工作。执行`everai worker list -a`可以看到新的worker已经处于运行状态。  
 ```bash
-ID                      STATUS    DETAIL_STATUS    CREATED_AT                DELETED_AT
-----------------------  --------  ---------------  ------------------------  ------------
-GtxtbdHn2rFEkZqZxSesyE  RUNNING   FREE             2024-05-12 18:20:38+0800
+ID                      STATUS      DETAIL_STATUS    CREATED_AT                DELETED_AT
+----------------------  ----------  ---------------  ------------------------  ------------------------
+kEEBkaoEaZrxPgzab2ChjQ  TERMINATED                   2024-07-05T08:41:49+0000  2024-07-05T13:12:23+0000
+mNTAJoqyMRHDyDoLTCSjPn  RUNNING     FREE             2024-07-05T13:11:59+0000
 ```
 
 再次使用`curl`执行测试用例，在控制台显示如下的数据信息。可以看到显示的数据信息已经完成更新。  

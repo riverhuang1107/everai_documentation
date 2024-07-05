@@ -4,11 +4,10 @@ If your app is deployed in [EverAI](https://everai.expvent.com) platform, when y
 
 Run `everai worker list`, you can see a worker in running.  
 
-
 ```bash
 ID                      STATUS    DETAIL_STATUS    CREATED_AT                DELETED_AT
 ----------------------  --------  ---------------  ------------------------  ------------
-bqZJ4eTjMmEbP9ncrvPgGg  RUNNING   FREE             2024-05-11 19:24:08+0800
+kEEBkaoEaZrxPgzab2ChjQ  RUNNING   FREE             2024-07-05T08:41:49+0000
 ```
 Use `curl` to run the test case, the output of the example is on the terminal.  
 
@@ -33,25 +32,26 @@ hello world
 ```
 Return to your app's directory, run `everai app prepare` to push the new file into the cloud.  
 
-Run the following command to finish app upgrade.  
+Run the following command to finish app update.  
 
 ```bash
 everai app update
 ```
-Run `everai worker list`, you can see the older worker is stiall running. And the new worker is deploying now.  
+Run `everai worker list -a`, you can see the older worker is stiall running. And the new worker is deploying now.  
 
 ```bash
-ID                      STATUS    DETAIL_STATUS    CREATED_AT                DELETED_AT
-----------------------  --------  ---------------  ------------------------  ------------
-bqZJ4eTjMmEbP9ncrvPgGg  RUNNING   FREE             2024-05-11 19:24:08+0800
-GtxtbdHn2rFEkZqZxSesyE  RUNNING   NSPECIFIED       2024-05-12 18:20:38+0800
+ID                      STATUS      DETAIL_STATUS    CREATED_AT                DELETED_AT
+----------------------  ----------  ---------------  ------------------------  ------------------------
+kEEBkaoEaZrxPgzab2ChjQ  RUNNING     FREE             2024-07-05T08:41:49+0000
+mNTAJoqyMRHDyDoLTCSjPn  CREATED     IN_FLIGHT        2024-07-05T13:11:59+0000
 ```
-The older worker is removed still the new worker is deployed. Run `everai worker list`, you can see is new worker is running.  
+The older worker is removed still the new worker is deployed. Run `everai worker list -a`, you can see is new worker is running.  
 
 ```bash
-ID                      STATUS    DETAIL_STATUS    CREATED_AT                DELETED_AT
-----------------------  --------  ---------------  ------------------------  ------------
-GtxtbdHn2rFEkZqZxSesyE  RUNNING   FREE             2024-05-12 18:20:38+0800
+ID                      STATUS      DETAIL_STATUS    CREATED_AT                DELETED_AT
+----------------------  ----------  ---------------  ------------------------  ------------------------
+kEEBkaoEaZrxPgzab2ChjQ  TERMINATED                   2024-07-05T08:41:49+0000  2024-07-05T13:12:23+0000
+mNTAJoqyMRHDyDoLTCSjPn  RUNNING     FREE             2024-07-05T13:11:59+0000
 ```
 Use `curl` to run the test case agian, the new output of the example is on the terminal now.  
 
