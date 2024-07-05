@@ -2,6 +2,8 @@
 ## update volume
 If your app is deployed in [EverAI](https://everai.expvent.com) platform, when you want to update your files in volume, you can run `everai app update`. [EverAI](https://everai.expvent.com) platform support app hot upgrade,  and your application service will always be running online during the entire upgrade and update process.  
 
+The following example is based on the app in the [quickstart](https://github.com/everai-example/get-start).
+
 Run `everai worker list`, you can see a worker in running.  
 
 ```bash
@@ -37,7 +39,7 @@ Run the following command to finish app update.
 ```bash
 everai app update
 ```
-Run `everai worker list -a`, you can see the older worker is stiall running. And the new worker is deploying now.  
+Run `everai worker list -a`, you can see the original worker is still running. And the new worker is deploying now.  
 
 ```bash
 ID                      STATUS      DETAIL_STATUS    CREATED_AT                DELETED_AT
@@ -45,7 +47,7 @@ ID                      STATUS      DETAIL_STATUS    CREATED_AT                D
 kEEBkaoEaZrxPgzab2ChjQ  RUNNING     FREE             2024-07-05T08:41:49+0000
 mNTAJoqyMRHDyDoLTCSjPn  CREATED     IN_FLIGHT        2024-07-05T13:11:59+0000
 ```
-The older worker is removed still the new worker is deployed. Run `everai worker list -a`, you can see is new worker is running.  
+The original worker is terminated still the new worker is deployed. Run `everai worker list -a`, you can see is new worker is running.  
 
 ```bash
 ID                      STATUS      DETAIL_STATUS    CREATED_AT                DELETED_AT
@@ -65,6 +67,8 @@ hello world
 
 ## update image  
 If your app is deployed in EverAI platform, when you want to update your code, you can run `everai app update`. [EverAI](https://everai.expvent.com) platform supports app hot upgrade,  and your application service will always be running online during the entire upgrade and update process.  
+
+The following example is based on the app in the [quickstart](https://github.com/everai-example/get-start).  
 
 Run `everai worker list`, you can see a worker in running.  
 
@@ -106,7 +110,7 @@ from everai.image import Builder
 
 IMAGE = 'quay.io/<username>/<repo>:<tag>'
 ```
-Aftering build image, you can run the following command to upgrade your app.  
+Aftering build image, you can run the following command to update your app.  
 
 ```bash
 everai app update

@@ -3,6 +3,8 @@
 
 如果你的应用已经在[EverAI](https://everai.expvent.com)平台云端部署，当你需要更新卷中的文件内容时，可以使用`everai app update`。[EverAI](https://everai.expvent.com)平台支持应用热升级，你的应用服务在整个升级更新过程中，始终处于在线运行状态。  
 
+以下示例基于[快速入门](https://github.com/everai-example/get-start)中的应用。  
+
 运行`everai worker list`，看到有一个worker正在运行中。  
 ```bash
 ID                      STATUS    DETAIL_STATUS    CREATED_AT                DELETED_AT
@@ -66,6 +68,8 @@ hello world
 ## update image  
 
 如果你的应用已经在[EverAI](https://everai.expvent.com)平台云端部署，当你需要更新你应用中的代码时，可以使用`everai app update`。[EverAI](https://everai.expvent.com)平台支持应用热升级，你的应用服务在整个升级更新过程中，始终处于在线运行状态。  
+
+以下示例基于[快速入门](https://github.com/everai-example/get-start)中的应用。  
 
 运行`everai worker list`，看到有一个worker正在运行中。  
 ```bash
