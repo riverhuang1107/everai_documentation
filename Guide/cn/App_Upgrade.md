@@ -70,7 +70,7 @@ hello world
 ```bash
 ID                      STATUS    DETAIL_STATUS    CREATED_AT                DELETED_AT
 ----------------------  --------  ---------------  ------------------------  ------------
-dEXndYfRrpqwAirhBdugYN  RUNNING   FREE             2024-05-11 14:54:27+0800
+PNLENbRP7AabNy6ZQWTogb  RUNNING   FREE             2024-07-05T06:45:19+0000
 ```
 
 使用`curl`执行测试用例，在终端显示如下的数据信息。服务器端向客户端持续推送消息。  
@@ -109,19 +109,20 @@ IMAGE = 'quay.io/<username>/<repo>:<tag>'
 ```bash
 everai app update
 ```
-执行`everai app list`，可以看到需要被更新的应用的状态是`PREPARING`。  
-```bash
-NAME          STATUS     CREATED_AT                ROUTE_NAME
-------------  ---------  ------------------------  ------------
-test-start-5  PREPARING  2024-05-11 14:54:25+0800  test-start-5
-```
 
-运行`everai worker list`，看到原来在运行的worker正处于`REMOVE`状态，新的worker已经在运行中。  
+运行`everai worker list -a`，可以看到新的worker正处于`INITIALIZED`状态。  
 ```bash
-ID                      STATUS    DETAIL_STATUS    CREATED_AT                DELETED_AT
-----------------------  --------  ---------------  ------------------------  ------------
-dEXndYfRrpqwAirhBdugYN  RUNNING   REMOVE           2024-05-11 14:54:27+0800
-SeaNG9f6hKcQ9J3X93GQEx  RUNNING   FREE             2024-05-11 15:11:37+0800
+ID                      STATUS       DETAIL_STATUS    CREATED_AT                DELETED_AT
+----------------------  -----------  ---------------  ------------------------  ------------
+PNLENbRP7AabNy6ZQWTogb  RUNNING      FREE             2024-07-05T06:45:19+0000
+kEEBkaoEaZrxPgzab2ChjQ  INITIALIZED  IN_FLIGHT        2024-07-05T08:41:49+0000
+```
+直到新的worker处于`RUNNING`状态，原来的worker已经处于`TERMINATED`状态。
+```bash
+ID                      STATUS      DETAIL_STATUS    CREATED_AT                DELETED_AT
+----------------------  ----------  ---------------  ------------------------  ------------------------
+PNLENbRP7AabNy6ZQWTogb  TERMINATED                   2024-07-05T06:45:19+0000  2024-07-05T08:42:28+0000
+kEEBkaoEaZrxPgzab2ChjQ  RUNNING     FREE             2024-07-05T08:41:49+0000
 ```
 
 再次使用`curl`执行测试用例，在终端控制台显示如下的数据信息。可以看到服务器端向客户端持续推送消息已经被更新。  
