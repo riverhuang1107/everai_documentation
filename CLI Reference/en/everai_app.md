@@ -93,7 +93,9 @@ Update an app from manifest file or an App object in `app.py`.
 
 `--from-file` indicates a manifest file for update app, otherwise, everai command line tools find App in `app.py`.  
 
-This operation may be trigger the worker rollout, if image, command ... changed  
+This operation may be trigger the worker rollout, if image, command ... changed.
+
+For detailed guidance on app update, check out [App Update](https://expvent.com/documentation/docs/Guide/App_Upgrade).
   
 **Example**:  
 

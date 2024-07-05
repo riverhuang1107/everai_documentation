@@ -86,7 +86,13 @@ everai app get [-h] [--namespace [NAMESPACE]] [--output [OUTPUT]] name
                         输出格式，可选（json, yaml, table, wide），默认为table
 
 ## everai app update             
-通过manifest文件或者在`app.py`中创建App对象来更新一个应用。
+通过manifest文件或者在`app.py`中创建App对象来更新一个应用。  
+
+`--from-file`通过一个manifest文件来更新应用，否则命令行工具会更新`app.py`中的应用.  
+
+这个操作可能会引起worker容器的重新部署，比如镜像发生变化。
+
+详细介绍请参考[App Update](https://expvent.com/documentation/zh-cn/docs/Guide/App_Upgrade)。
 
 **示例**:  
 
