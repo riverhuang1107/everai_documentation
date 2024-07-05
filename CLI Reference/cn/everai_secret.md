@@ -31,11 +31,13 @@ everai secret create your-quay-io-secret-name \
 
 通过一个`yaml`文件创建一个密钥。  
 
-首先创建一个名为test-secret的`yaml`文件，文件内容如下所示：  
+首先创建一个名为test-secret的`yaml`文件，文件内容中的数据值需要先经过base64编码，文件内容如下所示：  
 
 ```bash
-username: foo
-password: bar
+name: your-quay-io-secret-name
+data:
+  password: YmFyCg==
+  username: Zm9vCg==
 ```
 然后，运行如下所示命令创建密钥。 
 
@@ -138,11 +140,13 @@ everai secret update \
 
 通过一个`yaml`文件创建一个密钥。  
 
-首先创建一个名为test-secret的`yaml`文件，文件内容如下所示：  
+首先创建一个名为test-secret的`yaml`文件，文件内容中的数据值需要先经过base64编码，文件内容如下所示：  
 
 ```bash
-username: bar
-password: foo
+name: your-quay-io-secret-name
+data:
+  password: YmFyCg==
+  username: Zm9vCg==
 ```
 然后，运行如下所示命令更新密钥。 
  

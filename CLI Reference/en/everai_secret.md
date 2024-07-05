@@ -31,10 +31,12 @@ everai secret create your-quay-io-secret-name \
 
 Create a Secret from a `yaml` file.  
 
-Create a `yaml` file named test-secret firstly, the data of the example like this: 
+Create a `yaml` file named test-secret firstly, the data values ​​in the file content need to be base64 encoded. The data of the example like this: 
 ```bash
-username: foo
-password: bar
+name: your-quay-io-secret-name
+data:
+  password: YmFyCg==
+  username: Zm9vCg==
 ```
 Then, run the command like this:  
 ```bash  
@@ -134,10 +136,12 @@ everai secret update \
 
 Update a Secret from a `yaml` file.  
 
-Create a `yaml` file named test-secret firstly, the data of the example like this: 
+Create a `yaml` file named test-secret firstly, the data values ​​in the file content need to be base64 encoded. The data of the example like this: 
 ```bash
-username: bar
-password: foo
+name: your-quay-io-secret-name
+data:
+  password: YmFyCg==
+  username: Zm9vCg==
 ```
 Then, run the command like this:  
 ```bash  
