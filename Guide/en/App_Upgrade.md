@@ -71,7 +71,7 @@ Run `everai worker list`, you can see a worker in running.
 ```bash
 ID                      STATUS    DETAIL_STATUS    CREATED_AT                DELETED_AT
 ----------------------  --------  ---------------  ------------------------  ------------
-dEXndYfRrpqwAirhBdugYN  RUNNING   FREE             2024-05-11 14:54:27+0800
+PNLENbRP7AabNy6ZQWTogb  RUNNING   FREE             2024-07-05T06:45:19+0000
 ```
 Use `curl` to run the test case, the output of the example is on the terminal. This example sends active messages from the server to the client.  
 
@@ -110,19 +110,14 @@ Aftering build image, you can run the following command to upgrade your app.
 ```bash
 everai app update
 ```
-Run `everai app list`, now you can see the app status is `PREPARING`. 
-```bash
-NAME          STATUS     CREATED_AT                ROUTE_NAME
-------------  ---------  ------------------------  ------------
-test-start-5  PREPARING  2024-05-11 14:54:25+0800  test-start-5
-```
-Run `everai worker list`, you can see the older worker's detail status is `REMOVE`. And the new worker is running now.  
+
+Run `everai worker list -a`, you can see the new worker's detail status is `INITIALIZED`. 
 
 ```bash
-ID                      STATUS    DETAIL_STATUS    CREATED_AT                DELETED_AT
-----------------------  --------  ---------------  ------------------------  ------------
-dEXndYfRrpqwAirhBdugYN  RUNNING   REMOVE           2024-05-11 14:54:27+0800
-SeaNG9f6hKcQ9J3X93GQEx  RUNNING   FREE             2024-05-11 15:11:37+0800
+ID                      STATUS       DETAIL_STATUS    CREATED_AT                DELETED_AT
+----------------------  -----------  ---------------  ------------------------  ------------
+PNLENbRP7AabNy6ZQWTogb  RUNNING      FREE             2024-07-05T06:45:19+0000
+kEEBkaoEaZrxPgzab2ChjQ  INITIALIZED  IN_FLIGHT        2024-07-05T08:41:49+0000
 ```
 Use `curl` to run the test case again, the new output of the example is on the terminal. This example sends  new active messages from the server to the client.  
 
