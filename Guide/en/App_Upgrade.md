@@ -1,6 +1,6 @@
-# App Upgrade
-## everai app upgrade --volume-requests
-If your app is deployed in [EverAI](https://everai.expvent.com) platform, when you want to update your files in volume, you can run `everai app upgrade --volume-requests`. [EverAI](https://everai.expvent.com) platform support app hot upgrade,  and your application service will always be running online during the entire upgrade and update process.  
+# App Update
+## update volume
+If your app is deployed in [EverAI](https://everai.expvent.com) platform, when you want to update your files in volume, you can run `everai app update`. [EverAI](https://everai.expvent.com) platform support app hot upgrade,  and your application service will always be running online during the entire upgrade and update process.  
 
 Run `everai worker list`, you can see a worker in running.  
 
@@ -13,7 +13,7 @@ bqZJ4eTjMmEbP9ncrvPgGg  RUNNING   FREE             2024-05-11 19:24:08+0800
 Use `curl` to run the test case, the output of the example is on the terminal.  
 
 ```bash
-curl -H'Authorization: Bearer <your_token>' https://everai.expvent.com/api/routes/v1/<your app route name>/show-volume
+curl -H'Authorization: Bearer <your_token>' https://everai.expvent.com/api/routes/v1/<your namespace>/<your app name>/show-volume
 hello world
 hello world
 ```
@@ -36,7 +36,7 @@ Return to your app's directory, run `everai app prepare` to push the new file in
 Run the following command to finish app upgrade.  
 
 ```bash
-everai app upgrade --volume-requests
+everai app update
 ```
 Run `everai worker list`, you can see the older worker is stiall running. And the new worker is deploying now.  
 
@@ -56,15 +56,15 @@ GtxtbdHn2rFEkZqZxSesyE  RUNNING   FREE             2024-05-12 18:20:38+0800
 Use `curl` to run the test case agian, the new output of the example is on the terminal now.  
 
 ```bash
-curl -H'Authorization: Bearer <your_token>' https://everai.expvent.com/api/routes/v1/<your app route name>/show-volume
+curl -H'Authorization: Bearer <your_token>' https://everai.expvent.com/api/routes/v1/<your namespace>/<your app name>/show-volume
 hello world
 hello world
 hello world
 hello world
 ```
 
-## everai app upgrade --image  
-If your app is deployed in EverAI platform, when you want to update your code, you can run `everai app upgrade --image`. [EverAI](https://everai.expvent.com) platform supports app hot upgrade,  and your application service will always be running online during the entire upgrade and update process.  
+## update image  
+If your app is deployed in EverAI platform, when you want to update your code, you can run `everai app update`. [EverAI](https://everai.expvent.com) platform supports app hot upgrade,  and your application service will always be running online during the entire upgrade and update process.  
 
 Run `everai worker list`, you can see a worker in running.  
 
@@ -76,7 +76,7 @@ dEXndYfRrpqwAirhBdugYN  RUNNING   FREE             2024-05-11 14:54:27+0800
 Use `curl` to run the test case, the output of the example is on the terminal. This example sends active messages from the server to the client.  
 
 ```bash
-curl -H'Authorization: Bearer <your_token>' https://everai.expvent.com/api/routes/v1/<your app route name>/sse
+curl -H'Authorization: Bearer <your_token>' https://everai.expvent.com/api/routes/v1/<your namespace>/<your app name>/sse
 hello again 0
 
 hello again 1
@@ -108,7 +108,7 @@ IMAGE = 'quay.io/<username>/<repo>:<tag>'
 Aftering build image, you can run the following command to upgrade your app.  
 
 ```bash
-everai app upgrade --image
+everai app update
 ```
 Run `everai app list`, now you can see the app status is `PREPARING`. 
 ```bash
@@ -127,7 +127,7 @@ SeaNG9f6hKcQ9J3X93GQEx  RUNNING   FREE             2024-05-11 15:11:37+0800
 Use `curl` to run the test case again, the new output of the example is on the terminal. This example sends  new active messages from the server to the client.  
 
 ```bash
-curl -H'Authorization: Bearer <your_token>' https://everai.expvent.com/api/routes/v1/<your app route name>/sse
+curl -H'Authorization: Bearer <your_token>' https://everai.expvent.com/api/routes/v1/<your namespace>/<your app name>/sse
 hello world again 0
 
 
@@ -140,9 +140,9 @@ hello world again 2
 hello world again 3
 ```
 
-## everai app upgrade --resource-requests
+## update resource
 
-If your application has been deployed on the [EverAI](https://everai.expvent.com) platform cloud, you can use `everai app upgrade ----resource-requests` when you need to adjust your computing resources (CPU, memory, number of GPU cards or GPU model). The [EverAI](https://everai.expvent.com) platform supports hot application upgrades, and your application services are always running online during the entire upgrade and update process.
+If your application has been deployed on the [EverAI](https://everai.expvent.com) platform cloud, you can use `everai app update` when you need to adjust your computing resources (CPU, memory, number of GPU cards or GPU model). The [EverAI](https://everai.expvent.com) platform supports hot application upgrades, and your application services are always running online during the entire upgrade and update process.
 
 Open the `app.py` file, and in the code that creates and defines an app instance through the App class, modify the `resource_requests` parameter:  
 
@@ -161,7 +161,7 @@ resource_requests=ResourceRequests(
 After saving and exiting the `app.py` file, execute the following command to complete the adjustment of application computing resources.  
 
 ```bash
-everai app upgrade ----resource-requests
+everai app update
 ```
 
 Run `everai app list`, now you can see the app status is `PREPARING`. 

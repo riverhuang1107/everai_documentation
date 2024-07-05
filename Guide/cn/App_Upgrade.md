@@ -1,7 +1,7 @@
 # 应用热升级
-## everai app upgrade --volume-requests
+## update volume
 
-如果你的应用已经在[EverAI](https://everai.expvent.com)平台云端部署，当你需要更新卷中的文件内容时，可以使用`everai app upgrade --volume-requests`。[EverAI](https://everai.expvent.com)平台支持应用热升级，你的应用服务在整个升级更新过程中，始终处于在线运行状态。  
+如果你的应用已经在[EverAI](https://everai.expvent.com)平台云端部署，当你需要更新卷中的文件内容时，可以使用`everai app update`。[EverAI](https://everai.expvent.com)平台支持应用热升级，你的应用服务在整个升级更新过程中，始终处于在线运行状态。  
 
 运行`everai worker list`，看到有一个worker正在运行中。  
 ```bash
@@ -12,7 +12,7 @@ bqZJ4eTjMmEbP9ncrvPgGg  RUNNING   FREE             2024-05-11 19:24:08+0800
 
 使用`curl`执行测试用例，在终端显示如下的数据信息。  
 ```bash
-curl -H'Authorization: Bearer <your_token>' https://everai.expvent.com/api/routes/v1/<your app route name>/show-volume
+curl -H'Authorization: Bearer <your_token>' https://everai.expvent.com/api/routes/v1/<your namespace>/<your app name>/show-volume
 hello world
 hello world
 ```
@@ -35,7 +35,7 @@ hello world
 
 执行如下命令，完成应用的升级操作。  
 ```bash
-everai app upgrade --volume-requests
+everai app update
 ```
 
 再次运行`everai worker list`，看到原来的worker依然在运行中。同时一个全新的worker已经在部署中。  
@@ -55,16 +55,16 @@ GtxtbdHn2rFEkZqZxSesyE  RUNNING   FREE             2024-05-12 18:20:38+0800
 
 再次使用`curl`执行测试用例，在控制台显示如下的数据信息。可以看到显示的数据信息已经完成更新。  
 ```bash
-curl -H'Authorization: Bearer <your_token>' https://everai.expvent.com/api/routes/v1/<your app route name>/show-volume
+curl -H'Authorization: Bearer <your_token>' https://everai.expvent.com/api/routes/v1/<your namespace>/<your app name>/show-volume
 hello world
 hello world
 hello world
 hello world
 ```
 
-## everai app upgrade --image  
+## update image  
 
-如果你的应用已经在[EverAI](https://everai.expvent.com)平台云端部署，当你需要更新你应用中的代码时，可以使用`everai app upgrade --image`。[EverAI](https://everai.expvent.com)平台支持应用热升级，你的应用服务在整个升级更新过程中，始终处于在线运行状态。  
+如果你的应用已经在[EverAI](https://everai.expvent.com)平台云端部署，当你需要更新你应用中的代码时，可以使用`everai app update`。[EverAI](https://everai.expvent.com)平台支持应用热升级，你的应用服务在整个升级更新过程中，始终处于在线运行状态。  
 
 运行`everai worker list`，看到有一个worker正在运行中。  
 ```bash
@@ -75,7 +75,7 @@ dEXndYfRrpqwAirhBdugYN  RUNNING   FREE             2024-05-11 14:54:27+0800
 
 使用`curl`执行测试用例，在终端显示如下的数据信息。服务器端向客户端持续推送消息。  
 ```bash
-curl -H'Authorization: Bearer <your_token>' https://everai.expvent.com/api/routes/v1/<your app route name>/sse
+curl -H'Authorization: Bearer <your_token>' https://everai.expvent.com/api/routes/v1/<your namespace>/<your app name>/sse
 hello again 0
 
 hello again 1
@@ -107,7 +107,7 @@ IMAGE = 'quay.io/<username>/<repo>:<tag>'
 
 镜像构建完成后，你需要执行如下命令进行应用更新。  
 ```bash
-everai app upgrade --image
+everai app update
 ```
 执行`everai app list`，可以看到需要被更新的应用的状态是`PREPARING`。  
 ```bash
@@ -126,7 +126,7 @@ SeaNG9f6hKcQ9J3X93GQEx  RUNNING   FREE             2024-05-11 15:11:37+0800
 
 再次使用`curl`执行测试用例，在终端控制台显示如下的数据信息。可以看到服务器端向客户端持续推送消息已经被更新。  
 ```bash
-curl -H'Authorization: Bearer <your_token>' https://everai.expvent.com/api/routes/v1/<your app route name>/sse
+curl -H'Authorization: Bearer <your_token>' https://everai.expvent.com/api/routes/v1/<your namespace>/<your app name>/sse
 hello world again 0
 
 
@@ -139,9 +139,9 @@ hello world again 2
 hello world again 3
 ```
 
-## everai app upgrade --resource-requests
+## update resource
 
-如果你的应用已经在[EverAI](https://everai.expvent.com)平台云端部署，当你需要调整你的计算资源（CPU，内存，GPU卡数量或者GPU型号）时，可以使用`everai app upgrade ----resource-requests`。[EverAI](https://everai.expvent.com)平台支持应用热升级，你的应用服务在整个升级更新过程中，始终处于在线运行状态。  
+如果你的应用已经在[EverAI](https://everai.expvent.com)平台云端部署，当你需要调整你的计算资源（CPU，内存，GPU卡数量或者GPU型号）时，可以使用`everai app update`。[EverAI](https://everai.expvent.com)平台支持应用热升级，你的应用服务在整个升级更新过程中，始终处于在线运行状态。  
 
 打开`app.py`文件，在通过App类来创建定义一个app实例的代码中，修改`resource_requests`参数：  
 ```python
@@ -159,7 +159,7 @@ resource_requests=ResourceRequests(
 保存退出`app.py`文件后，执行如下命令，完成应用计算资源的调整。  
 
 ```bash
-everai app upgrade ----resource-requests
+everai app update
 ```
 
 执行`everai app list`，可以看到需要被更新的应用的状态是`PREPARING`。  
