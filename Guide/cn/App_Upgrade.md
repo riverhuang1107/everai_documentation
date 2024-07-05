@@ -163,6 +163,4 @@ resource_requests=ResourceRequests(
 everai app update
 ```
 
-执行`everai app list`，可以看到需要被更新的应用的状态是`PREPARING`。  
-
-运行`everai worker list`，看到原来在运行的worker正处于`REMOVE`状态，新的worker已经在运行中。
+运行`everai worker list -a`，看到原来在运行的worker正处于`TERMINATED`状态，新的worker已经在运行中。

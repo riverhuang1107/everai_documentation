@@ -130,7 +130,7 @@ PNLENbRP7AabNy6ZQWTogb  TERMINATED                   2024-07-05T06:45:19+0000  2
 kEEBkaoEaZrxPgzab2ChjQ  RUNNING     FREE             2024-07-05T08:41:49+0000
 ```
 
-Use `curl` to run the test case again, the new output of the example is on the terminal. This example sends  new active messages from the server to the client.  
+Use `curl` to run the test case again, the new output of the example is on the terminal. This example sends new active messages from the server to the client.  
 
 ```bash
 curl -H'Authorization: Bearer <your_token>' https://everai.expvent.com/api/routes/v1/<your namespace>/<your app name>/sse
@@ -170,7 +170,5 @@ After saving and exiting the `app.py` file, execute the following command to com
 everai app update
 ```
 
-Run `everai app list`, now you can see the app status is `PREPARING`. 
-
-Run `everai worker list`, you can see the older worker's detail status is `REMOVE`. And the new worker is running now.  
+Run `everai worker list -a`, you can see the original worker's detail status is `TERMINATED`. And the new worker is running now.  
 
