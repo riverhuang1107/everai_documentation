@@ -253,7 +253,8 @@ everai app queue <your app name>
 ```bash
   QUEUE_INDEX  CREATE_AT                 QUEUE_REASON
 -------------  ------------------------  --------------
-            0  2024-05-07 19:26:12+0800  WorkerBusy
+            0  2024-07-03T22:24:07+0000  WorkerBusy
+            1  2024-07-03T22:24:07+0000  WorkerBusy
 ```
 
 **格式**: 
