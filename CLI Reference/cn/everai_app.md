@@ -275,7 +275,7 @@ everai app queue [-h] [-n [NAMESPACE]] [--output [OUTPUT]] name
                         输出格式，可选（json, yaml, table, wide），默认为table
 
 ## everai app event           
-List events of app  
+显示应用事件  
 
 **示例**:  
 ```bash
