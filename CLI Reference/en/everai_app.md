@@ -27,7 +27,7 @@ everai app [-h] {create,run,get,update,pause,resume,prepare,list,ls,queue,q,even
 ## everai app create             
 Create an app from manifest file or an App object in `app.py`.
 
-`--from-file` indicates a manifest file for create app, otherwise, everai command line tool find app setup in `app.py`.  
+`--from-file` indicates a manifest file for create app, otherwise, everai command line tool finds app setup in `app.py`.  
 
 **Example**:
 ```bash
@@ -91,7 +91,7 @@ everai app get [-h] [--namespace [NAMESPACE]] [--output [OUTPUT]] name
 ## everai app update             
 Update an app from manifest file or an App object in `app.py`.
 
-`--from-file` indicates a manifest file for update app, otherwise, everai command line tools find App in `app.py`.  
+`--from-file` indicates a manifest file for update app, otherwise, everai command line tool finds App in `app.py`.  
 
 This operation may be trigger the worker rollout, if image, command ... changed.
 
@@ -340,7 +340,7 @@ ID                      STATUS    DETAIL_STATUS    CREATED_AT                DEL
 4gexdRcjZyAwPGNeNFNHpr  RUNNING   FREE             2024-06-25T12:19:05+0000
 mHFmmq7fJWWtERAyFDLrcA  RUNNING   FREE             2024-06-25T12:19:05+0000
 ```
-If the app name is not attached, output shows the list of workers in current app directory.  
+If the app name is not attached, everai command line tool finds app name in `app.py`.    
 
 ```bash
 everai app worker list
