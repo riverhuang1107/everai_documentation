@@ -134,6 +134,8 @@ curl --no-buffer http://<your ip>:8866/sse
 ## 构建镜像
 这步需要使用`Dockerfile`来为你的应用构建容器镜像。  
 
+这是一个关于[Dockerfile](https://github.com/everai-example/get-start-manifest/blob/main/Dockerfile)的示例代码。
+
 ```
 WORKDIR /workspace
 

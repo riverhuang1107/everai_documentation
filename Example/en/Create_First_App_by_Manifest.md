@@ -133,6 +133,8 @@ curl --no-buffer http://<your ip>:8866/sse
 ## Build image
 This step will build the container image using `Dockerfile`.    
 
+There is an example code in [Dockerfile](https://github.com/everai-example/get-start-manifest/blob/main/Dockerfile).
+
 ```
 WORKDIR /workspace
 
