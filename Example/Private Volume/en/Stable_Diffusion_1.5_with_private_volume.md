@@ -27,6 +27,17 @@ everai secret create your-huggingface-secret-name \
   --from-literal token-key-as-your-wish=<your huggingface token>
 ```
 
+## Create configmap
+>Optional, but you can use configmap for adjust autoscaling policy after deploying the image. 
+```shell
+everai configmap create sd15-configmap \ 
+  --from-literal min_workers=1 \
+  --from-literal max_workers=5 \
+  --from-literal max_queue_size=2 \
+  --from-literal scale_up_step=1 \
+  --from-literal max_idle_time=60
+```
+
 ## Write your app code in python
 ### Basic setup
 There is an example code in [app.py](https://github.com/everai-example/stable-diffusion-v1-5-with-private-volume/blob/main/app.py).  
