@@ -68,7 +68,6 @@ Now you can write your own Python code to implement the API endpoint service. Th
 
 ```python
 import os
-import time
 
 import flask
 from flask import Flask
@@ -111,6 +110,8 @@ curl http://<your ip>:8866/show-volume
 In addition, in the same application, you can implement multiple API endpoint services. This example uses `flask` to implement a external web service that sends active messages from the server to the client.  
 
 ```python
+import time
+
 # https://everai.expvent.com/api/routes/v1/default/get-start-manifest/sse
 # http://localhost:8866/sse
 @app.route('/sse', methods=['GET'])

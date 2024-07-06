@@ -68,7 +68,6 @@ everai volume push get-start-volume
 
 ```python
 import os
-import time
 
 import flask
 from flask import Flask
@@ -112,6 +111,8 @@ curl http://<your ip>:8866/show-volume
 此外，在同一个应用中，你可以实现多个API端点服务。这里的示例使用`flask`又实现了一个服务器端向客户端推送消息的对外服务。
 
 ```python
+import time
+
 # https://everai.expvent.com/api/routes/v1/default/get-start-manifest/sse
 # http://localhost:8866/sse
 @app.route('/sse', methods=['GET'])
