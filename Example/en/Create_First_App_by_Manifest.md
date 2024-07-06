@@ -69,7 +69,6 @@ Now you can write your own Python code to implement the API endpoint service. Th
 ```python
 import os
 
-import flask
 from flask import Flask
 
 app = Flask(__name__)
@@ -111,6 +110,7 @@ In addition, in the same application, you can implement multiple API endpoint se
 
 ```python
 import time
+import flask
 
 # https://everai.expvent.com/api/routes/v1/default/get-start-manifest/sse
 # http://localhost:8866/sse
