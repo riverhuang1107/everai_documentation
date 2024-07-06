@@ -343,7 +343,7 @@ ID                      STATUS    DETAIL_STATUS    CREATED_AT                DEL
 mHFmmq7fJWWtERAyFDLrcA  RUNNING   FREE             2024-06-25T12:19:05+0000
 ```
 
-如果不输入应用名称，命令行工具会根据`app.py`中的应用名称显示worker列表。  
+如果不输入应用名称，在当前应用目录下命令行工具会根据`app.py`中的应用名称显示worker列表。  
   
 ```bash
 everai app worker list

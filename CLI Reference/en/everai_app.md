@@ -340,7 +340,7 @@ ID                      STATUS    DETAIL_STATUS    CREATED_AT                DEL
 4gexdRcjZyAwPGNeNFNHpr  RUNNING   FREE             2024-06-25T12:19:05+0000
 mHFmmq7fJWWtERAyFDLrcA  RUNNING   FREE             2024-06-25T12:19:05+0000
 ```
-If the app name is not attached, everai command line tool finds app name in `app.py`.    
+If the app name is not attached, everai command line tool finds app name in `app.py` which is in current app directory.    
 
 ```bash
 everai app worker list
