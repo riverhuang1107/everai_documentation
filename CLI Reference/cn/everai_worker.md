@@ -41,7 +41,7 @@ ID                      STATUS    DETAIL_STATUS    CREATED_AT                DEL
 ```
 **格式**:  
 ```bash  
-everai worker list [-h] [--output [OUTPUT]] [--all] [--recent-days [RECENT_DAYS]] app_name
+everai worker list [-h] [--output [OUTPUT]] [--all] [--recent-days [RECENT_DAYS]] [--namespace [NAMESPACE]] [app_name]
 ```
 
 **参数**:  
