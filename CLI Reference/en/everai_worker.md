@@ -63,11 +63,13 @@ everai worker list [-h] [--output [OUTPUT]] [--all] [--recent-days [RECENT_DAYS]
 Run a command in a running worker  
 
 **Example**:  
+when you want to access the bash shell environment of the worker container, you can execute the following command:  
+
 ```bash 
 everai worker exec -it dweBRSPD395BvtBDsZYum8 bash
 ```
 
-The result could be shown like this:  
+After the command is executed, the current terminal environment has entered the `workspace` directory in the worker container.  
 
 ```bash 
 root@b0b6f096aeab:/workspace#
