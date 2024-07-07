@@ -17,11 +17,11 @@ everai secret [-h] {create,delete,list,ls,get,update} ...
 * `-h, --help`            显示帮助信息  
 
 ## everai secret create              
-从文件或者字符串创建密钥
+通过配置文件或者字符串键值对创建密钥
 
 **示例**:  
 
-从字符串创建一个密钥。  
+通过命令行设置字符串键值对创建一个密钥。  
 
 ```bash  
 everai secret create your-quay-io-secret-name \
@@ -29,7 +29,7 @@ everai secret create your-quay-io-secret-name \
   --from-literal password=<your password>
 ```
 
-通过一个`yaml`文件创建一个密钥。  
+通过一个`yaml`配置文件创建一个密钥。  
 
 首先创建一个名为test-secret的`yaml`文件，文件内容中的数据值需要先经过base64编码，文件内容如下所示：  
 
@@ -56,9 +56,9 @@ everai secret create [-h] [-f FROM_FILE] [-l FROM_LITERAL] [name]
 **选项**:  
 * `-h, --help`            显示帮助信息  
 * `-l FROM_LITERAL, --from-literal FROM_LITERAL`
-                        从字符串创建密钥，举例：`--from-literal name=user` 
+                        通过命令行设置字符串键值对的方式创建密钥，举例：`--from-literal name=user` 
 * `-f FROM_FILE, --from-file FROM_FILE`
-                        通过文件创建密钥，举例：`--from-file filename`  
+                        通过配置文件的方式创建密钥，举例：`--from-file filename`  
 
 ## everai secret delete              
 删除密钥
@@ -126,11 +126,11 @@ everai secret get [-h] [--output [OUTPUT]] name
                         输出格式，可选（json, yaml, table, wide），默认为table  
 
 ## everai secret update              
-从文件或者字符串更新密钥  
+通过配置文件或者字符串键值对更新密钥  
 
 **示例**:  
 
-从字符串更新一个密钥。  
+通过命令行设置字符串键值对更新一个密钥。  
 
 ```bash
 everai secret update \
@@ -138,7 +138,7 @@ everai secret update \
   --from-literal password=<your password> your-quay-io-secret-name
 ```
 
-通过一个`yaml`文件创建一个密钥。  
+通过一个`yaml`配置文件更新一个密钥。  
 
 首先创建一个名为test-secret的`yaml`文件，文件内容中的数据值需要先经过base64编码，文件内容如下所示：  
 
@@ -165,7 +165,7 @@ everai secret update [-h] [-f FROM_FILE] [-l FROM_LITERAL] [name]
 **选项**:  
 * `-h, --help`            显示帮助信息  
 * `-l FROM_LITERAL, --from-literal FROM_LITERAL`
-                        通过字符串更新密钥，举例：`--from-literal name=user`  
+                        通过命令行设置字符串键值对的方式更新密钥，举例：`--from-literal name=user`  
 * `-f FROM_FILE, --from-file FROM_FILE`
-                        通过文件更新密钥，举例：`--from-file filename`。文件类型支持简单的键值对的YAML文件，值必须是字符串  
+                        通过配置文件的方式更新密钥，举例：`--from-file filename`。文件类型支持简单的键值对的YAML文件，值必须是字符串  
 
