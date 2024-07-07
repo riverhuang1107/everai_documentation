@@ -39,3 +39,21 @@ NORMAL  AppSever   2024-07-06T14:57:06+0000  Successfully deployed app
       volume:
         volume: test-start-volume          # use a a private volume or a public volume from other user
 ```
+
+## 应用部署到EverAI平台后，是否支持在worker容器中运行命令？
+支持。你可以通过命令行工具指令`everai app worker exec`在运行中的worker容器中运行命令。
+
+举例来说，当你想访问worker容器的bash shell环境，可以执行如下命令：  
+
+```bash 
+everai worker exec -it dweBRSPD395BvtBDsZYum8 bash
+```
+
+命令执行后，当前的终端环境已经进入到worker容器内`workspace`目录下。  
+
+```bash 
+root@b0b6f096aeab:/workspace#
+```
+
+`everai app worker exec`的详细使用方法请参考[everai app worker exec](https://expvent.com/documentation/zh-cn/docs/CLI%20Reference/everai_app#everai-app-worker-exec)。
+

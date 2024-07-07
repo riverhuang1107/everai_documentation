@@ -41,3 +41,21 @@ If your application is created in manifest mode, you can define your multiple da
       volume:
         volume: test-start-volume          # use a a private volume or a public volume from other user
 ```
+
+## After an application is deployed to the EverAI platform, does it support running commands in the worker container?
+
+Support. You can run commands in a running worker container through the command line tool command `everai app worker exec`.
+
+For example, when you want to access the bash shell environment of the worker container, you can execute the following command:
+
+```bash 
+everai worker exec -it dweBRSPD395BvtBDsZYum8 bash
+```
+
+After the command is executed, the current terminal environment has entered the `workspace` directory in the worker container.
+
+```bash 
+root@b0b6f096aeab:/workspace#
+```
+
+For detailed usage of `everai app worker exec`, please refer to [everai app worker exec](https://expvent.com/documentation/docs/CLI%20Reference/everai_app#everai-app-worker-exec)。
