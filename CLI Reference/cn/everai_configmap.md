@@ -18,11 +18,11 @@ everai configmap [-h] {create,delete,list,ls,get,update} ...
 * `-h, --help`            显示帮助信息  
  
 ## everai configmap create              
-通过文件或者字符串创建ConfigMap  
+通过配置文件或者字符串键值对创建ConfigMap  
 
 **示例**:  
 
-从字符串创建一个ConfigMap。  
+通过命令行设置字符串键值对的方式创建一个ConfigMap。  
 
 ```bash  
 everai configmap create test-configmap \ 
@@ -33,7 +33,7 @@ everai configmap create test-configmap \
   --from-literal max_idle_time=60
 ```
 
-通过一个`yaml`文件创建一个ConfigMap。  
+通过一个`yaml`配置文件创建一个ConfigMap。  
 
 首先创建一个名为test-configmap的`yaml`文件，文件内容如下所示：  
 
@@ -63,9 +63,9 @@ everai configmap create [-h] [-f FROM_FILE] [-l FROM_LITERAL] [name]
 **选项**:  
 * `-h, --help`            显示帮助信息  
 * `-l FROM_LITERAL, --from-literal FROM_LITERAL`
-                        从字符串创建ConfigMap，举例：`--from-literal name=user`  
+                        通过命令行设置字符串键值对的方式创建一个ConfigMap，举例：`--from-literal name=user`  
 * `-f FROM_FILE, --from-file FROM_FILE`
-                        通过文件创建ConfigMap，举例：`--from-file filename`  
+                        通过配置文件的方式创建ConfigMap，举例：`--from-file filename`  
 
 ## everai configmap delete              
 删除ConfigMap  
@@ -131,11 +131,11 @@ everai configmap get [-h] [--output [OUTPUT]] name
                         输出格式，可选（json, yaml, table, wide），默认为table
 
 ## everai configmap update              
-通过文件或者字符串更新ConfigMap  
+通过配置文件或者字符串键值对更新ConfigMap  
 
 **示例**:  
 
-通过字符串更新ConfigMap。
+通过命令行设置字符串键值对的方式更新一个ConfigMap。
 
 ```bash  
 everai configmap update --from-literal min_workers=2 \
@@ -145,7 +145,7 @@ everai configmap update --from-literal min_workers=2 \
   --from-literal max_idle_time=60 test-configmap
 ```
 
-通过`yaml`文件更新ConfigMap。
+通过`yaml`配置文件更新ConfigMap。
 
 首先创建一个名为test-configmap的`yaml`文件，文件内容如下所示：  
 
@@ -176,5 +176,5 @@ everai configmap update [-h] [-f FROM_FILE] [-l FROM_LITERAL] [name]
 
 **选项**:  
 * `-h, --help`            显示帮助信息  
-* `-l FROM_LITERAL, --from-literal FROM_LITERAL`  通过字符串更新ConfigMap，举例：`--from-literal name=user`  
-* `-f FROM_FILE, --from-file FROM_FILE`  通过文件更新ConfigMap，举例：`--from-file filename`  
+* `-l FROM_LITERAL, --from-literal FROM_LITERAL`  通过命令行设置字符串键值对的方式更新ConfigMap，举例：`--from-literal name=user`  
+* `-f FROM_FILE, --from-file FROM_FILE`  通过配置文件更新ConfigMap，举例：`--from-file filename`  
