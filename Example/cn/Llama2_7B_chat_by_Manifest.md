@@ -128,6 +128,8 @@ if __name__ == '__main__':
 ## 构建镜像
 这步需要使用`Dockerfile`来为你的应用构建容器镜像。  
 
+这是一个[Dockerfile](https://github.com/everai-example/llama2-7b-chat-manifest-private/blob/main/Dockerfile)的示例代码。
+
 ```
 WORKDIR /workspace
 
