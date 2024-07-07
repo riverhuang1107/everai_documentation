@@ -61,11 +61,14 @@ everai worker list [-h] [--output [OUTPUT]] [--all] [--recent-days [RECENT_DAYS]
 在运行中的worker容器中执行命令  
 
 **示例**:  
+
+当你想访问worker容器的bash shell环境，可以执行如下命令：  
+
 ```bash 
 everai worker exec -it dweBRSPD395BvtBDsZYum8 bash
 ```
 
-用例输出的结果如下所示：  
+命令执行后，当前的终端环境已经进入到worker容器内`workspace`目录下。  
 
 ```bash 
 root@b0b6f096aeab:/workspace#
