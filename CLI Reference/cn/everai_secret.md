@@ -7,11 +7,11 @@ everai secret [-h] {create,delete,list,ls,get,update} ...
 ```
 
 **命令**:  
-* `create`              从文件或者字符串创建密钥 
+* `create`              通过配置文件或者字符串键值对创建密钥 
 * `delete`              删除密钥 
 * `list (ls)`           显示密钥列表 
 * `get`                 根据密钥名称查询密钥 
-* `update`              从文件或者字符串更新密钥 
+* `update`              通过配置文件或者字符串键值对更新密钥 
 
 **选项**:  
 * `-h, --help`            显示帮助信息  

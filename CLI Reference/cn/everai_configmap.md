@@ -8,11 +8,11 @@ everai configmap [-h] {create,delete,list,ls,get,update} ...
 
 **命令**:  
 
-* `create`              通过文件或者字符串创建ConfigMap  
+* `create`              通过配置文件或者字符串键值对创建ConfigMap  
 * `delete`              删除ConfigMap  
 * `list (ls)`           显示ConfigMap列表  
 * `get`                 显示一个ConfigMap的详细信息  
-* `update`              通过文件或者字符串更新ConfigMap  
+* `update`              通过配置文件或者字符串键值对更新ConfigMap  
 
 **选项**:  
 * `-h, --help`            显示帮助信息  
