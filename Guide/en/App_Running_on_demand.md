@@ -1,4 +1,4 @@
-# Run app on-demand
+# App Running on-demand
 In [EverAI](https://everai.expvent.com) platform, you always pay for what you use and nothing more. You never pay for idle resources — just actual compute time. This goal can be achieved through the reasonable use of `everai app pause` and `everai app resume`.  
 
 
