@@ -77,7 +77,7 @@ everai namespace create devops
 
 **Usage**:  
 ```bash  
-everai namespace create [-h] [--output [OUTPUT]] [name]
+everai namespace create [-h] [name]
 ```
 
 **Positional arguments**:  
@@ -85,8 +85,6 @@ everai namespace create [-h] [--output [OUTPUT]] [name]
 
 **Options**:  
 * `-h, --help`            show this help message and exit  
-* `--output [OUTPUT], -o [OUTPUT]`
-                        Output format, One of: (json, yaml, table, wide)
 
 ## everai namespace delete
 Delete a namespace   

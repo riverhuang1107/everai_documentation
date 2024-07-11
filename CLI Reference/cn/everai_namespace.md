@@ -81,7 +81,7 @@ everai namespace create devops
 
 **格式**:  
 ```bash  
-everai namespace create [-h] [--output [OUTPUT]] [name]
+everai namespace create [-h] [name]
 ```
 
 **参数**:  
@@ -89,8 +89,6 @@ everai namespace create [-h] [--output [OUTPUT]] [name]
 
 **选项**:  
 * `-h, --help`            显示帮助信息  
-* `--output [OUTPUT], -o [OUTPUT]`
-                        输出格式，可选（json, yaml, table, wide），默认为table
 
 ## everai namespace delete
 删除一个命名空间   
