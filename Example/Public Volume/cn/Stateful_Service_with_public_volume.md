@@ -7,8 +7,6 @@
 首先，为你的应用创建一个目录，进入应用目录后，首先需要使用你从[EverAI](https://everai.expvent.com)获取到的token进行登录。登录成功后，使用`everai app create`命令创建你的应用。
 ```bash
 everai login --token <your token>
-
-everai app create <your app name>
 ```
 ## 创建密钥
 
@@ -57,7 +55,7 @@ app = App(
     APP_NAME,
     image=image,
     volume_requests=[
-        VolumeRequest(name=VOLUME_NAME, create_if_not_exists=True),
+        VolumeRequest(name=VOLUME_NAME),
     ],
     secret_requests=[
         QUAY_IO_SECRET_NAME,
@@ -250,7 +248,7 @@ everai image build
 
 最后一步是把你的应用部署到EverAI。并使它保持在运行状态。  
 ```bash
-everai app deploy
+everai app create
 ```
 
 执行`everai app list`后，可以看到类似如下的输出结果。如果你的应用状态是`DEPLOYED`，意味着你的应用已经部署成功。  
