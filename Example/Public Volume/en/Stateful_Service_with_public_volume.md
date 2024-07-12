@@ -6,8 +6,6 @@ Create a directory for your app firstly. In your app directory, you should login
 
 ```bash
 everai login --token <your token>
-
-everai app create <your app name>
 ```
 ## Create secrets
 If you have already created a secret for your registry, you can skip this step.
@@ -253,7 +251,7 @@ everai image build
 The final step is to deploy your app to everai and keep it running.  
 
 ```bash
-everai app deploy
+everai app create
 ```
 After running `everai app list`, you can see the result similar to the following. If your app's status is `DEPLOYED`, it means that your app is deployed successfully.  
 
