@@ -50,7 +50,7 @@ app = App(
     APP_NAME,
     image=image,
     volume_requests=[
-        VolumeRequest(name=VOLUME_NAME, create_if_not_exists=True),
+        VolumeRequest(name=VOLUME_NAME),
     ],
     secret_requests=[
         QUAY_IO_SECRET_NAME,
