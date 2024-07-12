@@ -149,7 +149,6 @@ everai secret create quay-secret \
 
 首先，引入必要的EverAI Python类库。然后定义所需要用到的变量名，包括对象存储，访问镜像仓库的密钥，以及存放在对象存储中的文件等。使用`Image.from_registry`静态方法创建一个镜像实例。通过App类来创建定义一个app实例。  
 ```python
-import everai.utils.cmd
 from everai.app import App, context, VolumeRequest
 from everai.image import Image, BasicAuth
 from everai.resource_requests import ResourceRequests

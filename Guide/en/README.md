@@ -148,7 +148,6 @@ There is an example code in [app.py](https://github.com/everai-example/get-start
 First, import the required EverAI Python class library. Then define the variable names that need to be used, including the volume, the secret that accesses the image registry, and the file stored in the volume. Use the `Image.from_registry` static method to create a image instance. Create and define an app instance through the App class.  
 
 ```python
-import everai.utils.cmd
 from everai.app import App, context, VolumeRequest
 from everai.image import Image, BasicAuth
 from everai.resource_requests import ResourceRequests
