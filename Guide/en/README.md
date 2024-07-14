@@ -302,7 +302,7 @@ get-start                        default      DEPLOYED  1/1        2024-07-10T05
 ```
 Now, you can make a test call for your app, in these examples looks like:  
 ```bash
-curl --no-buffer -H'Authorization: Bearer <your_token>' https://everai.expvent.com/api/routes/v1/<your namespace>/<your app route name>/sse
+curl --no-buffer -H'Authorization: Bearer <your_token>' https://everai.expvent.com/api/routes/v1/<your namespace>/<your app name>/sse
 ```
 ## One more thing
 So far, you have created a simple application. But when the load of this application exceeds the endurance range of computing resources, the application's service response will slow down, time out, or even be unavailable. The [EverAI](https://everai.expvent.com) platform provides an autoscaling mechanism that can help your application automatically expand under high load conditions, eliminating the need for you to manually deploy new computing nodes.  For detailed guidance, check out [App Autoscaling](https://expvent.com/documentation/docs/Guide/App_Autoscaling).  
