@@ -296,9 +296,9 @@ everai app create
 ```
 After running `everai app list`, you can see the result similar to the following. If your app's status is `DEPLOYED`, it means that your app is deployed successfully.   
 ```bash
-NAME       NAMESPACE    STATUS    WORKERS    CREATED_AT
----------  -----------  --------  ---------  ------------------------
-get-start  default      DEPLOYED  3/3        2024-06-18T04:21:37+0000
+NAME                             NAMESPACE    STATUS    WORKERS    CREATED_AT
+-------------------------------  -----------  --------  ---------  ------------------------
+get-start                        default      DEPLOYED  1/1        2024-07-10T05:38:24+0000
 ```
 Now, you can make a test call for your app, in these examples looks like:  
 ```bash
