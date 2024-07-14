@@ -145,7 +145,7 @@ everai secret create quay-secret \
 ### Basic setup
 There is an example code in [app.py](https://github.com/everai-example/get-start/blob/main/app.py).  
 
-First, import the required EverAI Python class library. Then define the variable names that need to be used, including the volume, the secret that accesses the image registry, and the file stored in the volume. Use the `Image.from_registry` static method to create a image instance. Create and define an app instance through the App class.  
+Firstly, import the required EverAI Python class library. Then define the variable names that need to be used, including the volume, the secret that accesses the image registry, and the file stored in the volume. Use the `Image.from_registry` static method to create a image instance. Create and define an app instance through the App class.  
 
 ```python
 from everai.app import App, context, VolumeRequest
