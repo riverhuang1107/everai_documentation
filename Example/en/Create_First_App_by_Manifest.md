@@ -254,5 +254,5 @@ get-start-manifest               default      DEPLOYED  1/1        2024-06-29T08
 ```
 Now, you can make a test call for your app, in these examples looks like:  
 ```bash
-curl --no-buffer -H'Authorization: Bearer <your_token>' https://everai.expvent.com/api/routes/v1/<your namespace>/<your app route name>/sse
+curl --no-buffer -H'Authorization: Bearer <your_token>' https://everai.expvent.com/api/routes/v1/<your namespace>/<your app name>/sse
 ```
