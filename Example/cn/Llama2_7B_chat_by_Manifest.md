@@ -132,7 +132,7 @@ if __name__ == '__main__':
 
 你可以选择使用公共镜像仓库存放应用镜像。如：[quay.io](https://quay.io/)，[Docker Hub](https://hub.docker.com/)，[GitHub Container Registry](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry)，[Google Container Registry](https://cloud.google.com/artifact-registry)等。如果你有自建的镜像仓库，并且镜像可以在互联网上被访问，同样可以使用。  
 
-首先确保你的docker环境处于登录状态。 然后使用`docker buildx`构建支持多平台架构的Docker镜像，并把打包好的镜像推送到你指定的镜像仓库中。 
+首先确保你的docker环境处于登录状态。 推荐使用`docker buildx`构建支持多平台架构的Docker镜像，并把打包好的镜像推送到你指定的镜像仓库中。 
 
 ## 创建密钥
 密钥管理提供了一种安全的方法，可以添加凭证和其他敏感信息到你的应用容器中。  
