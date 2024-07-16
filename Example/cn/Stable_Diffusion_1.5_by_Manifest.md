@@ -176,25 +176,9 @@ if __name__ == '__main__':
 
 这是一个[Dockerfile](https://github.com/everai-example/stable-diffusion-v1-5-manifest-private/blob/main/Dockerfile)的示例代码。  
 
-```
-WORKDIR /workspace
+你可以选择使用公共镜像仓库存放应用镜像。如：[quay.io](https://quay.io/)，[Docker Hub](https://hub.docker.com/)，[GitHub Container Registry](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry)，[Google Container Registry](https://cloud.google.com/artifact-registry)等。如果你有自建的镜像仓库，并且镜像可以在互联网上被访问，同样可以使用。  
 
-RUN mkdir -p $WORKDIR/volume
-```
-
-在这个示例中，我们选择使用[quay.io](https://quay.io/)作为公共镜像仓库，存放应用镜像。你也可以使用与之类似的知名镜像仓库，如：[Docker Hub](https://hub.docker.com/)，[GitHub Container Registry](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry)，[Google Container Registry](https://cloud.google.com/artifact-registry)等。如果你有自建的镜像仓库，并且镜像可以在互联网上被访问，同样可以使用。  
-
-首先确保你的docker环境处于登录状态。  
-
-```bash
-docker login quay.io
-
-docker build -t quay.io/<username>/<repo>:<tag> .
-```
-然后执行以下命令打包镜像，并且把打包好的镜像推送到你指定的镜像仓库中。
-```bash
-docker push quay.io/<username>/<repo>:<tag>
-```
+首先确保你的docker环境处于登录状态。 然后使用`docker buildx`构建支持多平台架构的Docker镜像，并把打包好的镜像推送到你指定的镜像仓库中。 
 
 ## 创建密钥
 密钥管理提供了一种安全的方法，可以添加凭证和其他敏感信息到你的应用容器中。  
