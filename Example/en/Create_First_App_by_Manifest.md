@@ -152,9 +152,6 @@ everai secret create quay-secret \
   --from-literal username=<your username> \
   --from-literal password=<your password>
 ```
->**NOTE**
->
->[quay.io](https://quay.io/) is a well-known public image registry. Well-known image registry similar to [quay.io](https://quay.io/) include [Docker Hub](https://hub.docker.com/), [GitHub Container Registry](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry), [Google Container Registry](https://cloud.google.com/artifact-registry), etc.  
 
 ## Create configmap
 >Optional, but you can use configmap for adjust autoscaling policy after deploying the image. 
