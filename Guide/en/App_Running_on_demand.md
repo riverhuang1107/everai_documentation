@@ -13,7 +13,7 @@ Run `everai worker list <your app name>`, and show the work list again, you can 
 ID    STATUS    DETAIL_STATUS    CREATED_AT    DELETED_AT
 ----  --------  ---------------  ------------  ------------
 ```
-Run command `everai app list`, you can see that  the status of app is `PAUSED`.   
+Run command `everai app list`, you can see that  the status of app is `PAUSED`. `CREATED_AT` uses UTC time display.   
 
 ```bash
 NAME                             NAMESPACE    STATUS    WORKERS    CREATED_AT

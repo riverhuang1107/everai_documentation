@@ -5,7 +5,7 @@
 
 以下示例基于[快速入门](https://github.com/everai-example/get-start)中的应用。  
 
-运行`everai worker list`，看到有一个worker正在运行中。`CREATED_AT`使用UTC时间显示。  
+运行`everai worker list`，看到有一个worker正在运行中。`CREATED_AT`和`DELETED_AT`使用UTC时间显示。  
 ```bash
 ID                      STATUS    DETAIL_STATUS    CREATED_AT                DELETED_AT
 ----------------------  --------  ---------------  ------------------------  ------------
@@ -71,7 +71,7 @@ hello world
 
 以下示例基于[快速入门](https://github.com/everai-example/get-start)中的应用。  
 
-运行`everai worker list`，看到有一个worker正在运行中。`CREATED_AT`使用UTC时间显示。  
+运行`everai worker list`，看到有一个worker正在运行中。`CREATED_AT`和`DELETED_AT`使用UTC时间显示。  
 ```bash
 ID                      STATUS    DETAIL_STATUS    CREATED_AT                DELETED_AT
 ----------------------  --------  ---------------  ------------------------  ------------

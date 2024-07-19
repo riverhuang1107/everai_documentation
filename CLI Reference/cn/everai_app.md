@@ -335,7 +335,7 @@ everai app worker [-h] {list,ls,exec} ...
 everai app worker list <your app name>
 ```
 
-用例输出的结果如下所示，`CREATED_AT`使用UTC时间显示。  
+用例输出的结果如下所示，`CREATED_AT`和`DELETED_AT`使用UTC时间显示。  
 ```bash
 ID                      STATUS    DETAIL_STATUS    CREATED_AT                DELETED_AT
 ----------------------  --------  ---------------  ------------------------  ------------
