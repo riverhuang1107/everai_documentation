@@ -47,10 +47,10 @@ everai volume list
 The result could be shown like this:  
 
 ```bash
-NAME               REVISION    CREATED_AT                  FILES  SIZE    STATUS
------------------  ----------  ------------------------  -------  ------  --------
-demo-volume        000000-000  2024-05-10 14:10:25+0800        0  0 B     Public
-get-start-volume   000001-08a  2024-05-10 11:57:41+0800        1  11 B    Private
+NAME                                     REVISION    CREATED_AT                  FILES  SIZE          STATUS
+---------------------------------------  ----------  ------------------------  -------  ------------  --------
+get-start-volume                         000008-5d6  2024-05-28T12:46:09+0000        1  42 B          Private
+test-start-volume                        000003-490  2024-06-24T02:04:19+0000        1  100 B         Private
 ```
 
 **Usage**:
@@ -161,7 +161,7 @@ After publishing the volume, run command `everai volume list`, the status is cha
 ```bash   
 NAME               REVISION    CREATED_AT                  FILES  SIZE    STATUS
 -----------------  ----------  ------------------------  -------  ------  --------
-demo-volume        000000-000  2024-05-10 14:10:25+0800        0  0 B     Public
+demo-volume        000000-000  2024-05-10T06:10:25+0000        0  0 B     Public
 ```
 **Usage**:
 ```bash 
