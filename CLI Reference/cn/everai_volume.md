@@ -46,7 +46,7 @@ everai volume create [-h] name
 ```bash
 everai volume list
 ```
-用例输出的结果如下所示：  
+用例输出的结果如下所示，`CREATED_AT`使用UTC时间显示。  
 
 ```bash
 NAME               REVISION    CREATED_AT                  FILES  SIZE    STATUS
@@ -158,7 +158,8 @@ everai volume push [-h] name
  everai volume publish demo-volume
 ```  
 
-公开卷后，执行`everai volume list`后，可以看到，卷的状态变为`Public`。  
+公开卷后，执行`everai volume list`后，可以看到，卷的状态变为`Public`。`CREATED_AT`使用UTC时间显示。  
+  
 ```bash   
 NAME               REVISION    CREATED_AT                  FILES  SIZE    STATUS
 -----------------  ----------  ------------------------  -------  ------  --------

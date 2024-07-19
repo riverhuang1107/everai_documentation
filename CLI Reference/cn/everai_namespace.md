@@ -23,7 +23,7 @@ everai namespace [-h] {list,ls,get,create,delete} ...
 everai namespace list
 ```
 
-用例输出的结果如下所示：
+用例输出的结果如下所示，`CREATED_AT`使用UTC时间显示。
 
 ```bash 
 NAME     CREATED_AT
@@ -50,7 +50,7 @@ everai namespace list [-h] [--output [OUTPUT]]
 everai namespace get devops
 ```
 
-用例输出的结果如下所示：  
+用例输出的结果如下所示，`CREATED_AT`使用UTC时间显示。  
 
 ```bash 
 NAME    CREATED_AT

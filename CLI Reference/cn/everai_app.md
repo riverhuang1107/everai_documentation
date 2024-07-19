@@ -122,7 +122,7 @@ everai app update [-h] [--dry-run] [-f FROM_FILE]
 everai worker list <your app name>
 ```
 
-查看应用的worker列表，可以看到有2个正在运行的worker。  
+查看应用的worker列表，可以看到有2个正在运行的worker。`CREATED_AT`使用UTC时间显示。  
 
 ```bash
 ID                      STATUS    DETAIL_STATUS    CREATED_AT                DELETED_AT
@@ -224,7 +224,7 @@ everai app prepare [-h]
 ```bash
 everai app list
 ```
-用例输出的结果如下所示：    
+用例输出的结果如下所示，`CREATED_AT`使用UTC时间显示。    
 ```bash
 NAME       NAMESPACE    STATUS    WORKERS    CREATED_AT
 ---------  -----------  --------  ---------  ------------------------
@@ -250,7 +250,7 @@ everai app list [-h] [-n NAMESPACE] [-A] [--output [OUTPUT]]
 ```bash
 everai app queue <your app name>
 ```
-用例输出的结果如下所示：  
+用例输出的结果如下所示，`CREATED_AT`使用UTC时间显示。  
 
 ```bash
   QUEUE_INDEX  CREATE_AT                 QUEUE_REASON
@@ -283,7 +283,7 @@ everai app queue [-h] [-n [NAMESPACE]] [--output [OUTPUT]] name
 ```bash
 everai app event <your app name>
 ```
-用例输出的结果如下所示：
+用例输出的结果如下所示，`CREATED_AT`使用UTC时间显示。
 
 ```bash
 TYPE    FROM       CREATED_AT                MESSAGE
@@ -335,7 +335,7 @@ everai app worker [-h] {list,ls,exec} ...
 everai app worker list <your app name>
 ```
 
-用例输出的结果如下所示：  
+用例输出的结果如下所示，`CREATED_AT`使用UTC时间显示。  
 ```bash
 ID                      STATUS    DETAIL_STATUS    CREATED_AT                DELETED_AT
 ----------------------  --------  ---------------  ------------------------  ------------
