@@ -47,7 +47,7 @@ everai app update
 
 此时，你的应用已经具备了自动扩容的能力。  
 
-执行`everai worker list`可以观察到目前在低负载的情况下，有一个worker在工作。
+执行`everai worker list`可以观察到目前在低负载的情况下，有一个worker在工作。`CREATED_AT`使用UTC时间显示。
 ```bash
 ID                      STATUS    DETAIL_STATUS    CREATED_AT                DELETED_AT
 ----------------------  --------  ---------------  ------------------------  ------------

@@ -14,7 +14,7 @@ ID    STATUS    DETAIL_STATUS    CREATED_AT    DELETED_AT
 ----  --------  ---------------  ------------  ------------
 ```
 
-执行`everai app list`，可以看到此时应用的状态是`PAUSED`。  
+执行`everai app list`，可以看到此时应用的状态是`PAUSED`。`CREATED_AT`使用UTC时间显示。  
 ```bash
 NAME                             NAMESPACE    STATUS    WORKERS    CREATED_AT
 -------------------------------  -----------  --------  ---------  ------------------------

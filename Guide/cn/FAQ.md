@@ -7,7 +7,7 @@
 everai app event <your app name>
 ```
 
-输出的结果如下所示：
+输出的结果如下所示，`CREATED_AT`使用UTC时间显示。
 
 ```bash
 TYPE    FROM       CREATED_AT                MESSAGE
