@@ -122,7 +122,7 @@ everai app update [-h] [--dry-run] [-f FROM_FILE]
 everai worker list <your app name>
 ```
 
-查看应用的worker列表，可以看到有2个正在运行的worker。`CREATED_AT`使用UTC时间显示。  
+查看应用的worker列表，可以看到有2个正在运行的worker。`CREATED_AT`和`DELETED_AT`使用UTC时间显示。  
 
 ```bash
 ID                      STATUS    DETAIL_STATUS    CREATED_AT                DELETED_AT

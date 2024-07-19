@@ -123,7 +123,7 @@ Pause an app, all worker will be stopped
 everai worker list <your app name>
 ```
 
-Show worker list of app，you can see 2 running workers. `CREATED_AT` uses UTC time display.  
+Show worker list of app，you can see 2 running workers. `CREATED_AT` and `DELETED_AT` use UTC time display.  
 
 ```bash
 ID                      STATUS    DETAIL_STATUS    CREATED_AT                DELETED_AT
