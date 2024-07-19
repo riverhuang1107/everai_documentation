@@ -123,7 +123,7 @@ Pause an app, all worker will be stopped
 everai worker list <your app name>
 ```
 
-Show worker list of app，you can see 2 running workers.  
+Show worker list of app，you can see 2 running workers. `CREATED_AT` uses UTC time display.  
 
 ```bash
 ID                      STATUS    DETAIL_STATUS    CREATED_AT                DELETED_AT
@@ -223,7 +223,7 @@ List all apps
 ```bash
 everai app list
 ```
-The result could be shown like this:  
+The result could be shown like this, and `CREATED_AT` uses UTC time display.  
 ```bash
 NAME       NAMESPACE    STATUS    WORKERS    CREATED_AT
 ---------  -----------  --------  ---------  ------------------------
@@ -249,7 +249,7 @@ List queue of app
 ```bash
 everai app queue <your app name>
 ```
-The output for this example is this: 
+The output for this example is this, and `CREATED_AT` uses UTC time display. 
 ```bash
   QUEUE_INDEX  CREATE_AT                 QUEUE_REASON
 -------------  ------------------------  --------------
@@ -281,7 +281,7 @@ List events of app
 ```bash
 everai app event <your app name>
 ```
-The output for this example is this: 
+The output for this example is this, and `CREATED_AT` uses UTC time display. 
 ```bash
 TYPE    FROM       CREATED_AT                MESSAGE
 ------  ---------  ------------------------  ------------------------------------------------------------------------------------------------
@@ -332,7 +332,7 @@ List workers of app
 ```bash
 everai app worker list <your app name>
 ```
-The output for this example is this:  
+The output for this example is this, and `CREATED_AT` and `DELETED_AT` use UTC time display.  
 
 ```bash
 ID                      STATUS    DETAIL_STATUS    CREATED_AT                DELETED_AT

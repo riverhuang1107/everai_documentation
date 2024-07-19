@@ -20,7 +20,7 @@ List workers of app
 ```bash 
 everai worker list <your app name>
 ```
-The result could be shown like this:  
+The result could be shown like this, and `CREATED_AT` and `DELETED_AT` use UTC time display.  
 ```bash 
 ID                      STATUS    DETAIL_STATUS    CREATED_AT                DELETED_AT
 ----------------------  --------  ---------------  ------------------------  ------------

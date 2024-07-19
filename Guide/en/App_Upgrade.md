@@ -4,7 +4,7 @@ If your app is deployed in [EverAI](https://everai.expvent.com) platform, when y
 
 The following example is based on the app in the [quickstart](https://github.com/everai-example/get-start).
 
-Run `everai worker list`, you can see a worker in running.  
+Run `everai worker list`, you can see a worker in running. `CREATED_AT` and `DELETED_AT` use UTC time display.  
 
 ```bash
 ID                      STATUS    DETAIL_STATUS    CREATED_AT                DELETED_AT

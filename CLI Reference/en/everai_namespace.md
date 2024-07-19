@@ -22,7 +22,7 @@ List the namespaces
 ```bash 
 everai namespace list
 ```
-The result could be shown like this:  
+The result could be shown like this, and `CREATED_AT` uses UTC time display.  
 ```bash 
 NAME     CREATED_AT
 -------  ------------------------

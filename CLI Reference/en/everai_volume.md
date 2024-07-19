@@ -44,7 +44,7 @@ List volume
 ```bash
 everai volume list
 ```
-The result could be shown like this:  
+The result could be shown like this, and `CREATED_AT` uses UTC time display.  
 
 ```bash
 NAME                                     REVISION    CREATED_AT                  FILES  SIZE          STATUS
@@ -156,7 +156,7 @@ Publish volume to everyone
  everai volume publish demo-volume
 ```
 
-After publishing the volume, run command `everai volume list`, the status is changed from `Private` to `Public`.  
+After publishing the volume, run command `everai volume list`, the status is changed from `Private` to `Public`. `CREATED_AT` uses UTC time display.  
   
 ```bash   
 NAME               REVISION    CREATED_AT                  FILES  SIZE    STATUS
