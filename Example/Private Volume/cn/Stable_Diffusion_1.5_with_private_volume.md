@@ -271,7 +271,7 @@ everai image build
 everai app create
 ```
 
-执行`everai app list`后，可以看到类似如下的输出结果。如果你的应用状态是`DEPLOYED`，意味着你的应用已经部署成功。  
+执行`everai app list`后，可以看到类似如下的输出结果。如果你的应用状态是`DEPLOYED`，意味着你的应用已经部署成功。`CREATED_AT`使用UTC时间显示。  
 ```bash
 NAME                   NAMESPACE    STATUS    WORKERS    CREATED_AT
 ---------------------  -----------  --------  ---------  ------------------------
