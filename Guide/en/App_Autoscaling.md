@@ -47,7 +47,7 @@ everai app update
 ```
 Now, your app has the ability to autoscale.  
 
-Run `everai worker list`, you can see that there is one worker under low load conditions.
+Run `everai worker list`, you can see that there is one worker under low load conditions. `CREATED_AT` and `DELETED_AT` use UTC time display.
 
 ```bash
 ID                      STATUS    DETAIL_STATUS    CREATED_AT                DELETED_AT

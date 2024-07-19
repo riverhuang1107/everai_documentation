@@ -294,7 +294,7 @@ The final step is to deploy your app to [EverAI](https://everai.expvent.com) and
 ```bash
 everai app create  
 ```
-After running `everai app list`, you can see the result similar to the following. If your app's status is `DEPLOYED`, it means that your app is deployed successfully.   
+After running `everai app list`, you can see the result similar to the following. If your app's status is `DEPLOYED`, it means that your app is deployed successfully. `CREATED_AT` uses UTC time display.   
 ```bash
 NAME                             NAMESPACE    STATUS    WORKERS    CREATED_AT
 -------------------------------  -----------  --------  ---------  ------------------------
