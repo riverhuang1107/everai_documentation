@@ -228,7 +228,7 @@ everai image build
 everai app create
 ```
 
-执行`everai app list`后，可以看到类似如下的输出结果。`CREATED_AT`使用UTC时间显示。如果你的应用状态是`DEPLOYED`，意味着你的应用已经部署成功。  
+执行`everai app list`后，可以看到类似如下的输出结果。`CREATED_AT`使用UTC时间显示。如果你的应用状态是`DEPLOYED`，并且已经准备就绪的worker容器数量等于期望的worker容器数量，即`1/1`，意味着你的应用已经部署成功。  
 
 ```bash
 NAME                   NAMESPACE    STATUS    WORKERS    CREATED_AT
@@ -236,7 +236,7 @@ NAME                   NAMESPACE    STATUS    WORKERS    CREATED_AT
 llama2-7b-chat         default      DEPLOYED  1/1        2024-06-19T08:07:24+0000
 ```
 
-当你看到你的应用处于`DEPLOYED`时，你可以使用`curl`执行下面的请求来测试你部署的代码，在控制台上可以看到针对提问，大模型`Llama-2(7B)`给出的答案。显示如下的数据信息。  
+你可以使用`curl`执行下面的请求来测试你部署的代码，在控制台上可以看到针对提问，大模型`Llama-2(7B)`给出的答案。显示如下的数据信息。  
 
 ```bash
 curl -X POST -d '{"prompt": "who are you"}' -H 'Content-Type: application/json' -H'Authorization: Bearer <your_token>' https://everai.expvent.com/api/routes/v1/<your namespace>/<your app name>/chat

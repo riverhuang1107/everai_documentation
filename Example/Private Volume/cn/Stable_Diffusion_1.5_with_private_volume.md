@@ -271,14 +271,14 @@ everai image build
 everai app create
 ```
 
-执行`everai app list`后，可以看到类似如下的输出结果。`CREATED_AT`使用UTC时间显示。如果你的应用状态是`DEPLOYED`，意味着你的应用已经部署成功。  
+执行`everai app list`后，可以看到类似如下的输出结果。`CREATED_AT`使用UTC时间显示。如果你的应用状态是`DEPLOYED`，并且已经准备就绪的worker容器数量等于期望的worker容器数量，即`1/1`，意味着你的应用已经部署成功。  
 ```bash
 NAME                   NAMESPACE    STATUS    WORKERS    CREATED_AT
 ---------------------  -----------  --------  ---------  ------------------------
 stable-diffusion-v1-5  default      DEPLOYED  1/1        2024-06-19T05:16:05+0000
 ```
 
-当你看到你的应用处于`DEPLOYED`时，你可以使用`curl`执行下面的请求来测试你部署的文生图代码，在控制台上的当前目录下会产生一张由大模型`Stable Diffusion 1.5`生成的图片。 
+你可以使用`curl`执行下面的请求来测试你部署的文生图代码，在控制台上的当前目录下会产生一张由大模型`Stable Diffusion 1.5`生成的图片。 
 
 ```bash
 curl -X POST -d '{"prompt": "a photo of a cat on the boat"}' -H 'Content-Type: application/json' -H'Authorization: Bearer <your_token>' -o test.png https://everai.expvent.com/api/routes/v1/<your namespace>/<your app name>/txt2img

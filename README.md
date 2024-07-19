@@ -297,13 +297,13 @@ everai image build
 ```bash  
 everai app create
 ```
-执行`everai app list`后，可以看到类似如下的输出结果。`CREATED_AT`使用UTC时间显示。如果你的应用状态是`DEPLOYED`，意味着你的应用已经部署成功。    
+执行`everai app list`后，可以看到类似如下的输出结果。`CREATED_AT`使用UTC时间显示。如果你的应用状态是`DEPLOYED`，并且已经准备就绪的worker容器数量等于期望的worker容器数量，即`1/1`，意味着你的应用已经部署成功。    
 ```bash
 NAME                             NAMESPACE    STATUS    WORKERS    CREATED_AT
 -------------------------------  -----------  --------  ---------  ------------------------
 get-start                        default      DEPLOYED  1/1        2024-07-10T05:38:24+0000
 ```
-当你看到你的应用处于`DEPLOYED`时，你可以执行下面的请求来测试你部署的代码是否符合你的预期：  
+你可以执行下面的请求来测试你部署的代码是否符合你的预期：  
 ```bash
 curl --no-buffer -H'Authorization: Bearer <your_token>' https://everai.expvent.com/api/routes/v1/<your namespace>/<your app name>/sse
 ```
