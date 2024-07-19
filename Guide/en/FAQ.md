@@ -8,7 +8,7 @@ When creating or updating an application, the entire deployment process involves
 everai app event <your app name>
 ```
 
-The output results are as follows:
+The output results are as follows, and `CREATED_AT` uses UTC time display.
 
 ```bash
 TYPE    FROM       CREATED_AT                MESSAGE
