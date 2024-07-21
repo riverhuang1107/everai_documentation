@@ -23,6 +23,9 @@ NORMAL  AppSever   2024-07-06T14:57:06+0000  Successfully deployed app
 如果你的应用通过manifest模式创建，你可以在manifest文件中定义你的多个数据卷。  
 
 ```yaml
+...
+spec:
+  ...
   volumeMounts:
     - name: get-start-volume                                    # volume name
       mountPath: /workspace/volume       # mount path in container
@@ -38,6 +41,7 @@ NORMAL  AppSever   2024-07-06T14:57:06+0000  Successfully deployed app
     - name: test-start-volume                                    # volume name
       volume:
         volume: test-start-volume          # use a a private volume or a public volume from other user
+  ...
 ```
 
 ## 应用部署到EverAI平台后，是否支持在worker容器中运行命令？

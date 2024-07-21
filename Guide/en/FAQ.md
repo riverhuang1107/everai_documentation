@@ -18,13 +18,17 @@ NORMAL  Scheduler  2024-07-06T14:57:18+0000  Successfully assigned worker/GcaPyc
 NORMAL  AppSever   2024-07-06T14:57:06+0000  Successfully deployed app
 ```
 
-## Can an application mount multiple data volumes?
+## Can an application mount multiple data volumes? {.tabset}
 
 Support. The application supports mounting multiple data volumes.
 
+### Manifest Mode
 If your application is created in manifest mode, you can define your multiple data volumes in the manifest file.  
 
 ```yaml
+...
+spec:
+  ...
   volumeMounts:
     - name: get-start-volume                                    # volume name
       mountPath: /workspace/volume       # mount path in container
@@ -40,6 +44,25 @@ If your application is created in manifest mode, you can define your multiple da
     - name: test-start-volume                                    # volume name
       volume:
         volume: test-start-volume          # use a a private volume or a public volume from other user
+  ...
+```
+
+### App Object Mode
+
+If your application is created in app object mode, you can define your multiple data volumes in the `app.py` file.  
+
+```python
+VOLUME_NAME = 'get-start-volume'
+VOLUME_NAME_2 = 'test-start-volume'
+
+app = App(
+    ...
+    volume_requests=[
+        VolumeRequest(name=VOLUME_NAME),
+        VolumeRequest(name=VOLUME_NAME_2)
+    ]
+    
+)
 ```
 
 ## After an application is deployed to the EverAI platform, does it support running commands in the worker container?
