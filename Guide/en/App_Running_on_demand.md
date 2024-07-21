@@ -25,7 +25,7 @@ After the worker is stopped, your application's billing will also be stopped. Ba
 ```bash
  everai app resume <your app name>
 ```
-After running `everai app list`, you can see your app's status.  If status is `DEPLOYED`, it means that your app is deployed once again successfully.  
+After running `everai app list`, you can see your app's status.  If status is `DEPLOYED`, and the number of ready worker containers is equal to the expected number of worker containers, which is `1/1`, it means that your app is deployed once again successfully.  
 
 ```bash
 NAME                             NAMESPACE    STATUS    WORKERS    CREATED_AT

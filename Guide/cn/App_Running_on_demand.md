@@ -26,7 +26,7 @@ worker被停止后，你的应用的计费也会被随之停止。根据你的�
  everai app resume <your app name>
 ```
 
-执行`everai app list`后，可以看到类似如下的输出结果。如果你的应用状态是`DEPLOYED`，意味着你的应用已经被再次部署。  
+执行`everai app list`后，可以看到类似如下的输出结果。如果你的应用状态是`DEPLOYED`，并且已经准备就绪的worker容器数量等于期望的worker容器数量，即`1/1`，意味着你的应用已经被再次部署。  
 ```bash
 NAME                             NAMESPACE    STATUS    WORKERS    CREATED_AT
 -------------------------------  -----------  --------  ---------  ------------------------
