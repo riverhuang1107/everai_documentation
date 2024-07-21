@@ -18,7 +18,7 @@ NORMAL  Scheduler  2024-07-06T14:57:18+0000  Successfully assigned worker/GcaPyc
 NORMAL  AppSever   2024-07-06T14:57:06+0000  Successfully deployed app
 ```
 
-## Can an application mount multiple data volumes? {.tabset}
+## Can an application mount multiple data volumes?
 
 Support. The application supports mounting multiple data volumes.
 
@@ -48,7 +48,6 @@ spec:
 ```
 
 ### App Object Mode
-
 If your application is created in app object mode, you can define your multiple data volumes in the `app.py` file.  
 
 ```python
@@ -61,7 +60,7 @@ app = App(
         VolumeRequest(name=VOLUME_NAME),
         VolumeRequest(name=VOLUME_NAME_2)
     ]
-    
+    ...
 )
 ```
 

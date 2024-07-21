@@ -20,6 +20,7 @@ NORMAL  AppSever   2024-07-06T14:57:06+0000  Successfully deployed app
 ## 应用是否可以挂载多个数据卷？
 支持。应用支持挂载多个数据卷。
 
+### Manifest Mode
 如果你的应用通过manifest模式创建，你可以在manifest文件中定义你的多个数据卷。  
 
 ```yaml
@@ -42,6 +43,23 @@ spec:
       volume:
         volume: test-start-volume          # use a a private volume or a public volume from other user
   ...
+```
+
+### App Object Mode
+如果你的应用通过app object模式创建，你可以在`app.py`文件中挂载你的多个数据卷。  
+
+```python
+VOLUME_NAME = 'get-start-volume'
+VOLUME_NAME_2 = 'test-start-volume'
+
+app = App(
+    ...
+    volume_requests=[
+        VolumeRequest(name=VOLUME_NAME),
+        VolumeRequest(name=VOLUME_NAME_2)
+    ]
+    ...
+)
 ```
 
 ## 应用部署到EverAI平台后，是否支持在worker容器中运行命令？
