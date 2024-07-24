@@ -158,7 +158,7 @@ everai secret create quay-secret \
 ## 创建configmap
 >该步骤可选，如果你配置了configmap，你可以在部署镜像后使用configmap调整你的自动扩缩容策略。 
 ```shell
-everai configmap create get-start-configmap \ 
+everai configmap create get-start-configmap \
   --from-literal min_workers=1 \
   --from-literal max_workers=5 \
   --from-literal max_queue_size=2 \

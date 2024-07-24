@@ -198,7 +198,7 @@ everai secret create your-quay-io-secret-name \
 ## 创建configmap
 >该步骤可选，如果你配置了configmap，你可以在部署镜像后使用configmap调整你的自动扩缩容策略。 
 ```shell
-ever configmap create sd15-configmap \ 
+everai configmap create sd15-configmap \
   --from-literal min_workers=1 \
   --from-literal max_workers=5 \
   --from-literal max_queue_size=2 \

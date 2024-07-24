@@ -152,12 +152,12 @@ everai secret create your-quay-io-secret-name \
 ## 创建configmap
 >该步骤可选，如果你配置了configmap，你可以在部署镜像后使用configmap调整你的自动扩缩容策略。 
 ```shell
-ever configmap create llama2-configmap \ 
-  --from-literal min_workers=1 \
-  --from-literal max_workers=5 \
-  --from-literal max_queue_size=2 \
-  --from-literal scale_up_step=1 \
-  --from-literal max_idle_time=60
+everai configmap create llama2-configmap \
+--from-literal min_workers=1 \
+--from-literal max_workers=5 \
+--from-literal max_queue_size=2 \
+--from-literal scale_up_step=1 \
+--from-literal max_idle_time=60
 ```
 
 ## 定义Manifest文件
