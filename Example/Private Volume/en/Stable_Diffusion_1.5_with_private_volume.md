@@ -30,7 +30,7 @@ everai secret create your-huggingface-secret-name \
 ## Create configmap
 >Optional, but you can use configmap for adjust autoscaling policy after deploying the image. 
 ```shell
-everai configmap create sd15-configmap \ 
+everai configmap create sd15-configmap \
   --from-literal min_workers=1 \
   --from-literal max_workers=5 \
   --from-literal max_queue_size=2 \
