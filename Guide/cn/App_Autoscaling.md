@@ -5,7 +5,7 @@
 首先，你创建一个`configmap`对象，用于存放自动扩缩容相关的策略参数，示例中的参数定义了最小的worker数量是1，最大的worker数量是5，最大的队列数量是2，扩容worker的步长是1（即每次扩容的worker数量是1）。  
   
 ```bash
-everai configmap create get-start-configmap \ 
+everai configmap create get-start-configmap \
   --from-literal min_workers=1 \
   --from-literal max_workers=5 \
   --from-literal max_queue_size=2 \
