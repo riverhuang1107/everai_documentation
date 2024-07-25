@@ -33,7 +33,7 @@ everai secret create your-quay-io-secret-name \
 
 ```python
 from everai.app import App, context, VolumeRequest
-from everai.autoscaling import SimpleAutoScalingPolicy
+from everai_autoscaler.builtin import SimpleAutoScaler
 from everai.image import Image, BasicAuth
 from everai.resource_requests import ResourceRequests
 from everai.placeholder import Placeholder
@@ -61,7 +61,7 @@ app = App(
         QUAY_IO_SECRET_NAME,
     ],
     configmap_requests=[CONFIGMAP_NAME],
-    autoscaling_policy=SimpleAutoScalingPolicy(
+    autoscaling_policy=SimpleAutoScaler(
         # keep running workers even no any requests, that make reaction immediately for new request
         min_workers=Placeholder(kind='ConfigMap', name=CONFIGMAP_NAME, key='min_workers'),
         # the maximum works setting, protect your application avoid to pay a lot of money
@@ -221,9 +221,9 @@ ENV TMPDIR=/tmp
 RUN mkdir -p $TMPDIR
 ```
 
-在`image_builder.py`中，你需要配置你的镜像地址信息。  
-
 这是一个关于[image_builder.py](https://github.com/everai-example/stable-diffusion-v1-5-with-public-volume/blob/main/image_builder.py)的示例代码。
+
+在`image_builder.py`中，你需要配置你的镜像地址信息。  
 
 在这个示例中，我们选择使用[quay.io](https://quay.io/)作为公共镜像仓库，存放应用镜像。你也可以使用与之类似的知名镜像仓库，如：[Docker Hub](https://hub.docker.com/)，[GitHub Container Registry](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry)，[Google Container Registry](https://cloud.google.com/artifact-registry)等。如果你有自建的镜像仓库，并且镜像可以在互联网上被访问，同样可以使用。  
 
@@ -251,7 +251,9 @@ everai image build
 everai app create
 ```
 
-执行`everai app list`后，可以看到类似如下的输出结果。如果你的应用状态是`DEPLOYED`，意味着你的应用已经部署成功。  
+执行`everai app list`后，可以看到类似如下的输出结果。`CREATED_AT`使用UTC时间显示。
+
+如果你的应用状态是`DEPLOYED`，并且已经准备就绪的worker容器数量等于期望的worker容器数量，即`1/1`，意味着你的应用已经部署成功。  
 ```bash
 NAME                           STATUS    CREATED_AT                ROUTE_NAME
 -----------------------------  --------  ------------------------  -----------------------------
