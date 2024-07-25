@@ -265,13 +265,13 @@ sd-v1-5-stateful-service       DEPLOYED  2024-06-05 15:29:22+0800  sd-v1-5-state
 生成图片存放在worker容器的`/tmp`目录下。为确保图生图服务能读取到`/tmp`目录下的图片，需要自定义Header头`x-everai-session-id`，值可以是`uuid`。 
 
 ```bash
-curl -H 'x-everai-session-id: <uuid>' -o test.png -v https://everai.expvent.com/api/routes/v1/sd-v1-5-stateful-service/txt2img?prompt=cat%20on%20the%20boat
+curl -H 'x-everai-session-id: <uuid>' -o test.png -v https://everai.expvent.com/api/routes/v1/<your namespace>/<your app name>/txt2img?prompt=cat%20on%20the%20boat
 ```
 
 使用`curl`执行下面的请求来测试你部署的图生图代码。需要自定义Header头`x-everai-session-id`，值`uuid`必须与文生图服务时使用的`uuid`完全一致。由此确保请求可以在worker容器的`/tmp`目录下读取到由文生图服务生成的图片。
 
 ```bash
-curl -H 'x-everai-session-id: <uuid>' -o test.jpg -v https://everai.expvent.com/api/routes/v1/sd-v1-5-stateful-service/img2img?prompt=sketchup%20of%20cartoon%20cat
+curl -H 'x-everai-session-id: <uuid>' -o test.jpg -v https://everai.expvent.com/api/routes/v1/<your namespace>/<your app name>/img2img?prompt=sketchup%20of%20cartoon%20cat
 ```
 
 
