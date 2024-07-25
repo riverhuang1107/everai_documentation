@@ -4,7 +4,7 @@
 
 ## 登录EVERAI客户端
 
-首先，为你的应用创建一个目录，进入应用目录后，首先需要使用你从[EverAI](https://everai.expvent.com)获取到的token进行登录。  
+首先，为你的应用创建一个目录，进入应用目录后，需要使用你从[EverAI](https://everai.expvent.com)获取到的token进行登录。  
 
 ```bash
 everai login --token <your token>
