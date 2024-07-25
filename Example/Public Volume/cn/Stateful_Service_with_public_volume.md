@@ -61,7 +61,7 @@ app = App(
         QUAY_IO_SECRET_NAME,
     ],
     configmap_requests=[CONFIGMAP_NAME],
-    autoscaling_policy=SimpleAutoScaler(
+    autoscaler=SimpleAutoScaler(
         # keep running workers even no any requests, that make reaction immediately for new request
         min_workers=Placeholder(kind='ConfigMap', name=CONFIGMAP_NAME, key='min_workers'),
         # the maximum works setting, protect your application avoid to pay a lot of money
