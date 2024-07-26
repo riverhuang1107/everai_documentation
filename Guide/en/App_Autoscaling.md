@@ -8,7 +8,7 @@ First you create a `configmap` by the following command, this `configmap` includ
 everai configmap create get-start-configmap \
   --from-literal min_workers=1 \
   --from-literal max_workers=5 \
-  --from-literal max_queue_size=2 \
+  --from-literal min_free_workers=2 \
   --from-literal scale_up_step=1 \
   --from-literal max_idle_time=60
 ```
