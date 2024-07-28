@@ -51,7 +51,7 @@ everai configmap create sd15-configmap \
 
 ```python
 from everai.app import App, context, VolumeRequest
-from everai_autoscaler.builtin import SimpleAutoScaler
+from everai_autoscaler.builtin import FreeWorkerAutoScaler
 from everai.image import Image, BasicAuth
 from everai.resource_requests import ResourceRequests
 from everai.placeholder import Placeholder
@@ -80,7 +80,7 @@ app = App(
         QUAY_IO_SECRET_NAME
     ],
     configmap_requests=[CONFIGMAP_NAME],
-    autoscaler=SimpleAutoScaler(
+    autoscaler=FreeWorkerAutoScaler(
         # keep running workers even no any requests, that make reaction immediately for new request
         min_workers=Placeholder(kind='ConfigMap', name=CONFIGMAP_NAME, key='min_workers'),
         # the maximum works setting, protect your application avoid to pay a lot of money
