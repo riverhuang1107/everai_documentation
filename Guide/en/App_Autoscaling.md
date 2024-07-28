@@ -16,7 +16,7 @@ everai configmap create get-start-configmap \
 Based on the `app.py` code in [Getting started](https://expvent.com/documentation/docs/), When you define tha object of app,  you should add parameter `autoscaler`.  
 
 ```python
-from everai_autoscaler.builtin import SimpleAutoScaler
+from everai_autoscaler.builtin import FreeWorkerAutoScaler
 
 CONFIGMAP_NAME = 'get-start-configmap'
 
@@ -32,7 +32,7 @@ app = App(
         cpu_num=1,
         memory_mb=1024,
     ),
-    autoscaler=SimpleAutoScaler(
+    autoscaler=FreeWorkerAutoScaler(
         min_workers=Placeholder(kind='ConfigMap', name=CONFIGMAP_NAME, key='min_workers'),
         max_workers=Placeholder(kind='ConfigMap', name=CONFIGMAP_NAME, key='max_workers'),
         min_free_workers=Placeholder(kind='ConfigMap', name=CONFIGMAP_NAME, key='min_free_workers'),
