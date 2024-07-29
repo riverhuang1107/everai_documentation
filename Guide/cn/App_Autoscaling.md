@@ -2,8 +2,10 @@
 
 在[新手指引](https://expvent.com/documentation/zh-cn/docs/)中，你已经创建了一个简单的应用。但这个应用的负载超出计算资源的可承受范围时，应用的服务响应会变慢，超时，甚至不可用。[EverAI](https://everai.expvent.com)平台提供了自动扩缩容机制，可以帮助你的应用在高负载的情况下自动扩容，省去你手动部署新计算节点的操作。能够使你的应用能在很短的时间内快速提升负载能力。  
 
+EverAI平台目前提供了2种扩缩容机制，一种是基于至少在线的free workers数量的机制；一种是基于最大队列数量的机制。
+
 ## Min Free Workers
-首先，你创建一个`configmap`对象，用于存放自动扩缩容相关的策略参数，示例中的参数定义了最少的worker数量是1，最大的worker数量是5，最少的free worker数量是1，扩容worker的步长是1（即每次扩容的worker数量是1）。  
+首先，你创建一个`configmap`对象，用于存放自动扩缩容相关的策略参数，示例中的参数定义了最少的worker数量是1，最大的worker数量是5，至少在线的free worker数量是1，扩容worker的步长是1（即每次扩容的worker数量是1）。  
 
 ```bash
 everai configmap create get-start-configmap \
