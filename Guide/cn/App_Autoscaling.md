@@ -56,12 +56,12 @@ ID                      STATUS    DETAIL_STATUS    CREATED_AT                DEL
 5LJtBqJsRYgT67ZEuMAt88  RUNNING   FREE             2024-07-29T02:42:50+0000
 ```
 
-现在，这一步你可以使用`ab`工具对你的应用进行性能测试，加大你应用的工作负载。并同时观察worker和队列的数量变化。
+现在，这一步你可以使用`ab`工具对你的应用进行性能测试，加大你应用的工作负载。并同时观察worker的数量变化。
 ```bash
 ab -s 120 -t 120 -c 4 -n 300000 -H'Authorization: Bearer <your_token>' https://everai.expvent.com/api/routes/v1/<your namespace>/<your app name>/sse
 ```
 
-在worker列表中可以看到目前已经有4个worker在同时工作，性能测试前的只有1个worker在工作。这意味着随着应用负载的加大，[EverAI](https://everai.expvent.com)平台为你的应用自动完成了扩容的工作。  
+在worker列表中可以看到目前已经有4个busy worker和1个free worker在同时工作，性能测试前的只有1个worker在工作。这意味着随着应用负载的加大，[EverAI](https://everai.expvent.com)平台为你的应用自动完成了扩容的工作。  
 ```bash
 ID                      STATUS    DETAIL_STATUS    CREATED_AT                DELETED_AT
 ----------------------  --------  ---------------  ------------------------  ------------
