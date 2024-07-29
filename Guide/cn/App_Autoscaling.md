@@ -74,7 +74,7 @@ UtybEMGoZ4FtAF5Vjuddmu  RUNNING   BUSY             2024-07-29T03:07:30+0000
 LurJwFLStbYoarbNjepGHV  RUNNING   FREE             2024-07-29T03:07:50+0000
 ```
 
-当`ab`性能测试结束，应用业务负载的高峰期过去之后，系统会自动判断worker的负载情况，在设置的`max_idle_time`后，释放掉扩容产生的worker，恢复到设置的`mini_workers`数量。在这个示例中，执行`everai worker list`，可以看到应用的worker数量已经恢复到了扩容前的一个worker。系统已经为你的应用完成了自动缩容操作。 
+当`ab`性能测试结束，应用业务负载的高峰期过去之后，系统会自动判断worker的负载情况，在设置的`max_idle_time`后，释放掉扩容产生的worker，恢复到设置的`min_workers`数量。在这个示例中，执行`everai worker list`，可以看到应用的worker数量已经恢复到了扩容前的一个worker。系统已经为你的应用完成了自动缩容操作。 
 ```bash
 ID                      STATUS    DETAIL_STATUS    CREATED_AT                DELETED_AT
 ----------------------  --------  ---------------  ------------------------  ------------
@@ -159,7 +159,7 @@ PWwUmUqNYuzzM5sa98ajJL  RUNNING   BUSY             2024-07-01T09:47:31+0000
 dweBRSPD395BvtBDsZYum8  RUNNING   BUSY             2024-07-03T22:24:08+0000
 ```
 
-当`ab`性能测试结束，应用业务负载的高峰期过去之后，系统会自动判断worker的负载情况，在设置的`max_idle_time`后，释放掉扩容产生的worker，恢复到设置的`mini_workers`数量。在这个示例中，执行`everai worker list`，可以看到应用的worker数量已经恢复到了扩容前的一个worker。系统已经为你的应用完成了自动缩容操作。 
+当`ab`性能测试结束，应用业务负载的高峰期过去之后，系统会自动判断worker的负载情况，在设置的`max_idle_time`后，释放掉扩容产生的worker，恢复到设置的`min_workers`数量。在这个示例中，执行`everai worker list`，可以看到应用的worker数量已经恢复到了扩容前的一个worker。系统已经为你的应用完成了自动缩容操作。 
 ```bash
 ID                      STATUS    DETAIL_STATUS    CREATED_AT                DELETED_AT
 ----------------------  --------  ---------------  ------------------------  ------------
