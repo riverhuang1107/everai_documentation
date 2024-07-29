@@ -5,7 +5,7 @@ In the [Getting started](https://expvent.com/documentation/docs/), we have creat
 The EverAI platform currently provides two autoscaling mechanisms, one is based on at least the number of online free workers; the other is based on the maximum number of queues.
 
 ## Min Free Workers
-First you create a `configmap` by the following command, this `configmap` includes policy parameters about autoscaling, the example defines that the mini number of workers is 1, the maximum number of workers is 5, and the mini number of free workers is 1, The step size of worker for scaling up is 1 (the number of workers for each scaling up is 1).  
+First you create a `configmap` by the following command, this `configmap` includes policy parameters about autoscaling, the example defines that the mini number of workers is 1, the maximum number of workers is 5, the mini number of free workers is 1, and the step size of worker for scaling up is 1 (the number of workers for each scaling up is 1).  
 
 ```bash
 everai configmap create get-start-configmap \
@@ -87,7 +87,7 @@ ID                      STATUS    DETAIL_STATUS    CREATED_AT                DEL
 ```
 
 ## Max Queue Size
-First you create a `configmap` by the following command, this `configmap` includes policy parameters about autoscaling, the example defines that the mini number of workers is 1, the max number of workers is 5, and the max queue size is 2, The step size of worker for scaling up is 1 (the number of workers for each scaling up is 1).    
+First you create a `configmap` by the following command, this `configmap` includes policy parameters about autoscaling, the example defines that the mini number of workers is 1, the maximum number of workers is 5, the maximum queue size is 2, and the step size of worker for scaling up is 1 (the number of workers for each scaling up is 1).    
 
 ```bash
 everai configmap create get-start-configmap \
