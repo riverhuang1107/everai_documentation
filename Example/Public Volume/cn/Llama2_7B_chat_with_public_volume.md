@@ -102,7 +102,7 @@ app = App(
 
 ### 预加载模型
 
-你可以使用我们提供的公开卷`expvent/models--meta-llama--llama-2-7b-chat-hf`中的模型文件加载模型。 
+你可以使用我们提供的公开卷`everai/models--meta-llama--llama-2-7b-chat-hf`中的模型文件加载模型。 
 
 ```python
 import torch

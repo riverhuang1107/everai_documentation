@@ -152,7 +152,7 @@ def prepare_model():
 If you want to use `everai app run` to debug this example locally, your local debugging environment needs to have GPU resources(Nvidia GPU or GPU for MacOS devices with Metal programming framework), and use `everai volume pull` command to pull the model file from the cloud to the local environment before debugging the code.  
 
 ```bash
-everai volume pull expvent/models--runwayml--stable-diffusion-v1-5
+everai volume pull everai/models--runwayml--stable-diffusion-v1-5
 ```
 
 ### Generate inference service
