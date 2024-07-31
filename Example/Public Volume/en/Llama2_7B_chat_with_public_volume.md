@@ -50,7 +50,7 @@ from everai.placeholder import Placeholder
 from image_builder import IMAGE
 
 APP_NAME = '<your app name>'
-VOLUME_NAME = 'expvent/models--meta-llama--llama-2-7b-chat-hf'
+VOLUME_NAME = 'everai/models--meta-llama--llama-2-7b-chat-hf'
 MODEL_NAME = 'meta-llama/Llama-2-7b-chat-hf'
 HUGGINGFACE_SECRET_NAME = 'your-huggingface-secret-name'
 QUAY_IO_SECRET_NAME = 'your-quay-io-secret-name'
