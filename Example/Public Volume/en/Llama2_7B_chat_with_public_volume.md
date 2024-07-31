@@ -98,7 +98,7 @@ app = App(
 
 ### Load model
   
-You can load the model using the model file in the public volume `expvent/models--meta-llama--llama-2-7b-chat-hf` we provide.  
+You can load the model using the model file in the public volume `everai/models--meta-llama--llama-2-7b-chat-hf` we provide.  
 
 ```python
 import torch

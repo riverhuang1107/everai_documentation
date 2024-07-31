@@ -85,7 +85,7 @@ app = App(
 
 ### Load model
 
-You can load the model using the model file in the public volume `expvent/models--runwayml--stable-diffusion-v1-5` we provide.  
+You can load the model using the model file in the public volume `everai/models--runwayml--stable-diffusion-v1-5` we provide.  
 
 ```python
 from diffusers import StableDiffusionPipeline, StableDiffusionImg2ImgPipeline

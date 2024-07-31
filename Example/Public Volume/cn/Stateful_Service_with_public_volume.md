@@ -87,7 +87,7 @@ app = App(
 
 ### 预加载模型
 
-你可以使用我们提供的公开卷`expvent/models--runwayml--stable-diffusion-v1-5`中的模型文件加载模型。
+你可以使用我们提供的公开卷`everai/models--runwayml--stable-diffusion-v1-5`中的模型文件加载模型。
 
 ```python
 from diffusers import StableDiffusionPipeline, StableDiffusionImg2ImgPipeline
