@@ -159,7 +159,7 @@ everai volume push [-h] name
  everai volume publish demo-volume
 ```  
 
-公开数据卷后，执行`everai volume list`后，可以看到，卷的状态变为`Public`。`CREATED_AT`使用UTC时间显示。  
+公开数据卷后，执行`everai volume list`后，可以看到，数据卷的状态变为`Public`。`CREATED_AT`使用UTC时间显示。  
 
 ```bash   
 NAME               REVISION    CREATED_AT                  FILES  SIZE    STATUS
