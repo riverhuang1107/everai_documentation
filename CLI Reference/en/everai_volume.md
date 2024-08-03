@@ -3,7 +3,7 @@ Manage volume
 
 **Usage**:  
 ```bash  
-everai volume [-h] {create,list,ls,delete,get,pull,push} ...
+everai volume [-h] {create,list,ls,delete,get,pull,push,publish,tree,tr} ...
 ```
 
 **Commands**:  
@@ -14,6 +14,7 @@ everai volume [-h] {create,list,ls,delete,get,pull,push} ...
 * `pull`                Pull volume  
 * `push`                Push volume  
 * `publish`             Publish volume to everyone
+* `tree (tr)`           Tree volume
 
 **Options**:  
 * `-h, --help`            show this help message and exit
@@ -175,3 +176,27 @@ ever volume publish [-h] name
 
 * `-h, --help`  show this help message and exit
 
+## everai volume tree
+Tree volume  
+
+**Example**:  
+```bash   
+everai volume tree get-start-volume
+```
+The result could be shown like this:  
+
+```bash   
+get-start-volume
+└── my-model
+```
+**Usage**:
+```bash 
+everai volume tree [-h] name
+```
+**Positional arguments**:  
+
+* `name`        The volume name
+
+**Options**:  
+
+* `-h, --help`  show this help message and exit
