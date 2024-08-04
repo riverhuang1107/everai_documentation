@@ -81,3 +81,29 @@ root@b0b6f096aeab:/workspace#
 ```
 
 For detailed usage of `everai app worker exec`, please refer to [everai app worker exec](https://expvent.com/documentation/docs/CLI%20Reference/everai_app#everai-app-worker-exec)。
+
+## Is it supported to modify the storage path of the data volume in the local environment?
+
+Support. First, you can view the current environment variables of the EverAI platform through `everai config`, including the storage path of the data volume in the local environment.
+
+```bash
+EVERAI_HOME /root/.cache/everai
+EVERAI_ENDPOINT https://everai.expvent.com
+EVERAI_VOLUME_ROOT /root/.cache/everai/volumes
+```
+
+* **Linux(WSL) & MacOS**  
+
+Execute the following command to customize the data volume storage path in the local environment. In order to avoid setting this environment variable every time it is used, we can add this command to `.bashrc` and execute the `source` command to make it effective immediately.
+
+```bash
+export EVERAI_VOLUME_ROOT=/data/
+```
+
+Execute `everai config` again, you can see that the storage path of `EVERAI_VOLUME_ROOT` has been modified.
+
+```bash
+EVERAI_HOME /root/.cache/everai
+EVERAI_ENDPOINT https://everai.expvent.com
+EVERAI_VOLUME_ROOT /data/
+```

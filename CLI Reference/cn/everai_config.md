@@ -6,6 +6,13 @@
 ```bash
 everai config
 ```
+用例输出的结果如下所示：    
+
+```bash
+EVERAI_HOME /root/.cache/everai
+EVERAI_ENDPOINT https://everai.expvent.com
+EVERAI_VOLUME_ROOT /root/.cache/everai/volumes
+```
 
 **格式**:
 ```bash 

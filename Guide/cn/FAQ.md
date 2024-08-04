@@ -79,3 +79,26 @@ root@b0b6f096aeab:/workspace#
 
 `everai app worker exec`的详细使用方法请参考[everai app worker exec](https://expvent.com/documentation/zh-cn/docs/CLI%20Reference/everai_app#everai-app-worker-exec)。
 
+## 是否支持修改数据卷在本地环境的存放路径？
+支持。首先可以通过`everai config`查看EverAI平台当前的环境变量，其中包括数据卷在本地环境的存放路径。  
+
+```bash
+EVERAI_HOME /root/.cache/everai
+EVERAI_ENDPOINT https://everai.expvent.com
+EVERAI_VOLUME_ROOT /root/.cache/everai/volumes
+```
+
+* **Linux(WSL) & MacOS**  
+
+执行如下命令，可以自定义本地环境中的数据卷存放路径。为了避免每次使用时设置该环境变量，我们可以把该命令加入到`.bashrc`，并且执行`source`命令，使之立即生效。  
+
+```bash
+export EVERAI_VOLUME_ROOT=/data/
+```
+再次执行`everai config`，可以看到`EVERAI_VOLUME_ROOT`的存放路径已经修改完成。  
+
+```bash
+EVERAI_HOME /root/.cache/everai
+EVERAI_ENDPOINT https://everai.expvent.com
+EVERAI_VOLUME_ROOT /data/
+```
