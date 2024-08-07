@@ -141,7 +141,7 @@ def prepare_model():
     txt2img_pipe = StableDiffusionPipeline.from_pretrained(MODEL_NAME,
                                                         token=huggingface_token,
                                                         cache_dir=model_dir,
-                                                        revision="fp16", 
+                                                        variant='fp16', 
                                                         torch_dtype=torch.float16, 
                                                         low_cpu_mem_usage=False,
                                                         local_files_only=is_in_cloud
@@ -153,7 +153,7 @@ def prepare_model():
     #img2img_pipe = StableDiffusionImg2ImgPipeline.from_pretrained(MODEL_NAME,
     #                                                            token=huggingface_token,
     #                                                            cache_dir=model_dir,
-    #                                                            revision="fp16",
+    #                                                            variant='fp16',
     #                                                            torch_dtype=torch.float16,
     #                                                            low_cpu_mem_usage=False,
     #                                                            local_files_only=is_in_cloud
