@@ -107,3 +107,14 @@ EVERAI_HOME /root/.cache/everai
 EVERAI_ENDPOINT https://everai.expvent.com
 EVERAI_VOLUME_ROOT /data/
 ```
+* **Windows PowerShell**
+
+You can add a variable `EVERAI_VOLUME_ROOT` in the environment variables of the system properties, and set the value of this variable to the data volume storage path address in the local environment.
+
+Execute `everai config` again, you can see that the storage path of `EVERAI_VOLUME_ROOT` has been modified.
+
+```powershell
+EVERAI_HOME C:\Users\<Username>\.cache\everai
+EVERAI_ENDPOINT https://everai.expvent.com
+EVERAI_VOLUME_ROOT D:\data
+```

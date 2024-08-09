@@ -102,3 +102,14 @@ EVERAI_HOME /root/.cache/everai
 EVERAI_ENDPOINT https://everai.expvent.com
 EVERAI_VOLUME_ROOT /data/
 ```
+
+* **Windows PowerShell**
+
+你可以在系统属性的环境变量中添加一个变量`EVERAI_VOLUME_ROOT`，并设置该变量的值为本地环境中的数据卷存放路径地址。
+
+执行`everai config`，可以看到`EVERAI_VOLUME_ROOT`的存放路径已经修改完成。
+```powershell
+EVERAI_HOME C:\Users\<Username>\.cache\everai
+EVERAI_ENDPOINT https://everai.expvent.com
+EVERAI_VOLUME_ROOT D:\data
+```
