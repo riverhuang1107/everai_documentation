@@ -84,7 +84,7 @@ For detailed usage of `everai app worker exec`, please refer to [everai app work
 
 ## Is it supported to modify the storage path of the data volume in the local environment?
 
-Support. First, you can view the current environment variables of the EverAI platform through `everai config`, including the storage path of the data volume in the local environment.
+Support. First, you can view the current environment variables of the EverAI platform through `everai config`, including the storage path of the data volume in the local environment. Take the display results in the Linux environment as an example:  
 
 ```bash
 EVERAI_HOME /root/.cache/everai
