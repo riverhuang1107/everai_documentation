@@ -213,9 +213,9 @@ everai app create --from-file app.yaml
 如果你的应用状态是`DEPLOYED`，并且已经准备就绪的worker容器数量等于期望的worker容器数量，即`1/1`，意味着你的应用已经部署成功。  
 
 ```bash
-NAME                   NAMESPACE    STATUS    WORKERS    CREATED_AT
----------------------  -----------  --------  ---------  ------------------------
-stable-diffusion-v1-5  default      DEPLOYED  1/1        2024-06-19T05:16:05+0000
+NAME                               NAMESPACE    STATUS    WORKERS    CREATED_AT
+---------------------------------  -----------  --------  ---------  ------------------------
+sd-v1-5-manifest-private           default      DEPLOYED  1/1        2024-06-20T14:23:18+0000
 ```
 
 你可以使用`curl`执行下面的请求来测试你部署的文生图代码，在控制台上的当前目录下会产生一张由大模型`Stable Diffusion 1.5`生成的图片。 
