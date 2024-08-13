@@ -208,6 +208,9 @@ spec:
   resource:
     cpu: 1
     memory: 1 GiB
+  
+  services:
+  - port: 8866
 ```
 
 ## Deploy image
