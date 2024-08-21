@@ -87,7 +87,8 @@ app = App(
         ],
         cpu_constraints=CPUConstraints(
             platforms=['amd64', 'arm64']
-        )
+        ),
+        cuda_version_constraints=">=12.4"
     ),
 )
 ```
