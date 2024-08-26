@@ -6,6 +6,7 @@
 |:-------------- |:--------------|:--------------|
 |everai/models--meta-llama--llama-2-7b-chat-hf| meta-llama/Llama-2-7b-chat-hf|[Llama-2(7B) Chat with public volume](https://github.com/everai-example/llama2-7b-chat-with-public-volume)|                    
 |everai/models--meta-llama--meta-llama-3-8b  |meta-llama/Meta-Llama-3-8B ||
+|everai/models--meta-llama--meta-llama-3-1-8b  |meta-llama/Meta-Llama-3.1-8B ||
 
 * **Stable Diffusion**
 
