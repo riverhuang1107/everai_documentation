@@ -5,7 +5,7 @@
 List workers
 
 ```api
-/api/apps/v1/namespaces/{namespace}/apps/{name}/workers
+https://everai.expvent.com/api/apps/v1/namespaces/{namespace}/apps/{name}/workers
 ```
 
 ### Request
@@ -18,6 +18,8 @@ List workers
 |recentDays  |integer |display the workers that have existed in the between before day and now, default 2 day, value unit is day|
 
 ### Response
+
+Here’s what the response payload looks like as JSON:
 
 ```json
 {
@@ -62,7 +64,7 @@ List workers
 Scale down workers
 
 ```api
-/api/apps/v1/namespaces/{namespace}/apps/{name}/workers:scale-down
+https://everai.expvent.com/api/apps/v1/namespaces/{namespace}/apps/{name}/workers:scale-down
 ```
 
 ### Request
@@ -76,6 +78,8 @@ Scale down workers
 
 ### Response
 
+Here’s what the response payload looks like as JSON:
+
 ```json
 {}
 ```
@@ -85,7 +89,7 @@ Scale down workers
 Scale up workers
 
 ```api
-/api/apps/v1/namespaces/{namespace}/apps/{name}/workers:scale-up
+https://everai.expvent.com/api/apps/v1/namespaces/{namespace}/apps/{name}/workers:scale-up
 ```
 
 ### Request
@@ -97,6 +101,8 @@ Scale up workers
 |scaleUpWorkersNum   |string ||
 
 ### Response
+
+Here’s what the response payload looks like as JSON:
 
 ```json
 {

@@ -1,23 +1,23 @@
 # everai app
 
-## List workers
+## 显示worker容器列表
 
-List workers
+显示worker容器列表
 
 ```api
-/api/apps/v1/namespaces/{namespace}/apps/{name}/workers
+https://everai.expvent.com/api/apps/v1/namespaces/{namespace}/apps/{name}/workers
 ```
 
-### Request
+### 请求参数
 
-|Field Name |Type |Description |
+|字段名称 |类型 |描述 |
 |:-------------- |:--------------|:--------------|
 |namespace | string|namespace|
 |name | string|app name|
 |showAll   |boolean ||
 |recentDays  |integer |display the workers that have existed in the between before day and now, default 2 day, value unit is day|
 
-### Response
+### 返回结果
 
 ```json
 {
@@ -57,46 +57,46 @@ List workers
 }
 ```
 
-## Scale down workers
+## 缩容worker容器
 
-Scale down workers
+缩容worker容器
 
 ```api
-/api/apps/v1/namespaces/{namespace}/apps/{name}/workers:scale-down
+https://everai.expvent.com/api/apps/v1/namespaces/{namespace}/apps/{name}/workers:scale-down
 ```
 
-### Request
+### 请求参数
 
-|Field Name |Type |Description |
+|字段名称 |类型 |描述 |
 |:-------------- |:--------------|:--------------|
 |namespace | string|namespace|
 |name | string|app name|
 |scaleDownWorkersNum   |string ||
 |workerIds  |array[string] ||
 
-### Response
+### 返回结果
 
 ```json
 {}
 ```
 
-## Scale up workers
+## 扩容worker容器
 
-Scale up workers
+扩容worker容器
 
 ```api
-/api/apps/v1/namespaces/{namespace}/apps/{name}/workers:scale-up
+https://everai.expvent.com/api/apps/v1/namespaces/{namespace}/apps/{name}/workers:scale-up
 ```
 
-### Request
+### 请求参数
 
-|Field Name |Type |Description |
+|字段名称 |类型 |描述 |
 |:-------------- |:--------------|:--------------|
 |namespace | string|namespace|
 |name | string|app name|
 |scaleUpWorkersNum   |string ||
 
-### Response
+### 返回结果
 
 ```json
 {
