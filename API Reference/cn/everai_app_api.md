@@ -71,8 +71,8 @@ Scale down workers
 |:-------------- |:--------------|:--------------|
 |namespace | string|namespace|
 |name | string|app name|
-|showAll   |boolean ||
-|recentDays  |integer |display the workers that have existed in the between before day and now, default 2 day, value unit is day|
+|scaleDownWorkersNum   |string ||
+|workerIds  |array[string] ||
 
 ### Response
 
@@ -94,8 +94,7 @@ Scale up workers
 |:-------------- |:--------------|:--------------|
 |namespace | string|namespace|
 |name | string|app name|
-|showAll   |boolean ||
-|recentDays  |integer |display the workers that have existed in the between before day and now, default 2 day, value unit is day|
+|scaleUpWorkersNum   |string ||
 
 ### Response
 
