@@ -10,7 +10,7 @@ https://everai.expvent.com/api/apps/v1/namespaces/{namespace}/apps/{name}/worker
 
 ### 请求参数
 
-|字段名称 |类型 |描述 |
+|参数名称 |类型 |描述 |
 |:-------------- |:--------------|:--------------|
 |namespace | string|命名空间名称，默认为`default`|
 |name | string|应用名称|
@@ -59,7 +59,7 @@ https://everai.expvent.com/api/apps/v1/namespaces/{namespace}/apps/{name}/worker
 
 #### Worker Status
 
-|Status |Description |
+|状态 |描述 |
 |:-------------- |:--------------|
 |STATUS_UNSPECIFIED ||
 |STATUS_INITIALIZED ||
@@ -73,7 +73,7 @@ https://everai.expvent.com/api/apps/v1/namespaces/{namespace}/apps/{name}/worker
 
 #### Worker Detail Status
 
-|Detail Status |Description |
+|详细状态 |描述 |
 |:-------------- |:--------------|
 |DETAIL_STATUS_UNSPECIFIED ||
 |DETAIL_STATUS_IN_FLIGHT ||
@@ -93,7 +93,7 @@ https://everai.expvent.com/api/apps/v1/namespaces/{namespace}/apps/{name}/worker
 
 ### 请求参数
 
-|字段名称 |类型 |描述 |
+|参数名称 |类型 |描述 |
 |:-------------- |:--------------|:--------------|
 |namespace | string|命名空间名称，默认为`default`|
 |name | string|应用名称|
@@ -116,7 +116,7 @@ https://everai.expvent.com/api/apps/v1/namespaces/{namespace}/apps/{name}/worker
 
 ### 请求参数
 
-|字段名称 |类型 |描述 |
+|参数名称 |类型 |描述 |
 |:-------------- |:--------------|:--------------|
 |namespace | string|命名空间名称，默认为`default`|
 |name | string|应用名称|
