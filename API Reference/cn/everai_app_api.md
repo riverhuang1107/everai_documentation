@@ -4,7 +4,7 @@
 
 显示worker容器列表
 
-```api
+```bash
 https://everai.expvent.com/api/apps/v1/namespaces/{namespace}/apps/{name}/workers
 ```
 
@@ -87,7 +87,7 @@ https://everai.expvent.com/api/apps/v1/namespaces/{namespace}/apps/{name}/worker
 
 缩容worker容器
 
-```api
+```bash
 https://everai.expvent.com/api/apps/v1/namespaces/{namespace}/apps/{name}/workers:scale-down
 ```
 
@@ -110,7 +110,7 @@ https://everai.expvent.com/api/apps/v1/namespaces/{namespace}/apps/{name}/worker
 
 扩容worker容器
 
-```api
+```bash
 https://everai.expvent.com/api/apps/v1/namespaces/{namespace}/apps/{name}/workers:scale-up
 ```
 

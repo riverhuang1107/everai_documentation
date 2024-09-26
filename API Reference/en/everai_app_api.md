@@ -4,7 +4,7 @@
 
 List workers
 
-```api
+```bash
 https://everai.expvent.com/api/apps/v1/namespaces/{namespace}/apps/{name}/workers
 ```
 
@@ -89,7 +89,7 @@ Here’s what the response payload looks like as JSON:
 
 Scale down workers
 
-```api
+```bash
 https://everai.expvent.com/api/apps/v1/namespaces/{namespace}/apps/{name}/workers:scale-down
 ```
 
@@ -114,7 +114,7 @@ Here’s what the response payload looks like as JSON:
 
 Scale up workers
 
-```api
+```bash
 https://everai.expvent.com/api/apps/v1/namespaces/{namespace}/apps/{name}/workers:scale-up
 ```
 
