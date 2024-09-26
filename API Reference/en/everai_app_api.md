@@ -12,7 +12,7 @@ https://everai.expvent.com/api/apps/v1/namespaces/{namespace}/apps/{name}/worker
 
 |Field Name |Type |Description |
 |:-------------- |:--------------|:--------------|
-|namespace | string|namespace|
+|namespace | string|namespace name, Defaults to `defualt`|
 |name | string|app name|
 |showAll   |boolean ||
 |recentDays  |integer |display the workers that have existed in the between before day and now, default 2 day, value unit is day|
@@ -71,7 +71,7 @@ https://everai.expvent.com/api/apps/v1/namespaces/{namespace}/apps/{name}/worker
 
 |Field Name |Type |Description |
 |:-------------- |:--------------|:--------------|
-|namespace | string|namespace|
+|namespace | string|namespace name, Defaults to `defualt`|
 |name | string|app name|
 |scaleDownWorkersNum   |string ||
 |workerIds  |array[string] ||
@@ -96,7 +96,7 @@ https://everai.expvent.com/api/apps/v1/namespaces/{namespace}/apps/{name}/worker
 
 |Field Name |Type |Description |
 |:-------------- |:--------------|:--------------|
-|namespace | string|namespace|
+|namespace | string|namespace name, Defaults to `defualt`|
 |name | string|app name|
 |scaleUpWorkersNum   |string ||
 

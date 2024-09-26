@@ -12,10 +12,10 @@ https://everai.expvent.com/api/apps/v1/namespaces/{namespace}/apps/{name}/worker
 
 |字段名称 |类型 |描述 |
 |:-------------- |:--------------|:--------------|
-|namespace | string|namespace|
-|name | string|app name|
+|namespace | string|命名空间名称，默认为`default`|
+|name | string|应用名称|
 |showAll   |boolean ||
-|recentDays  |integer |display the workers that have existed in the between before day and now, default 2 day, value unit is day|
+|recentDays  |integer |显示最近天数内没有在运行中的worker容器|
 
 ### 返回结果
 
@@ -69,8 +69,8 @@ https://everai.expvent.com/api/apps/v1/namespaces/{namespace}/apps/{name}/worker
 
 |字段名称 |类型 |描述 |
 |:-------------- |:--------------|:--------------|
-|namespace | string|namespace|
-|name | string|app name|
+|namespace | string|命名空间名称，默认为`default`|
+|name | string|应用名称|
 |scaleDownWorkersNum   |string ||
 |workerIds  |array[string] ||
 
@@ -92,8 +92,8 @@ https://everai.expvent.com/api/apps/v1/namespaces/{namespace}/apps/{name}/worker
 
 |字段名称 |类型 |描述 |
 |:-------------- |:--------------|:--------------|
-|namespace | string|namespace|
-|name | string|app name|
+|namespace | string|命名空间名称，默认为`default`|
+|name | string|应用名称|
 |scaleUpWorkersNum   |string ||
 
 ### 返回结果
