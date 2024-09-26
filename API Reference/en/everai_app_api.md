@@ -59,6 +59,32 @@ Here’s what the response payload looks like as JSON:
 }
 ```
 
+#### Worker Status
+
+|Status |Description |
+|:-------------- |:--------------|
+|STATUS_UNSPECIFIED ||
+|STATUS_INITIALIZED ||
+|STATUS_PENDING ||
+|STATUS_RUNNING ||
+|STATUS_TERMINATING ||
+|STATUS_ERROR ||
+|STATUS_UNAVAILABLE ||
+|STATUS_TERMINATED ||
+|STATUS_CREATED ||
+
+#### Worker Detail Status
+
+|Detail Status |Description |
+|:-------------- |:--------------|
+|DETAIL_STATUS_UNSPECIFIED ||
+|DETAIL_STATUS_IN_FLIGHT ||
+|DETAIL_STATUS_REMOVE ||
+|DETAIL_STATUS_ROLLIN ||
+|STATUS_TERMINATING ||
+|DETAIL_STATUS_BUSY ||
+|DETAIL_STATUS_FREE ||
+
 ## Scale down workers
 
 Scale down workers
