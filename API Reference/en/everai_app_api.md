@@ -10,12 +10,12 @@ https://everai.expvent.com/api/apps/v1/namespaces/{namespace}/apps/{name}/worker
 
 ### Request
 
-|Field Name |Type |Description |
-|:-------------- |:--------------|:--------------|
-|`namespace` | string|namespace name, Defaults to `defualt`|
-|`name` | string|app name|
-|`showAll`   |boolean ||
-|`recentDays`  |integer |display the workers that have existed in the between before day and now, default 2 day, value unit is day|
+|Field Name |Type |Required |Description |
+|:-------------- |:--------------|:--------------|:--------------|
+|`namespace` | string| Yes | namespace name, Defaults to `defualt`|
+|`name` | string| Yes |app name|
+|`showAll`   |boolean | No ||
+|`recentDays`  |integer | No |display the workers that have existed in the between before day and now, default 2 day, value unit is day|
 
 ### Response
 
@@ -94,12 +94,12 @@ https://everai.expvent.com/api/apps/v1/namespaces/{namespace}/apps/{name}/worker
 
 ### Request
 
-|Field Name |Type |Description |
-|:-------------- |:--------------|:--------------|
-|`namespace` | string|namespace name, Defaults to `defualt`|
-|`name` | string|app name|
-|`scaleDownWorkersNum`   |string ||
-|`workerIds`  |array[string] ||
+|Field Name |Type |Required |Description |
+|:-------------- |:--------------|:--------------|:--------------|
+|`namespace` | string|Yes | namespace name, Defaults to `defualt`|
+|`name` | string|Yes |app name|
+|`scaleDownWorkersNum`   |string |No ||
+|`workerIds`  |array[string] |No ||
 
 ### Response
 
@@ -119,11 +119,11 @@ https://everai.expvent.com/api/apps/v1/namespaces/{namespace}/apps/{name}/worker
 
 ### Request
 
-|Field Name |Type |Description |
-|:-------------- |:--------------|:--------------|
-|`namespace` | string|namespace name, Defaults to `defualt`|
-|`name` | string|app name|
-|`scaleUpWorkersNum` |string ||
+|Field Name |Type |Required |Description |
+|:-------------- |:--------------|:--------------|:--------------|
+|`namespace` | string|Yes | namespace name, Defaults to `defualt`|
+|`name` | string|Yes |app name|
+|`scaleUpWorkersNum` |string |No ||
 
 ### Response
 

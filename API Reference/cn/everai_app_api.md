@@ -10,12 +10,12 @@ https://everai.expvent.com/api/apps/v1/namespaces/{namespace}/apps/{name}/worker
 
 ### 请求参数
 
-|参数名称 |类型 |描述 |
-|:-------------- |:--------------|:--------------|
-|`namespace` | string|命名空间名称，默认为`default`|
-|`name` | string|应用名称|
-|`showAll`   |boolean ||
-|`recentDays`  |integer |显示最近天数内没有在运行中的worker容器|
+|参数名称 |类型 |必填 |描述 |
+|:-------------- |:--------------|:--------------|:--------------|
+|`namespace` | string|是|命名空间名称，默认为`default`|
+|`name` | string|是|应用名称|
+|`showAll`   |boolean |否||
+|`recentDays`  |integer |否|显示最近天数内没有在运行中的worker容器|
 
 ### 返回结果
 
@@ -92,12 +92,12 @@ https://everai.expvent.com/api/apps/v1/namespaces/{namespace}/apps/{name}/worker
 
 ### 请求参数
 
-|参数名称 |类型 |描述 |
-|:-------------- |:--------------|:--------------|
-|`namespace` | string|命名空间名称，默认为`default`|
-|`name` | string|应用名称|
-|`scaleDownWorkersNum`   |string ||
-|`workerIds`  |array[string] ||
+|参数名称 |类型 |必填 |描述 |
+|:-------------- |:--------------|:--------------|:--------------|
+|`namespace` | string|是|命名空间名称，默认为`default`|
+|`name` | string|是|应用名称|
+|`scaleDownWorkersNum`   |string |否||
+|`workerIds`  |array[string] |否||
 
 ### 返回结果
 
@@ -115,11 +115,11 @@ https://everai.expvent.com/api/apps/v1/namespaces/{namespace}/apps/{name}/worker
 
 ### 请求参数
 
-|参数名称 |类型 |描述 |
-|:-------------- |:--------------|:--------------|
-|`namespace` | string|命名空间名称，默认为`default`|
-|`name` | string|应用名称|
-|`scaleUpWorkersNum`   |string ||
+|参数名称 |类型 |必填 |描述 |
+|:-------------- |:--------------|:--------------|:--------------|
+|`namespace` | string|是|命名空间名称，默认为`default`|
+|`name` | string|是|应用名称|
+|`scaleUpWorkersNum`   |string |否||
 
 ### 返回结果
 
