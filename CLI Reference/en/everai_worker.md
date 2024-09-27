@@ -55,7 +55,7 @@ everai worker list [-h] [--output [OUTPUT]] [--all] [--recent-days [RECENT_DAYS]
                         Output format, One of: (json, yaml, table, wide)  
 * `--all, -a`             show all workers, include deleted and errors  
 * `--recent-days [RECENT_DAYS], -d [RECENT_DAYS]`
-                        show not running workers who is created in recent days
+                        show all workers created in recent days, include deleted and errors
 * `--namespace [NAMESPACE], -n [NAMESPACE]`
                         namespace of app  
 

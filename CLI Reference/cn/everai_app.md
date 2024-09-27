@@ -370,7 +370,7 @@ everai app worker list [-h] [--output [OUTPUT]] [--all] [--recent-days [RECENT_D
                         输出格式，可选（json, yaml, table, wide）
   * `--all, -a`         显示该应用的所有worker，包括已经删除的和有问题的worker
   * `--recent-days [RECENT_DAYS], -d [RECENT_DAYS]`
-                         显示最近天数内没有在运行中的worker
+                         显示该应用最近天数内的所有worker，包括已经删除的和有问题的worker
   * `--namespace [NAMESPACE], -n [NAMESPACE]`
                         应用的命名空间
 
