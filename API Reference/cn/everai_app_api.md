@@ -61,27 +61,26 @@ https://everai.expvent.com/api/apps/v1/namespaces/{namespace}/apps/{name}/worker
 
 |状态 |描述 |
 |:-------------- |:--------------|
-|STATUS_UNSPECIFIED ||
-|STATUS_INITIALIZED ||
-|STATUS_PENDING ||
-|STATUS_RUNNING ||
-|STATUS_TERMINATING ||
-|STATUS_ERROR ||
-|STATUS_UNAVAILABLE ||
-|STATUS_TERMINATED ||
-|STATUS_CREATED ||
+|STATUS_UNSPECIFIED | Worker容器异常 |
+|STATUS_INITIALIZED |Worker容器初始化 |
+|STATUS_PENDING |Worker容器挂起 |
+|STATUS_RUNNING |Worker容器运行中 |
+|STATUS_TERMINATING |Worker容器正在终止中 |
+|STATUS_ERROR |Worker容器异常 |
+|STATUS_UNAVAILABLE |Worker容器不可用|
+|STATUS_TERMINATED |Worker容器已终止|
+|STATUS_CREATED |Worker容器已创建 |
 
 #### Worker Detail Status
 
 |详细状态 |描述 |
 |:-------------- |:--------------|
-|DETAIL_STATUS_UNSPECIFIED ||
-|DETAIL_STATUS_IN_FLIGHT ||
-|DETAIL_STATUS_REMOVE ||
-|DETAIL_STATUS_ROLLIN ||
-|STATUS_TERMINATING ||
-|DETAIL_STATUS_BUSY ||
-|DETAIL_STATUS_FREE ||
+|DETAIL_STATUS_UNSPECIFIED |Worker容器异常|
+|DETAIL_STATUS_IN_FLIGHT |Worker容器创建中|
+|DETAIL_STATUS_REMOVE |Worker容器删除中|
+|DETAIL_STATUS_ROLLIN |新的Worker容器替换旧的Worker容器|
+|DETAIL_STATUS_BUSY |Worker容器忙碌中|
+|DETAIL_STATUS_FREE |Worker容器空闲|
 
 ## 缩容worker容器
 
