@@ -12,10 +12,10 @@ https://everai.expvent.com/api/apps/v1/namespaces/{namespace}/apps/{name}/worker
 
 |Field Name |Type |Description |
 |:-------------- |:--------------|:--------------|
-|namespace | string|namespace name, Defaults to `defualt`|
-|name | string|app name|
-|showAll   |boolean ||
-|recentDays  |integer |display the workers that have existed in the between before day and now, default 2 day, value unit is day|
+|`namespace` | string|namespace name, Defaults to `defualt`|
+|`name` | string|app name|
+|`showAll`   |boolean ||
+|`recentDays`  |integer |display the workers that have existed in the between before day and now, default 2 day, value unit is day|
 
 ### Response
 
@@ -63,26 +63,26 @@ Here’s what the response payload looks like as JSON:
 
 |Status |Description |
 |:-------------- |:--------------|
-|STATUS_UNSPECIFIED |The worker is unspecified. |
-|STATUS_INITIALIZED |The worker is initialized. |
-|STATUS_PENDING |The worker is pending. |
-|STATUS_RUNNING |The worker is running. |
-|STATUS_TERMINATING |The worker is terminating. |
-|STATUS_ERROR |The worker is error. |
-|STATUS_UNAVAILABLE |The worker is not available.|
-|STATUS_TERMINATED |The worker is terminated.|
-|STATUS_CREATED |The worker is created. |
+|`STATUS_UNSPECIFIED` |The worker is unspecified. |
+|`STATUS_INITIALIZED` |The worker is initialized. |
+|`STATUS_PENDING` |The worker is pending. |
+|`STATUS_RUNNING` |The worker is running. |
+|`STATUS_TERMINATING` |The worker is terminating. |
+|`STATUS_ERROR` |The worker is error. |
+|`STATUS_UNAVAILABLE` |The worker is not available.|
+|`STATUS_TERMINATED` |The worker is terminated.|
+|`STATUS_CREATED` |The worker is created. |
 
 #### Worker Detail Status
 
 |Detail Status |Description |
 |:-------------- |:--------------|
-|DETAIL_STATUS_UNSPECIFIED |The worker is unspecified.|
-|DETAIL_STATUS_IN_FLIGHT |The worker is creating.|
-|DETAIL_STATUS_REMOVE |The worker is removing.|
-|DETAIL_STATUS_ROLLIN |The new worker is rolling in.|
-|DETAIL_STATUS_BUSY |The worker is busy.|
-|DETAIL_STATUS_FREE |The worker is free.|
+|`DETAIL_STATUS_UNSPECIFIED` |The worker is unspecified.|
+|`DETAIL_STATUS_IN_FLIGHT` |The worker is creating.|
+|`DETAIL_STATUS_REMOVE` |The worker is removing.|
+|`DETAIL_STATUS_ROLLIN` |The new worker is rolling in.|
+|`DETAIL_STATUS_BUSY` |The worker is busy.|
+|`DETAIL_STATUS_FREE` |The worker is free.|
 
 ## Scale down workers
 
@@ -96,10 +96,10 @@ https://everai.expvent.com/api/apps/v1/namespaces/{namespace}/apps/{name}/worker
 
 |Field Name |Type |Description |
 |:-------------- |:--------------|:--------------|
-|namespace | string|namespace name, Defaults to `defualt`|
-|name | string|app name|
-|scaleDownWorkersNum   |string ||
-|workerIds  |array[string] ||
+|`namespace` | string|namespace name, Defaults to `defualt`|
+|`name` | string|app name|
+|`scaleDownWorkersNum`   |string ||
+|`workerIds`  |array[string] ||
 
 ### Response
 
@@ -121,9 +121,9 @@ https://everai.expvent.com/api/apps/v1/namespaces/{namespace}/apps/{name}/worker
 
 |Field Name |Type |Description |
 |:-------------- |:--------------|:--------------|
-|namespace | string|namespace name, Defaults to `defualt`|
-|name | string|app name|
-|scaleUpWorkersNum   |string ||
+|`namespace` | string|namespace name, Defaults to `defualt`|
+|`name` | string|app name|
+|`scaleUpWorkersNum` |string ||
 
 ### Response
 
