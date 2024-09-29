@@ -11,7 +11,8 @@ https://everai.expvent.com/api/apps/v1/namespaces/{namespace}/apps/{name}/worker
 ### 请求参数
 
 ```bash
-curl -H 'Authorization: Bearer <your_token>' \
+curl -X GET \
+  -H 'Authorization: Bearer <your_token>' \
   https://everai.expvent.com/api/apps/v1/namespaces/<namespace>/apps/<name>/workers
 ```
 
