@@ -12,7 +12,7 @@ https://everai.expvent.com/api/apps/v1/namespaces/{namespace}/apps/{name}/worker
 
 ```bash
 curl -H 'Authorization: Token <your_token>' \
-  https://everai.expvent.com/api/apps/v1/<namespace>/apps/<name>/workers
+  https://everai.expvent.com/api/apps/v1/namespaces/<namespace>/apps/<name>/workers
 ```
 
 |Field Name |Type |Required |Description |
