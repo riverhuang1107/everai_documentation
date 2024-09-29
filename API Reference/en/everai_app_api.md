@@ -11,7 +11,7 @@ https://everai.expvent.com/api/apps/v1/namespaces/{namespace}/apps/{name}/worker
 ### Request
 
 ```bash
-curl -H 'Authorization: Token <your_token>' \
+curl -H 'Authorization: Bearer <your_token>' \
   https://everai.expvent.com/api/apps/v1/namespaces/<namespace>/apps/<name>/workers
 ```
 
@@ -99,6 +99,13 @@ https://everai.expvent.com/api/apps/v1/namespaces/{namespace}/apps/{name}/worker
 
 ### Request
 
+```bash
+curl -X POST \
+  -H 'Authorization: Bearer <your_token>' \
+  -d '{"scaleDownWorkersNum": "<scaleDownWorkersNum>", "workerIds": ["<workerIds>"]}' \
+  https://everai.expvent.com/api/apps/v1/namespaces/<namespace>/apps/<name>/workers:scale-down
+```
+
 |Field Name |Type |Required |Description |
 |:-------------- |:--------------|:--------------|:--------------|
 |`namespace` | string|Yes | namespace name, Defaults to `defualt`|
@@ -123,6 +130,13 @@ https://everai.expvent.com/api/apps/v1/namespaces/{namespace}/apps/{name}/worker
 ```
 
 ### Request
+
+```bash
+curl -X POST \
+  -H 'Authorization: Bearer <your_token>' \
+  -d '{"scaleUpWorkersNum": "<scaleUpWorkersNum>"}' \
+  https://everai.expvent.com/api/apps/v1/namespaces/<namespace>/apps/<name>/workers:scale-up
+```
 
 |Field Name |Type |Required |Description |
 |:-------------- |:--------------|:--------------|:--------------|

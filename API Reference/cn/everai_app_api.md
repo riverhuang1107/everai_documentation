@@ -11,7 +11,7 @@ https://everai.expvent.com/api/apps/v1/namespaces/{namespace}/apps/{name}/worker
 ### 请求参数
 
 ```bash
-curl -H 'Authorization: Token <your_token>' \
+curl -H 'Authorization: Bearer <your_token>' \
   https://everai.expvent.com/api/apps/v1/namespaces/<namespace>/apps/<name>/workers
 ```
 
@@ -97,6 +97,13 @@ https://everai.expvent.com/api/apps/v1/namespaces/{namespace}/apps/{name}/worker
 
 ### 请求参数
 
+```bash
+curl -X POST \
+  -H 'Authorization: Bearer <your_token>' \
+  -d '{"scaleDownWorkersNum": "<scaleDownWorkersNum>", "workerIds": ["<workerIds>"]}' \
+  https://everai.expvent.com/api/apps/v1/namespaces/<namespace>/apps/<name>/workers:scale-down
+```
+
 |参数名称 |类型 |必填 |描述 |
 |:-------------- |:--------------|:--------------|:--------------|
 |`namespace` | string|是|命名空间名称，默认为`default`|
@@ -119,6 +126,13 @@ https://everai.expvent.com/api/apps/v1/namespaces/{namespace}/apps/{name}/worker
 ```
 
 ### 请求参数
+
+```bash
+curl -X POST \
+  -H 'Authorization: Bearer <your_token>' \
+  -d '{"scaleUpWorkersNum": "<scaleUpWorkersNum>"}' \
+  https://everai.expvent.com/api/apps/v1/namespaces/<namespace>/apps/<name>/workers:scale-up
+```
 
 |参数名称 |类型 |必填 |描述 |
 |:-------------- |:--------------|:--------------|:--------------|
