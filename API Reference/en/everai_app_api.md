@@ -31,37 +31,31 @@ Here’s what the response payload looks like as JSON:
 {
   "workers": [
     {
-      "id": "string",
-      "deviceId": "string",
-      "status": "STATUS_UNSPECIFIED",
-      "detailStatus": "DETAIL_STATUS_UNSPECIFIED",
-      "createdAt": "2024-09-26T12:33:22.807Z",
-      "deletedAt": "2024-09-26T12:33:22.807Z",
-      "launchAt": "2024-09-26T12:33:22.807Z",
-      "lastServeAt": "2024-09-26T12:33:22.807Z",
-      "successCount": 0,
-      "failedCount": 0,
-      "sessionNumber": 0,
-      "CPUs": 0,
-      "memory": 0,
-      "GPUName": "string",
-      "GPUs": 0,
-      "appId": "string",
-      "appRevision": "string",
-      "replaceWorkerId": "string",
-      "userId": "string",
-      "requestId": "string",
-      "gpuModel": "string",
-      "gpuNum": 0,
-      "stopAt": "string",
-      "devicePublicAddress": "string"
+      "id": "JYdCWQfbKLAhEf8WnZUY34",
+      "deviceId": "95fa81d0-c46c-4d77-9194-20c65eb34733",
+      "status": "STATUS_RUNNING",
+      "detailStatus": "DETAIL_STATUS_FREE",
+      "createdAt": "2024-09-29T09:35:18.362Z",
+      "launchAt": "2024-09-29T09:35:23.443Z",
+      "lastServeAt": "2024-09-29T09:36:02.218108Z",
+      "successCount": 1,
+      "CPUs": 2,
+      "memory": 1024,
+      "appId": "nmusD8nfVdsdc8q3cAmcbE"
+    },
+    {
+      "id": "LZeebuHERVEcWxfaw3z7vJ",
+      "deviceId": "c2f3a824-0b33-4f14-a4c1-a4e417c90755",
+      "status": "STATUS_RUNNING",
+      "detailStatus": "DETAIL_STATUS_FREE",
+      "createdAt": "2024-09-29T09:35:18.370Z",
+      "launchAt": "2024-09-29T09:35:23.547Z",
+      "lastServeAt": "2024-09-29T09:35:35.387883192Z",
+      "CPUs": 2,
+      "memory": 1024,
+      "appId": "nmusD8nfVdsdc8q3cAmcbE"
     }
-  ],
-  "queueSize": 0,
-  "queueName": "string",
-  "lastScaleUpTime": "2024-09-26T12:33:22.807Z",
-  "lastScaleDownDeleteTime": "2024-09-26T12:33:22.807Z",
-  "maxWorkers": 0
+  ]
 }
 ```
 
