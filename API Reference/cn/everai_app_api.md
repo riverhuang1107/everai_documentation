@@ -140,7 +140,7 @@ curl -X POST \
 ```json
 {
   "workerIds": [
-    "string"
+    "5oSaHwT5Y9TmrocstmfWWj"
   ]
 }
 ```

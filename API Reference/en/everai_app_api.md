@@ -146,7 +146,7 @@ Here’s what the response payload looks like as JSON:
 ```json
 {
   "workerIds": [
-    "string"
+    "5oSaHwT5Y9TmrocstmfWWj"
   ]
 }
 ```
