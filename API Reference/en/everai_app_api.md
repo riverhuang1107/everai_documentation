@@ -10,6 +10,11 @@ https://everai.expvent.com/api/apps/v1/namespaces/{namespace}/apps/{name}/worker
 
 ### Request
 
+```bash
+curl -H 'Authorization: Token <your_token>' \
+  https://everai.expvent.com/api/apps/v1/<namespace>/apps/<name>/workers
+```
+
 |Field Name |Type |Required |Description |
 |:-------------- |:--------------|:--------------|:--------------|
 |`namespace` | string| Yes | namespace name, Defaults to `defualt`|
