@@ -5,6 +5,10 @@ sidebar_label: everai cli changelog
 
 # everai cli changelog
 
+## 0.2.33 (2024-10-10)
+
+## 0.2.32 (2024-10-08)
+
 ## 0.2.31 (2024-08-06)
 
 * Applications can configure multiple ports for externally exposed services. An example of yaml file configuration in manifest mode is as follows:    
