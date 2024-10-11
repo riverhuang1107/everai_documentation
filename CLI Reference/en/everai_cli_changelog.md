@@ -5,7 +5,7 @@ sidebar_label: everai cli changelog
 
 # everai cli changelog
 
-## 0.2.35 (2024-10-12)
+## 0.2.36 (2024-10-12)
 
 * Applications support controlling the expansion and contraction of worker containers through [API](https://expvent.com/documentation/docs/API%20Reference/everai_app_api). The yaml file configuration example in manifest mode is as follows:
 
@@ -18,7 +18,7 @@ spec:
       defaultWorkerNum: 1
   ...
 ```
-## 0.2.34 (2024-10-11)
+## 0.2.35 (2024-10-11)
 
 * Optimized the timeout reconnection logic of `everai volume push`.
 
