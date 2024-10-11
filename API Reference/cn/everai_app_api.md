@@ -21,7 +21,7 @@ curl -X GET \
 |`namespace` | string|是|命名空间名称，默认为`default`|
 |`name` | string|是|应用名称|
 |`showAll`   |boolean |否||
-|`recentDays`  |integer |否|显示最近天数内没有在运行中的worker容器|
+|`recentDays`  |integer |否|显示该应用最近天数内的所有worker容器，包括已经删除的和有问题的worker容器|
 
 ### 返回结果
 
