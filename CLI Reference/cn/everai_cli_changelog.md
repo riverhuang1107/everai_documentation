@@ -5,9 +5,21 @@ sidebar_label: everai cli changelog
 
 # everai cli changelog
 
-## 0.2.33 (2024-10-10)
+## 0.2.34 (2024-10-10)
 
-## 0.2.32 (2024-10-08)
+* 应用支持通过API来控制worker容器的扩缩容，manifest模式下yaml文件配置示例如下：
+  
+```yaml
+...
+spec:
+  ...
+  autoscaler:
+    manual:
+      defaultWorkerNum: 1
+  ...
+```
+
+## 0.2.33 (2024-10-10)
 
 ## 0.2.31 (2024-08-06)
 
