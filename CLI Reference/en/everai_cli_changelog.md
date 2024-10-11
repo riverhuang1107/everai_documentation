@@ -22,7 +22,7 @@ spec:
 ## 0.2.33 (2024-10-10)
 
 ```bash
-[2024-10-09 17:46:51][WARNING][:781] Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after conection broken by 'SSLError(SSLCertVerificationErrOr(1, '[SSL: CERTIFICATE_VERIFY FAILED] certificate verify failed: unable to get local issuer certificate(_ssl.c:1007)'))':/api/volumes/v1/volumes
+[2024-10-09 17:46:51][WARNING][:781] Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after conection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate(_ssl.c:1007)'))': /api/volumes/v1/volumes
 ```
 
 ## 0.2.31 (2024-08-06)
