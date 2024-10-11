@@ -7,6 +7,8 @@ sidebar_label: everai cli changelog
 
 ## 0.2.34 (2024-10-10)
 
+* Applications support controlling the expansion and contraction of worker containers through API. The yaml file configuration example in manifest mode is as follows:
+
 ```yaml
 ...
 spec:
