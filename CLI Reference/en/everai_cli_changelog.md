@@ -5,7 +5,19 @@ sidebar_label: everai cli changelog
 
 # everai cli changelog
 
-## 0.2.36 (2024-10-15)
+## 0.2.35 (2024-10-11)
+
+* Optimized the timeout reconnection logic of `everai volume push`.
+
+## 0.2.33 (2024-10-10)
+
+* Fixed the issue where when executing the `everai volume list` command, the following error may occur, that is, the local CA certificate cannot be obtained.
+
+```bash
+[2024-10-09 17:46:51][WARNING][:781] Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after conection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate(_ssl.c:1007)'))': /api/volumes/v1/volumes
+```
+
+## 0.2.32 (2024-10-08)
 
 * Applications support controlling the expansion and contraction of worker containers through [API](https://expvent.com/documentation/docs/API%20Reference/everai_app_api). The yaml file configuration example in manifest mode is as follows:
 
@@ -17,17 +29,6 @@ spec:
     manual:
       defaultWorkerNum: 1
   ...
-```
-## 0.2.35 (2024-10-11)
-
-* Optimized the timeout reconnection logic of `everai volume push`.
-
-## 0.2.33 (2024-10-10)
-
-* Fixed the issue where when executing the `everai volume list` command, the following error may occur, that is, the local CA certificate cannot be obtained.
-
-```bash
-[2024-10-09 17:46:51][WARNING][:781] Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after conection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate(_ssl.c:1007)'))': /api/volumes/v1/volumes
 ```
 
 ## 0.2.31 (2024-08-06)

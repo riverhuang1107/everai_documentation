@@ -5,7 +5,19 @@ sidebar_label: everai cli changelog
 
 # everai cli changelog
 
-## 0.2.36 (2024-10-15)
+## 0.2.35 (2024-10-11)
+
+* 优化了`everai volume push`时，超时重连的逻辑。
+  
+## 0.2.33 (2024-10-10)
+
+* 修复了在执行`everai volume list`指令时，有概率出现如下所示报错，即获取不到本地CA证书的问题。
+
+```bash
+[2024-10-09 17:46:51][WARNING][:781] Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after conection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate(_ssl.c:1007)'))': /api/volumes/v1/volumes
+```
+
+## 0.2.32 (2024-10-08)
 
 * 应用支持通过[API](https://expvent.com/documentation/zh-cn/docs/API%20Reference/everai_app_api)来控制worker容器的扩缩容，manifest模式下yaml文件配置示例如下：
   
@@ -17,18 +29,6 @@ spec:
     manual:
       defaultWorkerNum: 1
   ...
-```
-
-## 0.2.35 (2024-10-11)
-
-* 优化了`everai volume push`时，超时重连的逻辑。
-  
-## 0.2.33 (2024-10-10)
-
-* 修复了在执行`everai volume list`指令时，有概率出现如下所示报错，即获取不到本地CA证书的问题。
-
-```bash
-[2024-10-09 17:46:51][WARNING][:781] Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after conection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate(_ssl.c:1007)'))': /api/volumes/v1/volumes
 ```
 
 ## 0.2.31 (2024-08-06)
