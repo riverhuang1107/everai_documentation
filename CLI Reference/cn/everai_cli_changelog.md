@@ -5,7 +5,7 @@ sidebar_label: everai cli changelog
 
 # everai cli changelog
 
-## 0.2.36 (2024-10-12)
+## 0.2.36 (2024-10-15)
 
 * 应用支持通过[API](https://expvent.com/documentation/zh-cn/docs/API%20Reference/everai_app_api)来控制worker容器的扩缩容，manifest模式下yaml文件配置示例如下：
   
