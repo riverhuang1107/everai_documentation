@@ -14,7 +14,7 @@ sidebar_label: everai cli changelog
 * 修复了在执行`everai volume list`指令时，有概率出现如下所示报错，即获取不到本地CA证书的问题。
 
 ```bash
-[2024-10-09 17:46:51][WARNING][:781] Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connnection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate(_ssl.c:1007)'))': /api/volumes/v1/volumes
+[2024-10-09 17:46:51][WARNING][:781] Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate(_ssl.c:1007)'))': /api/volumes/v1/volumes
 ```
 
 ## 0.2.32 (2024-10-08)
