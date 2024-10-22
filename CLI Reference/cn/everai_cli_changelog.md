@@ -5,6 +5,10 @@ sidebar_label: everai cli changelog
 
 # everai cli changelog
 
+## 0.2.37 (2024-10-22)
+
+* `everai volume push`命令新增`--update`参数，只有当本地源文件和云端目标文件不一致，或本地源文件的大小与云端目标文件不同时，才会进行文件推送操作。
+  
 ## 0.2.35 (2024-10-11)
 
 * 优化了`everai volume push`时，超时重连的逻辑。
