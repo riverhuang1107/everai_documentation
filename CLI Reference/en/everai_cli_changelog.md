@@ -7,7 +7,7 @@ sidebar_label: everai cli changelog
 
 ## 0.2.37 (2024-10-22)
 
-* The `--update` parameter is added to the `everai volume push` command. The file push operation will only be performed when the local source file and the cloud target file are inconsistent, or the size of the local source file is different from the cloud target file.
+* The `--update` parameter is added to the `everai volume push` command to perform data volume push operations when the local source file exists or the cloud target file does not exist, or the size of the local source file is inconsistent with the cloud target file.
   
 ## 0.2.35 (2024-10-11)
 
