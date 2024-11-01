@@ -104,7 +104,7 @@ curl -X POST \
 |`namespace` | string|是|命名空间名称，默认为`default`|
 |`name` | string|是|应用名称|
 |`scaleDownWorkersNum`   |string |否||
-|`workerIds`  |array[string] |否||
+|`workerIds`  |array[string] |是||
 
 ### 返回结果
 

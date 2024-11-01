@@ -106,7 +106,7 @@ curl -X POST \
 |`namespace` | string|Yes | namespace name, Defaults to `defualt`|
 |`name` | string|Yes |app name|
 |`scaleDownWorkersNum`   |string |No ||
-|`workerIds`  |array[string] |No ||
+|`workerIds`  |array[string] |Yes ||
 
 ### Response
 
