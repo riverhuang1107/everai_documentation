@@ -158,6 +158,7 @@ everai volume push [-h] name
 
 **选项**:  
 * `-h, --help`  显示帮助信息
+* `-u, --update`  针对本地源文件存在且云端目标文件不存在，或本地源文件的大小与云端目标文件不一致的情况，进行数据卷推送操作。
 
 ## everai volume publish
  

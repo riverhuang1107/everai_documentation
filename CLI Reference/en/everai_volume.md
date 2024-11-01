@@ -156,6 +156,7 @@ everai volume push [-h] name
 
 **Options**:  
 * `-h, --help`  show this help message and exit
+* `-u, --update`  specifies that volumes push files only when the destination objects do not exist or when the size of the files is different from that of the destination objects
 
 ## everai volume publish
 Publish volume to everyone  
