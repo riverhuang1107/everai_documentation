@@ -5,6 +5,10 @@ sidebar_label: everai cli changelog
 
 # everai cli changelog
 
+## 0.2.38 (2024-11-01)
+
+* 应用支持`combinedVolume`特性。
+ 
 ## 0.2.37 (2024-10-22)
 
 * `everai volume push`命令新增`--update`参数，针对本地源文件存在或者云端目标文件不存在，或本地源文件的大小与云端目标文件不一致的情况，进行数据卷推送操作。

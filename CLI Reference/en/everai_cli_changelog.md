@@ -5,6 +5,10 @@ sidebar_label: everai cli changelog
 
 # everai cli changelog
 
+## 0.2.38 (2024-11-01)
+
+* The application supports the `combinedVolume` feature.
+
 ## 0.2.37 (2024-10-22)
 
 * The `--update` parameter is added to the `everai volume push` command to perform data volume push operations when the local source file exists or the cloud target file does not exist, or the size of the local source file is inconsistent with the cloud target file.
