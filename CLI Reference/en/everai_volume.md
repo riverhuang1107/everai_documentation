@@ -149,7 +149,7 @@ Uploading ...9a11f4367a4eed129e94a7b/text_encoder_2/model.fp16.safetensors:   0%
 
 **Usage**:
 ```bash   
-everai volume push [-h] name
+everai volume push [-h] [-u] name
 ```
 **Positional arguments**:  
   * `name`        The volume name  
