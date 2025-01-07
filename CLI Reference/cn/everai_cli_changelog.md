@@ -5,6 +5,10 @@ sidebar_label: everai cli changelog
 
 # everai cli changelog
 
+## 0.2.39 (2025-01-06)
+
+* 应用支持`sharedVolume`特性。
+
 ## 0.2.38 (2024-11-01)
 
 * 应用支持`combinedVolume`特性。
